@@ -1,0 +1,4622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Pac Kart documentation</title>
+        <link href="index.css" rel="stylesheet" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <div class="main_page" id="main_page">
+            <section id="main">
+                <h1>wip</h1>
+            </section>
+
+            <section id="file">
+                <h1>.x* introduction</h1>
+                <p>
+                    this type of file is used in 3 known games: <br />
+                    Hot Wheels Velocity X <br />
+                    Snoopy vs. the Red Baron <br />
+                    Pac Man World Rally
+                </p>
+
+                <p>
+                    the file extension changes based on console <br />
+                    pc: .xpc <br />
+                    gamecube: .xgc <br />
+                    xbox: .xdx <br />
+                    psp .xpp <br />
+                    ps2 .XPS
+                </p>
+
+                <p>
+                    the file can contain a wide verity of data <br />
+                    sounds/music <br />
+                    geometry <br />
+                    textures <br />
+                    animations <br />
+                    ect
+                </p>
+
+                <p>
+                    there are a number of differences between each game, console and file type <br />
+                    currently focusing on the gamecube version of pac man world rally,
+                    <br />
+                </p>
+
+                <p>Gamecube uses big endian</p>
+
+                <hr />
+
+                <h3>File Header</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>
+                                <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files">magic </a> <br />
+                                value always 33620128 or 02 01 00 A0
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>
+                                magic <br />
+                                value always 67174575 or 04 01 00 AF
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>
+                                section 2: file directory magic <br />
+                                value different depending on region / game
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>number of files</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                file directory magic list
+                <p>
+                    pac: <br />
+                    gc / ntsc: 267 <br />
+                    ps2: pal : 274 <br />
+                    ps2: ntsc: 267 <br />
+                    ps2: demo: 249 <br />
+                    psp: pal :274 <br />
+                    xbox:demo: 243 <br />
+                    pc:??? 267 <br />
+                    <br />
+                    snoopy vs the red baron: <br />
+                    pc: ???: 274 <br />
+                    <br />
+                    hot wheels x <br />
+                    pc: ntsc: 183
+                </p>
+
+                <hr />
+
+                <h3>file directory</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>magic</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>
+                                type of file: <br />
+                                * 0 = car <br />
+                                * 1 = interface <br />
+                                * 2 = item <br />
+                                * 3 = link <br />
+                                * 4 = world <br />
+                                * 5 = colliders <br />
+                                * 6 = world texture <br />
+                                * 7 = geometry <br />
+                                * 8 = share <br />
+                                * 9 = audio <br />
+                                * 10 = music <br />
+                                <small>credit to Alaxend0l#5064 on discord</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>
+                                file type index <br />
+                                files with different types can have the same index
+                            </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>
+                                usually 0 offset of some kind<br />
+                                always 0 in gc pac
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>amount bytes</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br />
+                type of file list:
+
+                <p>car: audio , models, animations , textures , logic</p>
+                <p>interface: audio , models, animations , textures , logic</p>
+                <p>item: audio , models , textures , logic</p>
+                <p>link: , textures , logic</p>
+                <p>world: audio ,collision, world options , models ,animations, textures , logic</p>
+                <p>collision: audio , collision ,textures, logic</p>
+                <p>texture: ,textures, logic</p>
+                <p>geometry: ,geometry</p>
+                <p>share: audio, geometry ,textures</p>
+                <p>audio: audio, logic</p>
+                <p>music: music, logic</p>
+
+                <p>
+                    <br />
+                    focusing on world type
+                </p>
+
+                <hr />
+
+                <h3>File header</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to 2nd offset list</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset to 1st offset list</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>amount of sounds</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>amount 2nd part of 2nd offset list</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>amount ??? part of 1st offset list</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>amount of textures</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>offset to textures</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>amount ??? part of 1st offset list</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>amount of offsets in sound offset list</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>always 0</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>always 0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>always 0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>unknown, low number</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>amount ??? part of 1st offset list</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>amount 1st part of 2nd offset list</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>offset to animations</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">append 0 until index is 120</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+
+                <h3>sound offset list</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset to sound list</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">append 0 until index divisible by 32</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>each offset always +32 <br /></p>
+
+                <hr />
+
+                <h3>sound list</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset to sound data / offset + start of sound list</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>u32</td>
+                            <td>length of sound</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>8</td>
+                            <td>u32</td>
+                            <td>0 or FF FF FF FF</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>sound sample rate</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>always 0?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u16</td>
+                            <td>? volume ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>22</td>
+                            <td>u16</td>
+                            <td>??? 16 bits per sample maybe ???</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>padding? always 0</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>padding? always 0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr />
+
+                <h3>sound data</h3>
+
+                <p>
+                    <br />
+                    pac: pc / gc / xbox <br />
+                    snoopy: pc <br />
+                    hot wheels: pc<br />
+                    <br />
+                    pcm format<br />
+                    1 channels<br />
+                    16 bit
+                    <br />
+                    <br />
+                    pac: ps2 / psp <br />
+                    unknown format
+                </p>
+
+                <hr />
+
+                <h3>1st offset list</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>u32</td>
+                            <td>index?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr />
+
+                <h3>mid section header:</h3>
+                <p>most offsets start here</p>
+                <p>most file types use this format except world / collision / world texture / geometry / share</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>always 1 / unknown</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>16/32 offset to logic offset</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...then</td>
+                        </tr>
+                        <tr>
+                            <td>[04]+0</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr>
+                            <td>[04]+04</td>
+                            <td>u32</td>
+                            <td>file index</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">divisible by 32 ?</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>world:</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset collision / 160</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset start unknown section 98432 Float?</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset start cpu / item / checkpoint header</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>small value</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>offset start world options</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>offset start unknown section end cpu list</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>small value</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>offset start unknown section / offset to offset fruit gate?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>collision/world texture /geometry/share = 0 bytes long</p>
+
+                <p>share: offsets to models / 32 bytes divisible long / ¿</p>
+
+                <hr />
+
+                <h3>collision header?:</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36-156</td>
+                            <td>???</td>
+                            <td>unknown values, probably nothing</td>
+                        </tr>
+                        <tr></tr>
+                        <tr class="unknown_value">
+                            <td>160</td>
+                            <td>float</td>
+                            <td>related to collision quadrant</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>164</td>
+                            <td>float</td>
+                            <td>related to collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>168</td>
+                            <td>float</td>
+                            <td>related to collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>172</td>
+                            <td>float</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>176</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>180</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>184</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>188</td>
+                            <td>float</td>
+                            <td>unknown 1</td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>u32</td>
+                            <td>offset start collision table 2 -48</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>196</td>
+                            <td>u32</td>
+                            <td>unknown 19 change value = inf loading</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>200</td>
+                            <td>float</td>
+                            <td>unknown related to collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>204</td>
+                            <td>float</td>
+                            <td>unknown related to collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>208</td>
+                            <td>float</td>
+                            <td>unknown related to collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>212</td>
+                            <td>u32</td>
+                            <td>unknown low value</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>216</td>
+                            <td>u32</td>
+                            <td>unknown low value</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>220</td>
+                            <td>u32</td>
+                            <td>unknown low value</td>
+                        </tr>
+                        <tr>
+                            <td>224</td>
+                            <td>u32</td>
+                            <td>offset collision grid</td>
+                        </tr>
+                        <tr>
+                            <td>228</td>
+                            <td>u32</td>
+                            <td>largest amount in collision increment? -1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>232</td>
+                            <td>u32</td>
+                            <td>unknown always 00</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>236</td>
+                            <td>u32</td>
+                            <td>unknown always 00</td>
+                        </tr>
+                        <tr>
+                            <td>240</td>
+                            <td>u32</td>
+                            <td>amount of sections in collision table 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>244</td>
+                            <td>u32</td>
+                            <td>unknown always 256</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>248</td>
+                            <td>u32</td>
+                            <td>unknown always 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>252</td>
+                            <td>u32</td>
+                            <td>unknown always 00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr />
+
+                <h3>collision table 1</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>vertex x</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>vertex y</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>vertex z</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>always -431602080 or CD CD CD CD</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>vertex x</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>vertex y</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>vertex z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>unknown usually 1</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>vertex x</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>vertex y</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>vertex z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>unknown usually 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>unknown usually 0</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>always CD CD CD CD</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>always CD CD CD CD</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>always CD CD CD CD</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>table doesn't do anything?</p>
+
+                <hr />
+
+                <h3>collision grid</h3>
+
+                <p>values collision related, values are always u32, values increment</p>
+
+                <hr />
+
+                <h3>collision table 2</h3>
+                <p>vertex 1 & 2 represent an area where collision from table 3 is active</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>vertex 1 x</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>vertex 1 y</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>vertex 1 z</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>always -107374176 or CC CC CC CC</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>vertex 2 x</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>vertex 2 y</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>vertex 2 z</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>always -107374176 or CC CC CC CC</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>amount of values in end collision table 3</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>offset end collision table 3</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>offset header collision table 3</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>amount of sections in collision table 3 header</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr />
+
+                <h3>collision table 3 head</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset start data</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>amount of data sections</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>? large number, most values are the same</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat depending on collision table 2 [44]</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">...after append CD CD CD CD until index divisible by 16</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>collision table data</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>float</td>
+                            <td>x rotation</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>float</td>
+                            <td>y rotation</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>float</td>
+                            <td>z rotation</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>y position ?</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>type of collision</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u16</td>
+                            <td>? usually increments / FF</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>22</td>
+                            <td>u16</td>
+                            <td>? usually increments / FF</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>b8</td>
+                            <td>append 8 CD</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>end</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>? usually increments</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">append CD until index divisible by 16</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+
+                <h3>world options section header</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>type of section</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>number of bytes per entry</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>amount of entries</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset to first entry</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">section always 256 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <br />
+                <p>types 6,7,9,12 not seen</p>
+
+                <h3>entry header</h3>
+
+                <p>before each of the section entires a 32 byte structure appears</p>
+                <p></p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>index</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u16</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>06</td>
+                            <td>u16</td>
+                            <td>0 or 1 other values no change</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>0 other values crash</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u16</td>
+                            <td>1 other values no change</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>14</td>
+                            <td>u16</td>
+                            <td>8 other values no change</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u16</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>18</td>
+                            <td>u16</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">section always 32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 0 / starting points</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>float</td>
+                            <td>position x</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>float</td>
+                            <td>position y</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>float</td>
+                            <td>position z</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>float</td>
+                            <td>position w</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>float</td>
+                            <td>rotation x</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>float</td>
+                            <td>rotation y</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>float</td>
+                            <td>rotation z</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>float</td>
+                            <td>rotation w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u16</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>74</td>
+                            <td>u8</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>75</td>
+                            <td>u8</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>float</td>
+                            <td>500</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>float</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>112</td>
+                            <td>u8</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>113</td>
+                            <td>u16</td>
+                            <td>ffff unknown other values no change</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>115</td>
+                            <td>u8</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>116</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>120</td>
+                            <td>u8</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>121</td>
+                            <td>u8</td>
+                            <td>1 if other number, index is moved last</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>122</td>
+                            <td>u16</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>124</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">128 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 1 / camera related ????</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offest animations</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u16</td>
+                            <td>0 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>78</td>
+                            <td>u16</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>float</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">96 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>section 2 // ?????</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>amount in 4th</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>offset deep ? -> 3rd,4th</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>offset deep ? -> 1st,2nd</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u16</td>
+                            <td>amount in 4th</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>86</td>
+                            <td>u16</td>
+                            <td>ff</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">112 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>1st</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>index ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>69 amount in 2nd list</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset: 2nd list -></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">section always ??? bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>2nd</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to entry section 15</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">divisible 32</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>3rd</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to offset to entry section 7 list (4th)</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">divisible 32</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>4th</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to entry section 15</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">divisible 32</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 3 section // only seen in rolling hills</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">64 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 4 - respawns ???</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>float</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>¿ sames as other</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>float</td>
+                            <td>x</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>112</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>116</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>120</td>
+                            <td>float</td>
+                            <td>10</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>124</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>128</td>
+                            <td>u32</td>
+                            <td>offset to 1st 4 first entry ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>132</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>136</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>140</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">144 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 5 / model postitoins ?</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>always 1 position x</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>always 1 position y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>always 1 position z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>float</td>
+                            <td>always 1 position w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>offset to model</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">112 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 8 section / ???</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>offset top of the collision section</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>offset bottom of the section ? last 16 bytes</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>type 8 collision section / wip on this</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>???</td>
+                            <td>???</td>
+                            <td>???</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">???</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 10 / pac pellet / fruit activators</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>x rotation probably</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>90000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>40000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">96 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 11 / respawn from player?</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>x rotation probably</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>low number</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>offset to a start position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 13 custom stage object ?</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>x rotation probably</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>500</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">96 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 14 animations ?</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>x rotation probably</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>w</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offset logic</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>type 15 / objects</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y position</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z position</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>render distance</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>ffff0000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>01010101</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>special collisoin ???????</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>offset special collision list 2 -96</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>offset special collision list 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>low number</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>amount of numbers in next list</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>500</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>500</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>low number</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>low number</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">???</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>special collision list 1</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>low number, start at 1, increment by 1 usually</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">???</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>special collision list 2</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00 - 36</td>
+                            <td>40b</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>0 sometimes a number of entries in offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>0 sometimes offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>number of entries in offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56-76</td>
+                            <td>24b</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>special collision list 3</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>item / CPU / checkpoint / respawn Routes header</p>
+                <p>like the optional sections above but linked by mid section header</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset start cpu route entries</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>amount of entries</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>FF FF FF FF</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>type 16</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>float</td>
+                            <td>x position</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>float</td>
+                            <td>y position</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>float</td>
+                            <td>z position</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>float</td>
+                            <td>w position</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>amount of floats in list 2</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>offset to list 2</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>offset to list 3</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>amount of entries in 1st list</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offset to list 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>cpu / item deviation, low values break blue bombers ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u16</td>
+                            <td>08 ? 04 = always last place | 08 = random lap counts / random</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>74</td>
+                            <td>u16</td>
+                            <td>00</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>64 0 0 0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>112</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>116</td>
+                            <td>u32</td>
+                            <td>0 based index</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>120</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>124</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">128 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>item / CPU Routes list 1</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00-28</td>
+                            <td>u32</td>
+                            <td>related to cpu / checkpoints</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>item / CPU Routes list 2</p>
+                <p>changing values does not seem to do anything</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00-28</td>
+                            <td>float</td>
+                            <td>distance between current and previous point</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>item / CPU Routes list 3</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00-28</td>
+                            <td>u32</td>
+                            <td>related to cpu / checkpoints</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>offsets ?course obstacles / gates</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00-28</td>
+                            <td>u32</td>
+                            <td>offset / 0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <hr />
+                <p>unknown</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset 43</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset 111232 next list?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset 15</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset 111424 next list? 2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />
+                <p>unknown list</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">???</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>wip later</p>
+                <br />
+                .....................
+                <hr />
+
+                <h3>animation</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>¿0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>¿0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat small number of times</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>wip later</p>
+                <br />
+                .....................
+                <hr />
+
+                <h3>models</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u16</td>
+                            <td>always 06 01</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>02</td>
+                            <td>u16</td>
+                            <td>type of model?</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset sections</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset .gx string</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset render distance</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>visibility:</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>float</td>
+                            <td>vertex 1 x</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>float</td>
+                            <td>vertex 1 y</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>float</td>
+                            <td>vertex 1 z</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>float</td>
+                            <td>vertex 1 w</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>float</td>
+                            <td>vertex 2 x</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>float</td>
+                            <td>vertex 2 y</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>float</td>
+                            <td>vertex 2 z</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>float</td>
+                            <td>vertex 2 w</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>float</td>
+                            <td>vertex 3 x</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>float</td>
+                            <td>vertex 3 y</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>float</td>
+                            <td>vertex 3 z</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>float</td>
+                            <td>vertex 3 w</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">48 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>sections</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>amount, 1 based index</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset inner section</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat until amount next amount = 0</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">...or if next offset = render distance</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">divisible by 16</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>render distance</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>float</td>
+                            <td>render distance</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat same amount of times as sections</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">divisible by 16</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>inner section</p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset model section data header</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat from sections amount</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">divisible by 16</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>model section data header</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u8</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>09</td>
+                            <td>u8</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>10</td>
+                            <td>u8</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>11</td>
+                            <td>u8</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>culling ???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>???</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">96 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>
+                    vertex float array 3 floats per vertex <br />
+                    color array 4 bytes rgba<br />
+                    uv array 2 bytes x 2 bytes y half floats? not sure
+                </p>
+
+                <p>wip later</p>
+                <br />
+                .....................
+                <hr />
+
+                <h3>texture header</h3>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u16</td>
+                            <td>
+                                texture type <br />
+                                * 65 = dxt1 <br />
+                                * 68 = ? <br />
+                                * 72 = ? <br />
+                                * 160 = rgba8888 <br />
+                                * 193 = dxt1 + alpha texture half size <br />
+                                * 194 = dxt1 + alpha texture <br />
+                                * 196 = ? <br />
+                                * 197 = dxt5/3 <br />
+                                * 200 = ?
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>u8</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>u8</td>
+                            <td>y</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset alpha texture</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset texture</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>b52</td>
+                            <td>texture string</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">64 bytes per entry</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>texture type</h3>
+
+                <br />
+                gc differs from pc on dxt1 color, bytes are swapped <br />
+                16 bit color: <br />
+                1st byte <br />
+                0 = high red /1 <br />
+                1 = red /2 <br />
+                2 = red /3 <br />
+                3 = red /4 <br />
+                4 = lowest red /5 <br />
+                5 = high green /1 <br />
+                6 = green /2 <br />
+                7 = green /3 <br />
+                2nd byte <br />
+                8 = green /4 <br />
+                9 = green /5 <br />
+                10 = lowest green /6 <br />
+                11 = high blue /1 <br />
+                12 = blue /2 <br />
+                13 = blue /3 <br />
+                14 = blue /4 <br />
+                15 = lowest blue /5
+                <br />
+
+                <br />
+                mip maps: <br />
+                gc = no mips <br />
+                pc / xbox = has mips<br />
+
+                <br />
+                texture type by console: <br />
+                gc: 65 / 193 / 194 <br />
+                pc: 65 / 160 / 197 <br />
+                xbox: 65 / 160 / 197 <br />
+                psp: 68 / 72 / 196 / 200 <br />
+                ps2: 72 / 160 / 200
+
+                <hr />
+
+                <h3>logic</h3>
+
+                <h2>logic section:</h2>
+                <p>only world rally - world file type</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>lights related , always 4</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset lighting section</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>float</td>
+                            <td>always 15000 / field of view</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset shadow position</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>22</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>float</td>
+                            <td>shine effect?/10000000</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>float</td>
+                            <td>shine effect?/10000000</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>variable 1 offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>250</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>1890</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>u32</td>
+                            <td>offset variable 2</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>offset variable 3</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>offset variable 4</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>offset variable 5</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>offset variable 6</td>
+                        </tr>
+                        <tr>
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>offset variable 7</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>offset variable 8</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>offset music filename</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>u32</td>
+                            <td>100 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>u32</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr>
+                            <td>88</td>
+                            <td>u32</td>
+                            <td>offset variable 10</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>u32</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>float</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>112</td>
+                            <td>float</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>116</td>
+                            <td>f</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>120</td>
+                            <td>f32</td>
+                            <td>0.5 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>124</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>128</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>132</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>136</td>
+                            <td>u16</td>
+                            <td>3</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>138</td>
+                            <td>u16</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>140</td>
+                            <td>f</td>
+                            <td>0.5 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>144</td>
+                            <td>f32</td>
+                            <td>0.584 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>148</td>
+                            <td>f32</td>
+                            <td>2110 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>152</td>
+                            <td>f</td>
+                            <td>2110 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>156</td>
+                            <td>f32</td>
+                            <td>128</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>160</td>
+                            <td>f32</td>
+                            <td>128</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>164</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>168</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>172</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>176</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>180</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>184</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>188</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>192</td>
+                            <td>u32</td>
+                            <td>offset later section</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>196</td>
+                            <td>u32</td>
+                            <td>offset later section</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>200</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>204</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>208</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>212</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>216</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>220</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>lighting section</h2>
+                <p>4 lights</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u8</td>
+                            <td>3 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>01</td>
+                            <td>u8</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>02</td>
+                            <td>u16</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u8</td>
+                            <td>red</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>u8</td>
+                            <td>green</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>u8</td>
+                            <td>blue</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>u8</td>
+                            <td>alpha</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>f</td>
+                            <td>50 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>f</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>f</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>f</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>f</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>1 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>100 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>0.5 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>0 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>0 ?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>shadow section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>float</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>float</td>
+                            <td>y</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>float</td>
+                            <td>z</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>variable 1 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 2 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset + 32</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>250</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>20000</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 2 part 2 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 3 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 4 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 5 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>FF ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>variable 6 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 7 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 8 section:</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>music filename section:</h2>
+                <p>32 byes</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>b32</td>
+                            <td>filename</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 10 section:</h2>
+                <p>offset:</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>00 02 00 00?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>offset + 32 ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>variable 10 section part 2</h2>
+                <p>offset:</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>this is like 0.1% of it idk what to do</p>
+                <br />
+                .....................
+            </section>
+        </div>
+    </body>
+</html>
