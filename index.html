@@ -3427,6 +3427,8 @@
 
                 <h3>texture header</h3>
 
+                <p>Pac Man World Rally</p>
+
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3436,7 +3438,7 @@
                         </tr>
                         <tr>
                             <td>00</td>
-                            <td>u16</td>
+                            <td>u8</td>
                             <td>
                                 texture type <br />
                                 * 65 = dxt1 <br />
@@ -3449,6 +3451,11 @@
                                 * 197 = dxt5/3 <br />
                                 * 200 = ?
                             </td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>u8</td>
+                            <td>amount mipmaps</td>
                         </tr>
                         <tr>
                             <td>02</td>
@@ -3483,31 +3490,14 @@
                     </tfoot>
                 </table>
 
-                <h3>texture type</h3>
+                <h3>gamecube dxt1 compression differences</h3>
 
-                <br />
-                gc differs from pc on dxt1 color, bytes are swapped <br />
-                16 bit color: <br />
-                1st byte <br />
-                0 = high red /1 <br />
-                1 = red /2 <br />
-                2 = red /3 <br />
-                3 = red /4 <br />
-                4 = lowest red /5 <br />
-                5 = high green /1 <br />
-                6 = green /2 <br />
-                7 = green /3 <br />
-                2nd byte <br />
-                8 = green /4 <br />
-                9 = green /5 <br />
-                10 = lowest green /6 <br />
-                11 = high blue /1 <br />
-                12 = blue /2 <br />
-                13 = blue /3 <br />
-                14 = blue /4 <br />
-                15 = lowest blue /5
-                <br />
-
+                gc differs from standard dxt1 compression,<br>
+                color and pixel position are big endian<br>
+                and every 4 pixel blocks are arranged in a zigzap pattern<br>
+                so 1st pixel block would be top left 2nd top right 3rd bottom left 4th bottom right<br>
+                after move right unless end then move down<br>
+                            
                 <br />
                 mip maps: <br />
                 gc = no mips <br />
@@ -3520,6 +3510,115 @@
                 xbox: 65 / 160 / 197 <br />
                 psp: 68 / 72 / 196 / 200 <br />
                 ps2: 72 / 160 / 200
+
+                <p>Snoopy vs. the Red Baron </p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>values usually the same?</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u8</td>
+                            <td>texture type <br>
+                                * 65 = dxt1 <br>
+                                * 193 = DDS (dxt1 compression + alpha texture half size) probably<br>
+                                * 195 = ???<br>
+                                * 197 = dxt5 <br /></td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>u8</td>
+                            <td>mip maps</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>u8</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>u8</td>
+                            <td>y</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>texture offset</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>string offset <br>
+                            strings are 16 dibisible by 16<br>
+                            end is relative on next offset / start of logic</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes per entry</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <p>Hot Wheels Velocity X </p>
+
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u16</td>
+                            <td>texture type<br>
+                                * 4 = dxt1 <br />
+                                * 5 = dxt5 <br />
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>u16</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u16</td>
+                            <td>y</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>06</td>
+                            <td>u16</td>
+                            <td>??</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>offset texture</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>padding ?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes per entry</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
 
                 <hr />
 
