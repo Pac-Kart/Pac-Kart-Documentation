@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>Pac Kart documentation</title>
+      <link href="index.css" rel="stylesheet"/>
+      <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      <script type="text/javascript" src="index.js"></script>
+   </head>
+   <body>
+      <div class="main_page" id="main_page">
+         <section id="main">
+            <h1>wip</h1>
+         </section>
+         <section id="file">
+            <h1>.sav file introduction</h1>
+            <p>
+               there are 3 different file types seen<br>
+               profile (contains all save data)<br>
+               ghost (a ghost replay file)<br>
+               PMR (unknown)<br><br>
+               interestingly the hall of fame records have default letters that are never seen
+               <br> JEN = Time Trials<br>WTH = Letter Hunt<br>
+               CKJ = clockbuster
+            </p>
+            <h3>file structure</h3>
+            <p>the profile structure is relatively the same across each version except for an 8 byte language section</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>bytes</th>
+                     <th>section</th>
+                  </tr>
+                  <tr>
+                     <td>0016</td>
+                     <td><a style='color:blue;' href='#file_header'>file header</a>                   
+                     </td>
+                  <tr>
+                     <td>0040</td>
+                     <td ><a style='color:blue;' href='#settings_1'>settings 1</a>                  
+                     </td>
+                  <tr>
+                     <td>0008</td>
+                     <td>
+                        <a style='color:blue;' href='#language'>language settings</a><br>European version only
+                     </td>
+                  <tr class='unknown_value'>
+                     <td>0064</td>
+                     <td><a style='color:blue;' href='#unknown_section'>unknown section</a>
+                     </td>
+                  <tr>
+                     <td>0160</td>
+                     <td>padding
+                     </td>
+                  <tr>
+                     <td>0008</td>
+                     <td><a style='color:blue;' href='#settings_2'>settings 2</a>
+                     </td>
+                  <tr>
+                     <td>0064</td>
+                     <td>padding
+                     </td>
+                  <tr>
+                     <td>0320</td>
+                     <td><a style='color:blue;' href='#cup'> hall of fame circuit records</a>
+                     </td>
+                  <tr>
+                     <td>0064</td>
+                     <td>padding
+                     </td>
+                  <tr>
+                     <td>1280</td>
+                     <td><a style='color:blue;' href='#time_trials'> hall of fame time trials</a>
+                     </td>
+                  <tr>
+                     <td>1088</td>
+                     <td><a style='color:blue;' href='#letter_hunt'>hall of fame letter hunt</a>
+                     </td>
+                  <tr>
+                     <td>1408</td>
+                     <td><a style='color:blue;' href='#clock_buster'>hall of fame clockbuster</a>
+                     </td>
+                  <tr>
+                     <td>0224</td>
+                     <td><a style='color:blue;' href='#unlockables'>unlockables</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <hr/>
+            <h3 id='file_header'>File Header</h3>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>
+                        file checksum<br>Format unknown
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>always 4
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>amount of bytes in file
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>12</td>
+                     <td>u32</td>
+                     <td>
+                        type of file? 
+                        <br>
+                        * 0 = profile
+                        <br>* 4 = ghost / pmr
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <hr>
+            <h2 id='settings_1'>settings 1</h2>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>
+                        offset letterhunt section +6<br>
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>12</td>
+                     <td>u32</td>
+                     <td>012 | u32 | 10
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>16</td>
+                     <td>u32</td>
+                     <td>8 /9
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>20</td>
+                     <td>u32</td>
+                     <td>23
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>24</td>
+                     <td>u32</td>
+                     <td>54 / 4? every time it saved ??????/   
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>28</td>
+                     <td>u32</td>
+                     <td>
+                        last selected difficulty
+                        <br>
+                        * 0 = easy
+                        <br>
+                        * 1 = mid
+                        <br>
+                        * 2 = hard
+                        <br>* 3 = nightmare                            
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>32</td>
+                     <td>u32</td>
+                     <td>
+                        auto save<br>
+                        * 0 = off<br>* 1 = on
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>36</td>
+                     <td>u8</td>
+                     <td>sfx volume
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>37</td>
+                     <td>u8</td>
+                     <td>music volume 
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>38</td>
+                     <td>u16</td>
+                     <td>padding ?
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <h3 id='language'>language setting</h3>if European version: append table:</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>
+                        language<br>
+                        * 0 = english <br>
+                        * 1 = french <br>
+                        * 2 = spanish<br>
+                        * 3 = italian<br>* 4 = german 
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>padding?
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <hr>
+            <h2 id='unknown_section'>unknown section</h2>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u8</td>
+                     <td>1</td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>01</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>02</td>
+                     <td>u8</td>
+                     <td>1</td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>03</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>100
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">repeat 8 times</th>
+                  </tr>
+                  <tr>
+                     <th colspan="3">64 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <p>+160 bytes padding / check if psp version changes</p>
+            <hr>
+            <h2 id='settings_2'>settings 2</h2>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u8</td>
+                     <td>
+                        default time trial letter 1<br>
+                        * 0 to 25 are letters<br>* 26 is space
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>01</td>
+                     <td>u8</td>
+                     <td>default time trial letter 2
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>02</td>
+                     <td>u8</td>
+                     <td>default time trial letter 3
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>03</td>
+                     <td>u8</td>
+                     <td>
+                        pac mobile camera <br>
+                        * 0 = on<br>* 1 = off
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>always 1
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">8 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <p>+64 bytes padding</p>
+            <hr>
+            <h2 id='cup'>hall of fame records</h2>
+            <p>circuit records:
+               organized like:
+            </p>
+            <p style=';margin:0px;'>cherry cup</p>
+            <p style='padding-left:5px;margin:0px;'>easy</p>
+            <p style='padding-left:5px;margin:0px;'>mid</p>
+            <p style='padding-left:5px;margin:0px;'>hard</p>
+            <p style='padding-left:5px;margin:0px;'>nightmare</p>
+            <p style=';margin:0px;'>grape cup</p>
+            <p style=';margin:0px;'>ect...</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u8</td>
+                     <td>
+                        trophy<br>
+                        * 00 = no trophy
+                        <br>
+                        * 01 = bronze
+                        <br>
+                        * 02 = silver
+                        <br>* 03 = gold
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>01</td>
+                     <td>u8</td>
+                     <td>completed ?
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>02</td>
+                     <td>u8</td>
+                     <td>
+                        character
+                        <br>
+                        * 01 = pacman
+                        <br>
+                        * 02 = blinky
+                        <br>
+                        * 03 = pooka
+                        <br>
+                        * 04 = toc man
+                        <br>
+                        * 05 = inky
+                        <br>
+                        * 06 = clyde
+                        <br>
+                        * 07 = ms pac man
+                        <br>
+                        * 08 = pinky
+                        <br>
+                        * 09 = jr pac man
+                        <br>
+                        * 10 = spooky
+                        <br>
+                        * 11 = pac devil
+                        <br>
+                        * 12 = erwin
+                        <br>
+                        * 13 = flygar
+                        <br>
+                        * 14 = mr driller
+                        <br>
+                        * 15 = prince
+                        <br>* 16 = mappy
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>03</td>
+                     <td>u8</td>
+                     <td>always 0 padding maybe
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>points | max = 1000000
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>time | max = 333:20:00
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>12</td>
+                     <td>u32</td>
+                     <td>
+                        show cup in hall of fame
+                        <br>
+                        * 00 = show
+                        <br>* 01 = don't show
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">16 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            +64 bytes padding
+            <hr>
+            <h2 id='time_trials'>time trials</h2>
+            <p>each track is 80 bytes each</p>
+            <p>time trial fast lap:</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>
+                        show cup in hall of fame
+                        <br>
+                        * 00 = show
+                        <br>* 01 = don't show
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>padding?
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>08</td>
+                     <td>u8</td>
+                     <td>0 ?
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>09</td>
+                     <td>u8</td>
+                     <td>
+                        if last run was a fast lap
+                        <br>
+                        * 0 = no fast lap
+                        <br>* 1 = fast lap
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>10</td>
+                     <td>u8</td>
+                     <td>
+                        last runs placement
+                        <br>
+                        * 0 = didn't place
+                        <br>
+                        * 1 = 1st
+                        <br>
+                        * 2 = 2nd
+                        <br>
+                        * 3 =  3rd
+                        <br>
+                        * 4 = 4th
+                        <br>* 5 = 5th
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>11</td>
+                     <td>u8</td>
+                     <td>letter 1
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>12</td>
+                     <td>u8</td>
+                     <td>letter 2
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>13</td>
+                     <td>u8</td>
+                     <td>letter 3
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>14</td>
+                     <td>u8</td>
+                     <td>character
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>15</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>16</td>
+                     <td>u32</td>
+                     <td>time
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">20 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <p>time trial lap:</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>padding?
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>04</td>
+                     <td>u8</td>
+                     <td>letter 1
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>05</td>
+                     <td>u8</td>
+                     <td>letter 2
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>06</td>
+                     <td>u8</td>
+                     <td>letter 3
+                     </td>
+                  </tr>
+                  </tr>
+                  <tr>
+                     <td>07</td>
+                     <td>u8</td>
+                     <td>character
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>time
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">12 bytes</th>
+                  </tr>
+                  <tr>
+                     <th colspan="3">repeat 5 times</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <hr>
+            <h2 id='letter_hunt'>letter hunt</h2>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>padding?
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>lock?
+                     </td>
+                  </tr>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">8 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u8</td>
+                     <td>
+                        trophy
+                        <br>
+                        * 01 = bronze
+                        <br>
+                        * 02 = silver
+                        <br>
+                        * 03 = gold<br>there is always a trophy
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>01</td>
+                     <td>u8</td>
+                     <td>character
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>02</td>
+                     <td>u8</td>
+                     <td>letter 1
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>03</td>
+                     <td>u8</td>
+                     <td>letter 2
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>04</td>
+                     <td>u8</td>
+                     <td>letter 3
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>05</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>06</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>07</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>time
+                     </td>
+                  </tr>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">12 bytes</th>
+                  </tr>
+                  <tr>
+                     <th colspan="3">5 times</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <hr>
+            <h2 id='clock_buster'>clockbuster</h2>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>00</td>
+                     <td>u32</td>
+                     <td>padding?
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>04</td>
+                     <td>u32</td>
+                     <td>lock?
+                     </td>
+                  </tr>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">8 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>00</td>
+                     <td>u8</td>
+                     <td>trophy
+                        <br>* 00 = no trophy
+                        <br>* 01 = bronze
+                        <br>* 02 = silver
+                        <br>* 03 = gold
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>01</td>
+                     <td>u8</td>
+                     <td>character
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>02</td>
+                     <td>u8</td>
+                     <td>letter 1
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>03</td>
+                     <td>u8</td>
+                     <td>letter 2
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>04</td>
+                     <td>u8</td>
+                     <td>letter 3
+                     </td>
+                  <tr>
+                     <td>05</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>06</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>07</td>
+                     <td>u8</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>08</td>
+                     <td>u32</td>
+                     <td>pac dots | max = 2000000000
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>12</td>
+                     <td>u32</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">16 bytes</th>
+                  </tr>
+                  <tr>
+                     <th colspan="3">5 times</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <hr>
+            <h2 id='unlockables'>unlockables</h2>
+            <p>unlocking the psp exclusive content doesn't work (sad)</p>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>Offset</th>
+                     <th>Type</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>000</td>
+                     <td>u32</td>
+                     <td>molten mountain arena
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>004</td>
+                     <td>u32</td>
+                     <td>ghost mansion arena
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>008</td>
+                     <td>u32</td>
+                     <td>canyon crusade arena
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>012</td>
+                     <td>u32</td>
+                     <td>arctic iceberg arena (psp)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>016</td>
+                     <td>u32</td>
+                     <td>spooky castle (psp)
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>020</td>
+                     <td>u32</td>
+                     <td>space arena
+                     </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>024</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr>
+                     <td>028</td>
+                     <td>u32</td>
+                     <td> pac man </td>
+                  </tr>
+                  <tr>
+                     <td>032</td>
+                     <td>u32</td>
+                     <td> blinky </td>
+                  </tr>
+                  <tr>
+                     <td>036</td>
+                     <td>u32</td>
+                     <td> pooka </td>
+                  </tr>
+                  <tr>
+                     <td>040</td>
+                     <td>u32</td>
+                     <td> toc man </td>
+                  </tr>
+                  <tr>
+                     <td>044</td>
+                     <td>u32</td>
+                     <td> inky </td>
+                  </tr>
+                  <tr>
+                     <td>048</td>
+                     <td>u32</td>
+                     <td> clyde </td>
+                  </tr>
+                  <tr>
+                     <td>052</td>
+                     <td>u32</td>
+                     <td> ms pac man </td>
+                  </tr>
+                  <tr>
+                     <td>056</td>
+                     <td>u32</td>
+                     <td> pinky </td>
+                  </tr>
+                  <tr>
+                     <td>060</td>
+                     <td>u32</td>
+                     <td> jr pac man </td>
+                  </tr>
+                  <tr>
+                     <td>064</td>
+                     <td>u32</td>
+                     <td> spooky </td>
+                  </tr>
+                  <tr>
+                     <td>068</td>
+                     <td>u32</td>
+                     <td> pac devil </td>
+                  </tr>
+                  <tr>
+                     <td>072</td>
+                     <td>u32</td>
+                     <td> erwin </td>
+                  </tr>
+                  <tr>
+                     <td>076</td>
+                     <td>u32</td>
+                     <td> flygar </td>
+                  </tr>
+                  <tr>
+                     <td>080</td>
+                     <td>u32</td>
+                     <td> mr driller (psp)  </td>
+                  </tr>
+                  <tr>
+                     <td>084</td>
+                     <td>u32</td>
+                     <td> prince </td>
+                  </tr>
+                  <tr>
+                     <td>088</td>
+                     <td>u32</td>
+                     <td> mappy (psp)  </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>092</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>096</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>100</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>104</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>108</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>112</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>116</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>120</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>124</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>128</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>132</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>136</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>140</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>144</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>148</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>152</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>156</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>160</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>164</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr>
+                     <td>168</td>
+                     <td>u32</td>
+                     <td> nightmare </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>172</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>176</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>180</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>184</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>188</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>192</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>196</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr>
+                     <td>200</td>
+                     <td>u32</td>
+                     <td> sir pac a lot </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>204</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr class='unknown_value'>
+                     <td>208</td>
+                     <td>u32</td>
+                     <td> unknown </td>
+                  </tr>
+                  <tr>
+                     <td>212</td>
+                     <td>u32</td>
+                     <td> sira ice dragon </td>
+                  </tr>
+                  <tr>
+                     <td>216</td>
+                     <td>u32</td>
+                     <td> black bomb </td>
+                  </tr>
+                  <tr>
+                     <td>220</td>
+                     <td>u32</td>
+                     <td> galaga ship </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">224 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+         </section>
+      </div>
+   </body>
+</html>

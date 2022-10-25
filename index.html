@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8"/>
         <title>Pac Kart documentation</title>
-        <link href="index.css" rel="stylesheet" />
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link href="index.css" rel="stylesheet"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
         <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
         <div class="main_page" id="main_page">
             <section id="main">
+                            
+                for the save file format click
+                <a href="save_file.html">here</a>
+                <br>
+
                 <h1>wip</h1>
             </section>
-
             <section id="file">
                 <h1>.x* introduction</h1>
                 <p>
-                    this type of file is used in 3 known games: <br />
-                    Hot Wheels Velocity X <br />
-                    Snoopy vs. the Red Baron <br />
-                    Pac Man World Rally
+                    Hot Wheels Velocity X <br/>
+                    Snoopy vs. the Red Baron <br/>Pac Man World Rally
+                
                 </p>
-
                 <p>
-                    the file extension changes based on console <br />
-                    pc: .xpc <br />
-                    gamecube: .xgc <br />
-                    xbox: .xdx <br />
-                    psp .xpp <br />
-                    ps2 .XPS
+                    the file extension changes based on console <br/>
+                    pc: .xpc <br/>
+                    gamecube: .xgc <br/>
+                    xbox: .xdx <br/>
+                    psp .xpp <br/>ps2 .XPS
+                
                 </p>
-
                 <p>
-                    the file can contain a wide verity of data <br />
-                    sounds/music <br />
-                    geometry <br />
-                    textures <br />
-                    animations <br />
-                    ect
+                    the file can contain a wide verity of data <br/>
+                    sounds/music <br/>
+                    geometry <br/>
+                    textures <br/>
+                    animations <br/>ect
+                
                 </p>
-
                 <p>
-                    there are a number of differences between each game, console and file type <br />
+                    there are a number of differences between each game, console and file type <br/>
                     currently focusing on the gamecube version of pac man world rally,
-                    <br />
+                    <br/>
                 </p>
-
                 <p>Gamecube uses big endian</p>
-
-                <hr />
-
+                <hr/>
                 <h3>File Header</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -63,24 +59,25 @@
                             <td>00</td>
                             <td>u32</td>
                             <td>
-                                <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files">magic </a> <br />
-                                value always 33620128 or 02 01 00 A0
+                                <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files">magic </a>
+                                <br/>value always 33620128 or 02 01 00 A0
+                            
                             </td>
                         </tr>
                         <tr>
                             <td>04</td>
                             <td>u32</td>
                             <td>
-                                magic <br />
-                                value always 67174575 or 04 01 00 AF
+                                magic <br/>value always 67174575 or 04 01 00 AF
+                            
                             </td>
                         </tr>
                         <tr>
                             <td>08</td>
                             <td>u32</td>
                             <td>
-                                section 2: file directory magic <br />
-                                value different depending on region / game
+                                section 2: file directory magic <br/>value different depending on region / game
+                            
                             </td>
                         </tr>
                         <tr>
@@ -90,29 +87,27 @@
                         </tr>
                     </tbody>
                 </table>
-                <br />
+                <br/>
                 file directory magic list
+                
                 <p>
-                    pac: <br />
-                    gc / ntsc: 267 <br />
-                    ps2: pal : 274 <br />
-                    ps2: ntsc: 267 <br />
-                    ps2: demo: 249 <br />
-                    psp: pal :274 <br />
-                    xbox:demo: 243 <br />
-                    pc:??? 267 <br />
-                    <br />
-                    snoopy vs the red baron: <br />
-                    pc: ???: 274 <br />
-                    <br />
-                    hot wheels x <br />
-                    pc: ntsc: 183
+                    pac: <br/>
+                    gc / ntsc: 267 <br/>
+                    ps2: pal : 274 <br/>
+                    ps2: ntsc: 267 <br/>
+                    ps2: demo: 249 <br/>
+                    psp: pal :274 <br/>
+                    xbox:demo: 243 <br/>
+                    pc:??? 267 <br/>
+                    <br/>
+                    snoopy vs the red baron: <br/>
+                    pc: ???: 274 <br/>
+                    <br/>
+                    hot wheels x <br/>pc: ntsc: 183
+                
                 </p>
-
-                <hr />
-
+                <hr/>
                 <h3>file directory</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -129,18 +124,18 @@
                             <td>04</td>
                             <td>u32</td>
                             <td>
-                                type of file: <br />
-                                * 0 = car <br />
-                                * 1 = interface <br />
-                                * 2 = item <br />
-                                * 3 = link <br />
-                                * 4 = world <br />
-                                * 5 = colliders <br />
-                                * 6 = world texture <br />
-                                * 7 = geometry <br />
-                                * 8 = share <br />
-                                * 9 = audio <br />
-                                * 10 = music <br />
+                                type of file: <br/>
+                                * 0 = car <br/>
+                                * 1 = interface <br/>
+                                * 2 = item <br/>
+                                * 3 = link <br/>
+                                * 4 = world <br/>
+                                * 5 = colliders <br/>
+                                * 6 = world texture <br/>
+                                * 7 = geometry <br/>
+                                * 8 = share <br/>
+                                * 9 = audio <br/>
+                                * 10 = music <br/>
                                 <small>credit to Alaxend0l#5064 on discord</small>
                             </td>
                         </tr>
@@ -148,16 +143,16 @@
                             <td>08</td>
                             <td>u32</td>
                             <td>
-                                file type index <br />
-                                files with different types can have the same index
+                                file type index <br/>files with different types can have the same index
+                            
                             </td>
                         </tr>
                         <tr class="unknown_value">
                             <td>12</td>
                             <td>u32</td>
                             <td>
-                                usually 0 offset of some kind<br />
-                                always 0 in gc pac
+                                usually 0 offset of some kind<br/>always 0 in gc pac
+                            
                             </td>
                         </tr>
                         <tr>
@@ -172,8 +167,7 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <br />
+                <br/>
                 type of file list:
 
                 <p>car: audio , models, animations , textures , logic</p>
@@ -187,16 +181,12 @@
                 <p>share: audio, geometry ,textures</p>
                 <p>audio: audio, logic</p>
                 <p>music: music, logic</p>
-
                 <p>
-                    <br />
-                    focusing on world type
+                    <br/>focusing on world type
+                
                 </p>
-
-                <hr />
-
+                <hr/>
                 <h3>File header</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -259,15 +249,15 @@
                             <td>u32</td>
                             <td>always 0</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>44</td>
                             <td>u32</td>
                             <td>always 0</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>48</td>
                             <td>u32</td>
-                            <td>unknown, low number</td>
+                            <td>amount of sections in animation header</td>
                         </tr>
                         <tr>
                             <td>52</td>
@@ -291,11 +281,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>sound offset list</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -315,12 +302,11 @@
                         </tr>
                     </tfoot>
                 </table>
-                <p>each offset always +32 <br /></p>
-
-                <hr />
-
+                <p>
+                    each offset always +32 <br/>
+                </p>
+                <hr/>
                 <h3>sound list</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -375,30 +361,24 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>sound data</h3>
-
                 <p>
-                    <br />
-                    pac: pc / gc / xbox <br />
-                    snoopy: pc <br />
-                    hot wheels: pc<br />
-                    <br />
-                    pcm format<br />
-                    1 channels<br />
+                    <br/>
+                    pac: pc / gc / xbox <br/>
+                    snoopy: pc <br/>
+                    hot wheels: pc<br/>
+                    <br/>
+                    pcm format<br/>
+                    1 channels<br/>
                     16 bit
-                    <br />
-                    <br />
-                    pac: ps2 / psp <br />
-                    unknown format
+                    <br/>
+                    <br/>
+                    pac: ps2 / psp <br/>probably vag?
+                
                 </p>
-
-                <hr />
-
+                <hr/>
                 <h3>1st offset list</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -418,13 +398,10 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>mid section header:</h3>
                 <p>most offsets start here</p>
                 <p>most file types use this format except world / collision / world texture / geometry / share</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -464,9 +441,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>world:</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -521,15 +496,10 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <p>collision/world texture /geometry/share = 0 bytes long</p>
-
                 <p>share: offsets to models / 32 bytes divisible long / ¿</p>
-
-                <hr />
-
+                <hr/>
                 <h3>collision header?:</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -665,11 +635,8 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>collision table 1</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -759,20 +726,13 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <p>table doesn't do anything?</p>
-
-                <hr />
-
+                <hr/>
                 <h3>collision grid</h3>
-
                 <p>values collision related, values are always u32, values increment</p>
-
-                <hr />
-
+                <hr/>
                 <h3>collision table 2</h3>
-                <p>vertex 1 & 2 represent an area where collision from table 3 is active</p>
-
+                <p>vertex 1 &2 represent an area where collision from table 3 is active</p>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -842,11 +802,8 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>collision table 3 head</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -879,9 +836,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <h3>collision table data</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -931,9 +886,7 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h3>end</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -953,11 +906,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
-
+                <hr/>
                 <h3>world options section header</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -992,15 +942,11 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <br />
+                <br/>
                 <p>types 6,7,9,12 not seen</p>
-
                 <h3>entry header</h3>
-
                 <p>before each of the section entires a 32 byte structure appears</p>
                 <p></p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1070,10 +1016,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 0 / starting points</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1238,8 +1182,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 1 / camera related ????</p>
                 <table class="binary_table">
                     <tbody>
@@ -1334,17 +1277,14 @@
                             <td>0</td>
                         </tr>
                     </tbody>
-
                     <tfoot>
                         <tr>
                             <th colspan="3">96 bytes</th>
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>section 2 // ?????</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1464,9 +1404,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>1st</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1521,9 +1459,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>2nd</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1544,7 +1480,6 @@
                     </tfoot>
                 </table>
                 <p>3rd</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1565,7 +1500,6 @@
                     </tfoot>
                 </table>
                 <p>4th</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1585,10 +1519,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 3 section // only seen in rolling hills</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1643,8 +1575,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 4 - respawns ???</p>
                 <table class="binary_table">
                     <tbody>
@@ -1800,10 +1731,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 5 / model postitoins ?</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1918,10 +1847,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 8 section / ???</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -1996,9 +1923,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>type 8 collision section / wip on this</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2018,10 +1943,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 10 / pac pellet / fruit activators</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2116,10 +2039,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 11 / respawn from player?</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2194,10 +2115,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 13 custom stage object ?</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2292,10 +2211,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 14 animations ?</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2370,10 +2287,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>type 15 / objects</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2448,10 +2363,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>special collisoin ???????</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2546,9 +2459,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>special collision list 1</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2568,9 +2479,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>special collision list 2</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2616,7 +2525,6 @@
                     </tfoot>
                 </table>
                 <p>special collision list 3</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2671,11 +2579,9 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>item / CPU / checkpoint / respawn Routes header</p>
                 <p>like the optional sections above but linked by mid section header</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2730,7 +2636,6 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>type 16</p>
                 <table class="binary_table">
                     <tbody>
@@ -2871,9 +2776,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>item / CPU Routes list 1</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2893,10 +2796,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>item / CPU Routes list 2</p>
                 <p>changing values does not seem to do anything</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2917,7 +2818,6 @@
                     </tfoot>
                 </table>
                 <p>item / CPU Routes list 3</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2937,10 +2837,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>offsets ?course obstacles / gates</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2960,10 +2858,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <hr />
+                <hr/>
                 <p>unknown</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -2998,9 +2894,8 @@
                         </tr>
                     </tfoot>
                 </table>
-                <hr />
+                <hr/>
                 <p>unknown list</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3020,14 +2915,41 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>wip later</p>
-                <br />
+                <br/>
                 .....................
-                <hr />
-
+                <hr/>
                 <h3>animation</h3>
-
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset to logic</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>always 0 padding probably</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>always 0 padding probably</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">repeat based on File header [48]</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>animation logic section:</p>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3038,33 +2960,75 @@
                         <tr class="unknown_value">
                             <td>00</td>
                             <td>u32</td>
-                            <td>offset to ?</td>
+                            <td>always 0</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td>¿0</td>
+                            <td>offset</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>08</td>
                             <td>u32</td>
-                            <td>¿0</td>
+                            <td>0/??</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>0/??</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0/??</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>u32</td>
+                            <td>0/??</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>u32</td>
+                            <td>0/??</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>offset</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="3">repeat small number of times</th>
+                            <th colspan="3">48 bytes</th>
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>wip later</p>
-                <br />
+                <br/>
                 .....................
-                <hr />
-
+                <hr/>
                 <h3>models</h3>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3104,9 +3068,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>visibility:</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3181,9 +3143,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>sections</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3215,7 +3175,6 @@
                     </tfoot>
                 </table>
                 <p>render distance</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3239,7 +3198,6 @@
                     </tfoot>
                 </table>
                 <p>inner section</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3262,7 +3220,6 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>model section data header</p>
                 <table class="binary_table">
                     <tbody>
@@ -3413,22 +3370,17 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>
-                    vertex float array 3 floats per vertex <br />
-                    color array 4 bytes rgba<br />
-                    uv array 2 bytes x 2 bytes y half floats? not sure
+                    vertex float array 3 floats per vertex <br/>
+                    color array 4 bytes rgba<br/>uv array 2 bytes x 2 bytes y half floats? not sure
+                
                 </p>
-
                 <p>wip later</p>
-                <br />
+                <br/>
                 .....................
-                <hr />
-
+                <hr/>
                 <h3>texture header</h3>
-
                 <p>Pac Man World Rally</p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3440,16 +3392,16 @@
                             <td>00</td>
                             <td>u8</td>
                             <td>
-                                texture type <br />
-                                * 65 = dxt1 <br />
-                                * 68 = ? <br />
-                                * 72 = ? <br />
-                                * 160 = rgba8888 <br />
-                                * 193 = dxt1 + alpha texture half size <br />
-                                * 194 = dxt1 + alpha texture <br />
-                                * 196 = ? <br />
-                                * 197 = dxt5/3 <br />
-                                * 200 = ?
+                                texture type <br/>
+                                * 65 = dxt1 <br/>
+                                * 68 = ? <br/>
+                                * 72 = ? <br/>
+                                * 160 = rgba8888 <br/>
+                                * 193 = dxt1 + alpha texture half size <br/>
+                                * 194 = dxt1 + alpha texture <br/>
+                                * 196 = ? <br/>
+                                * 197 = dxt5/3 <br/>* 200 = ?
+                            
                             </td>
                         </tr>
                         <tr>
@@ -3489,30 +3441,25 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <h3>gamecube dxt1 compression differences</h3>
-
                 gc differs from standard dxt1 compression,<br>
                 color and pixel position are big endian<br>
                 and every 4 pixel blocks are arranged in a zigzap pattern<br>
                 so 1st pixel block would be top left 2nd top right 3rd bottom left 4th bottom right<br>
                 after move right unless end then move down<br>
-                            
-                <br />
-                mip maps: <br />
-                gc = no mips <br />
-                pc / xbox = has mips<br />
-
-                <br />
-                texture type by console: <br />
-                gc: 65 / 193 / 194 <br />
-                pc: 65 / 160 / 197 <br />
-                xbox: 65 / 160 / 197 <br />
-                psp: 68 / 72 / 196 / 200 <br />
+                <br/>
+                mip maps: <br/>
+                gc = no mips <br/>
+                pc / xbox = has mips<br/>
+                <br/>
+                texture type by console: <br/>
+                gc: 65 / 193 / 194 <br/>
+                pc: 65 / 160 / 197 <br/>
+                xbox: 65 / 160 / 197 <br/>
+                psp: 68 / 72 / 196 / 200 <br/>
                 ps2: 72 / 160 / 200
 
                 <p>Snoopy vs. the Red Baron </p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3528,11 +3475,13 @@
                         <tr>
                             <td>04</td>
                             <td>u8</td>
-                            <td>texture type <br>
+                            <td>
+                                texture type <br>
                                 * 65 = dxt1 <br>
                                 * 193 = DDS (dxt1 compression + alpha texture half size) probably<br>
                                 * 195 = ???<br>
-                                * 197 = dxt5 <br /></td>
+                                * 197 = dxt5 <br/>
+                            </td>
                         </tr>
                         <tr>
                             <td>05</td>
@@ -3557,9 +3506,10 @@
                         <tr>
                             <td>12</td>
                             <td>u32</td>
-                            <td>string offset <br>
-                            strings are 16 dibisible by 16<br>
-                            end is relative on next offset / start of logic</td>
+                            <td>
+                                string offset <br>
+                                strings are 16 dibisible by 16<br>end is relative on next offset / start of logic
+                            </td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -3568,9 +3518,7 @@
                         </tr>
                     </tfoot>
                 </table>
-
                 <p>Hot Wheels Velocity X </p>
-
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -3581,10 +3529,11 @@
                         <tr>
                             <td>00</td>
                             <td>u16</td>
-                            <td>texture type<br>
-                                * 4 = dxt1 <br />
-                                * 5 = dxt5 <br />
-                        </td>
+                            <td>
+                                texture type<br>
+                                * 4 = dxt1 <br/>
+                                * 5 = dxt5 <br/>
+                            </td>
                         </tr>
                         <tr>
                             <td>02</td>
@@ -3618,12 +3567,8 @@
                         </tr>
                     </tfoot>
                 </table>
-
-
-                <hr />
-
+                <hr/>
                 <h3>logic</h3>
-
                 <h2>logic section:</h2>
                 <p>only world rally - world file type</p>
                 <table class="binary_table">
@@ -3925,7 +3870,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>lighting section</h2>
                 <p>4 lights</p>
                 <table class="binary_table">
@@ -4042,7 +3986,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>shadow section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4143,7 +4086,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 2 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4194,7 +4136,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 2 part 2 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4245,7 +4186,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 3 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4296,7 +4236,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 4 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4347,7 +4286,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 5 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4448,7 +4386,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 7 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4499,7 +4436,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 8 section:</h2>
                 <table class="binary_table">
                     <tbody>
@@ -4550,7 +4486,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>music filename section:</h2>
                 <p>32 byes</p>
                 <table class="binary_table">
@@ -4567,7 +4502,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 10 section:</h2>
                 <p>offset:</p>
                 <table class="binary_table">
@@ -4659,7 +4593,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <h2>variable 10 section part 2</h2>
                 <p>offset:</p>
                 <table class="binary_table">
@@ -4711,10 +4644,9 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <p>this is like 0.1% of it idk what to do</p>
-                <br />
-                .....................
+                <br/>.....................
+            
             </section>
         </div>
     </body>
