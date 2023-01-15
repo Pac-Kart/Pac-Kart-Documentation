@@ -44,9 +44,9 @@
                      <td>
                         <a style='color:blue;' href='#language'>language settings</a><br>European version only
                      </td>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>0064</td>
-                     <td><a style='color:blue;' href='#unknown_section'>unknown section</a>
+                     <td><a style='color:blue;' href='#control_section'>controller? section</a>
                      </td>
                   <tr>
                      <td>0160</td>
@@ -152,31 +152,31 @@
                      <td>08</td>
                      <td>u32</td>
                      <td>
-                        offset letterhunt section +6<br>
+                        year<br>
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>12</td>
                      <td>u32</td>
-                     <td>012 | u32 | 10
+                     <td>month
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>16</td>
                      <td>u32</td>
-                     <td>8 /9
+                     <td>day
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>20</td>
                      <td>u32</td>
-                     <td>23
+                     <td>hour / 24
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>24</td>
                      <td>u32</td>
-                     <td>54 / 4? every time it saved ??????/   
+                     <td>minute
                      </td>
                   </tr>
                   <tr>
@@ -215,8 +215,15 @@
                   </tr>
                   <tr class='unknown_value'>
                      <td>38</td>
-                     <td>u16</td>
-                     <td>padding ?
+                     <td>u8</td>
+                     <td>unknown
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>39</td>
+                     <td>u8</td>
+                     <td>Widescreen Mode<br>
+                        * 0 = off<br>* 1 = on
                      </td>
                   </tr>
                </tbody>
@@ -249,7 +256,7 @@
                </tbody>
             </table>
             <hr>
-            <h2 id='unknown_section'>unknown section</h2>
+            <h2 id='control_section'>controller section</h2>
             <table class="binary_table">
                <tbody>
                   <tr>
@@ -257,10 +264,12 @@
                      <th>Type</th>
                      <th>Description</th>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr>
                      <td>00</td>
                      <td>u8</td>
-                     <td>1</td>
+                     <td>rumble settings<br>
+                         * 0 = off<br>* 1 = on
+</td>
                   </tr>
                   <tr class='unknown_value'>
                      <td>01</td>
