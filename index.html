@@ -44,6 +44,11 @@
                     All integers in <b>x*</b>
                     archives are unsigned. The endian depends on the console endianness. Integers are referred to by amount of bits. u(8,16,32) in format types.
                 </p>
+                <h3>Offsets</h3>
+                <p>
+                    Most offsets start from the <a href='#mid_section_header'>Mid Section Header</a>.<br>
+                    Offsets that do not are noted when they appear.
+                </p>
                 <h3>Structure</h3>
                 <p>
                     The basic hierarchy common to all <b>x*</b>
@@ -70,7 +75,7 @@
                                         (Optional)
                                     </li>
                                     <li>
-                                        <a href="#_1st_offset_list">Offset Index List 1</a>
+                                        <a href="#_1st_offset_list">File Patcher 1</a>
                                     </li>
                                     <li>
                                         <a href="#mid_section_header">Mid Section Header</a>
@@ -85,7 +90,7 @@
                                             (Optional) <b>[Only seen in Rally]</b>
                                         </li>
                                         <li>
-                                            <a href="#animation_section">Animation</a>
+                                            <a href="#texture_animation_section">Animation</a>
                                             (Optional)
                                         </li>
                                         <li>
@@ -101,7 +106,7 @@
                                         </li>
                                     </ul>
                                     <li>
-                                        <a href="#_2nd_offset_list">Offset Index List 2</a>
+                                        <a href="#_2nd_offset_list">File Patcher 2</a>
                                     </li>
                                 </ul>
                             </ul>
@@ -228,7 +233,8 @@
                         <tr>
                             <td>20</td>
                             <td>u32</td>
-                            <td>offset to <a href="#sub_File_header">Sub File header</a></td>
+                            <td>offset to <a href="#sub_File_header">Sub File header</a><br>
+                            offset start = end of file directory</td>
                         </tr>
                     </tbody>
                 </table>
@@ -245,12 +251,13 @@
                         <tr>
                             <td>00</td>
                             <td>u32</td>
-                            <td>offset to 2nd offset list</td>
+                            <td>offset to <a href="#_2nd_offset_list">File Patcher 2</a></td>
                         </tr>
                         <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td>offset to 1st offset list</td>
+                            <td>offset to <a href='#_1st_offset_list'> File Patcher 1</a><br>
+                            offset start = File header </td>
                         </tr>
                         <tr>
                             <td>08</td>
@@ -260,12 +267,12 @@
                         <tr>
                             <td>12</td>
                             <td>u32</td>
-                            <td>amount 2nd part of 2nd offset list</td>
+                            <td>amount 2nd section of File Patcher 2</td>
                         </tr>
                         <tr>
                             <td>16</td>
                             <td>u32</td>
-                            <td>amount ??? part of 1st offset list</td>
+                            <td>amount 1st section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>20</td>
@@ -275,12 +282,12 @@
                         <tr>
                             <td>24</td>
                             <td>u32</td>
-                            <td>offset to textures</td>
+                            <td>offset to <a href='#texture_header'>textures</a></td>
                         </tr>
                         <tr>
                             <td>28</td>
                             <td>u32</td>
-                            <td>amount ??? part of 1st offset list</td>
+                            <td>amount 3rd section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>32</td>
@@ -305,27 +312,62 @@
                         <tr>
                             <td>48</td>
                             <td>u32</td>
-                            <td>amount of sections in animation header</td>
+                            <td>amount of sections in texture animations</td>
                         </tr>
                         <tr>
                             <td>52</td>
                             <td>u32</td>
-                            <td>amount ??? part of 1st offset list</td>
+                            <td>amount 2nd section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>56</td>
                             <td>u32</td>
-                            <td>amount 1st part of 2nd offset list</td>
+                            <td>amount 1st section of File Patcher 2</td>
                         </tr>
                         <tr>
                             <td>60</td>
                             <td>u32</td>
-                            <td>offset to animations</td>
+                            <td>offset to <a href='#texture_animation_section'>texture animations</a></td>
+                        </tr>
+                        <tr>
+                            <td>64-79</td>
+                            <td>u32</td>
+                            <td>0</a></td>
+                        </tr>
+                        <tr>
+                            <td>80-91</td>
+                            <td>b12</td>
+                            <td>shared string 1 ?</a></td>
+                        </tr>
+                        <tr>
+                            <td>92</td>
+                            <td>u32</td>
+                            <td>file index ?</td>
+                        </tr>
+                        <tr>
+                            <td>96</td>
+                            <td>u32</td>
+                            <td>0?</td>
+                        </tr>
+                        <tr>
+                            <td>100-111</td>
+                            <td>b12</td>
+                            <td>shared string 2 ?</a></td>
+                        </tr>
+                        <tr>
+                            <td>112</td>
+                            <td>u32</td>
+                            <td>file index ?</td>
+                        </tr>
+                        <tr>
+                            <td>116</td>
+                            <td>u32</td>
+                            <td>0?</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="3">append 0 until index is 120</th>
+                            <th colspan="3">120 bytes</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -341,7 +383,8 @@
                         <tr>
                             <td>0</td>
                             <td>u32</td>
-                            <td>offset to sound list</td>
+                            <td>offset to <a href='#sound_list'>sound list</a><br>
+                            offset start = sound offset list</td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -352,7 +395,7 @@
                 </table>
                 <p>each offset always +32 <br /></p>
                 <hr />
-                <h3>sound list</h3>
+                <h3 id='sound_list'>sound list</h3>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -363,7 +406,8 @@
                         <tr>
                             <td>0</td>
                             <td>u32</td>
-                            <td>offset to sound data / offset + start of sound list</td>
+                            <td>offset to <a href='#sound_data'>sound data</a> <br>
+                                start offset = sound list</td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -407,7 +451,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <h3>sound data</h3>
+                <h3 id='sound_data'>sound data</h3>
                 <p>
                     <br />
                     pac: pc / gc / xbox <br />
@@ -427,7 +471,10 @@
                 <p>only the xbox version contains this section</p>
                 <p>wip</p>
                 <hr />
-                <h3 id="_1st_offset_list">1st offset list</h3>
+                <h3 id="_1st_offset_list">1st patch list</h3>
+                <p>patches the texture/texture animation/sound indexes into the file.<br>
+                note that this section is probably unnecessary if there is no shared file linked.</p>
+                <h3>1</h3>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -442,10 +489,89 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>u32</td>
-                            <td>index?</td>
+                            <td>u16</td>
+                            <td>texture index</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>u16</td>
+                            <td>linked file<br>
+                            0 = same file<br>
+                            1 = shared file 1<br>
+                            2 = shared file 2</td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">8 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3>2</h3>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>u16</td>
+                            <td>texture animation index</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>u16</td>
+                            <td>linked file<br>
+                            0 = same file<br>
+                            1 = shared file 1<br>
+                            2 = shared file 2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">8 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3>3</h3>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>u16</td>
+                            <td>sound index</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>u16</td>
+                            <td>linked file<br>
+                            0 = same file<br>
+                            1 = shared file 1<br>
+                            2 = shared file 2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">8 bytes</th>
+                        </tr>
+                    </tfoot>
                 </table>
                 <hr />
                 <h3 id="mid_section_header">mid section header:</h3>
@@ -466,27 +592,37 @@
                         <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td>16/32 offset to Low Section Header offset</td>
+                            <td>offset to <a href="#mid_section_header_2"> mid section header 2</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">8 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3 id='mid_section_header_2'>mid section header 2</h3>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
                         </tr>
                         <tr>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...then</td>
-                        </tr>
-                        <tr>
-                            <td>[04]+0</td>
+                            <td>0</td>
                             <td>u32</td>
-                            <td>offset Low Section Header</td>
+                            <td>offset <a href='#logic_section'>Low Section Header</a></td>
                         </tr>
                         <tr>
-                            <td>[04]+04</td>
+                            <td>04</td>
                             <td>u32</td>
                             <td>file index</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="3">divisible by 32 ?</th>
+                            <th colspan="3">8 bytes</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -501,12 +637,12 @@
                         <tr>
                             <td>00</td>
                             <td>u32</td>
-                            <td>offset Low Section Header</td>
+                            <td>offset <a href='#logic_section'>Low Section Header</a></td>
                         </tr>
                         <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td>offset collision / 160</td>
+                            <td>offset <a href='#collision_header'>collision </a></td>
                         </tr>
                         <tr>
                             <td>08</td>
@@ -772,7 +908,7 @@
                 <p>table doesn't do anything?</p>
                 <hr />
                 <h3>collision grid</h3>
-                <p>each value is indexed to table 2<br /></p>
+                <p>3d tile based <br>each value is indexed to table 2<br /></p>
                 <hr />
                 <h3>collision table 2</h3>
                 <p>vertex 1 &2 represent an area where collision from table 3 is active</p>
@@ -3724,7 +3860,7 @@
                 <br />
                 .....................
                 <hr />
-                <h3 id="animation_section">animation</h3>
+                <h3 id="texture_animation_section">animation</h3>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -4961,7 +5097,7 @@
                         <tr class="unknown_value">
                             <td>184</td>
                             <td>u32</td>
-                            <td>offset 3</td>
+                            <td><a href="#car_1_3">offset 3</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>188</td>
@@ -5163,8 +5299,255 @@
                     </tfoot>
                 </table>
                 <hr />
-                <h2 id="car_1_5">car 1 5</h2>
-                <p>stats?</p>
+                <h2 id="car_1_3">car 1 3</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>? low number</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1">offset 1</a> </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1">car 1 3 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td> <a href="#car_1_3_1_1">offset 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_2">offset 2</a> </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_3">offset 3</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>backing up acceleration ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>jump height?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">64 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1">car 1 3 1 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>? </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_1_1">offset 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_1_2">offset 2</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">80 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1_1">car 1 3 1 1 1</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -5175,22 +5558,576 @@
                         <tr class="unknown_value">
                             <td>00</td>
                             <td>float</td>
-                            <td>backing up speed</td>
+                            <td> ?</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>04</td>
                             <td>float</td>
-                            <td>? related to turning</td>
+                            <td>? </td>
                         </tr>
                         <tr class="unknown_value">
                             <td>08</td>
                             <td>float</td>
-                            <td>turning sensitivity on ground</td>
+                            <td>?</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>12</td>
                             <td>float</td>
-                            <td>turning sensitivity in air</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">48 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1_2">car 1 3 1 1 2</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>? </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>hop distance</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_1_2_1"> offset 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_1_2_2">offset 2</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>96</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>100</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>104</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>108</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>112</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>116</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>120</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>124</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">128 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1_2_1">car 1 3 1 1 2 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>? </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1_2_2">car 1 3 1 1 2 2</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>? </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td><a href="#car_1_3_1_1_2_2_1">offset 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">32 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_1_2_2_1">car 1 3 1 1 2 2 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>? </td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />               
+                <h2 id="car_1_3_1_2">car 1 3 1 2</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> initial drift handaling/ drift tightness?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>drift handaling/ drift tightness?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">16 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />
+                <h2 id="car_1_3_1_3">car 1 3 1 3</h2>
+                <p>car hitbox??</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>float</td>
+                            <td> ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>32</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>36</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>40</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>48</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>52</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>56</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>60</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>64</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>68</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>72</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>76</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>80</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>84</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>88</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>92</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">96 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr />
+                <h2 id="car_1_5">car 1 5</h2>
+                <p>stats?</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>00</td>
+                            <td>float</td>
+                            <td>Reversing Speed</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>Turn Lag, low numbers are slow, high numbers are snappy</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>float</td>
+                            <td>Ground Turning Sensitivity</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>float</td>
+                            <td>Air Turning Sensitivity</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>16</td>
@@ -5326,7 +6263,7 @@
                 </table>
                 <hr />
                 <h2 id="car_1_5_2">car 1 5 2</h2>
-                <p>more stats</p>
+                <p>Speed and Acceleration</p>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -5334,35 +6271,35 @@
                             <th>Type</th>
                             <th>Description</th>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>00</td>
                             <td>float</td>
-                            <td>acceleration</td>
+                            <td>Mid Ground Acceleration</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>04</td>
                             <td>float</td>
-                            <td>accelerate forward when backing up ?</td>
+                            <td>Mid Air Acceleration</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>08</td>
                             <td>float</td>
-                            <td>?speed not sure</td>
+                            <td>Mid speed</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>12</td>
                             <td>float</td>
-                            <td>?speed up unknown but perdictible</td>
+                            <td>Top Ground Acceleration</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>16</td>
                             <td>float</td>
-                            <td>unknown</td>
+                            <td>Top Air Acceleration</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>20</td>
                             <td>float</td>
-                            <td>speed probably?</td>
+                            <td>Top Speed</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>24</td>
@@ -6922,7 +7859,7 @@
                             <td>u32</td>
                             <td>texture 2 ?</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>60</td>
                             <td>u32</td>
                             <td>
@@ -7657,7 +8594,7 @@
                     </tfoot>
                 </table>
                 <hr />
-                <h2 id="80byte_block">Frame ?:</h2>
+                <h2 id="80byte_block">Interface ?:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9049,7 +9986,7 @@
                         </tr>
                         <tr class="unknown_value">
                             <td>12</td>
-                            <td>u32</td>
+                            <td>float</td>
                             <td>amount of space between words ,,, minus space is possible</td>
                         </tr>
                         <tr class="unknown_value">
@@ -9299,7 +10236,7 @@
                         <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td><a href="#world_lighting_section">offset lighting section</a></td>
+                            <td><a href="#world_lighting_section">offset 1 lighting section</a></td>
                         </tr>
                         <tr>
                             <td>08</td>
@@ -9309,7 +10246,7 @@
                         <tr>
                             <td>12</td>
                             <td>u32</td>
-                            <td>offset shadow position</td>
+                            <td><a href="#world_header_low_2"> offset 2 shadow position </a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>16</td>
@@ -9339,7 +10276,7 @@
                         <tr>
                             <td>36</td>
                             <td>u32</td>
-                            <td>variable 1 offset</td>
+                            <td><a href="#world_header_low_3"> offset 3</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>40</td>
@@ -9354,42 +10291,42 @@
                         <tr>
                             <td>48</td>
                             <td>u32</td>
-                            <td>offset variable 2</td>
+                            <td><a href="#world_header_low_4">offset 4 </a></td>
                         </tr>
                         <tr>
                             <td>52</td>
                             <td>u32</td>
-                            <td>offset variable 3</td>
+                            <td><a href="#world_header_low_5"> offset 5 </a></td>
                         </tr>
                         <tr>
                             <td>56</td>
                             <td>u32</td>
-                            <td>offset variable 4</td>
+                            <td><a href="#world_header_low_6">offset 6 </a></td>
                         </tr>
                         <tr>
                             <td>60</td>
                             <td>u32</td>
-                            <td>offset variable 5</td>
+                            <td><a href="#world_header_low_7">offset 7 </a></td>
                         </tr>
                         <tr>
                             <td>64</td>
                             <td>u32</td>
-                            <td>offset variable 6</td>
+                            <td><a href="#world_header_low_8">offset 8 </a></td>
                         </tr>
                         <tr>
                             <td>68</td>
                             <td>u32</td>
-                            <td>offset variable 7</td>
+                            <td><a href="#world_header_low_9">offset 9 </a></td>
                         </tr>
                         <tr>
                             <td>72</td>
                             <td>u32</td>
-                            <td>offset variable 8</td>
+                            <td><a href="#world_header_low_10">offset 10 </a></td>
                         </tr>
                         <tr>
                             <td>76</td>
                             <td>u32</td>
-                            <td>offset music filename</td>
+                            <td><a href="#world_header_low_11">offset 11 music filename</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>80</td>
@@ -9404,7 +10341,7 @@
                         <tr>
                             <td>88</td>
                             <td>u32</td>
-                            <td>offset variable 10</td>
+                            <td><a href="#world_header_low_12">offset 12</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>92</td>
@@ -9464,7 +10401,7 @@
                         <tr>
                             <td>136</td>
                             <td>u32</td>
-                            <td>minimap icon image / not able to edit?</td>
+                            <td>minimap icon image</td>
                         </tr>
                         <tr>
                             <td>140</td>
@@ -9534,12 +10471,12 @@
                         <tr class="unknown_value">
                             <td>192</td>
                             <td>u32</td>
-                            <td>offset later section</td>
+                            <td><a href="#world_low_header_13"> offset 13</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>196</td>
                             <td>u32</td>
-                            <td>offset later section</td>
+                            <td><a href='#world_low_header_14'> offset 14</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>200</td>
@@ -9553,7 +10490,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2 id="world_lighting_section">lighting section</h2>
+                <hr>
+                <h2 id="world_lighting_section">offset 1 lighting section</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9673,7 +10611,8 @@
                         </tr>
                     </tfoot>
                 </table>
-                <h2>shadow section:</h2>
+                <hr>
+                <h2 id='world_header_low_2'>offset 2 shadow section:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9723,7 +10662,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 1 section:</h2>
+                <hr>
+                <h2 id='world_header_low_3'>offset 3</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9773,7 +10713,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 2 section:</h2>
+                <hr>
+                <h2 id='world_header_low_4'>offset 4</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9784,7 +10725,7 @@
                         <tr>
                             <td>00</td>
                             <td>u32</td>
-                            <td>offset + 32</td>
+                            <td><a href='#world_header_low_4_1'>offset 1</a></td>
                         </tr>
                         <tr class="unknown_value">
                             <td>04</td>
@@ -9823,7 +10764,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 2 part 2 section:</h2>
+                <hr>
+                <h2 id='world_header_low_4_1'>offset 4 1</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9873,7 +10815,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 3 section:</h2>
+                <hr>
+                <h2 id='world_header_low_5'>offset 5:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9923,7 +10866,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 4 section:</h2>
+                <hr>
+                <h2 id='world_header_low_6'>offset 6:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -9973,7 +10917,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 5 section:</h2>
+                <hr>
+                <h2 id='world_header_low_7'>offset 7:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -10023,7 +10968,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 6 section:</h2>
+                <hr>
+                <h2 id='world_header_low_8'>offset 8 :</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -10073,7 +11019,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 7 section:</h2>
+                <h2 id='world_header_low_9'>offset 9:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -10123,7 +11069,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 8 section:</h2>
+                <hr>
+                <h2 id='world_header_low_10'>offset 10:</h2>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -10173,7 +11120,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>music filename section:</h2>
+                <hr>
+                <h2 id='world_header_low_11'>offset 11 music filename section:</h2>
                 <p>32 byes</p>
                 <table class="binary_table">
                     <tbody>
@@ -10189,7 +11137,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 10 section:</h2>
+                <hr>
+                <h2 id='world_header_low_12'>offset 12:</h2>
                 <p>offset:</p>
                 <table class="binary_table">
                     <tbody>
@@ -10236,7 +11185,7 @@
                         <tr class="unknown_value">
                             <td>28</td>
                             <td>u32</td>
-                            <td>offset + 32 ?</td>
+                            <td><a href='#world_header_low_12_1'> offset 1</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>32</td>
@@ -10280,8 +11229,9 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2>variable 10 section part 2</h2>
-                <p>offset:</p>
+                <hr />
+                <h2 id='world_header_low_12_1'>offset 12 1</h2>
+                <p></p>
                 <table class="binary_table">
                     <tbody>
                         <tr>
@@ -10331,8 +11281,232 @@
                         </tr>
                     </tbody>
                 </table>
-                <br />
-                .....................
+                <hr />
+                <h2 id='world_low_header_13'>offset 13</h2>
+                <p></p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset frame 1</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>offset frame 2</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>500?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td>offset kart file name ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td>offset item file name ?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>some texture ?</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>u32</td>
+                            <td><a href='#car'> offset car</a> pac machine</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>u32</td>
+                            <td><a href='#car'> offset car</a> ghost car</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>u32</td>
+                            <td><a href='#car'> offset car</a> ghost eyes</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>u32</td>
+                            <td>amount in offset interfaces </td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>u32</td>
+                            <td><a href="#world_low_header_13_8"> offset interfaces</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>44</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h2 id='world_low_header_13_8'>offset 13 interface list</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>u32</td>
+                            <td>offset file name</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td>file index probably</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h2 id='world_low_header_14'>offset 14</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>b4</td>
+                            <td>ff,ff,ff,ff</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1'>offset 14 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1'>offset 14 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1'>offset 14 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1'>offset 14 1</a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h2 id='world_low_header_14_1'>offset 14 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>b4</td>
+                            <td>amount</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1_1'>offset 14 1 1 </a></td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>u32</td>
+                            <td>amount</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>12</td>
+                            <td>u32</td>
+                            <td><a href='#world_low_header_14_1_1'>offset 14 1 1 </a>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>16</td>
+                            <td>float</td>
+                            <td>float</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>20</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>24</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>28</td>
+                            <td>u32</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <h2 id='world_low_header_14_1_1'>offset 14 1 1</h2>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>00</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>04</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                        <tr class="unknown_value">
+                            <td>08</td>
+                            <td>float</td>
+                            <td>?</td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">12 bytes</th>
+                        </tr>
+                    </tfoot>
+                    </tbody>
+                </table>
                 <hr />
                 <h2 id="share_low_section">share</h2>
                 <p>not linked by offset, section appears after texture data and before 2nd offset list</p>
@@ -10392,8 +11566,69 @@
                 </table>
                 <hr />
 
-                <h3 id="_2nd_offset_list">2nd offset list</h3>
-                <p>no idea</p>
+                <h3 id="_2nd_offset_list">2nd patch list</h3>
+                <p>section 1 patches the model indexes into the file.
+                <br>note that the model section is probably unnecessary if there is no shared file linked.
+                <br>the general offsets section is mandatory else offsets after mid section header in memory will be malformed.</p>
+                <h3>1</h3>
+                <p>offset to  model</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>u16</td>
+                            <td>index</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>u16</td>
+                            <td>linked file<br>
+                            0 = same file<br>
+                            1 = shared file 1<br>
+                            2 = shared file 2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">8 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <h3>2</h3>
+                <p>list of general offsets</p>
+                <table class="binary_table">
+                    <tbody>
+                        <tr>
+                            <th>Offset</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>u32</td>
+                            <td>offset</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">4 bytes</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr>
+                <h3 id="end">end of file</h3>
+                <p>at the end of the file a block of 128 bytes is found<br>
+                each u8 is 32</p>
             </section>
         </div>
     </body>
