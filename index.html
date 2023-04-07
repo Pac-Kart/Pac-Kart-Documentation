@@ -267,12 +267,12 @@
                         <tr>
                             <td>12</td>
                             <td>u32</td>
-                            <td>amount 2nd section of File Patcher 2</td>
+                            <td>amount general offsets (2nd) section of File Patcher 2</td>
                         </tr>
                         <tr>
                             <td>16</td>
                             <td>u32</td>
-                            <td>amount 1st section of File Patcher 1</td>
+                            <td>amount texture (1st) section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>20</td>
@@ -287,7 +287,7 @@
                         <tr>
                             <td>28</td>
                             <td>u32</td>
-                            <td>amount 3rd section of File Patcher 1</td>
+                            <td>amount sound (3rd) section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>32</td>
@@ -317,12 +317,12 @@
                         <tr>
                             <td>52</td>
                             <td>u32</td>
-                            <td>amount 2nd section of File Patcher 1</td>
+                            <td>amount texture animation (2nd) section of File Patcher 1</td>
                         </tr>
                         <tr>
                             <td>56</td>
                             <td>u32</td>
-                            <td>amount 1st section of File Patcher 2</td>
+                            <td>amount model (1st) section of File Patcher 2</td>
                         </tr>
                         <tr>
                             <td>60</td>
@@ -4411,7 +4411,7 @@
                             <td>u32</td>
                             <td>
                                 offset vertex list<br />
-                                3 floats per entry
+                                9 floats per entry / triangle
                             </td>
                         </tr>
                         <tr>
@@ -4474,10 +4474,10 @@
                             <th>Type</th>
                             <th>Description</th>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>00</td>
                             <td>u32</td>
-                            <td>unknown amount</td>
+                            <td>amount vertex</td>
                         </tr>
                         <tr class="unknown_value">
                             <td>04</td>
@@ -8568,10 +8568,10 @@
                             <td>u32</td>
                             <td>1,?,?,?</td>
                         </tr>
-                        <tr class="unknown_value">
+                        <tr>
                             <td>04</td>
                             <td>u32</td>
-                            <td>always 12000 ?</td>
+                            <td>demo timer | alsways 12000</td>
                         </tr>
                         <tr>
                             <td>08</td>
