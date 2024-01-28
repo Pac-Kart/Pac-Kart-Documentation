@@ -16,14 +16,14 @@
             <h1>.sav file introduction</h1>
             <p>
                there are 3 different file types seen<br>
-               profile (contains all save data)<br>
-               ghost (a ghost replay file)<br>
+               <a href="#profile">profile </a>(contains all save data)<br>
+               <a href="#ghost">ghost</a> (a ghost replay file)<br>
                PMR (unknown)<br><br>
                interestingly the hall of fame records have default letters that are never seen
                <br> JEN = Time Trials<br>WTH = Letter Hunt<br>
                CKJ = clockbuster
             </p>
-            <h3>file structure</h3>
+            <h3 id='profile'>file structure</h3>
             <p>the profile structure is relatively the same across each version except for an 8 byte language section</p>
             <table class="binary_table">
                <tbody>
@@ -32,7 +32,7 @@
                      <th>section</th>
                   </tr>
                   <tr>
-                     <td>0016</td>
+                     <td>0012</td>
                      <td><a style='color:blue;' href='#file_header'>file header</a>                   
                      </td>
                   <tr>
@@ -85,6 +85,11 @@
                      <td><a style='color:blue;' href='#unlockables'>unlockables</a>
                      </td>
                   </tr>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">4736 bytes</th>
+                  </tr>
+               </tfoot>
                </tbody>
             </table>
             <hr/>
@@ -117,16 +122,6 @@
                      <td>amount of bytes in file
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
-                     <td>12</td>
-                     <td>u32</td>
-                     <td>
-                        type of file? 
-                        <br>
-                        * 0 = profile
-                        <br>* 4 = ghost / pmr
-                     </td>
-                  </tr>
                </tbody>
             </table>
             <hr>
@@ -141,8 +136,7 @@
                   <tr class='unknown_value'>
                      <td>00</td>
                      <td>u32</td>
-                     <td>0
-                     </td>
+                     <td>0</td>
                   </tr>
                   <tr class='unknown_value'>
                      <td>04</td>
@@ -150,39 +144,45 @@
                      <td>0
                      </td>
                   </tr>
-                  <tr>
+                  <tr class='unknown_value'>
                      <td>08</td>
+                     <td>u32</td>
+                     <td>0
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>12</td>
                      <td>u32</td>
                      <td>
                         year<br>
                      </td>
                   </tr>
                   <tr>
-                     <td>12</td>
+                     <td>16</td>
                      <td>u32</td>
                      <td>month
                      </td>
                   </tr>
                   <tr>
-                     <td>16</td>
+                     <td>20</td>
                      <td>u32</td>
                      <td>day
                      </td>
                   </tr>
                   <tr>
-                     <td>20</td>
+                     <td>24</td>
                      <td>u32</td>
                      <td>hour / 24
                      </td>
                   </tr>
                   <tr>
-                     <td>24</td>
+                     <td>28</td>
                      <td>u32</td>
                      <td>minute
                      </td>
                   </tr>
                   <tr>
-                     <td>28</td>
+                     <td>32</td>
                      <td>u32</td>
                      <td>
                         last selected difficulty
@@ -196,7 +196,7 @@
                      </td>
                   </tr>
                   <tr>
-                     <td>32</td>
+                     <td>36</td>
                      <td>u32</td>
                      <td>
                         auto save<br>
@@ -204,25 +204,25 @@
                      </td>
                   </tr>
                   <tr>
-                     <td>36</td>
+                     <td>40</td>
                      <td>u8</td>
                      <td>sfx volume
                      </td>
                   </tr>
                   <tr>
-                     <td>37</td>
+                     <td>41</td>
                      <td>u8</td>
                      <td>music volume 
                      </td>
                   </tr>
                   <tr class='unknown_value'>
-                     <td>38</td>
+                     <td>42</td>
                      <td>u8</td>
                      <td>unknown
                      </td>
                   </tr>
                   <tr>
-                     <td>39</td>
+                     <td>43</td>
                      <td>u8</td>
                      <td>Widescreen Mode<br>
                         * 0 = off<br>* 1 = on
@@ -1150,7 +1150,38 @@
                   </tr>
                </tfoot>
             </table>
-         </section>
+                        <hr>
+            <h3 id='ghost'>ghost file structure</h3>
+            <table class="binary_table">
+               <tbody>
+                  <tr>
+                     <th>bytes</th>
+                     <th>section</th>
+                  </tr>
+                  <tr>
+                     <td>0012</td>
+                     <td><a style='color:blue;' href='#file_header'>file header</a>                   
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>0004</td>
+                     <td >Ghost character
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>9608</td>
+                     <td>
+                        compressed ghost position data?<br>
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">9624 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+        </section>
       </div>
    </body>
 </html>
