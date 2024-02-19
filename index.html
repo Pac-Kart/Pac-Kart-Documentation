@@ -336,7 +336,7 @@
                         <tr>
                             <td>44</td>
                             <td>u32</td>
-                            <td>always 0</td>
+                            <td>CLUT offset</td>
                         </tr>
                         <tr>
                             <td>48</td>
@@ -6486,6 +6486,8 @@ ps2: 72 / 160 / 200
             <td>u16</td>
             <td>
                 texture type<br/>
+                * 1 = RGBA uncompressed <br/>
+                * 2 = 8-bit Indexed <br/>
                 * 4 = dxt1 <br/>
                 * 5 = dxt5 <br/>
             </td>
@@ -6500,20 +6502,20 @@ ps2: 72 / 160 / 200
             <td>u16</td>
             <td>y</td>
         </tr>
-        <tr class="unknown_value">
+        <tr>
             <td>06</td>
             <td>u16</td>
-            <td>??</td>
+            <td>mip maps</td>
         </tr>
         <tr>
             <td>08</td>
             <td>u32</td>
             <td>offset texture</td>
         </tr>
-        <tr class="unknown_value">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>padding ?</td>
+            <td>CLUT index</td>
         </tr>
     </tbody>
     <tfoot>
