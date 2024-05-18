@@ -2,7 +2,7 @@ html {
     background: white;
 }
 
-td,th,binary_table,tr {
+td,th,h,tr {
     border: 1px #aaa solid;
 }
 
@@ -14,14 +14,14 @@ th {
     background-color: #f2f2f2;
 }
 
-.binary_table {
+.h {
     margin: 1em 0;
     background-color: #f9f9f9;
     border-collapse: collapse;
     color: black;
 }
 
-.unknown_value {
+.u {
     color: #000000;
     background-color: #d0d0d0
 }

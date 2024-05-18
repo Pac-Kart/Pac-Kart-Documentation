@@ -25,7 +25,7 @@
             </p>
             <h3 id='profile'>file structure</h3>
             <p>the profile structure is relatively the same across each version except for an 8 byte language section</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>bytes</th>
@@ -94,7 +94,7 @@
             </table>
             <hr/>
             <h3 id='file_header'>File Header</h3>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -110,7 +110,7 @@
                         polynomial = 0x04C11DB7
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>always 4
@@ -126,25 +126,25 @@
             </table>
             <hr>
             <h2 id='settings_1'>settings 1</h2>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
                      <th>Type</th>
                      <th>Description</th>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>00</td>
                      <td>u32</td>
                      <td>0</td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>0
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>08</td>
                      <td>u32</td>
                      <td>0
@@ -192,7 +192,7 @@
                         * 1 = mid
                         <br>
                         * 2 = hard
-                        <br>* 3 = nightmare                            
+                        <br>* 3 = nightmare
                      </td>
                   </tr>
                   <tr>
@@ -215,7 +215,7 @@
                      <td>music volume 
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>42</td>
                      <td>u8</td>
                      <td>unknown
@@ -231,7 +231,7 @@
                </tbody>
             </table>
             <h3 id='language'>language setting</h3>if European version: append table:</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -249,7 +249,7 @@
                         * 3 = italian<br>* 4 = german 
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>padding?
@@ -259,7 +259,7 @@
             </table>
             <hr>
             <h2 id='control_section'>controller section</h2>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -271,26 +271,26 @@
                      <td>u8</td>
                      <td>rumble settings<br>
                          * 0 = off<br>* 1 = on
-</td>
+                  </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>01</td>
                      <td>u8</td>
                      <td>0
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>02</td>
                      <td>u8</td>
                      <td>1</td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>03</td>
                      <td>u8</td>
                      <td>0
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>100
@@ -309,7 +309,7 @@
             <p>+160 bytes padding / check if psp version changes</p>
             <hr>
             <h2 id='settings_2'>settings 2</h2>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -344,7 +344,7 @@
                         * 0 = on<br>* 1 = off
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>always 1
@@ -370,7 +370,7 @@
             <p style='padding-left:5px;margin:0px;'>nightmare</p>
             <p style=';margin:0px;'>grape cup</p>
             <p style=';margin:0px;'>ect...</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -390,7 +390,7 @@
                         <br>* 03 = gold
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>01</td>
                      <td>u8</td>
                      <td>completed ?
@@ -434,7 +434,7 @@
                         <br>* 16 = mappy
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>03</td>
                      <td>u8</td>
                      <td>always 0 padding maybe
@@ -474,7 +474,7 @@
             <h2 id='time_trials'>time trials</h2>
             <p>each track is 80 bytes each</p>
             <p>time trial fast lap:</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -491,13 +491,13 @@
                         <br>* 01 = don't show
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>padding?
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>08</td>
                      <td>u8</td>
                      <td>0 ?
@@ -555,7 +555,7 @@
                      <td>character
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>15</td>
                      <td>u8</td>
                      <td>0
@@ -575,14 +575,14 @@
                </tfoot>
             </table>
             <p>time trial lap:</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
                      <th>Type</th>
                      <th>Description</th>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>00</td>
                      <td>u32</td>
                      <td>padding?
@@ -631,20 +631,20 @@
             </table>
             <hr>
             <h2 id='letter_hunt'>letter hunt</h2>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
                      <th>Type</th>
                      <th>Description</th>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>00</td>
                      <td>u32</td>
                      <td>padding?
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>lock?
@@ -658,7 +658,7 @@
                   </tr>
                </tfoot>
             </table>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -739,20 +739,20 @@
             </table>
             <hr>
             <h2 id='clock_buster'>clockbuster</h2>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
                      <th>Type</th>
                      <th>Description</th>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>00</td>
                      <td>u32</td>
                      <td>padding?
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>04</td>
                      <td>u32</td>
                      <td>lock?
@@ -766,7 +766,7 @@
                   </tr>
                </tfoot>
             </table>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -850,7 +850,7 @@
             <hr>
             <h2 id='unlockables'>unlockables</h2>
             <p>unlocking the psp exclusive content doesn't work (sad)</p>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>Offset</th>
@@ -893,7 +893,7 @@
                      <td>space arena
                      </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>024</td>
                      <td>u32</td>
                      <td> unknown </td>
@@ -978,97 +978,97 @@
                      <td>u32</td>
                      <td> mappy (psp)  </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>092</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>096</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>100</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>104</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>108</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>112</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>116</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>120</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>124</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>128</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>132</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>136</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>140</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>144</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>148</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>152</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>156</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>160</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>164</td>
                      <td>u32</td>
                      <td> unknown </td>
@@ -1078,37 +1078,37 @@
                      <td>u32</td>
                      <td> nightmare </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>172</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>176</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>180</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>184</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>188</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>192</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>196</td>
                      <td>u32</td>
                      <td> unknown </td>
@@ -1118,12 +1118,12 @@
                      <td>u32</td>
                      <td> sir pac a lot </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>204</td>
                      <td>u32</td>
                      <td> unknown </td>
                   </tr>
-                  <tr class='unknown_value'>
+                  <tr class='u'>
                      <td>208</td>
                      <td>u32</td>
                      <td> unknown </td>
@@ -1152,7 +1152,7 @@
             </table>
                         <hr>
             <h3 id='ghost'>ghost file structure</h3>
-            <table class="binary_table">
+            <table class="h">
                <tbody>
                   <tr>
                      <th>bytes</th>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pac Kart documentation</title>
+        <link href="index.css" rel="stylesheet"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <div class="main_page" id="main_page">
+            <section id="main">
+                <h1>Padding</h1>
+                Sections where padding is seen:<br><br>
+                <a href="index.html#file_directory_x">File Directory</a>
+                <br>
+                <a href="index.html#data_pack">Data Pack</a>
+                <br>
+                <a href="index.html#sound_offset_list">sound_offset_list</a>
+                <br>
+                <a href="index.html#index_patch_list">Index Patch List</a>
+                <br>
+                <a href="index.html#mid_section_header">Ordered List</a>
+                <br>
+                <a href="index.html#offset_patch_list">Offset Patch List</a>
+                <br><br>
+                Usually padding is based on the divisibilty of the datapack but not always<br>
+                Padding in ordered sections are usually safe to ignore<br>
+                Sections not mentioned are 0<br>
+                Version List:<br>
+                <b>PMWR PC</b>
+                <br>
+                sound_offset_list / index_patch_list: 32<br>
+                ordered: 16<br>
+                <b>PMWR GC</b>
+                <br>
+                sound_offset_list / index_patch_list / ordered: 32<br>
+                <b>PMWR PS2</b>
+                <br>
+                File Directory / data_pack / sound_offset_list / index_patch_list / offset_patch_list: 2048 (globally)
+                <br>ordered: 16<br>
+                <b>HWVX PS2 Proto</b>
+                <br>
+                ordered: divisible by 16
+                    <br>
+            </section>
+        </div>
+    </body>
+</html>
