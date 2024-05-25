@@ -4743,7 +4743,7 @@ not sure if it does anything</p>
             <td>04</td>
             <td>u32</td>
             <td>
-                <a href="#models_04">offset sections</a> based on amount [02]
+                <a href="#models_04">offset LOD sections</a> based on amount [02]
             </td>
         </tr>
         <tr>
@@ -4763,62 +4763,62 @@ not sure if it does anything</p>
         <tr>
             <td>16</td>
             <td>float</td>
-            <td>visibility vertex 1 x</td>
+            <td>Center visibility x</td>
         </tr>
         <tr>
             <td>20</td>
             <td>float</td>
-            <td>visibility vertex 1 y</td>
+            <td>Center visibility y</td>
         </tr>
         <tr>
             <td>24</td>
             <td>float</td>
-            <td>visibility vertex 1 z</td>
+            <td>Center visibility z</td>
         </tr>
         <tr>
             <td>28</td>
             <td>float</td>
-            <td>visibility vertex 1 w</td>
+            <td>Center visibility radius</td>
         </tr>
         <tr>
             <td>32</td>
             <td>float</td>
-            <td>visibility vertex 2 x</td>
+            <td>Min visibility x</td>
         </tr>
         <tr>
             <td>36</td>
             <td>float</td>
-            <td>visibility vertex 2 y</td>
+            <td>Min visibility y</td>
         </tr>
         <tr>
             <td>40</td>
             <td>float</td>
-            <td>visibility vertex 2 z</td>
+            <td>Min visibility z</td>
         </tr>
         <tr>
             <td>44</td>
             <td>float</td>
-            <td>visibility vertex 2 w</td>
+            <td>Min visibility w</td>
         </tr>
         <tr>
             <td>48</td>
             <td>float</td>
-            <td>visibility vertex 3 x</td>
+            <td>Max visibility x</td>
         </tr>
         <tr>
             <td>52</td>
             <td>float</td>
-            <td>visibility vertex 3 y</td>
+            <td>Max visibility y</td>
         </tr>
         <tr>
             <td>56</td>
             <td>float</td>
-            <td>visibility vertex 3 z</td>
+            <td>Max visibility z</td>
         </tr>
         <tr>
             <td>60</td>
             <td>float</td>
-            <td>visibility vertex 3 w</td>
+            <td>Max visibility w</td>
         </tr>
     </tbody>
     <tfoot>
@@ -4829,6 +4829,7 @@ not sure if it does anything</p>
 </table>
 <hr/>
 <h2 id="models_04">models_04</h2>
+<p>LOD Sections</p>
 <table class="h">
     <tbody>
         <tr>
@@ -4839,13 +4840,13 @@ not sure if it does anything</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount of sub sections</td>
+            <td>amount of materials</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
             <td>
-                <a href="#models_04_04">offset sub sections</a> based on amount [00]
+                <a href="#models_04_04">offset materials</a> based on amount [00]
             </td>
         </tr>
     </tbody>
@@ -4889,7 +4890,7 @@ not sure if it does anything</p>
             <td>00</td>
             <td>u32</td>
             <td>
-                <a href="#models_04_04_00">offset model sub section data header</a>
+                <a href="#models_04_04_00">offset material</a>
             </td>
         </tr>
     </tbody>
@@ -6083,11 +6084,12 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<p>
-    after this section but before the model name
-    section a list of texture names appears<br/>
+<hr>
+<h2 id="models_04_04_00_names">models_04_04_00_names</h2>
+<p>this section is a list of texture names that each material uses, likley when the mesh was first imported as a few texture names are mismatched.<br/>
+    file extenstion is always a .tga<br/>
     this is not linked by an offset<br/>
-    strings are null terminated<br/>the amount of strings depends on the amount of sub sections but sometimes is less or has none at all?
+    null terminated strings<br/>
 </p>
 <hr/>
 <h2 id="GC_models_04_04_00_80">GC_models_04_04_00_80</h2>
