@@ -23,22 +23,27 @@
                     represents the different extensions seen with this file type)
                 </p>
                 <h2>Games</h2>
-                <p>
+                <p>click to go to that games specific format<br>
                     The <b>x*</b>
-                    file archive is seen in 4 games:<br/>
-                    Hot Wheels Velocity X <br/>
+                    file archive is seen in 6 games:<br/>
+                    <a href="mmvcl.html">Motor Mayhem: Vehicular Combat League</a><br>
+                    <a href="hwvx.html">Hot Wheels Velocity X</a> <br/>
                     Snoopy vs. the Red Baron <br/>
-                    Pac Man World Rally <br/>Bigfoot: Collision Course
+                    Pac Man World Rally <br/>
+                    Bee Movie Game (Wii Version) <br/>
+                    Bigfoot: Collision Course <br/>
                 </p>
                 <h2>Extensions</h2>
                 <p>
                     The <b>x*</b>
-                    file archive extension changes based on console except for Bigfoot: Collision Course: <br/>
+                    file archive extension changes based on console<br/>
                     pc: .xpc <br/>
                     gamecube: .xgc <br/>
                     xbox: .xdx <br/>
+                    wii: .xwi <br/>
                     psp .xpp <br/>
-                    ps2 .XPS <br/>Bigfoot: Collision Course: .xdx9
+                    ps2 .XPS <br/>
+                    Bee Movie / Bigfoot: Collision Course (PC Version only?): xdx9
                 </p>
                 <h2>Integers</h2>
                 <p>
@@ -135,7 +140,7 @@
                             <td>04</td>
                             <td>u32</td>
                             <td>
-                                magic 2 <br/>Big Foot / Pacman / Snoopy =  67174575<br> Hot Wheels = 67174574
+                                magic 2 <br/>Big Foot / Bee / Pacman / Snoopy =  67174575<br> Hot Wheels = 67174574
                             </td>
                         </tr>
                         <tr>
@@ -145,7 +150,10 @@
                                 version <br/>value different depending on region / game
                 <p>
                     Bigfoot: Collision Course:<br>
-                    PC: 315<br><br>
+                    PC: 315<br>
+                    Wii: 315<br><br>
+                    Bee Movie Game:<br>
+                    Wii 315<br><br>
                     Pac Man World Rally: <br/>
                     PC: 267 <br/>
                     GC: ntsc: 267 <br/>
@@ -157,6 +165,8 @@
                     <br/>
                     Snoopy vs. the Red Baron: <br/>
                     PC: 274 <br/>
+                    PSP: 273 <br/>
+                    PS2: 273 <br/>
                     <br/>
                     Hot Wheels Velocity X <br/>
                     PC: ntsc 183<br>
@@ -228,7 +238,7 @@
                             <td>12</td>
                             <td>u32</td>
                             <td>
-                                usually 0 offset of some kind<br/>always 0 in pac
+                                Geometry related value.
                             </td>
                         </tr>
                         <tr>
@@ -317,7 +327,7 @@ Length of <a href="#ordered_list">Ordered List</a>
 <tr>
 <td>36</td>
 <td>u32</td>
-<td>always 0</td>
+<td>0</td>
 </tr>
 <tr>
 <td>40</td>
@@ -455,7 +465,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td>always 0</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -470,12 +480,12 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>always 0</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td>always 0</td>
+            <td>0</td>
         </tr>
     </tbody>
         <tfoot>
@@ -5294,7 +5304,6 @@ GameCube:
     </tfoot>
 </table>
 <h2 id="PS2_models_04_04_00">PS2_models_04_04_00</h2>
-<p>sections</p>
 <table class="h">
     <tbody>
         <tr>
@@ -5305,31 +5314,7 @@ GameCube:
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>section type<br>
-                <a href="#PS2_models_04_04_00t0">0</a><br>
-                <a href="#PS2_models_04_04_00t1">1</a><br>
-                <a href="#PS2_models_04_04_00t2">2</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<h2 id="PS2_models_04_04_00t0">PS2_models_04_04_00t0</h2>
-<p>Section 0</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#PS2_models_04_04_00">type</a></td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -5485,367 +5470,6 @@ GameCube:
     <tfoot>
         <tr>
             <th colspan="3">80 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<h2 id="PS2_models_04_04_00t1">PS2_models_04_04_00t1</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>65539,65537,327681,196609,327683</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>33554432 - 905969920</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>1 - 1170</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>17,112,1552,401,4208,1553</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>17,112,528,401,4208,529</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>41</td>
-            <td>u8</td>
-            <td>0,255,1</td>
-        </tr>
-        <tr class="u">
-            <td>42</td>
-            <td>u8</td>
-            <td>204,0</td>
-        </tr>
-        <tr class="u">
-            <td>43</td>
-            <td>u8</td>
-            <td>204,0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>45</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>46</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>47</td>
-            <td>u8</td>
-            <td>255,127</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>0,1280</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u8</td>
-            <td>0,61,209,205,169,255,172</td>
-        </tr>
-        <tr class="u">
-            <td>53</td>
-            <td>u8</td>
-            <td>0,87,114,38,174,255,190</td>
-        </tr>
-        <tr class="u">
-            <td>54</td>
-            <td>u8</td>
-            <td>0,132,255</td>
-        </tr>
-        <tr class="u">
-            <td>55</td>
-            <td>u8</td>
-            <td>0,127,255</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>always 224</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>u32</td>
-            <td>272 - 5165120</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>offset maybe?</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>0 - 5160896</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>80</td>
-            <td>u32</td>
-            <td>240 - 5165088</td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">96 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<h2 id="PS2_models_04_04_00t2">PS2_models_04_04_00t2</h2>
-<p>Section 2</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#PS2_models_04_04_00">type</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>1 - 254</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>4 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>1 - 254</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0,1,2,512</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>4 - 180</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>112,0,6512</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>112,0,6512</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>always 65535</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u8</td>
-            <td>0,127,255</td>
-        </tr>
-        <tr class="u">
-            <td>45</td>
-            <td>u8</td>
-            <td>0,127,255</td>
-        </tr>
-        <tr class="u">
-            <td>46</td>
-            <td>u8</td>
-            <td>0,127,255</td>
-        </tr>
-        <tr class="u">
-            <td>47</td>
-            <td>u8</td>
-            <td>92 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>float</td>
-            <td>0.015447236597537994 - 374.2680358886719</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>float</td>
-            <td>0.04122297838330269 - 235.26791381835938</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>float</td>
-            <td>0.03248786926269531 - 295.209716796875</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>4 - 180</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>offset maybe?</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>6 - 266</td>
-        </tr>
-        <tr class="u">
-            <td>80</td>
-            <td>u32</td>
-            <td>offset maybe?</td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>u32</td>
-            <td>offset maybe?</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">96 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -14840,7 +14464,7 @@ speed boosts set to maximum shift</p>
             <tr>
                 <td>00</td>
                 <td>0 - 271</td>
-                <td>always 0</td>
+                <td>0</td>
             </tr>
             <tr class="u">
                 <td>272</td>
@@ -36283,7 +35907,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>always 0</td>
+            <td>0</td>
         </tr>
         <tr>
             <td>04</td>

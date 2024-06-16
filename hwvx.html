@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pac Kart documentation</title>
+        <link href="index.css" rel="stylesheet"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <div class="main_page" id="main_page">
+            <section id="main">
+                go back to main
+                <a href="index.html">here</a> <br/>
+                <br/>
+                <h1>wip</h1>
+            </section>
+<h2 id="file_header_x">File Header</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 33620128</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 67174574</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>183,179,177</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>1 - 49</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_directory">hwvx_directory</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 183</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0 - 10</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0 - 118</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0 - 7143423, only none 0 when type = 7(geo)?</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>108 - 10174256</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0 - 39228608</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">24 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_geo_datapack">hwvx_geo_datapack</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>length of ordered 12 - 857064</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount general offsets (5th) 0 - 23413</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>amount indexs (1st)0 - 369</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>amount indexs (3rd) 1,2,10,3,0,4,5</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td>patchlist amount padding 12,4,0,8,20,16,24,28</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td>amount indexs (2nd) 0 - 108</td>
+        </tr>
+        <tr>
+            <td>44-51</td>
+            <td>b8</td>
+            <td>shared string</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>u32</td>
+            <td>amount indexs (4th) always 1</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">80 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="index_patch_list">Patch List</h2>
+<p> patches the texture/texture animation/sound indexes into the file.<br>
+    the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
+</p>
+<hr>
+<h2 id="ordered_list">Ordered List</h2>
+<p>to get here simply do length of file - File Header[12]<br>
+    to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
+    all sections in the ordered list use the start of the ordered list as the offset<br><br>
+    in order the sections contained are:<br>
+    <a href="#ordered_list">File Specific Section</a><br>
+
+    <a href="#models">Models</a><br>
+
+    <a href="#texture_animation_section">Texture Animation Part 1</a><br>
+
+    <a href="#model_animation_1">Model Animation 1</a><br>
+
+    <a href="#model_animation_2">Model Animation 2</a><br>
+
+    <a href="#texture_header">Textures</a><br>
+
+    <a href="#unordered_list">Unordered List</a><br>
+
+    <a href="#texture_anim_1">Texture Animation Part 2</a><br>
+
+    <a href="#offset_patch_list">Offset Patch List</a><br><br>
+    Texture Animation Part 1 & Textures & Offset Patch List are directly linked to by the datapack<br>
+    The other sections are linked to by the File Specific Section & unordered list & Texture Animation Part 1<br>
+</p>
+<hr>
+<h2 id="hwvx_basic">hwvx_basic</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>offset</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0 - 479232</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_basic_00">hwvx_basic_00</h2>
+<p>no direct count for this?</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 11595</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>offset to model? 0 - 641776</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_model">hwvx_model</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>depends on console?<br>
+                pc = 2<br>
+                ps2 = 4101<br>
+                gamecube = 8195</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u16</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+         <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>sections 96 - 641840</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>render distance, 128 - 641872</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>-11476.2275390625 - 6048.48876953125</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>-7631.66455078125 - 666.902587890625</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>-11836.0244140625 - 4676.455078125</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>70.95291137695312 - 19796.203125</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>-6077.38623046875 - 11857.80859375</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>-1148.53515625 - 11801.646484375</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>-4880.88134765625 - 11994.3056640625</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>6.950652599334717 - 17136.75390625</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>float</td>
+            <td>-6137.91796875 - 6070.80859375</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>float</td>
+            <td>-1175.86279296875 - 5002.611328125</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>float</td>
+            <td>-5076.19140625 - 5847.0048828125</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_model_08">hwvx_model_08</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>0,1, a'ways 0 gc</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u16</td>
+            <td>1 - 60</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0 - 7127, 0 = gc</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>128 - 642016</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>192 - 1220605120</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>144 - 641888</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+
+
+
+</section></div></body></html>
