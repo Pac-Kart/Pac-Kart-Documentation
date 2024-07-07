@@ -23,25 +23,25 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>always 33620128</td>
+            <td>Magic always 33620128</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>always 67174574</td>
+            <td>Magic always 67174574</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>183,179,177</td>
+            <td>version | 177,179,183</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>1 - 49</td>
+            <td><a href="#hwvx_directory">amount directory</a> | 1 - 49</td>
         </tr>
     </tbody>
     <tfoot>
@@ -108,17 +108,17 @@
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>length of ordered 12 - 857064</td>
+            <td>length of ordered | 12 - 857064</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount general offsets (5th) 0 - 23413</td>
+            <td>amount patchlist general offsets | 0 - 23413</td>
         </tr>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount indexs (1st)0 - 369</td>
+            <td>amount patchlist texture indexs | 0 - 369</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -143,7 +143,7 @@
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td>amount indexs (3rd) 1,2,10,3,0,4,5</td>
+            <td>amount patchlist texture anims indexs | 1,2,10,3,0,4,5</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -153,27 +153,23 @@
         <tr>
             <td>36</td>
             <td>u32</td>
-            <td>patchlist amount padding 12,4,0,8,20,16,24,28</td>
+            <td>amount patchlist padding | 0 - 28</td>
         </tr>
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td>amount indexs (2nd) 0 - 108</td>
+            <td>amount patchlist model indexes | 0 - 108</td>
         </tr>
         <tr>
-            <td>44-51</td>
-            <td>b8</td>
+            <td>55</td>
+            <td>b12</td>
             <td>shared string</td>
         </tr>
         <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
             <td>56</td>
             <td>u32</td>
-            <td>amount indexs (4th) always 1</td>
+            <td>always 1, prob shared string related<br>
+                maybe patch list related?</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -207,36 +203,141 @@
         </tr>
     </tfoot>
 </table>
-<hr/>
-<h2 id="index_patch_list">Patch List</h2>
-<p> patches the texture/texture animation/sound indexes into the file.<br>
+<hr>
+<h2 id="geo_patch_list">geo_patch_list</h2>
+<p> patches the textures indexs/texture anims indexs/model indexs/???/general offsets into the file.<br>
     the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
+    To get each section you would do:<br>
+    patch_list = hwvx_geo_datapack + 80 //start of Texture Indexes<br>
+    patch_list+= (u32(8) * 8) //start of Texture Animation Indexes<br>
+    patch_list+= (u32(28) * 8) //start of Model Indexes<br>
+    patch_list+= (u32(40) * 4) //start unknown 4 byte value<br>
+    patch_list+= (u32(56) * 4) //start of General Offsets<br>
+    patch_list+= (u32(4) * 4) //start of Padding<br>
+    patch_list+= (u32(36)) //start of Ordered List<br>
 </p>
+<h2>Texture Indexes (1)</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>Texture Index</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>Offset</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>Texture Anims (2)</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>Texture Anims Index</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>u32</td>
+            <td>Offset</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>Models (3)</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>Models Indexes</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>u32</td>
+            <td>Offset</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>Unknown? (4)</h2>
+<p>not sure if this is a count or related to the next section general offsets</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 322</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>General Offsets (5)</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>offset</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>Padding (6)</h2>
+<p>values in padding are always 0</p>
 <hr>
 <h2 id="ordered_list">Ordered List</h2>
-<p>to get here simply do length of file - File Header[12]<br>
-    to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
+<p>to get here offset to the Index Patch List from the datapack then add the sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
-    in order the sections contained are:<br>
-    <a href="#ordered_list">File Specific Section</a><br>
-
-    <a href="#models">Models</a><br>
-
-    <a href="#texture_animation_section">Texture Animation Part 1</a><br>
-
-    <a href="#model_animation_1">Model Animation 1</a><br>
-
-    <a href="#model_animation_2">Model Animation 2</a><br>
-
-    <a href="#texture_header">Textures</a><br>
-
-    <a href="#unordered_list">Unordered List</a><br>
-
-    <a href="#texture_anim_1">Texture Animation Part 2</a><br>
-
-    <a href="#offset_patch_list">Offset Patch List</a><br><br>
-    Texture Animation Part 1 & Textures & Offset Patch List are directly linked to by the datapack<br>
-    The other sections are linked to by the File Specific Section & unordered list & Texture Animation Part 1<br>
 </p>
 <hr>
 <h2 id="hwvx_basic">hwvx_basic</h2>
