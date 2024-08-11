@@ -88,12 +88,12 @@
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>version | 177,179,183</td>
+            <td>version | 179,177</td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_directory">amount directory</a> | 1 - 49</td>
+            <td><a href="#hwvx_directory">amount directory</a> | 1 - 45</td>
         </tr>
     </tbody>
     <tfoot>
@@ -114,7 +114,7 @@
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>always 183</td>
+            <td>179,177</td>
         </tr>
         <tr>
             <td>04</td>
@@ -136,12 +136,12 @@
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>0 - 118</td>
+            <td>0 - 75</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td>0 - 7143423, value only appears when type = 7(geo)?</td>
+            <td>0 - 7771, value only appears when type = 7(geo)?</td>
         </tr>
         <tr>
             <td>16</td>
@@ -181,12 +181,12 @@
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#ordered_list">Length of Ordered List</a> | 24 - 7710092</td>
+            <td><a href="#ordered_list">Length of Ordered List</a></td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>Length of <a href="#audio_section">audio_section section</a> (not including the Sound Offset List) | 0 - 950432</td>
+            <td>Length of <a href="#audio_section">audio_section section</a> (not including the Sound Offset List)</td>
         </tr>
         <tr>
             <td>08</td>
@@ -211,7 +211,7 @@
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_texture">offset to textures</a> (from ordered) based on amount [20] | 0 - 7660608</td>
+            <td><a href="#hwvx_texture">offset to textures</a> (from ordered) based on amount [20]</td>
         </tr>
         <tr>
             <td>28</td>
@@ -236,17 +236,17 @@
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#color_table">CLUT offset</a> (from ordered) based on amount [40] | 0 - 7700416</td>
+            <td><a href="#color_table">CLUT offset</a> (from ordered) based on amount [40]</td>
         </tr>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td>amount of sections in texture animations | 0,1,2,5,3,4</td>
+            <td>amount of sections in texture animations | 0 - 5</td>
         </tr>
         <tr>
             <td>52</td>
             <td>u32</td>
-            <td>amount texture animation (2nd) section of Patch List | 0,1,2,5,6,12</td>
+            <td>amount texture animation (2nd) section of Patch List | 0 - 12</td>
         </tr>
         <tr>
             <td>56</td>
@@ -256,54 +256,54 @@
         <tr>
             <td>60</td>
             <td>u32</td>
-            <td><a href="#hwvx_texture_anims">offset to texture animations</a> (from ordered), based on amount [48] | 0 - 1209184</td>
+            <td><a href="#hwvx_texture_anims">offset to texture animations</a> (from ordered), based on amount [48]</td>
         </tr>
         <tr>
             <td>64</td>
             <td>u32</td>
             <td>amount 0 - 45</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>68</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68">offset</a> based on amount [64] 0 - 191456</td>
+            <td><a href="#hwvx_datapack_68">offset</a> based on amount [64]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>72</td>
             <td>u32</td>
             <td><a href="#impulse_tracker">offset to impulse_tracker</a><br> or length of hwvx_audio_list + hwvx_audio_data maybe?<br>
                 only seen in world files</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>76</td>
             <td>u32</td>
-            <td><a href="#hwvx_audio_data_2">offset to hwvx_audio_data_2</a><br> or length of hwvx_audio_list + hwvx_audio_data + impulse_tracker maybe?<br>
+            <td><a href="#hwvx_audio_data_2">offset to hwvx_audio_data_2</a><br>
                 only seen in world & music files</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>80-91</td>
             <td>b12</td>
             <td>shared string 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>92</td>
             <td>u32</td>
-            <td>file index ? | 1,0,3,2</td>
+            <td>share 1 file index | 1,0,3,2</td>
         </tr>
         <tr class="u">
             <td>96</td>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>100-111</td>
             <td>b12</td>
             <td>shared string 2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>112</td>
             <td>u32</td>
-            <td>file index ? | 0,1</td>
+            <td>share 2 file index ? | 0,1</td>
         </tr>
         <tr class="u">
             <td>116</td>
@@ -852,10 +852,6 @@ Magic: IMPM</p>
     </tbody>
 </table>
 <hr>
-<hr>
-
-
-
 <h2 id="hwvx_basic">hwvx_basic</h2>
 <table class="h">
     <tbody>
@@ -936,7 +932,7 @@ Magic: IMPM</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_geo_basic_0">offset</a> 16,0</td>
+            <td><a href="#hwvx_geo_basic_0">offset</a> sometimes</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -1006,6 +1002,21 @@ Magic: IMPM</p>
 </table>
 <hr/>
 <h2 id="hwvx_world">hwvx_world</h2>
+<p>world multi linked sections<br>
+<a href="#hwvx_world_12">hwvx_world_12</a><br>
+<a href="#hwvx_world_20">hwvx_world_20</a><br>
+<a href="#hwvx_world_36_36">hwvx_world_36_36</a><br>
+<a href="#hwvx_world_36_48">hwvx_world_36_48</a><br>
+<a href="#hwvx_world_36_48_8">hwvx_world_36_48_8</a><br>
+<a href="#hwvx_world_36_48_16">hwvx_world_36_48_16</a><br>
+<a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+<a href="#hwvx_world_52">hwvx_world_52</a><br>
+<a href="#hwvx_world_76">hwvx_world_76</a><br>
+<a href="#hwvx_world_84_0">hwvx_world_84_0</a><br>
+<a href="#hwvx_world_100_4">hwvx_world_100_4</a><br>
+<a href="#hwvx_world_108">hwvx_world_108</a><br>
+<a href="#hwvx_world_108_44t6">hwvx_world_108_44t6</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -1036,7 +1047,7 @@ Magic: IMPM</p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 0,12,10,14,56,3,65,84</td>
+            <td>amount 0 - 6584</td>
         </tr>
         <tr>
             <td>20</td>
@@ -1066,7 +1077,7 @@ Magic: IMPM</p>
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td>amount 0,3,7,6</td>
+            <td>amount 0 - 7</td>
         </tr>
         <tr>
             <td>44</td>
@@ -1076,7 +1087,7 @@ Magic: IMPM</p>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td>amount 0,2,4,6,8,10</td>
+            <td>amount 0 - 10</td>
         </tr>
         <tr>
             <td>52</td>
@@ -1111,22 +1122,22 @@ Magic: IMPM</p>
         <tr>
             <td>76</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_76">offset</a> based on amount [72]</td>
+            <td><a href="#hwvx_world_76">offset (hwvx_world_76)</a> based on amount [72]</td>
         </tr>
         <tr>
             <td>80</td>
             <td>u32</td>
-            <td>amount 0,1,2,4,3</td>
+            <td>amount 0 - 4</td>
         </tr>
         <tr>
             <td>84</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_84">offset</a> based on amount [80]</td>
+            <td><a href="#hwvx_world_76">offset (hwvx_world_76)</a> based on amount [80]</td>
         </tr>
         <tr>
             <td>88</td>
             <td>u32</td>
-            <td>amount 0,1,2,5,3,4</td>
+            <td>amount 0 - 5</td>
         </tr>
         <tr>
             <td>92</td>
@@ -1136,7 +1147,7 @@ Magic: IMPM</p>
         <tr>
             <td>96</td>
             <td>u32</td>
-            <td>amount 1,0,4,15,11</td>
+            <td>amount 0 - 15</td>
         </tr>
         <tr>
             <td>100</td>
@@ -1353,7 +1364,7 @@ Magic: IMPM</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 0,1,3,4,5</td>
+            <td>amount 0 - 5</td>
         </tr>
         <tr>
             <td>12</td>
@@ -1373,7 +1384,7 @@ Magic: IMPM</p>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 0,1,2</td>
+            <td>amount 0 - 2</td>
         </tr>
         <tr>
             <td>28</td>
@@ -1510,7 +1521,7 @@ Magic: IMPM</p>
         <tr class="u">
             <td>16</td>
             <td>float</td>
-            <td>0,-0.11147642135620117,-0.06742775440216064,0.4570648670196533,0.0524287223815918</td>
+            <td>-0.11147642135620117 - 0.4570648670196533</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -1520,7 +1531,7 @@ Magic: IMPM</p>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>0,-0.00923454761505127,0.0023209452629089355,-0.046747684478759766</td>
+            <td>-0.046747684478759766 - 0.0023209452629089355</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -1650,7 +1661,7 @@ Magic: IMPM</p>
         <tr class="u">
             <td>92</td>
             <td>u32</td>
-            <td>65535,3327,2559,3071,1081,2617,2873,1535,2815,2047,19455,2303,2622,2362,1854</td>
+            <td>1081 - 65535</td>
         </tr>
     </tbody>
     <tfoot>
@@ -1661,6 +1672,9 @@ Magic: IMPM</p>
 </table>
 <hr/>
 <h2 id="hwvx_world_20">hwvx_world_20</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_world">hwvx_world [20] </a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -1709,7 +1723,7 @@ Magic: IMPM</p>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>patch model </td>
@@ -1828,7 +1842,7 @@ Magic: IMPM</p>
         <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_36_36">offset</a> 0 - 79824</td>
+            <td><a href="#hwvx_world_36_36">offset</a></td>
         </tr>
         <tr class="u">
             <td>40</td>
@@ -1843,7 +1857,7 @@ Magic: IMPM</p>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_36_48">offset</a> 992 - 80224</td>
+            <td><a href="#hwvx_world_36_48">offset</a></td>
         </tr>
         <tr class="u">
             <td>52</td>
@@ -2200,6 +2214,7 @@ Magic: IMPM</p>
 unordered?
 <p>multi linked to by:<br>
     <a href="#hwvx_world_36_48_8">hwvx_world_36_48_8 [36] </a><br>
+    <a href="#hwvx_unknown_4">hwvx_unknown_4 [4]t6 </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -2243,7 +2258,7 @@ unordered?
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a> 0 - 5921968</td>
+            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a></td>
         </tr>
         <tr>
             <td>16</td>
@@ -2253,12 +2268,12 @@ unordered?
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_anims_2">offset (hwvx_model_anims_2)</a> 0 - 1225056</td>
+            <td><a href="#hwvx_model_anims_2">offset (hwvx_model_anims_2)</a></td>
         </tr>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 1,4,2,0,3</td>
+            <td>amount 0 - 4</td>
         </tr>
         <tr>
             <td>28</td>
@@ -2289,7 +2304,7 @@ unordered?
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>199.5008087158203,-251.48367309570312,-257.639404296875,292.9000244140625,-193.1776885986328,-172.55381774902344</td>
+            <td>-257.639404296875 - 292.9000244140625</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -2343,12 +2358,12 @@ unordered?
         <tr class="u">
             <td>36</td>
             <td>float</td>
-            <td>5000,623.6835327148438,889.7593383789062,2500,171.0055694580078,211.4947052001953,279.418212890625,163.15728759765625</td>
+            <td>163.15728759765625 - 5000</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>float</td>
-            <td>7500,1247.3670654296875,1779.5186767578125,5000,500,469.69305419921875,245.71278381347656</td>
+            <td>245.71278381347656 - 7500</td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -2500,6 +2515,7 @@ unordered?
 <h2 id="hwvx_world_36_48_24">hwvx_world_36_48_24</h2>
 <p>multi linked to by:<br>
     <a href="#hwvx_world_36_48">hwvx_world_36_48 [24] </a><br>
+    <a href="#hwvx_datapack_68_4t5">hwvx_datapack_68_4t5 [4] </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -2591,7 +2607,7 @@ unordered?
         <tr class="u">
             <td>52</td>
             <td>u32</td>
-            <td>16843009,1044250881,184549633,16842753,16842752,16843008</td>
+            <td>16842752 - 1044250881</td>
         </tr>
         <tr class="u">
             <td>56</td>
@@ -2631,7 +2647,7 @@ unordered?
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0,-0.037026435136795044,0.0011647619539871812,-0.14798127114772797,0.05065522342920303</td>
+            <td>-0.14798127114772797 - 0.05065522342920303</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -2646,17 +2662,17 @@ unordered?
         <tr class="u">
             <td>16</td>
             <td>float</td>
-            <td>0,-0.03701553866267204,0.0011643380858004093,-0.003744495799764991,0.00090483867097646</td>
+            <td>-0.03701553866267204 - 0.0011643380858004093</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>1,0.9993143081665039,0.9999993443489075,0.9889901876449585,0.9987161755561829</td>
+            <td>0.9889901876449585 - 1</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>0,0.000898263358976692,-0.000031418170692631975,0.14793388545513153,-0.05064714327454567</td>
+            <td>-0.05064714327454567 - 0.14793388545513153</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -2813,6 +2829,8 @@ unordered?
 <h2 id="hwvx_world_76">hwvx_world_76</h2>
 <p>multi linked to by:<br>
     <a href="#hwvx_world">hwvx_world [76] </a><br>
+    <a href="#hwvx_datapack_68_4t5">hwvx_datapack_68_4t5 [4] </a><br>
+    <a href="#hwvx_datapack_68_20_4t7">hwvx_datapack_68_20_4t7 [8] </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -2829,31 +2847,7 @@ unordered?
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="hwvx_world_84">hwvx_world_84</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_world">hwvx_world [84] </a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_world_84_0">offset</a> </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2861,8 +2855,7 @@ unordered?
 <h2 id="hwvx_world_84_0">hwvx_world_84_0</h2>
 <p>multi linked to by:<br>
     <a href="#hwvx_world_76">hwvx_world_76 [0] </a><br>
-    <a href="#hwvx_world_84">hwvx_world_84 [0] </a><br>
-    <a href="#hwvx_world_92_4">hwvx_world_92_4_16t2  [12][16] </a><br>
+    <a href="#hwvx_world_92_4">hwvx_world_92_4  [12][16] </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -3017,7 +3010,7 @@ unordered?
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_text">offset (hwvx_text)</a> 0 - 5937472</td>
+            <td><a href="#hwvx_text">offset (hwvx_text)</a></td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -3082,7 +3075,7 @@ unordered?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 10,5,18,4,3</td>
+            <td>amount 3 - 18</td>
         </tr>
         <tr>
             <td>04</td>
@@ -3157,6 +3150,7 @@ unordered?
 <p>multi linked to by:<br>
     <a href="#hwvx_world">hwvx_world [108] </a><br>
     <a href="#hwvx_world">hwvx_world_4_16_4 [0] </a><br>
+    <a href="#hwvx_datapack_68_4t5">hwvx_datapack_68_4t5 [4] </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -3233,7 +3227,7 @@ unordered?
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_108_40">offset</a> 0 - 134512</td>
+            <td><a href="#hwvx_world_108_40">offset</a></td>
         </tr>
         <tr>
             <td>44</td>
@@ -4977,55 +4971,64 @@ Only WORLD2L1_PROTO.XPS ?
             <td>float</td>
             <td>always 100</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>120</td>
             <td>u32</td>
-            <td>patch texture 3435921408,3435921458</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>124</td>
             <td>u32</td>
-            <td>patch texture 3435921475,3435921409</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>128</td>
             <td>u32</td>
-            <td>patch texture 3435921409,3435921410,3435921408</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>132</td>
             <td>u32</td>
-            <td>patch texture 3435921410,3435921411,3435921409</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>136</td>
             <td>u32</td>
-            <td>patch texture 3435921413,3435921414,3435921412</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>140</td>
             <td>u32</td>
-            <td>patch texture 3435921414,3435921415,3435921413</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>144</td>
             <td>u32</td>
-            <td>patch texture 3435921415,3435921414,3435921416</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>148</td>
             <td>u32</td>
-            <td>patch texture 3435921411,3435921412,3435921410</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>152</td>
             <td>u32</td>
-            <td>patch texture 3435921412,3435921413,3435921411</td>
+            <td>patch texture</td>
         </tr>
         <tr class="u">
             <td>156</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_156_156">offset</a> 0 - 19696</td>
+            <td>offseted to by:
+                <a href="#hwvx_world">hwvx_world</a><br>
+                <a href="#hwvx_car_160">hwvx_car_160</a><br>
+                <a href="#hwvx_world_36_48">hwvx_world_36_48</a><br>
+                <a href="#hwvx_world_36_48_8">hwvx_world_36_48_8</a><br>
+                <a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+                <a href="#hwvx_world_108_44t6">hwvx_world_108_44t6</a><br>
+                <a href="#hwvx_world_76">hwvx_world_76</a><br>
+                + ?
+            </td>
         </tr>
         <tr>
             <td>160</td>
@@ -5120,7 +5123,7 @@ Only WORLD2L1_PROTO.XPS ?
         <tr>
             <td>232</td>
             <td>u32</td>
-            <td>amount 0,4</td>
+            <td>amount 0 - 4</td>
         </tr>
         <tr>
             <td>236</td>
@@ -5150,7 +5153,7 @@ Only WORLD2L1_PROTO.XPS ?
         <tr>
             <td>256</td>
             <td>u32</td>
-            <td>amount 0,2</td>
+            <td>amount 0 - 2</td>
         </tr>
         <tr>
             <td>260</td>
@@ -5312,12 +5315,12 @@ Only WORLD2L1_PROTO.XPS ?
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_156_196_28">offset</a> 1683584,838848</td>
+            <td><a href="#hwvx_world_156_196_28">offset</a></td>
         </tr>
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a> 1684096,839536</td>
+            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -5912,7 +5915,7 @@ Only WORLD2L1_PROTO.XPS ?
         <tr>
             <td>56</td>
             <td>u32</td>
-            <td>amount 4,1,5,15,3,9,6,8</td>
+            <td>amount 1 - 15</td>
         </tr>
         <tr>
             <td>60</td>
@@ -6795,7 +6798,7 @@ Only WORLD2L1_PROTO.XPS ?
         <tr class="u">
             <td>76</td>
             <td>float</td>
-            <td>0,87.99996185302734,117.33328247070312,58.66664123535156,102.66661834716797,131.99993896484375,146.66659545898438</td>
+            <td>0 - 146.66659545898438</td>
         </tr>
         <tr class="u">
             <td>80</td>
@@ -6873,7 +6876,7 @@ Only WORLD2L1_PROTO.XPS ?
             <td>u32</td>
             <td>1 - 23</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td>based on type [8]<br>
@@ -6887,32 +6890,32 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>0 - 269</td>
+            <td>type? 0 - 269</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_12">offset</a> 0 - 196976</td>
+            <td><a href="#hwvx_datapack_68_12">offset</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>0,1,2,3</td>
+            <td>amount 0 - 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_20">offset</a> </td>
+            <td><a href="#hwvx_datapack_68_20">offset</a> based on amount [28] </td>
         </tr>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_24">offset</a> 0 - 197680</td>
+            <td><a href="#hwvx_datapack_68_24">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td>1 - 18</td>
+            <td>amount 1 - 18</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -7022,22 +7025,27 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_4t5_4">offset</a> maybe based on [8] / [16]?<br>
-                offsets to world sections, sometimes no alligned if 0 22 </td>
+            <td>not based on type? sections seen:<br>
+                <a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+                <a href="#hwvx_world_76">hwvx_world_76</a><br>
+                <a href="#hwvx_world_108">hwvx_world_108</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
             <td>1,0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32 / float</td>
             <td>based on type [16]<br>
-                0 = <a href="#hwvx_datapack_68_4t5_12">offset</a><br>
+                0 = links to other world sections<br>
+                &nbsp;<a href="#hwvx_world_12">hwvx_world_12</a><br>
+                &nbsp;<a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
                 22 = float 0,60,50,666,777,555,4,5,20,10,2,3,1</td>
         </tr>
         <tr class="u">
@@ -7134,7 +7142,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>1st amount</td>
@@ -7154,11 +7162,18 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_4trest_4">offsets</a><br>
-            random byes from collision linked ????</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_36_48">hwvx_world_36_48</a><br>
+                <a href="#hwvx_world_36_48_8">hwvx_world_36_48_8</a><br>
+                <a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+                <a href="#hwvx_world_36_36">hwvx_world_36_36</a><br>
+                <a href="#hwvx_world_108">hwvx_world_108</a><br>
+                <a href="#hwvx_world_12">hwvx_world_12</a><br>
+                Also offsets to random sections in collision ???
+            </td>
         </tr>
     </tbody>
     <tfoot>
@@ -7175,7 +7190,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>2nd amount</td>
@@ -7195,11 +7210,13 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_4trest_4">offset</a> based on amount [0]<br>
-            usually world sections linked</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_12">hwvx_world_12</a><br>
+                Also offsets to random sections in hwvx_world_12
+            </td>
         </tr>
     </tbody>
     <tfoot>
@@ -7222,10 +7239,10 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>0,11,6,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_12_4">offset</a> 0 - 163472</td>
+            <td><a href="#hwvx_datapack_68_12_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -7293,20 +7310,22 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_12_4_4">offset</a> </td>
+            <td><a href="#hwvx_datapack_68_12_4_4">offset</a> hwvx_world_36_48_24 sometimes ??? </td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
             <td>0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>float</td>
-            <td><a href="#hwvx_datapack_68_12_4_12">offset</a> 0,1,5,10,30,3.587324068671532e-43,2,4.932570594423356e-43,8.96831017167883e-43,7.623063645927005e-43</td>
+            <td>based on type [16]<br>
+                0 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                rest = float 0,1,5,10,30,</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -7347,17 +7366,48 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>0 - 39</td>
+            <td>type? 0 - 39, some sections are probably combined</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_datapack_68_20_4">offset</a> </td>
+            <td>based on types [0] & [8]<br>
+                0 = <a href="#hwvx_datapack_68_20_4t0">offset</a><br>
+                [0] 1 = offset<br>
+                &nbsp;<a href="#hwvx_datapack_68_20_4t1t12">[8] = 12</a><br>
+                &nbsp;<a href="#hwvx_datapack_68_20_4t1t13">[8] = 13</a><br>
+                &nbsp;<a href="#hwvx_datapack_68_20_4t1t16">[8] = 16</a><br>
+                2 = <a href="#hwvx_datapack_68_20_4t2">offset</a><br>
+                3 = <a href="#hwvx_datapack_68_20_4t3">offset</a><br>
+                4 = <a href="#hwvx_datapack_68_20_4t4">offset</a><br>
+                5 = <a href="#hwvx_datapack_68_20_4t5">offset</a><br>
+                6 = <a href="#hwvx_datapack_68_20_4t6">offset</a><br>
+                7,16 = <a href="#hwvx_datapack_68_20_4t7">offset</a><br>
+                8 = <a href="#hwvx_datapack_68_20_4t8">offset</a><br>
+                9 = <a href="#hwvx_datapack_68_20_4t9">offset</a><br>
+                [0] 10 = offset<br>
+                &nbsp;<a href="#hwvx_datapack_68_20_4t10t10">[8] = 10</a><br>
+                &nbsp;<a href="#hwvx_datapack_68_20_4t10t20">[8] = 20</a><br>
+                12 = <a href="#hwvx_datapack_68_20_4t12">offset</a><br>
+                15 = <a href="#hwvx_datapack_68_20_4t15">offset</a><br>
+                17 = <a href="#hwvx_datapack_68_20_4t17">offset</a><br>
+                20 = <a href="#hwvx_datapack_68_20_4t20">offset</a><br>
+                21 = <a href="#hwvx_datapack_68_20_4t21">offset</a><br>
+                22 = <a href="#hwvx_datapack_68_20_4t22">offset</a><br>
+                24 = <a href="#hwvx_datapack_68_20_4t24">offset</a><br>
+                26 = <a href="#hwvx_datapack_68_20_4t26">offset</a><br>
+                31 = <a href="#hwvx_datapack_68_20_4t31">offset</a><br>
+                32 = <a href="#hwvx_datapack_68_20_4t32">offset</a><br>
+                34 = <a href="#hwvx_datapack_68_20_4t34">offset</a><br>
+                36 = <a href="#hwvx_datapack_68_20_4t36">offset</a><br>
+                38 = <a href="#hwvx_datapack_68_20_4t38">offset</a><br>
+                39 = <a href="#hwvx_datapack_68_20_4t39">offset</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>1 - 116</td>
+            <td>type? amount (bytes *4) ???? 1 - 116</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -7393,6 +7443,1511 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
     <tfoot>
         <tr>
             <th colspan="3">24 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t0">hwvx_datapack_68_20_4t0</h2>
+<h3 id="hwvx_datapack_68_20_4t0_sec1">hwvx_datapack_68_20_4t0_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t0_sec1">hwvx_datapack_68_20_4t0_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_108">hwvx_world_108</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t0_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t1t12">hwvx_datapack_68_20_4t1t12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 30</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>type 1,6<br>
+                1 = hwvx_world_12<br>
+                6 = hwvx_world_120_0</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>based on type [4]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                6 = <a href="#hwvx_world_120_0">offset (hwvx_world_120_0)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0,15</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,10,1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>type 1,6,2</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>based on type [24]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                2 = <a href="#hwvx_world_36_48_8">offset (hwvx_world_36_48_8)</a><br>
+                6 = <a href="#hwvx_world_120_0">offset (hwvx_world_120_0)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>0,5,10</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>always 31</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t1t13">hwvx_datapack_68_20_4t1t13</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 27</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>105,90</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>type 6,2,1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td>based on type [8]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                2 = <a href="#hwvx_world_36_48_8">offset (hwvx_world_36_48_8)</a><br>
+                6 = <a href="#hwvx_world_120_0">offset (hwvx_world_120_0)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,15</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,5,1</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>15,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>type 1,6,2</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td>based on type [28]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                2 = <a href="#hwvx_world_36_48_8">offset (hwvx_world_36_48_8)</a><br>
+                6 = <a href="#hwvx_world_120_0">offset (hwvx_world_120_0)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>0,10</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>0,20</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>always 31</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t1t16">hwvx_datapack_68_20_4t1t16</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 28</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>105,120</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>18,17,85,15</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0.5,1,0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>1,0.8999999761581421,0.699999988079071,0.800000011920929</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>type 1,2</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td>based on type [20]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                2 = <a href="#hwvx_world_36_48_8">offset (hwvx_world_36_48_8)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>10,0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>10,120,0,5</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>type 1,2</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>u32</td>
+            <td>based on type [40]<br>
+                1 = <a href="#hwvx_world_12">offset (hwvx_world_12)</a><br>
+                2 = <a href="#hwvx_world_36_48_8">offset (hwvx_world_36_48_8)</a><br>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>float</td>
+            <td>0,5,80</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>always 31</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t2">hwvx_datapack_68_20_4t2</h2>
+<h3 id="hwvx_datapack_68_20_4t2_sec1">hwvx_datapack_68_20_4t2_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,0,3,25</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t2_sec2">hwvx_datapack_68_20_4t2_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_36_48_8">hwvx_world_36_48_8</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t2_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t3">hwvx_datapack_68_20_4t3</h2>
+<h3 id="hwvx_datapack_68_20_4t3_sec1">hwvx_datapack_68_20_4t3_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t3_sec2">hwvx_datapack_68_20_4t3_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_36_48_8">? get_hwvx_world_36_48_16</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t3_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t4">hwvx_datapack_68_20_4t4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_interface">offset (hwvx_interface)</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t5">hwvx_datapack_68_20_4t5</h2>
+<h3 id="hwvx_datapack_68_20_4t5_sec1">hwvx_datapack_68_20_4t5_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t5_sec2">hwvx_datapack_68_20_4t5_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t5_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_datapack_68_20_4t6">hwvx_datapack_68_20_4t6</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>5,4</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t7">hwvx_datapack_68_20_4t7</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>17,15</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_76">offset (hwvx_world_76)</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0 - 600000</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t8">hwvx_datapack_68_20_4t8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>23,24</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>8,7</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_76">offset (hwvx_world_76)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t9">hwvx_datapack_68_20_4t9</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>12,11</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 6</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>30,3,4</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_20">offset (hwvx_world_20)</a></td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t10t10">hwvx_datapack_68_20_4t10t10</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>1,0.20000000298023224,0.10000000149011612</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0,2000</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>41,6</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0 - 86</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>40,0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t10t20">hwvx_datapack_68_20_4t10t20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>always 41</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>20,48,34,64,56</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>always 40</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>always 10</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">80 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t12">hwvx_datapack_68_20_4t12</h2>
+<h3 id="hwvx_datapack_68_20_4t12_sec1">hwvx_datapack_68_20_4t12_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t12_sec2">hwvx_datapack_68_20_4t12_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_120_0">hwvx_world_120_0</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t12_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_datapack_68_20_4t15">hwvx_datapack_68_20_4t15</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>type? <br>
+                0 = 0<br>
+                1 = /hwvx_world_12<br>
+                2 = hwvx_world_36_48_8<br>
+                3 = hwvx_world_36_48_24<br>
+                6 = hwvx_world_120_0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>based on type [0]<br>
+                1 = <a href="#hwvx_world_12">hwvx_world_12</a><br>
+                2 = <a href="#hwvx_world_36_48_8">hwvx_world_36_48_8</a><br>
+                3 = <a href="#hwvx_world_36_48_24">hwvx_world_36_48_24</a><br>
+                6 = <a href="#hwvx_world_120_0">hwvx_world_120_0</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20"> [8] *4 bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t17">hwvx_datapack_68_20_4t17</h2>
+<h3 id="hwvx_datapack_68_20_4t17_sec1">hwvx_datapack_68_20_4t17_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>10,9,3,0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t17_sec2">hwvx_datapack_68_20_4t17_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_120_0">hwvx_world_120_0</a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t17_sec1"> ([4] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_datapack_68_20_4t20">hwvx_datapack_68_20_4t20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>4,1,7</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 60</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#hwvx_text">offset (hwvx_text)</a> offset text section </td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t21">hwvx_datapack_68_20_4t21</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_52">offset (hwvx_world_52)</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_12">offset (hwvx_world_12)</a></tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t22">hwvx_datapack_68_20_4t22</h2>
+<h3 id="hwvx_datapack_68_20_4t22_sec1">hwvx_datapack_68_20_4t22_sec1</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>35,34</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_datapack_68_20_4t22_sec2">hwvx_datapack_68_20_4t22_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>offseted to:<br>
+                <a href="#hwvx_world_12"> hwvx_world_12 </a><br>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3"><a href="#hwvx_datapack_68_20_4t17_sec1"> ([8] *4) bytes</a></th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_datapack_68_20_4t24">hwvx_datapack_68_20_4t24</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 36</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_datapack_68_20_4t24t5_4">offset</a> hwvx_world_36_48_24</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_datapack_68_20_4t24t5_12">offset</a> hwvx_world_12</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t26">hwvx_datapack_68_20_4t26</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>23,24</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#hwvx_world_76">offset (hwvx_world_76)</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t31">hwvx_datapack_68_20_4t31</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_interface">offset (hwvx_interface)</a> interface</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t32">hwvx_datapack_68_20_4t32</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0,2,1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t34">hwvx_datapack_68_20_4t34</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>17,15</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>300,101,100</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0 - 31</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>1,34,35,20,16,28,29</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t36">hwvx_datapack_68_20_4t36</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 7</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t38">hwvx_datapack_68_20_4t38</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_datapack_68_20_4t39">hwvx_datapack_68_20_4t39</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,2,3,4</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -7555,121 +9110,17 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>00</td>
             <td>u16</td>
-            <td>depends on console?<br>
-                pc = 2<br>
-                ps2 = 4101<br>
-                gamecube = 8195</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u16</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-         <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>sections 96 - 641840</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>render distance, 128 - 641872</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>-11476.2275390625 - 6048.48876953125</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>-7631.66455078125 - 666.902587890625</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>-11836.0244140625 - 4676.455078125</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>70.95291137695312 - 19796.203125</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>-6077.38623046875 - 11857.80859375</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>-1148.53515625 - 11801.646484375</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>-4880.88134765625 - 11994.3056640625</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>float</td>
-            <td>6.950652599334717 - 17136.75390625</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>float</td>
-            <td>-6137.91796875 - 6070.80859375</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>float</td>
-            <td>-1175.86279296875 - 5002.611328125</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>float</td>
-            <td>-5076.19140625 - 5847.0048828125</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="hwvx_model">hwvx_model</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
             <td>always 4101</td>
         </tr>
         <tr>
             <td>02</td>
             <td>u16</td>
-            <td>amount 1,3,5,2</td>
+            <td>amount 1 - 5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>0,7</td>
+            <td>type 0,7,8</td>
         </tr>
         <tr>
             <td>08</td>
@@ -7767,10 +9218,10 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>02</td>
             <td>u8</td>
-            <td>1 - 35</td>
+            <td>amount 1 - 35</td>
         </tr>
         <tr class="u">
             <td>03</td>
@@ -7782,10 +9233,10 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>4 - 5505</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_8_8">offset</a> 160 - 1135744</td>
+            <td><a href="#hwvx_model_8_8">offset</a> based on amount [2]</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -7857,10 +9308,10 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch Animation 0 - 4521984</td>
+            <td>patch Animation</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -7887,10 +9338,14 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_8_8_12">offset</a> 192 - 1145104</td>
+            <td>based on type <a href="#hwvx_model">[4] from hwvx_model</a><br>
+                0 = <a href="#hwvx_model_8_8_12t0">offset</a><br>
+                7 = <a href="#hwvx_model_8_8_12t7">offset</a><br>
+                8 = <a href="#hwvx_model_8_8_12t8">offset</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -7902,10 +9357,10 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
             <td>u32</td>
             <td>0 - 4294901760</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>patch texture 0 - 99</td>
+            <td>patch texture</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -7920,7 +9375,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_model_8_8_12">hwvx_model_8_8_12</h2>
+<h2 id="hwvx_model_8_8_12t0">hwvx_model_8_8_12t0</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7951,77 +9406,77 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>16</td>
             <td>u16</td>
-            <td>1 - 10125</td>
+            <td>9 - 10125</td>
         </tr>
         <tr class="u">
             <td>18</td>
             <td>u8</td>
-            <td>0,3</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>19</td>
             <td>u8</td>
-            <td>96,0</td>
+            <td>always 96</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_8_8_12_20">offset</a> this points to byte 32 in section, sometimes? more data is needed maybe 0,240,5632</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>0,197892</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_8_8_12_28">offset</a> </td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>32</td>
             <td>u16</td>
-            <td>0,331,85</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>34</td>
             <td>u8</td>
-            <td>0,7</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>35</td>
             <td>u8</td>
-            <td>3,96</td>
+            <td>always 3</td>
         </tr>
         <tr class="u">
             <td>36</td>
-            <td>u32</td>
-            <td><a href="#hwvx_model_8_8_12_36">offset</a> offset sometimes ?</td>
+            <td>u8</td>
+            <td>always 220</td>
         </tr>
         <tr class="u">
             <td>37</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>38</td>
             <td>u8</td>
-            <td>0 - 15</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>39</td>
             <td>u8</td>
-            <td>2,0</td>
+            <td>always 2</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>u8</td>
-            <td>4,0</td>
+            <td>always 4</td>
         </tr>
         <tr class="u">
             <td>41</td>
             <td>u8</td>
-            <td>4,0</td>
+            <td>always 4</td>
         </tr>
         <tr class="u">
             <td>42</td>
@@ -8031,7 +9486,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>43</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -8041,52 +9496,67 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>45</td>
             <td>u8</td>
-            <td>128,0</td>
+            <td>always 128</td>
         </tr>
         <tr class="u">
             <td>46</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>47</td>
             <td>u8</td>
-            <td>108,0</td>
+            <td>always 108</td>
         </tr>
         <tr class="u">
             <td>48</td>
-            <td>u32</td>
-            <td></td>
+            <td>u8</td>
+            <td>3 - 79</td>
+        </tr>
+        <tr class="u">
+            <td>49</td>
+            <td>u8</td>
+            <td>always 128</td>
+        </tr>
+        <tr class="u">
+            <td>50</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>51</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>52</td>
             <td>u8</td>
-            <td>0,240</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>53</td>
             <td>u8</td>
-            <td>64,1</td>
+            <td>always 64</td>
         </tr>
         <tr class="u">
             <td>54</td>
             <td>u8</td>
-            <td>14,46,0</td>
+            <td>46,14</td>
         </tr>
         <tr class="u">
             <td>55</td>
             <td>u8</td>
-            <td>48,2</td>
+            <td>always 48</td>
         </tr>
         <tr class="u">
             <td>56</td>
             <td>u16</td>
-            <td>1298,1028</td>
+            <td>always 1298</td>
         </tr>
         <tr class="u">
             <td>58</td>
             <td>u16</td>
-            <td>0,256</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -8096,27 +9566,27 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>61</td>
             <td>u8</td>
-            <td>0,128</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>62</td>
             <td>u8</td>
-            <td>0,1</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>63</td>
             <td>u8</td>
-            <td>0,108</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>64</td>
             <td>u8</td>
-            <td>3,27,12</td>
+            <td>always 3</td>
         </tr>
         <tr class="u">
             <td>65</td>
             <td>u8</td>
-            <td>1,128</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>66</td>
@@ -8126,32 +9596,480 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>67</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>68</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>always 1</td>
         </tr>
         <tr class="u">
             <td>69</td>
             <td>u8</td>
-            <td>128,192</td>
+            <td>always 128</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>70</td>
             <td>u8</td>
-            <td>3 - 79</td>
+            <td>amount 3 - 79</td>
         </tr>
         <tr class="u">
             <td>71</td>
             <td>u8</td>
-            <td>108,144</td>
+            <td>always 108</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">72 bytes+</th>
+            <th colspan="3">72 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+followed by <a href="#hwvx_model_8_8_12_modeldata">hwvx_model_8_8_12_modeldata</a>
+<hr/>
+<h2 id="hwvx_model_8_8_12t7">hwvx_model_8_8_12t7</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 196609</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_model_8_8_12t7_20">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_model_8_8_12t8">hwvx_model_8_8_12t8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 197121</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_model_8_8_12t7_20">offset (hwvx_model_8_8_12t7_20)</a> </td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>always 197892</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#hwvx_model_8_8_12t7_20">offset (hwvx_model_8_8_12t7_20)</a> </td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>always 460038</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td><a href="#hwvx_model_8_8_12t7_20">offset (hwvx_model_8_8_12t7_20)</a> </td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_model_8_8_12t7_20">hwvx_model_8_8_12t7_20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>112,331,85</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u16</td>
+            <td>always 24576</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 50331648</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>always 33554928</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>always 16778244</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 1812037632</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>32784,32795,32780</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>always 2416820224</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>always 307307794</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>always 5</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u8</td>
+            <td>always 3</td>
+        </tr>
+        <tr class="u">
+            <td>49</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>50</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>51</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>53</td>
+            <td>u8</td>
+            <td>always 128</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>u8</td>
+            <td>amount <a href="#hwvx_model_8_8_12_modeldata">hwvx_model_8_8_12_modeldata</a></td>
+        </tr>
+        <tr class="u">
+            <td>55</td>
+            <td>u8</td>
+            <td>always 108</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">56 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+followed by <a href="#hwvx_model_8_8_12_modeldata">hwvx_model_8_8_12_modeldata</a>
+<hr>
+<h2 id="hwvx_model_8_8_12_modeldata">hwvx_model_8_8_12_modeldata</h2>
+<h3 id="hwvx_model_8_8_12_modeldata_sec1">hwvx_model_8_8_12_modeldata_sec1</h3>
+based on previous sections amount
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-1.889305591583252 - 0.5935239791870117</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-9.9150390625 - 4.993503570556641</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0,128,32,64,192</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0,165,166,179,51</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>255,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_model_8_8_12_modeldata_sec2">hwvx_model_8_8_12_modeldata_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>always 2</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>always 128</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>u8</td>
+            <td>amount</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>always 100</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_model_8_8_12_modeldata_sec3">hwvx_model_8_8_12_modeldata_sec3</h3>
+array of floats, <a href="#hwvx_model_8_8_12_modeldata_sec2">based on amount [2]</a>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0 - 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0 - 4</td>
+        </tr>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_model_8_8_12_modeldata_sec4">hwvx_model_8_8_12_modeldata_sec4</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>always 3</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>always 128</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>u8</td>
+            <td>amount</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>always 104</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_model_8_8_12_modeldata_sec5">hwvx_model_8_8_12_modeldata_sec5</h3>
+<a href="#hwvx_model_8_8_12_modeldata_sec4">based on amount [2]</a>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-0.5608059763908386 - 0.5608059763908386</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-0.8237742185592651 - 0.9473644495010376</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-0.9723348617553711 - 0.9723081588745117</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -8225,29 +10143,29 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 8,7,9</td>
+            <td>amount</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>u32</td>
             <td>56,49,63</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_anims_1_24">offset</a> sometimes 4 - 16 bytes?</td>
+            <td><a href="#hwvx_model_anims_1_24">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#hwvx_model_anims_1_28">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_model_anims_1_32">offset</a> 80,384,272,176,160,208,240,112 bytes seen</td>
+            <td><a href="#hwvx_model_anims_1_32">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
             <td><a href="#hwvx_model_anims_1_36">offset</a> based on amount [48]</td>
@@ -8265,7 +10183,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td>amount 4,0,2</td>
+            <td>amount 0 - 4</td>
         </tr>
         <tr class="u">
             <td>52</td>
@@ -8336,6 +10254,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
 </table>
 <hr/>
 <h2 id="hwvx_model_anims_1_24">hwvx_model_anims_1_24</h2>
+<p>4 - 24 bytes seen</p>
 <table class="h">
     <tbody>
         <tr>
@@ -8392,7 +10311,8 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
 </table>
 <hr/>
 <h2 id="hwvx_model_anims_1_28">hwvx_model_anims_1_28</h2>
-        <p>12,16,24 by</p>
+<p>12 - 32 bytes seen</p>
+<h3 id="hwvx_model_anims_1_28_sec1">hwvx_model_anims_1_28_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -8402,43 +10322,39 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         </tr>
         <tr class="u">
             <td>00</td>
-            <td>u32</td>
-            <td>always 8323199</td>
+            <td>u16</td>
+            <td>127</td>
+        </tr>
+     </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">??? bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<h3 id="hwvx_model_anims_1_28_sec2">hwvx_model_anims_1_28_sec2</h3>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
         </tr>
         <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 8323199</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>always 8323199</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 127</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>b9</td>
+            <td>00</td>
+            <td>string</td>
             <td>string sometimes | Rotation / Steering</td>
         </tr>
      </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">24 bytes</th>
+            <th colspan="3">??? bytes</th>
         </tr>
     </tfoot>
 </table>
 <hr/>
 <h2 id="hwvx_model_anims_1_32">hwvx_model_anims_1_32</h2>
+<p>16 - 496 bytes seen</p>
 <table class="h">
     <tbody>
         <tr>
@@ -8459,17 +10375,17 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0,-1.9866976737976074,-0.9968428611755371,8.96831017167883e-44,0.07607059925794601,1.9356577396392822,0.022253483533859253,-0.014021691866219044</td>
+            <td>?</td>
         </tr>
         <tr class="u">
-            <td>12</td>
+            <td>08</td>
             <td>float</td>
-            <td>1,1.2570736874679468e-36</td>
+            <td>?</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">16 bytes</th>
+            <th colspan="3">16+ bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -8485,27 +10401,27 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>-2.328306384496992e-12,-0.000023235619664774276,-0.000002962803364425781,2.328306384496992e-12,-0.000023234479158418253</td>
+            <td>?</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>-0.0013084333622828126,-5.966285191588705e-12,1.0368239470107121e-12,-0.0013083916855975986,-2.9103837937728694e-13</td>
+            <td>?</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>2.3283064365386963e-10,0.052323561161756516,0.026178184896707535,-2.3283064365386963e-10,0.052322689443826675</td>
+            <td>?</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>0.9968687295913696,-7.450580596923828e-9,1.862645149230957e-9,0.9968689680099487,-1.4901161193847656e-8</td>
+            <td>?</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">16 bytes</th>
+            <th colspan="3">16 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -8541,12 +10457,12 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr class="u">
             <td>16</td>
             <td>float</td>
-            <td>0,-0.0013084333622828126,8.96831017167883e-44,-2.328306384496992e-12,-4.336808689942018e-19,2.328306384496992e-12</td>
+            <td>-4.336808689942018e-19 - 8.96831017167883e-44</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0,2.3283064365386963e-10,1.0470761771444153e+34,3.918868709144226e-30,-0.0013084333622828126,-0.0013083916855975986</td>
+            <td>-0.0013084333622828126 - 3.918868709144226e-30</td>
         </tr>
     </tbody>
     <tfoot>
@@ -8578,7 +10494,7 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 8,7,9</td>
+            <td>amount 7 - 9</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -8854,8 +10770,28 @@ rest = <a href="#hwvx_datapack_68_4trest">offset</a><br>
 <p>sections here appear whenever they are linked and do not have a set order<br>
 <h2>sections seen</h2>
 <h4>multi linked</h4>
-might not actually be unordered !?!?
+<a href="#hwvx_world_36_48_8_36">hwvx_world_36_48_8_36</a><br>
+<a href="#hwvx_world_12_64">hwvx_world_12_64</a><br>
+<a href="#hwvx_world_12_64_48_0">hwvx_world_12_64_48_0</a><br>
+<a href="#hwvx_car_144">hwvx_car_144</a><br>
+<a href="#hwvx_car_228_8_24t2">hwvx_car_228_8_24t2</a><br>
+<a href="#hwvx_interface">hwvx_interface</a><br>
+<a href="#hwvx_text">hwvx_text</a><br>
+<a href="#hwvx_font">hwvx_font</a><br>
+<a href="#hwvx_interface_16_20t2_4_20">hwvx_interface_16_20t2_4_20</a><br>
+<a href="#hwvx_unknown">hwvx_unknown</a><br>
+<a href="#hwvx_unknown_4_4t1">hwvx_unknown_4_4t1</a><br>
+<a href="#hwvx_unknown_4_4t2">hwvx_unknown_4_4t2</a><br>
+<a href="#hwvx_unknown_4_4t5">hwvx_unknown_4_4t5</a><br>
+<a href="#hwvx_unknown_4_4t7">hwvx_unknown_4_4t7</a><br>
+<a href="#hwvx_unknown_4_4t29_12_32">hwvx_unknown_4_4t29_12_32</a><br>
+<a href="#hwvx_sound_controls">hwvx_sound_controls</a><br>
+<a href="#hwvx_sound_section">hwvx_sound_section</a><br>
+<h4>just linked</h4>
+<a href="#hwvx_car_160">hwvx_car_160</a><br>
+<a href="#hwvx_car_228_8">hwvx_car_228_8</a><br>
 </p>
+
 <hr>
 <h2 id="hwvx_world_12_64">hwvx_world_12_64</h2>
 <p>multi linked to by:<br>
@@ -8886,7 +10822,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>146.66659545898438,190.6665802001953,271.3332214355469,1466.666015625,0,197.99990844726562,168.66659545898438,205.33323669433594,183.333251953125</td>
+            <td>0 - 1466.666015625</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -8941,7 +10877,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td>amount 2,1</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>48</td>
@@ -8987,7 +10923,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount 0,11,1,2</td>
+            <td>amount 0 - 11</td>
         </tr>
         <tr>
             <td>08</td>
@@ -9127,7 +11063,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>88</td>
             <td>u32</td>
-            <td><a href="#hwvx_world_12_64_48_0_88">offset</a> 1676096,0,5549104</td>
+            <td><a href="#hwvx_world_12_64_48_0_88">offset</a></td>
         </tr>
         <tr class="u">
             <td>92</td>
@@ -9281,7 +11217,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 403 - 12180</td>
+            <td>amount</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -9317,7 +11253,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 1,2,3,4</td>
+            <td>amount 1 - 4</td>
         </tr>
         <tr>
             <td>04</td>
@@ -9490,7 +11426,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown">offset (hwvx_unknown)</a> 0,292464,2379840,2431136,2338544</td>
+            <td><a href="#hwvx_unknown">offset (hwvx_unknown)</a></td>
         </tr>
         <tr>
             <td>52</td>
@@ -9515,7 +11451,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>68</td>
             <td>u32</td>
-            <td>amount 3,1</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>72</td>
@@ -9525,7 +11461,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>76</td>
             <td>u32</td>
-            <td>amount 3,1</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>80</td>
@@ -9669,10 +11605,10 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>68</td>
             <td>u32</td>
-            <td>patch texture always 2</td>
+            <td>patch texture index always 2</td>
         </tr>
         <tr>
             <td>72</td>
@@ -9684,12 +11620,12 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td><a href="#hwvx_model_anims_2">offset (hwvx_model_anims_2)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>80</td>
             <td>u32</td>
-            <td>patch texture always 3</td>
+            <td>patch texture index always 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>84</td>
             <td>u32</td>
             <td>patch model </td>
@@ -10014,7 +11950,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>-0.15000000596046448,-0.10000000149011612,-0.05000000074505806,-0.20000000298023224</td>
+            <td>-0.20000000298023224 - -0.05000000074505806</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -10175,12 +12111,12 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_car_120_16_4">offset</a> 0,768304</td>
+            <td><a href="#hwvx_car_120_16_4">offset</a></td>
         </tr>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 7,5,6</td>
+            <td>amount 5 - 7</td>
         </tr>
         <tr>
             <td>12</td>
@@ -10245,7 +12181,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_car_120_16_48">offset</a> based on amount [44]</td>
+            <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> based on amount [44]</td>
         </tr>
         <tr>
             <td>52</td>
@@ -10278,10 +12214,10 @@ maybe same as hwvx_car_144?</p>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch model always 32</td>
+            <td>patch model offset always 32</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -10314,10 +12250,10 @@ maybe same as hwvx_car_144?</p>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch model 32 - 490416</td>
+            <td>patch model</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -10400,77 +12336,6 @@ maybe same as hwvx_car_144?</p>
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="hwvx_car_120_16_48">hwvx_car_120_16_48</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0,5,-5</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>1,3,6,2</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>0,4</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0,31,2</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#hwvx_car_120_16_48_24">offset</a> 0 - 5927216</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -10562,7 +12427,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 10,8,11,12,13,16</td>
+            <td>amount 8 - 16</td>
         </tr>
         <tr>
             <td>04</td>
@@ -10620,7 +12485,7 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>7,0,4,5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td>patch model </td>
@@ -10633,7 +12498,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#hwvx_car_120_16_56_4_16">offset</a> 0 - 1225840</td>
+            <td><a href="#hwvx_car_120_16_56_4_16">offset</a></td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -11089,17 +12954,17 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>36</td>
             <td>float</td>
-            <td>-6.300000190734863,-10.5,-16.399999618530273,0,2,-14,-11.600000381469727</td>
+            <td>-16.399999618530273 - 2</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>float</td>
-            <td>28,31.200000762939453,37.20000076293945,30.399999618530273,43.599998474121094,24.799999237060547,26,18.799999237060547,26.799999237060547,35.20000076293945</td>
+            <td>18.799999237060547 - 43.599998474121094</td>
         </tr>
         <tr class="u">
             <td>44</td>
             <td>float</td>
-            <td>3.799999952316284,3.9000000953674316,3.299999952316284,3.0999999046325684,4.900000095367432,2.700000047683716</td>
+            <td>2.700000047683716 - 4.900000095367432</td>
         </tr>
     </tbody>
     <tfoot>
@@ -11460,7 +13325,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0.5,0.699999988079071,1,0.800000011920929,0.30000001192092896</td>
+            <td>0.30000001192092896 - 1</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -11626,7 +13491,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>60</td>
             <td>u32</td>
-            <td>amount 6,5</td>
+            <td>amount 5 - 6</td>
         </tr>
         <tr>
             <td>64</td>
@@ -11837,7 +13702,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>48</td>
@@ -12096,6 +13961,11 @@ maybe same as hwvx_car_144?</p>
 </table>
 <hr/>
 <h2 id="hwvx_car_160">hwvx_car_160</h2>
+<p>linked to by:<br>
+    <a href="#hwvx_car">hwvx_car [160] </a><br>
+    <a href="#hwvx_unknown_4_4t7">hwvx_unknown_4_4t7 [16] </a><br>
+    <a href="#hwvx_world_36_48_8_36">hwvx_world_36_48_8_36 [16] </a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -12186,7 +14056,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>52</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>56</td>
@@ -12765,7 +14635,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>1,1.2000000476837158,1.100000023841858,1.2999999523162842,0.800000011920929</td>
+            <td>0.800000011920929 - 1.2999999523162842</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -12795,7 +14665,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>36</td>
             <td>float</td>
-            <td>0.6200000047683716,0,0.6800000071525574,0.6700000166893005,0.75,0.6499999761581421,0.699999988079071,0.8999999761581421</td>
+            <td>0 - 0.8999999761581421</td>
         </tr>
         <tr class="u">
             <td>40</td>
@@ -12896,7 +14766,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0,0.012000000104308128,0.017000000923871994,0.019999999552965164,0.027000000700354576</td>
+            <td>0 - 0.027000000700354576</td>
         </tr>
         <tr>
             <td>04</td>
@@ -12927,7 +14797,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount 0 - 18</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>08</td>
@@ -12943,7 +14813,13 @@ maybe same as hwvx_car_144?</p>
 </table>
 <hr/>
 <h2 id="hwvx_car_228_8">hwvx_car_228_8</h2>
-<p>hwvx_car_228_8 === hwvx_item_60 ?</p>
+<p>linked to by:<br>
+    <a href="#hwvx_car_228">hwvx_car_228 [8] </a><br>
+    <a href="#hwvx_car_120_16">hwvx_car_120_16 [48] </a><br>
+    <a href="#hwvx_item_48_0">hwvx_item_48_0 [48] </a><br>
+    <a href="#hwvx_item">hwvx_item [60] </a><br>
+    <a href="#hwvx_unknown_4_4t2">hwvx_unknown_4_4t2 [160] </a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -13067,7 +14943,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 1,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>28</td>
@@ -13077,7 +14953,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a> 0 - 1308960</td>
+            <td><a href="#hwvx_sound_controls">offset (hwvx_sound_controls)</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -13141,7 +15017,7 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td>patch model </td>
@@ -13159,7 +15035,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount 5,1,2,3</td>
+            <td>amount 1 - 5</td>
         </tr>
         <tr>
             <td>24</td>
@@ -13169,7 +15045,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td>amount 6,0,3,11,1</td>
+            <td>amount 0 - 11</td>
         </tr>
         <tr>
             <td>32</td>
@@ -13391,15 +15267,15 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>patch texture 20,24,25</td>
+            <td>patch texture</td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>16</td>
@@ -13409,7 +15285,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount 1,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>24</td>
@@ -13739,7 +15615,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>68</td>
             <td>u32</td>
-            <td>amount 3,2</td>
+            <td>amount 2 - 3</td>
         </tr>
         <tr>
             <td>72</td>
@@ -13864,10 +15740,10 @@ maybe same as hwvx_car_144?</p>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture always 3435921419</td>
+            <td>patch texture index always 11</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -13940,15 +15816,15 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>patch texture 1,10</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>patch texture 0,1,10</td>
+            <td>patch texture</td>
         </tr>
         <tr>
             <td>28</td>
@@ -14407,9 +16283,12 @@ maybe same as hwvx_car_144?</p>
     <a href="#basic_4">basic_4 [0] </a><br>
     <a href="#hwvx_interface_16_60">hwvx_interface_16_60 [0] </a><br>
     <a href="#hwvx_interface_16_68_20_8">hwvx_interface_16_68_20_8 [0] </a><br>
+    <a href="#hwvx_interface_24_8">hwvx_interface_24_8 [0]t1 </a><br>
     <a href="#hwvx_car_132">hwvx_car_132 [16][24][28] </a><br>
     <a href="#hwvx_world_156">hwvx_world_156 [204] </a><br>
     <a href="#hwvx_datapack_68_4t1">hwvx_datapack_68_4t1 [0] </a><br>
+    <a href="#hwvx_datapack_68_20_4t4">hwvx_datapack_68_20_4t4 [0] </a><br>
+    <a href="#hwvx_datapack_68_20_4t31">hwvx_datapack_68_20_4t31 [4] </a><br>
 </p>
 
 <table class="h">
@@ -14434,25 +16313,25 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0,3600</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>29,27,53,24,1,7</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16">offset</a> based on amount [12] 1921648,1904064,3609936,428272,1586832,96208,334272</td>
+            <td><a href="#hwvx_interface_16">offset</a> based on amount [12]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>2,1,5,0,3</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_24">offset</a> 1920864,1903440,3608960,0,1557856,96096</td>
+            <td><a href="#hwvx_interface_24">offset</a> based on amount [20]</td>
         </tr>
         <tr>
             <td>28</td>
@@ -14482,7 +16361,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_48">offset</a> 1921632,1904048,3609904,428256,1586816,96192,334256</td>
+            <td><a href="#hwvx_interface_48">offset</a></td>
         </tr>
         <tr class="u">
             <td>52</td>
@@ -14750,7 +16629,7 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>52</td>
             <td>float</td>
-            <td>-1,0,1,-0.019999999552965164,-0.15000000596046448,-1.2000000476837158,-1.4299999475479126</td>
+            <td>-1.4299999475479126 - 1</td>
         </tr>
         <tr class="u">
             <td>56</td>
@@ -14770,7 +16649,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>68</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_68">offset</a> 0,3643088,337296,338080,338752</td>
+            <td><a href="#hwvx_interface_16_68">offset</a></td>
         </tr>
         <tr>
             <td>72</td>
@@ -14807,12 +16686,12 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td><a href="#hwvx_interface_16_96">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>100</td>
             <td>u32</td>
-            <td>amount 3,2,1</td>
+            <td>amount 1 - 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>104</td>
             <td>u32</td>
             <td><a href="#hwvx_interface_16_104">offset</a> based on amount [100]</td>
@@ -14853,7 +16732,7 @@ maybe same as hwvx_car_144?</p>
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td>based on type [0]<br>
@@ -14871,10 +16750,11 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_20t0_16">offset</a> only when [0]0 = 3?  - 1617296</td>
+            <td>based on type [0]<br>
+                3 = <a href="#hwvx_interface_16_20t0_16">offset</a></td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -14946,7 +16826,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 3435921427 - 3435921462</td>
+            <td>patch texture</td>
         </tr>
     </tbody>
     <tfoot>
@@ -14967,7 +16847,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_text">offset (hwvx_text)</a> 0 - 3642960</td>
+            <td><a href="#hwvx_text">offset (hwvx_text)</a> sometimes</td>
         </tr>
         <tr>
             <td>04</td>
@@ -14977,7 +16857,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_20t1_8">offset</a> 0,336432</td>
+            <td><a href="#hwvx_interface_16_20t1_8">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -15021,6 +16901,7 @@ maybe same as hwvx_car_144?</p>
     <a href="#hwvx_item_48">hwvx_item_48 [16] </a><br>
     <a href="#hwvx_car_140_64">hwvx_car_140_64 [0] </a><br>
     <a href="#hwvx_world_92_4">hwvx_world_92_4 [20][24] </a><br>
+    <a href="#hwvx_datapack_68_20_4t20">hwvx_datapack_68_20_4t20 [8] </a><br>
 </p>
 <table class="h">
     <tbody>
@@ -15071,15 +16952,15 @@ maybe same as hwvx_car_144?</p>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 10,13,9,12,21,5,6,1,3,4</td>
+            <td>patch texture</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_sound_section">offset (hwvx_sound_section)</a> 0,440176</td>
+            <td><a href="#hwvx_sound_section">offset (hwvx_sound_section)</a> sometimes</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -15109,12 +16990,12 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#hwvx_font_28">offset</a> 0,1937712,1918960,3643056,439664,440256,97696,336768,337264,338720</td>
+            <td><a href="#hwvx_font_28">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td>amount 18,29,0</td>
+            <td>amount 0 - 29</td>
         </tr>
         <tr>
             <td>36</td>
@@ -15309,7 +17190,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 10,8</td>
+            <td>amount 8 - 10</td>
         </tr>
         <tr>
             <td>04</td>
@@ -15390,7 +17271,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 0,2,3,1,4</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>28</td>
@@ -15434,12 +17315,12 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_20t2_4_20_12">offset</a> 1939456,1939856,1940160,1940384,1941072,1920640,1921040,1921344,1921568,1922368</td>
+            <td><a href="#hwvx_interface_16_20t2_4_20_12">offset</a></td>
         </tr>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 4,3,1,7</td>
+            <td>amount 1 - 7</td>
         </tr>
         <tr>
             <td>20</td>
@@ -15449,7 +17330,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 7,1,3,4</td>
+            <td>amount 1 - 7</td>
         </tr>
         <tr>
             <td>28</td>
@@ -15474,7 +17355,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td>amount 5,2,1</td>
+            <td>amount 1 - 5</td>
         </tr>
         <tr>
             <td>48</td>
@@ -15566,7 +17447,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 1,3,6,2</td>
+            <td>amount 1 - 6</td>
         </tr>
         <tr>
             <td>04</td>
@@ -15736,7 +17617,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 2,3</td>
+            <td>amount 2 - 3</td>
         </tr>
         <tr>
             <td>04</td>
@@ -15941,12 +17822,12 @@ maybe same as hwvx_car_144?</p>
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>always 50</td>
+            <td>0,50</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -16058,7 +17939,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 0,16</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>12</td>
@@ -16068,7 +17949,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 2,1,0</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>20</td>
@@ -16170,7 +18051,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_68_20_8">offset</a> 3643152,4383200,1627856,1628768,1629648,337360,337424,338800</td>
+            <td><a href="#hwvx_interface_16_68_20_8">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -16219,7 +18100,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_68_20_8_8">offset</a> 0 - 4196752</td>
+            <td><a href="#hwvx_interface_16_68_20_8_8">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -16249,7 +18130,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_68_20_8_32">offset</a> 0,4301216,4301456,4359168,4359408</td>
+            <td><a href="#hwvx_interface_16_68_20_8_32">offset</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -16519,7 +18400,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount 0,1,2</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>08</td>
@@ -16586,7 +18467,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_72_8_8_4">offset</a> 0 - 4348208</td>
+            <td><a href="#hwvx_interface_16_72_8_8_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -16653,7 +18534,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 1,3,4,2</td>
+            <td>amount 1 - 4</td>
         </tr>
         <tr>
             <td>04</td>
@@ -16663,7 +18544,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>12</td>
@@ -16673,7 +18554,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 1,2,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>20</td>
@@ -16683,7 +18564,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 1,2,3,4</td>
+            <td>amount 1 - 4</td>
         </tr>
         <tr>
             <td>28</td>
@@ -16693,7 +18574,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td>amount 1,4,2</td>
+            <td>amount 1 - 4</td>
         </tr>
         <tr>
             <td>36</td>
@@ -16904,7 +18785,7 @@ maybe same as hwvx_car_144?</p>
             <td>u32</td>
             <td>0,1000</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td><a href="#hwvx_interface_16_104_8">offset</a> </td>
@@ -16928,7 +18809,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 1,3,2,0</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>04</td>
@@ -16938,7 +18819,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 0,2</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>12</td>
@@ -16948,42 +18829,42 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>amount 0,2,1,3,4,5</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
             <td><a href="#hwvx_interface_16_104_8_20">offset</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>0,2,1</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_104_8_28">offset</a> 0 - 4382112</td>
+            <td><a href="#hwvx_interface_16_104_8_28">offset</a> based on amount [24]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td>0,2,1</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_104_8_36">offset</a> 0 - 4382144</td>
+            <td><a href="#hwvx_interface_16_104_8_36">offset</a> based on amount [32]</td>
         </tr>
-        <tr class="u">
+        <tr">
             <td>40</td>
             <td>u32</td>
-            <td>0,2</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_104_8_44">offset</a> 0,3619264,3620048</td>
+            <td><a href="#hwvx_interface_16_104_8_44">offset</a> based on amount [40]</td>
         </tr>
         <tr class="u">
             <td>48</td>
@@ -17330,7 +19211,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_104_8_56_4">offset</a> 3813168,1628272</td>
+            <td><a href="#hwvx_interface_16_104_8_56_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -17485,7 +19366,7 @@ maybe same as hwvx_car_144?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_16_68_20_8_0t11_4_4_0_4">offset</a> 0 - 4359552</td>
+            <td><a href="#hwvx_interface_16_68_20_8_0t11_4_4_0_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -17560,7 +19441,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>0,600,90000,6000</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td><a href="#hwvx_interface_24_8">offset</a> </td>
@@ -17581,11 +19462,13 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>based on type [5]<br>
-                1 = interface<a href="#hwvx_interface_24_8_0">offset</a> 0 - 4320640</td>
+                1 = <a href="#hwvx_interface">offset (hwvx_interface)</a><br>
+                11 = <a href="#hwvx_interface_24_8_0t11">offset</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -17595,7 +19478,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr class="u">
             <td>05</td>
             <td>u8</td>
-            <td>3,2,17,1,11,15,20,24</td>
+            <td>type? 3,2,17,1,11,15,20,24</td>
         </tr>
         <tr class="u">
             <td>06</td>
@@ -17607,10 +19490,13 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_8">offset</a> 0,3772144,3772288,3980832,3980944,1587248,1587392</td>
+            <td>based on type [5]<br>
+                15 = <a href="#hwvx_interface_24_8_8t15">offset</a><br>
+                17 = <a href="#hwvx_interface_24_8_8t17">offset</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -17693,15 +19579,15 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>6,3,2,4</td>
+            <td>amount 2 - 6</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_0t11_4">offset</a> 3933344,3933920,4072800,4106912,4161280,4161856,4285904,4286192,4320224,4320656</td>
+            <td><a href="#hwvx_interface_24_8_0t11_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -17729,15 +19615,15 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>always 2</td>
+            <td>amount always 2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_0t11_4_4">offset</a> </td>
+            <td><a href="#hwvx_interface_24_8_0t11_4_4">offset</a> based on amount [0]</td>
         </tr>
     </tbody>
     <tfoot>
@@ -17755,7 +19641,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td><a href="#hwvx_interface_24_8_0t11_4_4_0">offset</a> </td>
@@ -17781,10 +19667,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>1 - 262145</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_0t11_4_4_0_4">offset</a> 0 - 4320848</td>
+            <td><a href="#hwvx_interface_24_8_0t11_4_4_0_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -17821,6 +19707,42 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>04</td>
             <td>u32</td>
             <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="hwvx_interface_24_8_8t15">hwvx_interface_24_8_8t15</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_interface_24_8_8t15_0">offset</a></td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_interface_24_8_8t15_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -17927,42 +19849,6 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_interface_24_8_8t15">hwvx_interface_24_8_8t15</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_8t15_0">offset</a> 3980848,3980960</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_interface_24_8_8t15_4">offset</a> 3980864,3980976</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
 <h2 id="hwvx_interface_24_8_8t17">hwvx_interface_24_8_8t17</h2>
 <table class="h">
     <tbody>
@@ -18025,7 +19911,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 9,6,1,2,0,17,3,5,4,7</td>
+            <td>amount 0 - 17</td>
         </tr>
         <tr>
             <td>04</td>
@@ -18091,7 +19977,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#hwvx_interface_28_4_16">offset</a> 0 - 4321424</td>
+            <td><a href="#hwvx_interface_28_4_16">offset</a></td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -18285,7 +20171,6 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
     <a href="#hwvx_world_156_244">hwvx_world_156_244 [0] </a><br>
     <a href="#hwvx_collision_92_0">hwvx_collision_92_0 [48][60][64]  </a><br>
     <a href="#hwvx_collision_92_0_72">hwvx_collision_92_0_72 [0]  </a><br>
-    <a href="#hwvx_world_36_48_8_36_16_64">hwvx_world_36_48_8_36_16_64 [0]  </a><br>
     <a href="#hwvx_unknown_4_4t4_28">hwvx_unknown_4_4t4_28 [0]  </a><br>
     <a href="#hwvx_unknown_4_4t29_12_32_28">hwvx_unknown_4_4t29_12_32_28 [0]  </a><br>
 </p>
@@ -18299,7 +20184,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 4,5,8</td>
+            <td>amount 4 - 8</td>
         </tr>
         <tr>
             <td>04</td>
@@ -18335,9 +20220,9 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>1, 2, 3, 4, 5, 7, 10, 11, 12, 15, 26, 29</td>
+            <td>type 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 15, 26, 29,30</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td>based on type [0]<br>
@@ -18346,6 +20231,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
                 3 = <a href="#hwvx_unknown">offset (hwvx_unknown)</a><br>
                 4 = <a href="#hwvx_unknown_4_4t4">offset</a><br>
                 5 = <a href="#hwvx_unknown_4_4t5">offset (hwvx_unknown_4_4t5)</a><br>
+                6 = <a href="#hwvx_world_36_48_8_36">offset (hwvx_world_36_48_8_36)</a><br>
                 7 = <a href="#hwvx_unknown_4_4t7">offset (hwvx_unknown_4_4t7)</a><br>
                 8 = <a href="#hwvx_unknown_4_4t8">offset </a><br>
                 10 = <a href="#hwvx_sound_section">offset (hwvx_sound_section)</a><br>
@@ -18361,7 +20247,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>based on type [0]<br>
                 1,2,3,4,7,10,29 = <a href="#hwvx_unknown_4_8t1">offset</a><br>
-                5,8,26 = <a href="#hwvx_unknown_4_8t5">offset</a><br>
+                5,6,8,26 = <a href="#hwvx_unknown_4_8t5">offset</a><br>
             </td>
         </tr>
     </tbody>
@@ -18456,7 +20342,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_8t1_44">offset</a> 0,138272</td>
+            <td><a href="#hwvx_unknown_4_8t1_44">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -18828,7 +20714,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_8t5_28">offset</a> 0 - 1312752</td>
+            <td><a href="#hwvx_unknown_4_8t5_28">offset</a></td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -19039,7 +20925,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_sound_controls">offset(hwvx_sound_controls)</a> 0 - 5837216</td>
+            <td><a href="#hwvx_sound_controls">offset(hwvx_sound_controls)</a></td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -19049,7 +20935,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td>amount 2,1</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>36</td>
@@ -19059,7 +20945,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td>amount 1-3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>44</td>
@@ -19102,7 +20988,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>patch model </td>
@@ -19222,7 +21108,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td>amount 1,6,2</td>
+            <td>amount 1 - 6</td>
         </tr>
         <tr>
             <td>36</td>
@@ -19232,7 +21118,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td>amount 3,2,1</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>44</td>
@@ -19258,7 +21144,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 0 - 66</td>
+            <td>patch texture</td>
         </tr>
     </tbody>
     <tfoot>
@@ -19325,7 +21211,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>16</td>
@@ -19335,7 +21221,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount 1,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>24</td>
@@ -19580,10 +21466,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
                 2 = <a href="#hwvx_unknown_4_4t2_12t2">offset</a><br>
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>patch model 62448,25456,45760,26880,30384,51184,24384,32</td>
+            <td>patch model</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -19690,7 +21576,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>92</td>
             <td>u32</td>
             <td>patch texture</td>
@@ -19753,7 +21639,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>140</td>
             <td>u32</td>
-            <td>amount 2,0,3</td>
+            <td>amount 0 - 3</td>
         </tr>
         <tr>
             <td>144</td>
@@ -19763,37 +21649,37 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>148</td>
             <td>u32</td>
-            <td>amount 1,0,2</td>
+            <td>amount 0 - 2</td>
         </tr>
         <tr>
             <td>152</td>
             <td>u32</td>
             <td><a href="#hwvx_unknown_4_4t2_152">offset</a> based on amount [148]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>156</td>
             <td>u32</td>
-            <td>1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>160</td>
             <td>u32</td>
-            <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> 139472,90496,82880,133024,140784,130880,99840,25776</td>
+            <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> based on amount [156]</td>
         </tr>
         <tr>
             <td>164</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t2_164">offset</a> 0,140432,25712</td>
+            <td><a href="#hwvx_unknown_4_4t2_164">offset</a></td>
         </tr>
         <tr>
             <td>168</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t2_168">offset</a> 139424,90448,82832,0</td>
+            <td><a href="#hwvx_unknown_4_4t2_168">offset</a></td>
         </tr>
         <tr>
             <td>172</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t2_172">offset</a> 139408,90432,82816,133008,140768,130864,99824,25760</td>
+            <td><a href="#hwvx_unknown_4_4t2_172">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -20347,17 +22233,17 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t5_32">offset</a> 0 - 1311840</td>
+            <td><a href="#hwvx_unknown_4_4t5_32">offset</a></td>
         </tr>
         <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t5_36">offset</a> 0,120304</td>
+            <td><a href="#hwvx_unknown_4_4t5_36">offset</a></td>
         </tr>
         <tr>
             <td>40</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t5_40">offset</a> 0,120352</td>
+            <td><a href="#hwvx_unknown_4_4t5_40">offset</a></td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -20468,7 +22354,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown">offset (hwvx_unknown)</a> 0 - 1310336</td>
+            <td><a href="#hwvx_unknown">offset (hwvx_unknown)</a></td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -20539,7 +22425,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount 3,4</td>
+            <td>amount 3 - 4</td>
         </tr>
         <tr>
             <td>08</td>
@@ -20823,7 +22709,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>patch model </td>
@@ -20843,7 +22729,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
             <td><a href="#hwvx_car_160">offset (hwvx_car_160)</a> </td>
@@ -20858,7 +22744,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> </td>
@@ -20912,7 +22798,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>amount 2,1</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>16</td>
@@ -20922,7 +22808,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount 4,5</td>
+            <td>amount 4 - 5</td>
         </tr>
         <tr>
             <td>24</td>
@@ -21040,7 +22926,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 7,9,5,11,12,38,8,3,20,2,6,10,22,24,14,25</td>
+            <td>amount 2 - 38</td>
         </tr>
         <tr>
             <td>12</td>
@@ -21098,7 +22984,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>float</td>
             <td>0 - 600</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td>patch model </td>
@@ -21106,7 +22992,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown_4_4t29_12_32">offset</a> 0 - 5904800</td>
+            <td><a href="#hwvx_unknown_4_4t29_12_32">offset</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -21175,7 +23061,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td>amount 1,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>28</td>
@@ -21317,7 +23203,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#hwvx_unknown">offset</a> 0 - 142256</td>
+            <td><a href="#hwvx_unknown">offset</a></td>
         </tr>
         <tr class="u">
             <td>40</td>
@@ -21329,10 +23215,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td><a href="#hwvx_unknown">offset (hwvx_unknown)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_item_48">offset</a> 0 - 138416</td>
+            <td><a href="#hwvx_item_48">offset</a></td>
         </tr>
         <tr>
             <td>52</td>
@@ -21344,10 +23230,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>3,4,5,1,7,0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>60</td>
             <td>u32</td>
-            <td><a href="#hwvx_item_60">offset</a> 0 - 143664</td>
+            <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> based on amount [56]</td>
         </tr>
     </tbody>
     <tfoot>
@@ -21365,10 +23251,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_item_48_0">offset</a> 0 - 138512</td>
+            <td><a href="#hwvx_item_48_0">offset</a></td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -21395,10 +23281,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u8</td>
-            <td>patch texture 0</td>
+            <td>patch texture index always 0</td>
         </tr>
         <tr class="u">
             <td>25</td>
@@ -21529,7 +23415,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 3,2,5,7,6,1,0</td>
+            <td>amount 0 - 7</td>
         </tr>
         <tr>
             <td>12</td>
@@ -21571,15 +23457,15 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td><a href="#hwvx_item_48_0_40">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
-            <td>22,7,17,4,6,5,19,2,9,1</td>
+            <td>amount</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#hwvx_item_48_0_48">offset</a> </td>
+            <td><a href="#hwvx_car_228_8">offset (hwvx_car_228_8)</a> based on amount [44] </td>
         </tr>
         <tr>
             <td>52</td>
@@ -21612,10 +23498,10 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch model 32 - 65072</td>
+            <td>patch model</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -21794,7 +23680,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td><a href="#hwvx_item_48_0_48_24">offset</a> 0 - 141936</td>
+            <td><a href="#hwvx_item_48_0_48_24">offset</a></td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -21885,470 +23771,6 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
     </tfoot>
 </table>
 <hr/>
-
-
-
-<h2 id="hwvx_item_60">hwvx_item_60</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0,-1.5,1.5</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0,3.5,2.5,2.75,-2,5,1,1.4320000410079956,1.5,6</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0,-0.8999999761581421,0.42500001192092896,-0.4449999928474426</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>6,9,5,2,1</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0,1,-1</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24">offset</a> 0 - 144080</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-
-
-<h2 id="hwvx_item_60_24t2">hwvx_item_60_24t2</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 256</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>500,100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>1500,0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0.10000000149011612,0.029999999329447746</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t2_28">offset</a> 27088,108384</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-
-<h2 id="hwvx_item_60_24t5">hwvx_item_60_24t5</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>patch model 32,17504,26336,43168,30160</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t5_24">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t5_32">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t5_44">offset</a> </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-
-<h2 id="hwvx_item_60_24t6">hwvx_item_60_24t6</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>5,2</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>patch texture 0,1,24,22</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>1,2</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t6_16">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>1,3</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t6_24">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>1,3,5</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t6_32">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="hwvx_item_60_24t9">hwvx_item_60_24t9</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>514,16777730</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>32,16</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>5,10</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>patch texture always 1</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u8</td>
-            <td>patch texture 0,1</td>
-        </tr>
-        <tr class="u">
-            <td>25</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>26</td>
-            <td>u8</td>
-            <td>0,204</td>
-        </tr>
-        <tr class="u">
-            <td>27</td>
-            <td>u8</td>
-            <td>0,204</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t9_28">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#hwvx_item_60_24t9_32">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u8</td>
-            <td>1,0,10,11</td>
-        </tr>
-        <tr class="u">
-            <td>37</td>
-            <td>u8</td>
-            <td>1,2,12</td>
-        </tr>
-        <tr class="u">
-            <td>38</td>
-            <td>u8</td>
-            <td>1,12,0</td>
-        </tr>
-        <tr class="u">
-            <td>39</td>
-            <td>u8</td>
-            <td>1,15</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>33,150,100</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>33,100</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-
-
 <h2 id="hwvx_link">hwvx_link</h2>
 <table class="h">
     <tbody>
@@ -22377,15 +23799,15 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
             <td>u32</td>
             <td>offset string HW_Items</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>patch texture always 0</td>
+            <td>patch texture index always 0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>patch texture always 1</td>
+            <td>patch texture index always 1</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -22546,7 +23968,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 14,17,5,6,0,8</td>
+            <td>amount 0 - 17</td>
         </tr>
         <tr>
             <td>04</td>
@@ -22582,7 +24004,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 3,2,1,0</td>
+            <td>amount 0 - 3</td>
         </tr>
         <tr>
             <td>04</td>
@@ -23182,7 +24604,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 1,3</td>
+            <td>amount 1 - 3</td>
         </tr>
         <tr>
             <td>12</td>
@@ -23218,7 +24640,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount 3,8,2,6,1</td>
+            <td>amount 1 - 8</td>
         </tr>
         <tr>
             <td>12</td>
@@ -23432,7 +24854,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>amount 0,3,1</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>08</td>
@@ -23442,7 +24864,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>amount 2,1,6,7,11</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>16</td>
@@ -23483,7 +24905,7 @@ hwvx_interface_24 = hwvx_interface_16_68_20 ?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount 1,2</td>
+            <td>amount 1 - 2</td>
         </tr>
         <tr>
             <td>04</td>
