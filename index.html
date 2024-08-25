@@ -27,11 +27,11 @@
                     The <b>x*</b>
                     file archive is seen in 6 games:<br/>
                     <a href="mmvcl.html">Motor Mayhem: Vehicular Combat League</a><br>
-                    <a href="hwvx.html">Hot Wheels Velocity X</a>(proto) <br/>
+                    Hot Wheels Velocity X <a href="hwvx.html">(Release)</a> / <a href="hwvx_proto.html"> (proto)</a><br/>
                     Snoopy vs. the Red Baron <br/>
-                    Pac Man World Rally <br/>
+                    Pac Man World Rally <a href="pmwr_xdx.html">(XDX)</a><br/>
                     Bee Movie Game (Wii Version) <br/>
-                    Bigfoot: Collision Course <br/>
+                    <a href="bcc.html">Bigfoot: Collision Course</a><br/>
                 </p>
                 <h2>Extensions</h2>
                 <p>
@@ -518,7 +518,6 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
 <p>linked to by the <a href="#data_pack">datapack</a><br>
     patches the texture/texture animation/sound indexes into the file.<br>
     the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
-    The Hot Wheels Velocity X Proto combines this with the <a href='#offset_patch_list'> Offset Patch List</a>
 </p>
 <p>depending on the verion <a href="padding.html">padding</a> may be seen</p>
 <h2>1</h2>
@@ -7338,58 +7337,6 @@ ps2: 72 / 160 / 200
             <td>
                 string offset <br/>end is relative on next offset / start of unordered?
             </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<p>Hot Wheels Velocity X</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u16</td>
-            <td>
-                texture type<br/>
-                * 0 = RGB <br/>
-                * 1 = RGBA uncompressed <br/>
-                * 2 = 8-bit Indexed <br/>
-                * 4 = dxt1 <br/>
-                * 5 = dxt5 <br/>
-            </td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>u16</td>
-            <td>x</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u16</td>
-            <td>y</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>u16</td>
-            <td>mip maps</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td>offset texture</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td>CLUT index</td>
         </tr>
     </tbody>
     <tfoot>
