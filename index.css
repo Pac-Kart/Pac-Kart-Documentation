@@ -25,6 +25,12 @@ th {
     color: #000000;
     background-color: #d0d0d0
 }
+.c {
+    border-radius:15px;
+    padding-bottom:12px;
+}
+
+
 
 .main_page {
     margin: 10%;

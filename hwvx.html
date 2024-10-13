@@ -21,7 +21,7 @@
                 </p>
                 <div class="visual_structure">
                     <div style="background:#09518b;border-top: none;border-bottom: 25px solid #4664cd;border-left: 50px solid transparent;border-right: 25px solid transparent;">
-                        <a style="color:white;">.XPS</a>
+                        <a style="color:white;">.X*</a>
                     </div>
                     <div style="color: white;background: #4664cd;text-align: center;">
                         <div class="box box1">
@@ -61,6 +61,7 @@
                                 </div>
                                 <div class="box box3"><a class="link" href="#hwvx_texture_anims_0">Texture Animation Part 2</a></div>
                             </div>
+                            <div class="box box2"><a class="link" href="#offset_patch_list">Offset Patch List</a></div>
                         </div>
                     </div>
                     <div style="background:#09518b;border-top: 25px solid #4664cd;border-left: 50px solid transparent;border-right: 25px solid transparent;">
@@ -102,6 +103,16 @@
         </tr>
     </tfoot>
 </table>
+<h3 id="file_header_x_pseudocode">pseudocode</h3>
+<p>example of how to get to each directory entry</p>
+<pre class='h' style="border-radius:15px;padding-bottom:12px;"><code>
+  header_length = 16;
+  after_directory = header_length + ( u32(12) * 24 );
+
+  for (i = 0; i < u32(12); i++) {
+        get_hwvx_directory_entry(header_length + (i * 24), after_directory);
+    }
+</code></pre>
 <hr/>
 <h2 id="hwvx_directory">hwvx_directory</h2>
 <table class="h">
@@ -153,9 +164,6 @@
             <td>based on type [4]<br>
                 1,2,3,4,5,6,8,9,10 = <a href="#hwvx_datapack">offset (hwvx_datapack)</a><br>
                 7 = <a href="#hwvx_geo_datapack">offset (hwvx_geo_datapack)</a><br>
-                <br>to get to the datapack:<br>
-                datapack = 16 + (directory_entry * 24) + 24<br>
-                datapack+= u32(20)<br>
             </td>
     </tbody>
     <tfoot>
@@ -164,8 +172,21 @@
         </tr>
     </tfoot>
 </table>
-<h2 id="datapack">datapack</h2>
-<p>2 datapack versions are seen, <a href="#hwvx_geo_datapack">geometry</a> & <a href="#hwvx_datapack">everything</a> else<p>
+<h3 id="hwvx_directory_pseudocode">pseudocode</h3>
+<p>example handaling a hwvx_directory entry (continuing from <a href="#file_header_x_pseudocode">file_header_x</a>)</p>
+<pre class='h c'><code>
+function get_hwvx_directory_entry( dir_entry_offset, after_directory ) {
+
+    offset_datapack = after_directory + u32(dir_entry_offset + 20);
+
+    if( u32(dir_entry_offset + 4) == 7 ) {
+        get_hwvx_geo_datapack( offset_datapack );
+    } else {
+        get_hwvx_datapack( offset_datapack );
+    }
+
+}
+</code></pre>
 <hr>
 <h2 id="hwvx_datapack">hwvx_datapack</h2>
 <table class="h">
@@ -530,15 +551,14 @@ Magic: IMPM</p>
 <h2 id="hwvx_patch_list">hwvx_patch_list</h2>
 <p> patches the textures indexs/texture anims indexs/sound indexes/model indexs/general offsets into the file.<br>
     the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
+    bytes 4 & 6 are reversed for gamecube<br>
     To get each section you would do:<br>
     patch_list = hwvx_datapack + 120 //after datapack<br>
     patch_list += (u32(8) * 4) // after audio section<br>
     patch_list += (u32(4)) //start of Texture Indexes<br>
     patch_list+= (u32(16) * 8) //start of Texture Animation Indexes<br>
     patch_list+= (u32(52) * 8) //start of Sounds<br>
-    patch_list+= (u32(28) * 8) //start of Model Offsets<br>
-    patch_list+= (u32(56) * 8) //start of General Offsets<br>
-    patch_list+= (u32(12) *4) //start of Ordered List<br>
+    patch_list+= (u32(28) * 8) //start of Ordered List<br>
 </p>
 <h2>Texture Indexes (1)</h2>
 <table class="h">
@@ -555,8 +575,17 @@ Magic: IMPM</p>
         </tr>
         <tr>
             <td>4</td>
-            <td>u32</td>
-            <td>Texture Index</td>
+            <td>u16</td>
+            <td>texture index</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>u16</td>
+            <td>
+                linked file<br>
+                0 = same file<br>
+                DataPack [92] = shared file 1<br>DataPack [112] = shared file 2
+            </td>
         </tr>
     </tbody>
     <tfoot>
@@ -580,8 +609,17 @@ Magic: IMPM</p>
         </tr>
         <tr>
             <td>4</td>
-            <td>u32</td>
-            <td>Texture Anims Index</td>
+            <td>u16</td>
+            <td>Texture Anim index</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>u16</td>
+            <td>
+                linked file<br>
+                0 = same file<br>
+                DataPack [92] = shared file 1<br>DataPack [112] = shared file 2
+            </td>
         </tr>
     </tbody>
     <tfoot>
@@ -605,58 +643,22 @@ Magic: IMPM</p>
         </tr>
         <tr>
             <td>4</td>
-            <td>u32</td>
-            <td>Models Indexes</td>
+            <td>u16</td>
+            <td>Sound index</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>u16</td>
+            <td>
+                linked file<br>
+                0 = same file<br>
+                DataPack [92] = shared file 1<br>DataPack [112] = shared file 2
+            </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
             <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<h2>Models (4)</h2>
-<table class="h">
-        <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>u32</td>
-            <td>Offset</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>u32</td>
-            <td>Models Indexes</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<h2>General Offsets (5)</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>u32</td>
-            <td>offset</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -24072,7 +24074,7 @@ pc/ps2 is 16 bytes per entry<br>gamecube version is 32 bytes per entry</p>
             <td>u32</td>
             <td><a href="#hwvx_texture_anims_0_16">offset</a> based on amount [12]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
             <td><a href="#hwvx_texture_anims_0_20">offset</a> </td>
@@ -24264,4 +24266,63 @@ pc/ps2 is 16 bytes per entry<br>gamecube version is 32 bytes per entry</p>
     </tfoot>
 </table>
 <hr/>
+<h2 id="offset_patch_list">Offset Patch List</h2>
+<p>
+    linked to by the <a href="#data_pack">datapack</a><br>
+    Patches offsets into the file, bytes 4 & 6 are reversed for gamecube<br>
+</p>
+<h2>Models (1)</h2>
+<table class="h">
+        <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>Offset</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>u16</td>
+            <td>Model index</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>u16</td>
+            <td>
+                linked file<br>
+                0 = same file<br>
+                DataPack [92] = shared file 1<br>DataPack [112] = shared file 2
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<h2>General Offsets (2)</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>u32</td>
+            <td>offset</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
 </section></div></body></html>
