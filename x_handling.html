@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Pac Kart documentation</title>
+        <link href="index.css" rel="stylesheet"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <div class="main_page" id="main_page">
+            <section id="main">
+                <h1>X Handling</h1>
+                <p>Here are examples on how to handle the .x* files:</p>
+
+<h3 id="endian_check">endian check</h3>
+<p>the first u32 of the file is always 33620128, this can be used to check the endianness of the file</p>
+<pre class='h' style="border-radius:15px;padding-bottom:12px;"><code>
+    is_little_endian;
+
+    switch ( u32(0) ) {
+        case 33620128:
+            is_little_endian = true;
+            break;
+        case 2684354818:
+            is_little_endian = false;
+            break;
+    }
+</code></pre>
+<hr/>
+<h3 id="version_check">console/game check</h3>
+<p>the u32 at position 8 in the file header is the version identifier.<br><br>version 274 is shared by both Pac Man World Rally (PSP / PS2) & Snoopy Vs The Red Baron (PC)<br>The file extension is needed to check which game it is.</p>
+<pre class='h' style="border-radius:15px;padding-bottom:12px;"><code>
+        file_extension_str; //assuming this has already been obtained
+        console;
+        game;
+
+        switch ( file_extension_str ) {
+        case "xpc":
+        case "xdx9":
+            console = "pc";
+            break
+        case "xgc":
+            console = "gamecube";
+            break
+        case "XPS":
+            console = "ps2";
+            break
+        case "xpp":
+            console = "psp";
+            break
+        case "xdx":
+            console = "xbox";
+            break
+        case "xwi":
+            console = "wii";
+            break
+        }
+
+        switch ( u32(8) ) {
+        case 4:
+        case 100:
+            game = "motor_mayhem";
+            break
+        case 177:
+        case 179:
+            game = "hot_wheels_velocity_x_ps2_proto";
+            break
+        case 183:
+            game = "hot_wheels_velocity_x";
+            break
+        case 243:
+            game = "pac_man_world_rally_xbox_proto";
+            break
+        case 249:
+            game = "pac_man_world_rally_ps2_demo";
+            break
+        case 267:
+            game = "pac_man_world_rally";
+            break
+        case 273:
+            game = "snoopy_vs_the_red_baron";
+            break
+        case 274:
+            if ( console ) == "pc" {
+                game = "snoopy_vs_the_red_baron";
+            } else {
+                game = "pac_man_world_rally";
+            }
+            break
+        case 312:
+            game = "bee_movie_game";
+            break
+        case 315:
+            game = "bigfoot_collision_course";
+            break
+        }
+</code></pre>
+<hr/>
+            </section>
+        </div>
+    </body>
+</html>

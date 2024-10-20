@@ -28,6 +28,9 @@
                             <a class="link" href="#file_header_x">File Header</a>
                         </div>
                         <div class="box box1">
+                            <a class="link" href="#datapack_mmvcl">datapack_mmvcl</a>
+                        </div>
+                        <div class="box box1">
                                 <a class="link" href="#index_patch_list">Patch List</a>
                         </div>
                         <div style="padding-bottom:2%;" class="box box1">
@@ -87,80 +90,96 @@
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>type of file?<br>67174573 = world files<br>
+            <td>Magic 2?<br>67174573 = world files<br>
                 134348960 = [BOOTUP,LOADING,ENDGAME,MAINMENU,VEHICLES]
             </td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>type of file?<br>4 = [BOOTUP,LOADING,ENDGAME,MAINMENU,VEHICLES]<br>
+            <td>File Version?<br>4 = [BOOTUP,LOADING,ENDGAME,MAINMENU,VEHICLES]<br>
 100 = world files</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td>ordered list length</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>amount general offsets patch list</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>amount texture patch list</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td>amount textures [28]</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td>offset <a href="#Texture"> Texture List</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td>amount sound patch list</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td>Amount Sound [40]</td>
-        </tr>
-        <tr>
-            <td>40</td>
-            <td>u32</td>
-            <td>offset <a href="#sound_list">Sound List</a></td>
-        </tr>
-        <tr>
-            <td>44</td>
-            <td>u32</td>
-            <td>amount color tables</td>
-        </tr>
-        <tr>
-            <td>48</td>
-            <td>u32</td>
-            <td>offset <a href="#color_table">color table</a> based on amount [44]</td>
-        </tr>
-        <tr>
-            <td>52</td>
-            <td>u32</td>
-            <td>amount [56]</td>
-        </tr>
-        <tr>
-            <td>56</td>
-            <td>u32</td>
-            <td><a href="#mm_model_texture_anims_list">offset mm_model_texture_anims_list?</a> based on amount [52]</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">60 bytes</th>
+            <th colspan="3">12 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="datapack_mmvcl">datapack_mmvcl</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>ordered list length</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount general offsets patch list</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>amount texture patch list</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td>amount textures [16]</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>offset <a href="#Texture"> Texture List</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>amount sound patch list</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td>Amount Sound [28]</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>offset <a href="#sound_list">Sound List</a></td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td>amount color tables</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td>offset <a href="#color_table">color table</a> based on amount [32]</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td>amount [44]</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>u32</td>
+            <td><a href="#mm_model_texture_anims_list">offset mm_model_texture_anims_list?</a> based on amount [40]</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
         </tr>
     </tfoot>
 </table>
