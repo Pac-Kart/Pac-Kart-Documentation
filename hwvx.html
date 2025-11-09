@@ -286,7 +286,7 @@ function get_hwvx_directory_entry( dir_entry_offset, after_directory ) {
         <tr>
             <td>68</td>
             <td>u32</td>
-            <td><a href="#hwvx_trigger">offset </a> (from ordered), based on amount [64]</td>
+            <td><a href="#hwvx_triggers_and_actions">offset </a> (from ordered), based on amount [64]</td>
         </tr>
         <tr>
             <td>72</td>
@@ -437,9 +437,9 @@ function get_hwvx_datapack( offset_datapack ) {
         break
     }
 
-    offset_hwvx_trigger = offset_ordered_list + u32(offset_datapack + 68);
+    offset_hwvx_triggers_and_actions = offset_ordered_list + u32(offset_datapack + 68);
     for (let i = 0; i < u32(offset_datapack + 64); i++) {
-        get_hwvx_trigger( offset_hwvx_trigger + (i * 44) );
+        get_hwvx_triggers_and_actions( offset_hwvx_triggers_and_actions + (i * 44) );
     }
 
 }
@@ -5725,7 +5725,7 @@ if file type is music go to <a href="#impulse_tracker">impulse_tracker</a> else 
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger">hwvx_trigger</h2>
+<h2 id="hwvx_triggers_and_actions">hwvx_triggers_and_actions</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -5770,11 +5770,11 @@ if file type is music go to <a href="#impulse_tracker">impulse_tracker</a> else 
             <td>04</td>
             <td>u32</td>
             <td>based on type [8]<br>
-1 = <a href="#hwvx_trigger_4t1">offset</a><br>
-3 = <a href="#hwvx_trigger_4t3">offset</a><br>
-5 = <a href="#hwvx_trigger_4t5">offset</a><br>
-6 = <a href="#hwvx_trigger_4t6">offset</a><br>
-rest = <a href="#hwvx_trigger_4trest">offset</a><br>
+1 = <a href="#hwvx_triggers_and_actions_4t1">offset</a><br>
+3 = <a href="#hwvx_triggers_and_actions_4t3">offset</a><br>
+5 = <a href="#hwvx_triggers_and_actions_4t5">offset</a><br>
+6 = <a href="#hwvx_triggers_and_actions_4t6">offset</a><br>
+rest = <a href="#hwvx_triggers_and_actions_4trest">offset</a><br>
 </td>
         </tr>
         <tr class="u">
@@ -5785,7 +5785,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#hwvx_trigger_12">offset</a> based on amount [16]</td>
+            <td><a href="#hwvx_triggers_and_actions_12">offset</a> based on amount [16]</td>
         </tr>
         <tr>
             <td>16</td>
@@ -5795,7 +5795,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#hwvx_trigger_20">offset</a> based on amount [28]</td>
+            <td><a href="#hwvx_actions">offset</a> based on amount [28]</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -5845,7 +5845,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_4t1">hwvx_trigger_4t1</h2>
+<h2 id="hwvx_triggers_and_actions_4t1">hwvx_triggers_and_actions_4t1</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -5856,7 +5856,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#hwvx_trigger_4t1_0">offset (interface prob)</a> </td>
+            <td><a href="#hwvx_triggers_and_actions_4t1_0">offset (interface prob)</a> </td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -5881,7 +5881,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_4t3">hwvx_trigger_4t3</h2>
+<h2 id="hwvx_triggers_and_actions_4t3">hwvx_triggers_and_actions_4t3</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -5917,7 +5917,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_4t5">hwvx_trigger_4t5</h2>
+<h2 id="hwvx_triggers_and_actions_4t5">hwvx_triggers_and_actions_4t5</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -5980,7 +5980,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_4t6">hwvx_trigger_4t6</h2>
+<h2 id="hwvx_triggers_and_actions_4t6">hwvx_triggers_and_actions_4t6</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -5992,9 +5992,9 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
             <td>00</td>
             <td>u32</td>
             <td>type<br>
-                <a href="#hwvx_trigger_4trest">1,2 = skip to trest</a><br>
-                <a href="#hwvx_trigger_4t6t4">4 = 4 offsets</a><br>
-                <a href="#hwvx_trigger_4t6t20">20,21</a></td>
+                <a href="#hwvx_triggers_and_actions_4trest">1,2 = skip to trest</a><br>
+                <a href="#hwvx_triggers_and_actions_4t6t4">4 = 4 offsets</a><br>
+                <a href="#hwvx_triggers_and_actions_4t6t20">20,21</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -6003,7 +6003,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h2 id="hwvx_trigger_4t6t4">hwvx_trigger_4t6t4</h2>
+<h2 id="hwvx_triggers_and_actions_4t6t4">hwvx_triggers_and_actions_4t6t4</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6053,7 +6053,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h2 id="hwvx_trigger_4t6t20">hwvx_trigger_4t6t20</h2>
+<h2 id="hwvx_triggers_and_actions_4t6t20">hwvx_triggers_and_actions_4t6t20</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6104,9 +6104,9 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_4trest">hwvx_trigger_4trest</h2>
-<p>section is <a href="#hwvx_trigger">([8] *4)</a> bytes per entry</p>
-<h3 id="hwvx_trigger_4trest_sec1">hwvx_trigger_4trest_sec1</h3>
+<h2 id="hwvx_triggers_and_actions_4trest">hwvx_triggers_and_actions_4trest</h2>
+<p>section is <a href="#hwvx_triggers_and_actions">([8] *4)</a> bytes per entry</p>
+<h3 id="hwvx_triggers_and_actions_4trest_sec1">hwvx_triggers_and_actions_4trest_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6126,7 +6126,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_4trest_sec2">hwvx_trigger_4trest_sec2</h3>
+<h3 id="hwvx_triggers_and_actions_4trest_sec2">hwvx_triggers_and_actions_4trest_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6150,11 +6150,11 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_4trest_sec1"> ([0] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_triggers_and_actions_4trest_sec1"> ([0] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_4trest_sec3">hwvx_trigger_4trest_sec3</h3>
+<h3 id="hwvx_triggers_and_actions_4trest_sec3">hwvx_triggers_and_actions_4trest_sec3</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6174,7 +6174,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_4trest_sec4">hwvx_trigger_4trest_sec4</h3>
+<h3 id="hwvx_triggers_and_actions_4trest_sec4">hwvx_triggers_and_actions_4trest_sec4</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6193,12 +6193,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"> <a href="#hwvx_trigger_4trest_sec3">([0] *4) bytes</a></th>
+            <th colspan="3"> <a href="#hwvx_triggers_and_actions_4trest_sec3">([0] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_12">hwvx_trigger_12</h2>
+<h2 id="hwvx_triggers_and_actions_12">hwvx_triggers_and_actions_12</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6214,7 +6214,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#hwvx_trigger_12_4">offset</a></td>
+            <td><a href="#hwvx_triggers_and_actions_12_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -6274,7 +6274,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_12_4">hwvx_trigger_12_4</h2>
+<h2 id="hwvx_triggers_and_actions_12_4">hwvx_triggers_and_actions_12_4</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6291,7 +6291,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
             <td>04</td>
             <td>u32</td>
             <td>based on type [0]<br>
-                1 = <a href="#hwvx_trigger_12_4_4">offset</a><br>
+                1 = <a href="#hwvx_triggers_and_actions_12_4_4">offset</a><br>
                 22 = 200,100</td>
         </tr>
         <tr class="u">
@@ -6303,7 +6303,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
             <td>12</td>
             <td>u32 / float</td>
             <td>based on type [16]<br>
-                0 = u32 variour offsets seen:<br> hwvx_trigger_12_4_4<br>hwvx_world_76<br>hwvx_world_36_48_24<br>hwvx_world_108<br><br>
+                0 = u32 variour offsets seen:<br> hwvx_triggers_and_actions_12_4_4<br>hwvx_world_76<br>hwvx_world_36_48_24<br>hwvx_world_108<br><br>
                 rest = float 0 - 30</td>
         </tr>
         <tr class="u">
@@ -6336,7 +6336,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20">hwvx_trigger_20</h2>
+<h2 id="hwvx_actions">hwvx_actions</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6344,51 +6344,96 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>type? 0 - 41 some sections are probably combined</td>
+            <td>action IDs<br>
+            AirboxChangeMode = 0<br>
+            CameraSetTargets = 1<br>
+            DestructibleChangeMode = 2<br>
+            FXPointChangeMode = 3<br>
+            InterfacePlay = 4<br>
+            ItemChangeMode = 5<br>
+            EndLevel = 6<br>
+            TimerChangevalue = 7<br>
+            TimerChangeMode = 8<br>
+            MoveableChangeMode = 9<br>
+            MusicChange = 10<br>
+            MusicSetSong = 11 (Unused on PC)<br>
+            NavPointChangeMode = 12<br>
+            PauseGame = 13<br>
+            SpeakerChangeMode = 14 (Unused on PC)<br>
+            TargetArrowSetTarget = 15<br>
+            VariableChangeValue = 16<br>
+            VehicleChangeMode = 17<br>
+            VehicleAISetNamedPath = 18 (Unused on PC)<br>
+            VertexColorSeqChangeMode = 19<br>
+            PrintDebugString = 20<br>
+            VehicleTeleport = 21<br>
+            VehicleChangeControl = 22<br>
+            SetPlayerVehicle = 23 (Unused on PC)<br>
+            VehicleRemoveItem = 24<br>
+            VehicleRemoveCreature = 25 (Unused on PC)<br>
+            VariableChangeMode = 26<br>
+            LoadInterfacePack = 27<br>
+            PlayInterfacePack = 28<br>
+            UnloadInterfacePack = 29<br>
+            EndInterfacePack = 30<br>
+            EndInterface = 31<br>
+            HUDChangeMode = 32<br>
+            ScriptLightChangeMode = 33 (Unused on PC)<br>
+            CodeVariableModifyValue = 34<br>
+            MissionObjChangeMode = 35<br>
+            PauseTACSystem = 36<br>
+            SwapAIScript = 37<br>
+            ResetGameRound = 38<br>
+            RoundComplete = 39<br>
+            VehicleGiveItem = 40<br>
+            SetPlayerOrder = 41<br>
+            PlaySoundSequence = 42<br>
+            CreatureChangeMode = 43
+            </td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
             <td>based on types [0] & [8]<br>
-                0 = <a href="#hwvx_trigger_20_4t0">offset</a><br>
+                0 = <a href="#hwvx_actions_4tAirboxChangeMode">offset</a><br>
                 [0] 1 = offset<br>
-                &nbsp;<a href="#hwvx_trigger_20_4t1t13">[8] = 13</a><br>
-                &nbsp;<a href="#hwvx_trigger_20_4t1t14">[8] = 14</a><br>
-                &nbsp;<a href="#hwvx_trigger_20_4t1t17">[8] = 17</a><br>
-                2 = <a href="#hwvx_trigger_20_4t2">offset</a><br>
-                3 = <a href="#hwvx_trigger_20_4t3">offset</a><br>
-                4 = <a href="#hwvx_trigger_20_4t4">offset</a><br>
-                5 = <a href="#hwvx_trigger_20_4t5">offset</a><br>
-                7 = <a href="#hwvx_trigger_20_4t7">offset</a><br>
-                8 = <a href="#hwvx_trigger_20_4t8">offset</a><br>
-                9 = <a href="#hwvx_trigger_20_4t9">offset</a><br>
+                &nbsp;<a href="#hwvx_actions_4tCameraSetTargetst13">[8] = 13</a><br>
+                &nbsp;<a href="#hwvx_actions_4tCameraSetTargetst14">[8] = 14</a><br>
+                &nbsp;<a href="#hwvx_actions_4tCameraSetTargetst17">[8] = 17</a><br>
+                2 = <a href="#hwvx_actions_4tDestructibleChangeMode">offset</a><br>
+                3 = <a href="#hwvx_actions_4tFXPointChangeMode">offset</a><br>
+                4 = <a href="#hwvx_actions_4tInterfacePlay">offset</a><br>
+                5 = <a href="#hwvx_actions_4tItemChangeMode">offset</a><br>
+                7 = <a href="#hwvx_actions_4tTimerChangevalue">offset</a><br>
+                8 = <a href="#hwvx_actions_4tTimerChangeMode">offset</a><br>
+                9 = <a href="#hwvx_actions_4tMoveableChangeMode">offset</a><br>
                 [0] 10 = offset<br>
-                &nbsp;<a href="#hwvx_trigger_20_4t10t10">[8] = 10</a><br>
-                &nbsp;<a href="#hwvx_trigger_20_4t10t20">[8] = 20</a><br>
-                12 = <a href="#hwvx_trigger_20_4t12">offset</a><br>
+                &nbsp;<a href="#hwvx_actions_4tMusicChanget10">[8] = 10</a><br>
+                &nbsp;<a href="#hwvx_actions_4tMusicChanget20">[8] = 20</a><br>
+                12 = <a href="#hwvx_actions_4tNavPointChangeMode">offset</a><br>
                 [0] 15 = offset<br>
-                &nbsp;<a href="#hwvx_trigger_20_4t15t1">[8] = 1</a><br>
-                &nbsp;<a href="#hwvx_trigger_20_4t15t5">[8] = 5</a><br>
-                16 = <a href="#hwvx_trigger_20_4t16">offset</a><br>
-                17 = <a href="#hwvx_trigger_20_4t17">offset</a><br>
-                20 = <a href="#hwvx_trigger_20_4t20">offset</a><br>
-                21 = <a href="#hwvx_trigger_20_4t21">offset</a><br>
-                22 = <a href="#hwvx_trigger_20_4t22">offset</a><br>
-                24 = <a href="#hwvx_trigger_20_4t24">offset</a><br>
-                26 = <a href="#hwvx_trigger_20_4t26">offset</a><br>
-                31 = <a href="#hwvx_trigger_20_4t31">offset</a><br>
-                32 = <a href="#hwvx_trigger_20_4t32">offset</a><br>
+                &nbsp;<a href="#hwvx_actions_4tTargetArrowSetTargett1">[8] = 1</a><br>
+                &nbsp;<a href="#hwvx_actions_4tTargetArrowSetTargett5">[8] = 5</a><br>
+                16 = <a href="#hwvx_actions_4tVariableChangeValue">offset</a><br>
+                17 = <a href="#hwvx_actions_4tVehicleChangeMode">offset</a><br>
+                20 = <a href="#hwvx_actions_4tPrintDebugString">offset</a><br>
+                21 = <a href="#hwvx_actions_4tVehicleTeleport">offset</a><br>
+                22 = <a href="#hwvx_actions_4tVehicleChangeControl">offset</a><br>
+                24 = <a href="#hwvx_actions_4tVehicleRemoveItem">offset</a><br>
+                26 = <a href="#hwvx_actions_4tVariableChangeMode">offset</a><br>
+                31 = <a href="#hwvx_actions_4tEndInterface">offset</a><br>
+                32 = <a href="#hwvx_actions_4tHUDChangeMode">offset</a><br>
                 [0] 34 = offset<br>
-                &nbsp;<a href="#hwvx_trigger_20_4t34t5">[8] = 5</a><br>
-                &nbsp;<a href="#hwvx_trigger_20_4t34t6">[8] = 6</a><br>
-                36 = <a href="#hwvx_trigger_20_4t36">offset</a><br>
-                38 = <a href="#hwvx_trigger_20_4t38">offset</a><br>
-                39 = <a href="#hwvx_trigger_20_4t39">offset</a><br>
-                40 = <a href="#hwvx_trigger_20_4t40">offset</a><br>
-                41 = <a href="#hwvx_trigger_20_4t41">offset</a><br></td>
+                &nbsp;<a href="#hwvx_actions_4tCodeVariableModifyValuet5">[8] = 5</a><br>
+                &nbsp;<a href="#hwvx_actions_4tCodeVariableModifyValuet6">[8] = 6</a><br>
+                36 = <a href="#hwvx_actions_4tPauseTACSystem">offset</a><br>
+                38 = <a href="#hwvx_actions_4tResetGameRound">offset</a><br>
+                39 = <a href="#hwvx_actions_4tRoundComplete">offset</a><br>
+                40 = <a href="#hwvx_actions_4tVehicleGiveItem">offset</a><br>
+                41 = <a href="#hwvx_actions_4tSetPlayerOrder">offset</a><br></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -6433,8 +6478,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t0">hwvx_trigger_20_4t0</h2>
-<h3 id="hwvx_trigger_20_4t0_sec1">hwvx_trigger_20_4t0_sec1</h3>
+<h2 id="hwvx_actions_4tAirboxChangeMode">hwvx_actions_4tAirboxChangeMode</h2>
+<h3 id="hwvx_actions_4tAirboxChangeMode_sec1">hwvx_actions_4tAirboxChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6459,7 +6504,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t0_sec1">hwvx_trigger_20_4t0_sec1</h3>
+<h3 id="hwvx_actions_4tAirboxChangeMode_sec2">hwvx_actions_4tAirboxChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6477,12 +6522,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t0_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tAirboxChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t1t13">hwvx_trigger_20_4t1t13</h2>
+<h2 id="hwvx_actions_4tCameraSetTargetst13">hwvx_actions_4tCameraSetTargetst13</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6583,7 +6628,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t1t14">hwvx_trigger_20_4t1t14</h2>
+<h2 id="hwvx_actions_4tCameraSetTargetst14">hwvx_actions_4tCameraSetTargetst14</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6691,7 +6736,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t1t17">hwvx_trigger_20_4t1t17</h2>
+<h2 id="hwvx_actions_4tCameraSetTargetst17">hwvx_actions_4tCameraSetTargetst17</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6817,9 +6862,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-
-<h2 id="hwvx_trigger_20_4t2">hwvx_trigger_20_4t2</h2>
-<h3 id="hwvx_trigger_20_4t2_sec1">hwvx_trigger_20_4t2_sec1</h3>
+<h2 id="hwvx_actions_4tDestructibleChangeMode">hwvx_actions_4tDestructibleChangeMode</h2>
+<h3 id="hwvx_actions_4tDestructibleChangeMode_sec1">hwvx_actions_4tDestructibleChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6844,7 +6888,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t2_sec2">hwvx_trigger_20_4t2_sec2</h3>
+<h3 id="hwvx_actions_4tDestructibleChangeMode_sec2">hwvx_actions_4tDestructibleChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6862,14 +6906,14 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t2_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tDestructibleChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t3">hwvx_trigger_20_4t3</h2>
-<h3 id="hwvx_trigger_20_4t3_sec1">hwvx_trigger_20_4t3_sec1</h3>
+<h2 id="hwvx_actions_4tFXPointChangeMode">hwvx_actions_4tFXPointChangeMode</h2>
+<h3 id="hwvx_actions_4tFXPointChangeMode_sec1">hwvx_actions_4tFXPointChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6894,7 +6938,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t3_sec2">hwvx_trigger_20_4t3_sec2</h3>
+<h3 id="hwvx_actions_4tFXPointChangeMode_sec2">hwvx_actions_4tFXPointChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6906,18 +6950,18 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
             <td>00</td>
             <td>u32</td>
             <td>offseted to:<br>
-                <a href="#hwvx_Airbox">? get_hwvx_world_36_48_16</a><br>
+                <a href="#hwvx_Airbox">hwvx_Airbox</a><br>
             </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t3_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tFXPointChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t4">hwvx_trigger_20_4t4</h2>
+<h2 id="hwvx_actions_4tInterfacePlay">hwvx_actions_4tInterfacePlay</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6954,8 +6998,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t5">hwvx_trigger_20_4t5</h2>
-<h3 id="hwvx_trigger_20_4t5_sec1">hwvx_trigger_20_4t5_sec1</h3>
+<h2 id="hwvx_actions_4tItemChangeMode">hwvx_actions_4tItemChangeMode</h2>
+<h3 id="hwvx_actions_4tItemChangeMode_sec1">hwvx_actions_4tItemChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6980,7 +7024,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t5_sec2">hwvx_trigger_20_4t5_sec2</h3>
+<h3 id="hwvx_actions_4tItemChangeMode_sec2">hwvx_actions_4tItemChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -6998,12 +7042,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t5_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tItemChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_trigger_20_4t7">hwvx_trigger_20_4t7</h2>
+<h2 id="hwvx_actions_4tTimerChangevalue">hwvx_actions_4tTimerChangevalue</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7062,7 +7106,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t8">hwvx_trigger_20_4t8</h2>
+<h2 id="hwvx_actions_4tTimerChangeMode">hwvx_actions_4tTimerChangeMode</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7099,7 +7143,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t9">hwvx_trigger_20_4t9</h2>
+<h2 id="hwvx_actions_4tMoveableChangeMode">hwvx_actions_4tMoveableChangeMode</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7155,7 +7199,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t10t10">hwvx_trigger_20_4t10t10</h2>
+<h2 id="hwvx_actions_4tMusicChanget10">hwvx_actions_4tMusicChanget10</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7231,7 +7275,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t10t20">hwvx_trigger_20_4t10t20</h2>
+<h2 id="hwvx_actions_4tMusicChanget20">hwvx_actions_4tMusicChanget20</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7348,8 +7392,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t12">hwvx_trigger_20_4t12</h2>
-<h3 id="hwvx_trigger_20_4t12_sec1">hwvx_trigger_20_4t12_sec1</h3>
+<h2 id="hwvx_actions_4tNavPointChangeMode">hwvx_actions_4tNavPointChangeMode</h2>
+<h3 id="hwvx_actions_4tNavPointChangeMode_sec1">hwvx_actions_4tNavPointChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7374,7 +7418,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t12_sec2">hwvx_trigger_20_4t12_sec2</h3>
+<h3 id="hwvx_actions_4tNavPointChangeMode_sec2">hwvx_actions_4tNavPointChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7392,12 +7436,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t12_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tNavPointChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_trigger_20_4t15t1">hwvx_trigger_20_4t15t1</h2>
+<h2 id="hwvx_actions_4tTargetArrowSetTargett1">hwvx_actions_4tTargetArrowSetTargett1</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7433,7 +7477,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t15t5">hwvx_trigger_20_4t15t5</h2>
+<h2 id="hwvx_actions_4tTargetArrowSetTargett5">hwvx_actions_4tTargetArrowSetTargett5</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7495,7 +7539,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t16">hwvx_trigger_20_4t16</h2>
+<h2 id="hwvx_actions_4tVariableChangeValue">hwvx_actions_4tVariableChangeValue</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7555,8 +7599,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t17">hwvx_trigger_20_4t17</h2>
-<h3 id="hwvx_trigger_20_4t17_sec1">hwvx_trigger_20_4t17_sec1</h3>
+<h2 id="hwvx_actions_4tVehicleChangeMode">hwvx_actions_4tVehicleChangeMode</h2>
+<h3 id="hwvx_actions_4tVehicleChangeMode_sec1">hwvx_actions_4tVehicleChangeMode_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7581,7 +7625,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t17_sec2">hwvx_trigger_20_4t17_sec2</h3>
+<h3 id="hwvx_actions_4tVehicleChangeMode_sec2">hwvx_actions_4tVehicleChangeMode_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7599,12 +7643,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t17_sec1"> ([4] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tVehicleChangeMode_sec1"> ([4] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_trigger_20_4t20">hwvx_trigger_20_4t20</h2>
+<h2 id="hwvx_actions_4tPrintDebugString">hwvx_actions_4tPrintDebugString</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7640,7 +7684,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t21">hwvx_trigger_20_4t21</h2>
+<h2 id="hwvx_actions_4tVehicleTeleport">hwvx_actions_4tVehicleTeleport</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7696,8 +7740,8 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t22">hwvx_trigger_20_4t22</h2>
-<h3 id="hwvx_trigger_20_4t22_sec1">hwvx_trigger_20_4t22_sec1</h3>
+<h2 id="hwvx_actions_4tVehicleChangeControl">hwvx_actions_4tVehicleChangeControl</h2>
+<h3 id="hwvx_actions_4tVehicleChangeControl_sec1">hwvx_actions_4tVehicleChangeControl_sec1</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7727,7 +7771,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
         </tr>
     </tfoot>
 </table>
-<h3 id="hwvx_trigger_20_4t22_sec2">hwvx_trigger_20_4t22_sec2</h3>
+<h3 id="hwvx_actions_4tVehicleChangeControl_sec2">hwvx_actions_4tVehicleChangeControl_sec2</h3>
 <table class="h">
     <tbody>
         <tr>
@@ -7745,12 +7789,12 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3"><a href="#hwvx_trigger_20_4t17_sec1"> ([8] *4) bytes</a></th>
+            <th colspan="3"><a href="#hwvx_actions_4tVehicleChangeMode_sec1"> ([8] *4) bytes</a></th>
         </tr>
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_trigger_20_4t24">hwvx_trigger_20_4t24</h2>
+<h2 id="hwvx_actions_4tVehicleRemoveItem">hwvx_actions_4tVehicleRemoveItem</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7786,7 +7830,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t26">hwvx_trigger_20_4t26</h2>
+<h2 id="hwvx_actions_4tVariableChangeMode">hwvx_actions_4tVariableChangeMode</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7823,7 +7867,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t31">hwvx_trigger_20_4t31</h2>
+<h2 id="hwvx_actions_4tEndInterface">hwvx_actions_4tEndInterface</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7859,7 +7903,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t32">hwvx_trigger_20_4t32</h2>
+<h2 id="hwvx_actions_4tHUDChangeMode">hwvx_actions_4tHUDChangeMode</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7895,7 +7939,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t34t5">hwvx_trigger_20_4t34t5</h2>
+<h2 id="hwvx_actions_4tCodeVariableModifyValuet5">hwvx_actions_4tCodeVariableModifyValuet5</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -7951,7 +7995,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t34t6">hwvx_trigger_20_4t34t6</h2>
+<h2 id="hwvx_actions_4tCodeVariableModifyValuet6">hwvx_actions_4tCodeVariableModifyValuet6</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -8010,7 +8054,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t36">hwvx_trigger_20_4t36</h2>
+<h2 id="hwvx_actions_4tPauseTACSystem">hwvx_actions_4tPauseTACSystem</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -8048,7 +8092,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 <hr/>
 
 
-<h2 id="hwvx_trigger_20_4t38">hwvx_trigger_20_4t38</h2>
+<h2 id="hwvx_actions_4tResetGameRound">hwvx_actions_4tResetGameRound</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -8085,7 +8129,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t39">hwvx_trigger_20_4t39</h2>
+<h2 id="hwvx_actions_4tRoundComplete">hwvx_actions_4tRoundComplete</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -8121,7 +8165,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
     </tfoot>
 </table>
 <hr/>
-<h2 id="hwvx_trigger_20_4t40">hwvx_trigger_20_4t40</h2>
+<h2 id="hwvx_actions_4tVehicleGiveItem">hwvx_actions_4tVehicleGiveItem</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -8180,7 +8224,7 @@ rest = <a href="#hwvx_trigger_4trest">offset</a><br>
 </table>
 <hr/>
 
-<h2 id="hwvx_trigger_20_4t41">hwvx_trigger_20_4t41</h2>
+<h2 id="hwvx_actions_4tSetPlayerOrder">hwvx_actions_4tSetPlayerOrder</h2>
 <table class="h">
     <tbody>
         <tr>
