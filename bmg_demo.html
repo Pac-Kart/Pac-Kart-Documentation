@@ -15,7 +15,8 @@
                 <br/>
                 <h1>wip</h1>
             </section>
-<h2 id="bmg_demo_directory">bmg_demo_directory</h2>
+<p>demo seen in the shrek the 3rd wii game</p>
+<h2 id="bmg_demo_file_heaader">bmg_demo_file_heaader</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -23,25 +24,25 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+            <tr>
             <td>00</td>
             <td>u32</td>
-            <td>always 33620128</td>
+            <td>magic 1 always 33620128</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>always 67174575</td>
+            <td>magic 2 always 67174575</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>always 288</td>
+            <td>file version always 288</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>1,2,11</td>
+            <td>amount in <a href="#bmg_demo_directory">bmg_demo_directory</a> 1,2,11</td>
         </tr>
     </tbody>
     <tfoot>
@@ -60,35 +61,39 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>always 288</td>
+            <td>version always 288</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>1,3,4</td>
+            <td>file type<br>
+                1 = interface<br>
+                3 = link<br>
+                4 = world<br>
+            </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>0 - 10</td>
+            <td>file index 0 - 10</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td></td>
+            <td>amount bytes in datapack</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>0 - 2452940</td>
+            <td>offset to <a href="#bmg_demo_datapack">DataPack</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -106,15 +111,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>728 - 10735364</td>
+            <td>Length Ordered List</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>0,2488,4852,23992,1274676</td>
+            <td>Length of Audio/Music section 0,2488,4852,23992,1274676</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -547,45 +552,45 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_0">offset</a> always 320</td>
+            <td><a href="#bmg_demo_world_0">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_4">offset</a> always 144736</td>
+            <td><a href="#bmg_demo_world_4">offset (bmg_demo_world_4)</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>prob amount  always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12">offset</a> always 2976</td>
+            <td><a href="#bmg_demo_world_12">offset (bmg_demo_world_12)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>always 233</td>
+            <td>amount | always 233</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_20">offset</a> always 3136</td>
+            <td><a href="#bmg_demo_world_20">offset (bmg_demo_world_20)</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>always 10</td>
+            <td>amount | always 10</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_28">offset</a> always 134944</td>
+            <td><a href="#bmg_demo_world_28">offset</a> based on amount [24]</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -627,15 +632,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>64</td>
             <td>u32</td>
-            <td>always 3</td>
+            <td>amount always 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>68</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_68">offset</a> always 144288</td>
+            <td><a href="#bmg_demo_world_68">offset (bmg_demo_world_68)</a> based on amount [64]</td>
         </tr>
         <tr class="u">
             <td>72</td>
@@ -650,22 +655,22 @@
         <tr class="u">
             <td>80</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>prob amount always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>84</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_84">offset</a> always 144640</td>
+            <td><a href="#bmg_demo_world_84">offset (bmg_demo_world_84)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>88</td>
             <td>u32</td>
-            <td>always 17</td>
+            <td>amount | always 17</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>92</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_92">offset</a> always 32960</td>
+            <td><a href="#bmg_demo_world_92">offset (bmg_demo_world_92)</a> based on amount [88]</td>
         </tr>
         <tr class="u">
             <td>96</td>
@@ -687,20 +692,20 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>112</td>
             <td>u32</td>
-            <td>always 896</td>
+            <td>amount | always 896</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>116</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_116">offset</a> always 34592</td>
+            <td><a href="#bmg_demo_world_116">offset</a> based on amount [112]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>120</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_120">offset</a> always 144896</td>
+            <td><a href="#bmg_demo_world_120">offset</a></td>
         </tr>
         <tr class="u">
             <td>124</td>
@@ -762,15 +767,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>172</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_172">offset</a> always 10309856</td>
+            <td><a href="#bmg_demo_world_172">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>176</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_176">offset</a> always 144960</td>
+            <td><a href="#bmg_demo_world_176">offset</a></td>
         </tr>
         <tr class="u">
             <td>180</td>
@@ -807,10 +812,10 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>208</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_208">offset</a> always 144928</td>
+            <td><a href="#bmg_demo_world_208">offset</a></td>
         </tr>
         <tr class="u">
             <td>212</td>
@@ -1108,10 +1113,10 @@
             <td>float</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_0_32">offset</a> always 2928</td>
+            <td><a href="#bmg_demo_world_0_32">offset</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -1133,25 +1138,25 @@
             <td>float</td>
             <td>always 0.4000000059604645</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>52</td>
             <td>u32</td>
-            <td>always 25</td>
+            <td>amount | always 25</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>amount | always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>60</td>
             <td>u32</td>
-            <td>always 25</td>
+            <td>amount | always 25</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>64</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_0_64">offset</a> always 416</td>
+            <td><a href="#bmg_demo_world_0_64">offset (bmg_demo_world_0_64)</a> based on amounts [52]*[56]*[60]</td>
         </tr>
         <tr class="u">
             <td>68</td>
@@ -1163,10 +1168,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>76</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_0_76">offset</a> always 416</td>
+            <td><a href="#bmg_demo_world_0_76">offset</a></td>
         </tr>
         <tr class="u">
             <td>80</td>
@@ -1291,7 +1296,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -1328,15 +1333,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_4_16">offset</a> always 144800</td>
+            <td><a href="#bmg_demo_world_4_16">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_4_20">offset</a> always 144736</td>
+            <td><a href="#bmg_demo_world_4">offset (bmg_demo_world_4)</a></td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -1629,10 +1634,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>60</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60">offset</a> always 10083456</td>
+            <td><a href="#bmg_demo_world_12_60">offset</a></td>
         </tr>
         <tr class="u">
             <td>64</td>
@@ -1831,10 +1836,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0">offset</a> always 10083488</td>
+            <td><a href="#bmg_demo_world_12_60_0">offset</a></td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -1917,20 +1922,20 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_12">offset</a> always 10083584</td>
+            <td><a href="#bmg_demo_model_sub_link">offset (bmg_demo_model_sub_link)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>always 2</td>
+            <td>amount | always 2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_20">offset</a> always 10083744</td>
+            <td><a href="#bmg_demo_world_12_60_0_20">offset</a> based on amount [16]</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -1972,10 +1977,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_56">offset</a> always 10088128</td>
+            <td><a href="#bmg_demo_world_12_60_0_56">offset</a></td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -2044,15 +2049,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_20_4">offset</a> 10083776,10085216</td>
+            <td><a href="#bmg_demo_world_12_60_0_20_4">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">8 bytes</th>
+            <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2065,15 +2070,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>3,7</td>
+            <td>amount | 3,7</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_20_4_4">offset</a> 10083808,10085248</td>
+            <td><a href="#bmg_demo_world_12_60_0_20_4_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -2121,15 +2126,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_20_4_4_0">offset</a> 10083840,10084096,10084320,10084544,10084768,10084992,10085280,10087616,10087872</td>
+            <td><a href="#bmg_demo_model_link">offset (bmg_demo_model_link)</a></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2147,10 +2152,10 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_12_60_0_56_4">offset</a> always 10088160</td>
+            <td><a href="#bmg_demo_world_12_60_0_56_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -2353,25 +2358,25 @@
             <td>float</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>64</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1">offset</a> </td>
+            <td><a href="#bmg_demo_model_anim_1">offset (bmg_demo_model_anim_1)</a> </td>
         </tr>
         <tr class="u">
             <td>68</td>
             <td>float</td>
             <td>15,20,24,30</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>72</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_20_72">offset</a> </td>
+            <td><a href="#bmg_demo_idk">offset (bmg_demo_idk)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>76</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_world_20_76">offset</a> </td>
+            <td><a href="#bmg_demo_model_link">offset (bmg_demo_model_link)</a></td>
         </tr>
         <tr class="u">
             <td>80</td>
@@ -2451,7 +2456,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">128 bytes</th>
+            <th colspan="3">128 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2501,27 +2506,31 @@
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_24">offset</a> 0 - 4161134352</td>
+            <td><a href="#bmg_demo_model_anim_1_24">offset</a><br>
+            sometimes u32</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_28">offset</a> 0 - 4294967295</td>
+            <td><a href="#bmg_demo_model_anim_1_28">offset</a><br>
+            sometimes u32</td>
         </tr>
         <tr class="u">
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_32">offset</a> 0 - 2700181001</td>
+            <td><a href="#bmg_demo_model_anim_1_32">offset</a> based on amount [40]<br>
+            sometimes u32</td>
         </tr>
         <tr class="u">
             <td>36</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_36">offset</a> 0 - 4194371587</td>
+            <td><a href="#bmg_demo_model_anim_1_36">offset</a><br>
+            sometimes u32</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>u32</td>
-            <td>0 - 4283782475</td>
+            <td>sometimes amount | 0 - 4283782475</td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -2578,7 +2587,6 @@
     </tfoot>
 </table>
 <hr/>
-
 <h2 id="bmg_demo_model_anim_1_52">bmg_demo_model_anim_1_52</h2>
 <table class="h">
     <tbody>
@@ -2602,35 +2610,39 @@
             <td>u32</td>
             <td>0,4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_12">offset</a> 0 - 4294967295</td>
+            <td><a href="#bmg_demo_model_anim_1_52_12">offset</a> based on amount [0]<br>
+            sometimes u32 if amount 0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_16">offset</a> 0 - 4294967295</td>
+            <td><a href="#bmg_demo_model_anim_1_52_16">offset</a> based on mount [8]<br>
+            sometimes u32 if amount 0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_20">offset</a> </td>
+            <td><a href="#bmg_demo_model_anim_1_52_20">offset</a> based on amount [4]<br>
+            sometimes u32 if amount 0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_24">offset</a> 0 - 4294967295</td>
+            <td><a href="#bmg_demo_model_anim_1_52_24">offset</a> based on amount [0]<br>
+            sometimes u32 if amount 0</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_28">offset</a> 0 - 8674968</td>
+            <td><a href="#bmg_demo_model_anim_1_52_28">offset</a> unknown amount</td>
         </tr>
         <tr class="u">
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anim_1_52_32">offset</a> 0 - 8678208</td>
+            <td><a href="#bmg_demo_model_anim_1_52_32">offset</a> unknown amount</td>
         </tr>
     </tbody>
     <tfoot>
@@ -2661,7 +2673,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">2 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2687,7 +2699,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">2 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2713,7 +2725,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">2 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2734,7 +2746,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2771,7 +2783,6 @@
     </tfoot>
 </table>
 <hr/>
-
 <h2 id="bmg_demo_model_link">bmg_demo_model_link</h2>
 <p>multi linked to by:<br>
     <a href="#bmg_demo_model">bmg_demo_model [link] </a><br>
@@ -2788,25 +2799,28 @@
             <td>u32</td>
             <td>0 - 27000</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_model_link_4">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td><a href="#bmg_demo_model_link_8">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_link_12">offset</a> </td>
+            <td><a href="#bmg_demo_model_sub_link">offset (bmg_demo_model_sub_link)</a> </td>
         </tr>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_link_16">offset</a> </td>
+            <td>unknown type<br>
+                <a href="#bmg_demo_some_model_anim_1">offset bmg_demo_some_model_anim_1</a><br>
+                <a href="#bmg_demo_model_anim_1">offset bmg_demo_model_anim_1</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -2833,15 +2847,15 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_link_28">offset</a> 0 - 10239008</td>
+            <td><a href="#bmg_demo_model_link_28">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_link_32">offset</a> 0 - 10309696</td>
+            <td><a href="#bmg_demo_model_link_32">offset</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -2858,20 +2872,20 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>48</td>
             <td>u32</td>
             <td><a href="#bmg_demo_model_link_48">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>52</td>
             <td>u32</td>
-            <td>0,1,2,3,4,5,6,7</td>
+            <td>amount | 0,1,2,3,4,5,6,7</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_link_56">offset</a> 0 - 10306784</td>
+            <td><a href="#bmg_demo_mysterious">offset (bmg_demo_mysterious)</a> based on amount [52]</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -2901,27 +2915,30 @@
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_sub_link_0">offset</a> </td>
+            <td>unknown type<br>
+                <a href="#bmg_demo_some_model_anim_2">offset bmg_demo_some_model_anim_2</a><br>
+                <a href="#bmg_demo_model_anims_2">offset (bmg_demo_model_anims_2)</a><br>
+            </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>0,1,2,4,5,12</td>
+            <td>amount | 0,1,2,4,5,12</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_sub_link_8">offset</a> 0 - 10304160</td>
+            <td><a href="#bmg_demo_model_sub_link_8">offset</a> based on amount [4]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>0 - 34</td>
+            <td>amount | 0 - 34</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_sub_link_16">offset</a> 0 - 10308320</td>
+            <td><a href="#bmg_demo_model_sub_link_16">offset</a> based on amount [12]</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -2959,10 +2976,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>1 - 60</td>
+            <td>amount | 1 - 60</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -2994,10 +3011,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_model_anims_2_16">offset</a> </td>
+            <td><a href="#bmg_demo_model_anims_2_16">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -3023,27 +3040,7 @@
 </table>
 <hr/>
 
-<h2 id="bmg_demo_model_sub_link_8">bmg_demo_model_sub_link_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>patch model 0 - 5284192</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
+
 <h2 id="bmg_demo_model_anims_2_16">bmg_demo_model_anims_2_16</h2>
 <table class="h">
     <tbody>
@@ -3110,7 +3107,28 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="bmg_demo_model_sub_link_8">bmg_demo_model_sub_link_8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>patch model 0 - 5284192</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -3841,12 +3859,11 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">8 bytes</th>
+            <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
 <hr/>
-
 <h2 id="bmg_demo_model_link_28">bmg_demo_model_link_28</h2>
 <table class="h">
     <tbody>
@@ -4238,7 +4255,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">112 bytes</th>
+            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -4742,7 +4759,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">112 bytes</th>
+            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -7174,7 +7191,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">96 bytes</th>
+            <th colspan="3">96 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -8000,7 +8017,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">64 bytes</th>
+            <th colspan="3">64 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -11162,7 +11179,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">112 bytes</th>
+            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
