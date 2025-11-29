@@ -2264,52 +2264,67 @@
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
+            <td>u16</td>
             <td>always 1</td>
         </tr>
         <tr class="u">
             <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
+            <td>u16</td>
             <td>1 - 102</td>
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u16</td>
             <td>0</td>
         </tr>
         <tr class="u">
             <td>12</td>
-            <td>u32</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u16</td>
             <td>always 8</td>
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>always 8</td>
+            <td>u16</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
-            <td>u32</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>22</td>
+            <td>u16</td>
             <td>0</td>
         </tr>
         <tr class="u">
             <td>24</td>
-            <td>u32</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>26</td>
+            <td>u16</td>
             <td>0</td>
         </tr>
         <tr class="u">
             <td>28</td>
-            <td>u32</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>30</td>
+            <td>u16</td>
             <td>0</td>
         </tr>
         <tr class="u">
@@ -10692,7 +10707,7 @@
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8_4_0">offset (bmg_demo_interface_80_36t1_8_4_0)</a> </td>
+            <td><a href="#bmg_demo_text">offset (bmg_demo_text)</a> </td>
         </tr>
     </tbody>
     <tfoot>
@@ -21620,15 +21635,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>amount | 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_72_24_4t11_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_72_24_4t11_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -21679,7 +21694,7 @@
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_72_24_4t11_4_0">offset</a> </td>
+            <td>offset string</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -21694,7 +21709,7 @@
         <tr class="u">
             <td>09</td>
             <td>u8</td>
-            <td>0,1</td>
+            <td>type | 0,1</td>
         </tr>
         <tr class="u">
             <td>10</td>
@@ -21706,15 +21721,18 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_72_24_4t11_4_12">offset</a> </td>
+            <td>based on type [9]<br>
+                0 = <a href="#bmg_demo_interface_72_24_4t11_4_12t0">offset</a><br>
+                1 = <a href="#bmg_demo_interface_72_24_4t11_4_12t1">offset</a><br>
+            </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">16 bytes</th>
+            <th colspan="3">16 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -21798,12 +21816,12 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_72_24_4t11_4_12t1_0">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_72_24_4t11_4_12t1_4">offset</a> </td>
@@ -21859,7 +21877,7 @@
             <td>u32</td>
             <td>always 141</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_72_24_4t11_4_12t1_0_4">offset</a> </td>
@@ -22022,12 +22040,12 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_72_24_12_0">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_72_24_12_4">offset</a> </td>
@@ -22190,10 +22208,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_0">offset</a> </td>
+            <td>offset string</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -22220,15 +22238,15 @@
             <td>u8</td>
             <td>0,1,2,3,4,5,8,255</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_12">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_16">offset</a> </td>
+            <td>offset string</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -22260,17 +22278,27 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_32">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36">offset</a> </td>
+            <td>based on type [26]<br>
+                0 = <a href="#bmg_demo_interface_80_36t0">offset</a><br>
+                1 = <a href="#bmg_demo_interface_80_36t1">offset</a><br>
+                6 = <a href="#bmg_demo_interface_80_36t6">offset</a><br>
+                7 = <a href="#bmg_demo_interface_80_36t7">offset</a><br>
+                10 = <a href="#bmg_demo_interface_80_36t10">offset</a><br>
+                12 = <a href="#bmg_demo_interface_80_36t12">offset</a><br>
+                13 = <a href="#bmg_demo_interface_80_36t13">offset</a><br>
+                14 = <a href="#bmg_demo_interface_80_36t14">offset</a><br>
+                15 = <a href="#bmg_demo_interface_80_36t15">offset</a><br>
+            </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>40</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_40">offset</a> </td>
@@ -22285,7 +22313,7 @@
             <td>float</td>
             <td>-1.600000023841858 - 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>52</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_52">offset</a> </td>
@@ -22300,15 +22328,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>64</td>
             <td>u32</td>
-            <td>1,2,3,5</td>
+            <td>amount | 1,2,3,5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>68</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68">offset</a> based on amount [64]</td>
         </tr>
         <tr class="u">
             <td>72</td>
@@ -22542,15 +22570,15 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>0,1,2,3,4</td>
+            <td>amount | 0,1,2,3,4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_32_8">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_32_8">offset</a> based on amount [4]</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -22613,7 +22641,7 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_32_8_4">offset</a> </td>
@@ -22626,7 +22654,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -22730,12 +22758,12 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>patch texture 0 - 1114112</td>
+            <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t0_8">offset</a> </td>
@@ -22796,15 +22824,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>2,4,7,8,19</td>
+            <td>amount | 2,4,7,8,19</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t0_8_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t0_8_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -22867,15 +22895,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 196608,262144,327680</td>
+            <td>patch texture</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -22908,22 +22936,29 @@
             <td>u8</td>
             <td>always 5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_4">offset</a> </td>
+            <td><a href="#bmg_demo_text">offset (bmg_demo_text)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8">offset</a> </td>
+            <td>based on type [0]<br>
+                1 = <a href="#bmg_demo_interface_80_36t1_8t1">offset</a><br>
+                3 = <a href="#bmg_demo_interface_80_36t1_8t3">offset</a><br>
+                4 = <a href="#bmg_demo_interface_80_36t1_8t4">offset</a><br>
+            </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12">offset</a> </td>
+            <td>based on type [2]<br>
+               0 = <a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a><br>
+               1 = <a href="#bmg_demo_interface_80_36t1_12t1">offset (bmg_demo_interface_80_36t1_12t1)</a><br>
+            </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t1_16">offset</a> </td>
@@ -22989,20 +23024,35 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>1,3,4,7,16</td>
+            <td>amount | 1,3,4,7,16</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8t1_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_8t1_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
-            <td>16777216,16777217</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -23045,15 +23095,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8t1_4_0">offset</a> </td>
+            <td><a href="#bmg_demo_text">offset (bmg_demo_text)</a> </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -23127,7 +23177,7 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t1_8t4_4">offset</a> </td>
@@ -23183,7 +23233,7 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t1_8t4_4_4">offset</a> </td>
@@ -23282,99 +23332,7 @@
     </tfoot>
 </table>
 <hr/>
-<h2 id="bmg_demo_interface_80_36t1_8">bmg_demo_interface_80_36t1_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,7</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8_4">offset</a> </td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="bmg_demo_interface_80_36t1_8_4">bmg_demo_interface_80_36t1_8_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8_4_0">offset</a> </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="bmg_demo_interface_80_36t1_8_4_0">bmg_demo_interface_80_36t1_8_4_0</h2>
+<h2 id="bmg_demo_text">bmg_demo_text</h2>
 <p>multi linked to by:<br>
     <a href="#bmg_demo_interface_80_36t1_8_4">bmg_demo_interface_80_36t1_8_4 [0] </a><br>
 </p>
@@ -23385,10 +23343,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_8_4_0_0">offset</a> </td>
+            <td>offset string</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -23444,15 +23402,15 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td>patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t0_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0_4">offset (bmg_demo_interface_80_36t1_12t0_4)</a> </td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -23484,20 +23442,20 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t1_12t0_20">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>0,1,80</td>
+            <td>amount | 0,1,80</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t0_28">offset</a></td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0_28">offset</a> based on amount [24]</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -23598,27 +23556,27 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>always 253</td>
+            <td>amount | always 253</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t0_4_24">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0_4_24">offset</a> based on amount 20</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td>always 130</td>
+            <td>amount | always 130</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t0_4_32">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0_4_32">offset</a> based on amount [28]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t1_12t0_4_36">offset</a> </td>
@@ -23677,7 +23635,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">2 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -23738,7 +23696,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">24 bytes</th>
+            <th colspan="3">24 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -23840,7 +23798,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -23859,12 +23817,15 @@
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>type | 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4">offset</a> </td>
+            <td>based on type [0]<br>
+                0 = <a href="#bmg_demo_interface_80_36t1_12t1_4t0">offset</a><br>
+                1 = <a href="#bmg_demo_interface_80_36t1_12t1_4t1">offset</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -23942,10 +23903,10 @@
             <td>u32</td>
             <td>always 3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t0_12">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -23962,15 +23923,15 @@
             <td>float</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t0_28">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t0_32">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -24053,20 +24014,20 @@
             <td>u32</td>
             <td>always 4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t1_12">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t1_16">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4t1_20">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t1_12t0">offset (bmg_demo_interface_80_36t1_12t0)</a> </td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -24077,77 +24038,6 @@
             <td>28</td>
             <td>u32</td>
             <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr/>
-<h2 id="bmg_demo_interface_80_36t1_12t1_4">bmg_demo_interface_80_36t1_12t1_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>3,4</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>3,4</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4_12">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4_16">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4_20">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t1_12t1_4_28">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -24221,10 +24111,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t6_0">offset</a> </td>
+            <td><a href="#bmg_demo_interface">offset (bmg_demo_interface)</a> </td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -24251,7 +24141,7 @@
             <td>u32</td>
             <td>0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t6_12">offset</a> </td>
@@ -24378,10 +24268,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t7_0">offset</a> </td>
+            <td><a href="#bmg_demo_interface">offset (bmg_demo_interface)</a> </td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -24566,7 +24456,7 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t13_4">offset</a> </td>
@@ -24576,7 +24466,7 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t13_12">offset</a> </td>
@@ -24673,10 +24563,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 1245184,2031616</td>
+            <td>patch texture</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -24749,7 +24639,7 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t14_4">offset</a> </td>
@@ -24886,7 +24776,7 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t15_0">offset</a> </td>
@@ -24962,7 +24852,7 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_36t15_0_16">offset</a> </td>
@@ -24998,10 +24888,10 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 196608,262144,1507328</td>
+            <td>patch texture</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -25068,25 +24958,25 @@
             <td>u32</td>
             <td>0,100</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
-            <td>2,7</td>
+            <td>amount | 2,7</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t15_0_16_48">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t15_0_16_48">offset</a> based on amount [44]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>52</td>
             <td>u32</td>
-            <td>2,3</td>
+            <td>amount | 2,3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_36t15_0_16_56">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_36t15_0_16_56">offset</a> based on amount [52]</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -25142,7 +25032,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -25213,7 +25103,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -25301,7 +25191,7 @@
             <td>u32</td>
             <td>0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_40_36">offset</a> </td>
@@ -25382,7 +25272,7 @@
             <td>u32</td>
             <td>always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_40_36_24">offset</a> </td>
@@ -25519,52 +25409,52 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>0,1,4</td>
+            <td>amount | 0,1,4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_52_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_52_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>prob amount 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_52_12">offset</a> </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>amount | 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_52_20">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_52_20">offset</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>0,1,3</td>
+            <td>amount | 0,1,3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_52_28">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_52_28">offset</a> based on amount [24]</td>
         </tr>
         <tr class="u">
             <td>32</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>prob amount 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_52_36">offset</a> </td>
@@ -25673,7 +25563,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -25815,7 +25705,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -25876,7 +25766,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26020,7 +25910,7 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_interface_80_68_4">offset</a> </td>
@@ -26033,7 +25923,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26046,65 +25936,65 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>1,2</td>
+            <td>amount | 1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_4">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_4">offset</a> based on amount [0]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>0,1,2,5</td>
+            <td>amount | 0,1,2,3,5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_12">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_12">offset</a> based on amount [8]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>amount | 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_20">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_20">offset</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>amount | 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_28">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_28">offset</a> based on amount [24]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>amount | 0,1,2,3,4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_36">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_36">offset</a> based on amount [32]</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>amount prob | 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_interface_80_68_4_44">offset</a> </td>
+            <td><a href="#bmg_demo_interface_80_68_4_44">offset</a></td>
         </tr>
         <tr class="u">
             <td>48</td>
@@ -26170,7 +26060,7 @@
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0,800</td>
+            <td>0,500,800</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -26190,7 +26080,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">24 bytes</th>
+            <th colspan="3">24 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26261,7 +26151,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26301,8 +26191,8 @@
         </tr>
         <tr class="u">
             <td>20</td>
-            <td>u32</td>
-            <td>0</td>
+            <td>float</td>
+            <td>0,250</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -26317,7 +26207,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26388,7 +26278,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26434,7 +26324,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -26548,7 +26438,7 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_texture_anim_0_4">offset</a> </td>
@@ -26563,15 +26453,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>always 2</td>
+            <td>amount | always 2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_demo_texture_anim_0_20">offset</a> </td>
+            <td><a href="#bmg_demo_texture_anim_0_20">offset</a> based on amount [16]</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -26642,9 +26532,9 @@
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>amount prob | always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td><a href="#bmg_demo_texture_anim_0_4_4">offset</a> </td>
@@ -26668,6 +26558,62 @@
             <td>20</td>
             <td>u32</td>
             <td>always 1000</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr/>
+<h2 id="bmg_demo_texture_anim_0_4_4">bmg_demo_texture_anim_0_4_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -26733,7 +26679,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">16 bytes</th>
+            <th colspan="3">16 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
