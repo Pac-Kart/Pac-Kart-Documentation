@@ -10,7 +10,9 @@
    <body>
       <div class="main_page" id="main_page">
          <section id="main">
-            <h1>wip</h1>
+            <section id="main">
+                go back to main
+                <a href="index.html">here</a> <br/>
          </section>
          <section id="file">
             <h1>.sav file introduction</h1>
@@ -18,7 +20,7 @@
                there are 3 different file types seen<br>
                <a href="#profile">profile </a>(contains all save data)<br>
                <a href="#ghost">ghost</a> (a ghost replay file)<br>
-               PMR (unknown)<br><br>
+               <a href="#PMR">PMR</a> (unknown)<br><br>
                interestingly the hall of fame records have default letters that are never seen
                <br> JEN = Time Trials<br>WTH = Letter Hunt<br>
                CKJ = clockbuster
@@ -1150,7 +1152,7 @@
                   </tr>
                </tfoot>
             </table>
-                        <hr>
+            <hr>
             <h3 id='ghost'>ghost file structure</h3>
             <table class="h">
                <tbody>
@@ -1165,8 +1167,7 @@
                   </tr>
                   <tr>
                      <td>0004</td>
-                     <td >Ghost character
-                     </td>
+                     <td>Ghost character</td>
                   </tr>
                   <tr>
                      <td>9608</td>
@@ -1178,6 +1179,30 @@
                <tfoot>
                   <tr>
                      <th colspan="3">9624 bytes</th>
+                  </tr>
+               </tfoot>
+            </table>
+            <hr>
+            <h3 id='PMR'>PMR</h3>
+            <table class="h">
+               <tbody>
+                  <tr>
+                     <th>bytes</th>
+                     <th>section</th>
+                  </tr>
+                  <tr>
+                     <td>0012</td>
+                     <td><a style='color:blue;' href='#file_header'>file header</a>                   
+                     </td>
+                  </tr>
+                  <tr class='u'>
+                     <td>0004</td>
+                     <td>Always 1</td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <th colspan="3">16 bytes</th>
                   </tr>
                </tfoot>
             </table>
