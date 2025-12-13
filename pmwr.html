@@ -11,11 +11,11 @@
         <div class="main_page" id="main_page">
             <section id="main">
                 go back to main
-                <a href="index.html">here</a> <br/>
-                <br/>
+                <a href="index.html">here</a><br>
+                <br>
                 for the save file format click
                 <a href="save_file.html">here</a>
-                <br/>
+                <br>
                 <h2>Pac Man World Rally Structure</h2>
                 <p>
                     The layout seen in <b>x*</b> for Pac man World Rally archives is as follows:
@@ -74,7 +74,7 @@
                         <a style="color:#09518b;user-select:none;">.</a>
                     </div>
                 </div>
-                <hr/> 
+                <hr> 
                 <h2 id="file_header_x">File Header</h2>
 <p>depending on the verion <a href="padding.html">padding</a> may be seen</p>
                 <table class="h">
@@ -88,22 +88,22 @@
                             <td>00</td>
                             <td>u32</td>
                             <td>
-                                <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files">magic 1 </a>
-                                <br/>value always 33620128
+                                <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files">magic 1</a>
+                                <br>value always 33620128
                             </td>
                         </tr>
                         <tr>
                             <td>04</td>
                             <td>u32</td>
                             <td>
-                                magic 2 <br/>Big Foot / Bee / Pacman / Snoopy =  67174575<br> Hot Wheels = 67174574
+                                magic 2 <br>Big Foot / Bee / Pacman / Snoopy =  67174575<br> Hot Wheels = 67174574
                             </td>
                         </tr>
                         <tr>
                             <td>08</td>
                             <td>u32</td>
                             <td>
-                                version <br/>value different depending on region / game
+                                version <br>value different depending on region / game
                 <p>
                     Bigfoot: Collision Course:<br>
                     PC: 315<br>
@@ -111,21 +111,21 @@
                     Bee Movie Game:<br>
                     Wii 312<br><br>
                     Wii Demo 288<br><br>
-                    Pac Man World Rally: <br/>
-                    PC: 267 <br/>
-                    GC: ntsc: 267 <br/>
-                    PS2: pal : 274 <br/>
-                    PS2: ntsc: 267 <br/>
-                    PS2: demo: 249 <br/>
-                    PSP: pal :274 <br/>
-                    Xbox:demo: 243 <br/>
-                    <br/>
-                    Snoopy vs. the Red Baron: <br/>
-                    PC: 274 <br/>
-                    PSP: 273 <br/>
-                    PS2: 273 <br/>
-                    <br/>
-                    Hot Wheels Velocity X <br/>
+                    Pac Man World Rally: <br>
+                    PC: 267 <br>
+                    GC: ntsc: 267 <br>
+                    PS2: pal : 274 <br>
+                    PS2: ntsc: 267 <br>
+                    PS2: demo: 249 <br>
+                    PSP: pal :274 <br>
+                    Xbox:demo: 243 <br>
+                    <br>
+                    Snoopy vs. the Red Baron: <br>
+                    PC: 274 <br>
+                    PSP: 273 <br>
+                    PS2: 273 <br>
+                    <br>
+                    Hot Wheels Velocity X <br>
                     PC: ntsc 183<br>
                     PS2: ntsc 183<br>
                     GC: ntsc 183<br>
@@ -148,8 +148,8 @@
                         </tr>
                     </tfoot>
                 </table>
-                <br/>
-                <hr/>
+                <br>
+                <hr>
                 <h2 id="file_directory_x">file directory</h2>
                 <table class="h">
                     <tbody>
@@ -162,25 +162,25 @@
                             <td>00</td>
                             <td>u32</td>
                             <td>
-                                version<br/>every DataPack has the same version number as file header
+                                version<br>every DataPack has the same version number as file header
                             </td>
                         </tr>
                         <tr>
                             <td>04</td>
                             <td>u32</td>
                             <td>
-                                type of file: <br/>
-                                * 0 = car <br/>
-                                * 1 = interface <br/>
-                                * 2 = item <br/>
-                                * 3 = link <br/>
-                                * 4 = world <br/>
-                                * 5 = colliders <br/>
-                                * 6 = world texture <br/>
-                                * 7 = geometry <br/>
-                                * 8 = share <br/>
-                                * 9 = audio <br/>
-                                * 10 = music <br/>
+                                type of file: <br>
+                                * 0 = car <br>
+                                * 1 = interface <br>
+                                * 2 = item <br>
+                                * 3 = link <br>
+                                * 4 = world <br>
+                                * 5 = colliders <br>
+                                * 6 = world texture <br>
+                                * 7 = geometry <br>
+                                * 8 = share <br>
+                                * 9 = audio <br>
+                                * 10 = music <br>
                                 <small>credit to Alaxend0l#5064 on discord</small>
                             </td>
                         </tr>
@@ -188,7 +188,7 @@
                             <td>08</td>
                             <td>u32</td>
                             <td>
-                                file type index <br/>files with different types can have the same index
+                                file type index <br>files with different types can have the same index
                             </td>
                         </tr>
                         <tr class="u">
@@ -219,8 +219,8 @@
                         </tr>
                     </tfoot>
                 </table>
-                <br/>
-                <hr/>
+                <br>
+                <hr>
 <p>depending on the verion <a href="padding.html">padding</a> may be seen</p>
 
 <h2 id="data_pack">DataPack</h2>
@@ -360,7 +360,7 @@ offset to <a href='#texture_animation_section'>texture animations</a> (from orde
     </tr>
 </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_offset_list">Sound Offset List</h2>
 <p>comes directly after the datapack if there are any sounds, if not skip to the <a href="#index_patch_list">index patch list</a><br>
 depending on the verion <a href="padding.html">padding</a> may be seen</p>
@@ -386,7 +386,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='sounds'>Audio</h2>
 <table class="h">
     <tbody>
@@ -452,24 +452,24 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
 </table>
 <h2 id='sound_data'>sound data</h2>
 <p>
-    <br/>
-    pac: pc / gc / xbox <br/>
-    snoopy: pc <br/>
-    hot wheels: pc<br/>
-    <br/>
-    pcm format<br/>
-    1 channels<br/>
+    <br>
+    pac: pc / gc / xbox <br>
+    snoopy: pc <br>
+    hot wheels: pc<br>
+    <br>
+    pcm format<br>
+    1 channels<br>
     16 bit
-                    <br/>
-    <br/>
-    pac: ps2 / psp <br/>probably vag?
+                    <br>
+    <br>
+    pac: ps2 / psp <br>probably vag?
 
 </p>
-<hr/>
+<hr>
 <h2 id="music">music</h2>
 <p>only the xbox version contains this section</p>
 <p>wip</p>
-<hr/>
+<hr>
 <h2 id="index_patch_list">Index Patch List</h2>
 <p>linked to by the <a href="#data_pack">datapack</a><br>
     patches the texture/texture animation/sound indexes into the file.<br>
@@ -578,7 +578,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="ordered_list">Ordered List</h2>
 <p>no direct offset to this section<br>
     to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
@@ -727,7 +727,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
             <td>u32</td>
             <td>offset into unordered list<br> depends on <a href="#file_directory_x">type</a> of file:<br>
                 <a href="#car">0 = car header</a><br>
-                <a href="#interface">1 = interface header </a><br>
+                <a href="#interface">1 = interface header</a><br>
                 2 = item (not seen)<br>
                 <a href="#link">3 = link header</a><br>
                 9 = audio (not seen)<br>
@@ -777,7 +777,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
             <td>04</td>
             <td>u32</td>
             <td>
-                offset <a href='#collision'>collision </a>
+                offset <a href='#collision'>collision</a>
             </td>
         </tr>
         <tr>
@@ -974,7 +974,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_76">collision_76</h2>
 <table class="h">
     <tbody>
@@ -1035,7 +1035,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_76_16">collision_76_16</h2>
 <table class="h">
     <tbody>
@@ -1111,7 +1111,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_84">collision_84</h2>
 <p>????</p>
 <table class="h">
@@ -1208,11 +1208,11 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_64">collision_64</h2>
 <p>
     3d tile based <br>
-    each value is indexed from <a href="#collision_32t0">collision_32t0</a> / <a href="#collision_32t1">collision_32t1</a><br/>
+    each value is indexed from <a href="#collision_32t0">collision_32t0</a> / <a href="#collision_32t1">collision_32t1</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -1233,7 +1233,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_32t0">collision_32t0</h2>
 <table class="h">
     <tbody>
@@ -1309,7 +1309,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_32t0_40">collision_32t0_40</h2>
 <p>another grid?</p>
                     <table class="h">
@@ -1331,7 +1331,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_32t1">collision_32t1</h2>
 <p>vertex 1 & 2 represent an area where collision from <a href="#collision_32t1_40">collision_32t1_40</a> is active</p>
 <table class="h">
@@ -1408,7 +1408,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_32t1_40">collision_32t1_40</h2>
 <table class="h">
     <tbody>
@@ -1455,7 +1455,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
     </tfoot>
 </table>
 <p>...after append CD CD CD CD until section divisible by 16</p>
-<hr/>
+<hr>
 <h2 id="collision_32t1_40_00">collision_32t1_40_00</h2>
 <table class="h">
     <tbody>
@@ -1516,7 +1516,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="collision_32t1_36">collision_32t1_36</h2>
 <table class="h">
     <tbody>
@@ -1551,31 +1551,31 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
             <td>00</td>
             <td>u32</td>
             <td>
-                type of section<br/>
+                type of section<br>
                 <a href="#world_20_12t0">0 = starting points</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t1">1 = camera</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t2">2 = link?</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t3">3 = sound area</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t4">4 = respawns 1</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t5">5 = world model</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t8">8 = collision related</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t10">10 = pac pellet /fruit activators</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t11">11 = respawn 2</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t13">13 = custom stage object ?</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t14">14 = animations ? ?</a>
-                <br/>
+                <br>
                 <a href="#world_20_12t15">15 = objects</a>
-                <br/>types 6,7,9,12 not seen
+                <br>types 6,7,9,12 not seen
                             
             
             </td>
@@ -1615,7 +1615,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<br/>
+<br>
 <hr>
 <h2 id="type_entry_header">entry header</h2>
 <p>before each of the section entires a 32 byte structure appears</p>
@@ -1689,7 +1689,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t0">world_20_12t0</h2>
 <p>multi linked to by:<br>
     <a href="#world_20"> world_20 [12]</a><br>
@@ -1874,7 +1874,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t1">world_20_12t1</h2>
         <p>multi linked to by:<br>
         <a href="#world_20">world_20 [12]</a><br>
@@ -2000,7 +2000,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2">world_20_12t2</h2>
 <table class="h">
     <tbody>
@@ -2118,7 +2118,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_100">world_20_12t2_100</h2>
 <table class="h">
     <tbody>
@@ -2139,7 +2139,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_56">world_20_12t2_56</h2>
 <table class="h">
     <tbody>
@@ -2455,7 +2455,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_64">world_20_12t2_64</h2>
 <table class="h">
     <tbody>
@@ -2476,7 +2476,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_76">world_20_12t2_76</h2>
 <table class="h">
     <tbody>
@@ -2518,7 +2518,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_76_12">world_20_12t2_76_12</h2>
 <table class="h">
     <tbody>
@@ -2575,7 +2575,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t2_72_00">world_20_12t2_72_00</h2>
 <p>amount based on <a href="#world_20_12t2">world_20_12t2 [40]</a></p>
 <table class="h">
@@ -2597,7 +2597,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t3">world_20_12t3</h2>
 <p>type 3 section / Sound area</p>
 <table class="h">
@@ -2663,7 +2663,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t4">world_20_12t4</h2>
 <p>multi linked to by:<br>
     <a href="#world_20"> world_20 [12]</a><br>
@@ -2835,7 +2835,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t4_128t1">world_20_12t4_128t1</h2>
 <table class="h">
     <tbody>
@@ -2871,7 +2871,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t5">world_20_12t5</h2>
 <p>type 5 / model postitoins ?</p>
 <table class="h">
@@ -3011,7 +3011,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8">world_20_12t8</h2>
 <p>type 8 section / collision related</p>
 <p>multi linked to by:<br>
@@ -3088,7 +3088,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
             <td>72</td>
             <td>u32</td>
             <td>based on type [32]<br>
-                <a href="#world_20_12t8_72">0 = offset </a><br>
+                <a href="#world_20_12t8_72">0 = offset</a><br>
                 1 = 0</td>
         </tr>
         <tr>
@@ -3107,7 +3107,7 @@ depending on the verion <a href="padding.html">padding</a> may be seen</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_72">world_20_12t8_72</h2>
 <p>section usually 192 bytes but not always<br>
 section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
@@ -3130,7 +3130,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_76t1">world_20_12t8_76t1</h2>
 <table class="h">
     <tbody>
@@ -3186,7 +3186,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_76t7">world_20_12t8_76t7</h2>
 <table class="h">
     <tbody>
@@ -3237,7 +3237,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_76t8">world_20_12t8_76t8</h2>
 <table class="h">
     <tbody>
@@ -3273,7 +3273,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_76t8_04">world_20_12t8_76t8_04</h2>
 <p>multi linked to by:<br>
     <a href="#world_20_12t8_76t8"> world_20_12t8_76t8 [08]</a><br>
@@ -3352,7 +3352,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t8_76t8_08">world_20_12t8_76t8_08</h2>
 <p>multi linked to by:<br>
     <a href="#world_20_12t8_76t8"> world_20_12t8_76t8 [08]</a><br>
@@ -3422,7 +3422,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t10">world_20_12t10</h2>
         <p>multi linked to by:<br>
         <a href="#world_20">world_20 [12]</a><br>
@@ -3554,7 +3554,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t11">world_20_12t11</h2>
         <p>multi linked to by:<br>
         <a href="#world_20">world_20 [12]</a><br>
@@ -3650,7 +3650,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t13">world_20_12t13</h2>
         <p>multi linked to by:<br>
         <a href="#world_20">world_20 [12]</a><br>
@@ -3788,7 +3788,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t14">world_20_12t14</h2>
 <p>multi linked to by:<br>
     <a href="#world_20">world_20 [12]t14</a><br>
@@ -3892,7 +3892,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_20_12t15">world_20_12t15</h2>
 <p>multi linked to by:<br>
     <a href="#world_20">world_20 [12]t14</a><br>
@@ -4011,7 +4011,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_08">world_08</h2>
 <p>special collision ???????</p>
 <table class="h">
@@ -4044,12 +4044,12 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#world_08_16">offset </a> based on amount [28]</td>
+            <td><a href="#world_08_16">offset</a> based on amount [28]</td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#world_08_20">offset </a> based on amount [24]</td>
+            <td><a href="#world_08_20">offset</a> based on amount [24]</td>
         </tr>
         <tr>
             <td>24</td>
@@ -4108,7 +4108,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_08_20">world_08_20</h2>
 <table class="h">
     <tbody>
@@ -4129,7 +4129,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_08_16">world_08_16</h2>
 <table class="h">
     <tbody>
@@ -4245,7 +4245,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_08_16_12">world_08_16_12</h2>
 <table class="h">
     <tbody>
@@ -4266,7 +4266,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_12">world_12</h2>
 <p>item / CPU / checkpoint / respawn Routes header</p>
 <p>like the optional sections above but linked by world</p>
@@ -4304,7 +4304,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_12_00">world_12_00</h2>
 <table class="h">
     <tbody>
@@ -4475,7 +4475,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_12_00_64">world_12_00_64</h2>
 <table class="h">
     <tbody>
@@ -4497,7 +4497,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_12_00_52">world_12_00_52</h2>
 <table class="h">
     <tbody>
@@ -4520,7 +4520,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_12_00_56">world_12_00_56</h2>
 <table class="h">
     <tbody>
@@ -4542,7 +4542,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_32">world_32</h2>
 <table class="h">
     <tbody>
@@ -4563,7 +4563,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_24">world_24</h2>
 <table class="h">
     <tbody>
@@ -4604,7 +4604,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_24_04">world_24_04</h2>
 <table class="h">
     <tbody>
@@ -4625,7 +4625,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_24_12">world_24_12</h2>
 <table class="h">
     <tbody>
@@ -4646,7 +4646,7 @@ section simalir to <a href="#world_20_12t2_56">world_20_12t2_56</a></p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="ordered_share_section">Share</h2>
 <p>there does not seem to be an amount for this section?<br><br>
 there is also a <a href="#share_low_section">section</a> in gShared not linked by offset after the textures<br>
@@ -4674,7 +4674,7 @@ not sure if it does anything</p>
 <h2 id="models">models</h2>
 <p>linked to by:<br>
     <a href="#ordered_share_section">ordered_share_section [00]</a><br>                
-    <a href="#type_5models">world type_5 [100] </a><br>            
+    <a href="#type_5models">world type_5 [100]</a><br>            
     <a href="#model_link_24">model_link_24 [00]</a><br>                
     <a href="#model_link_32">model_link_32 [00]</a><br>
     <a href="#interface_72_24t0">interface_72_24t0 [04]t1</a><br>                
@@ -4788,7 +4788,7 @@ not sure if it does anything</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04">models_04</h2>
 <p>LOD Sections</p>
 <table class="h">
@@ -4817,7 +4817,7 @@ not sure if it does anything</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_12">models_12</h2>
 <table class="h">
     <tbody>
@@ -4838,7 +4838,7 @@ not sure if it does anything</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04">models_04_04</h2>
 <table class="h">
     <tbody>
@@ -4861,7 +4861,7 @@ not sure if it does anything</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <p>differnet Versions seen<br>
 <a href="#models_04_04_00">PC</a><br>
 <a href="#PS2_models_04_04_00">PS2</a><br>
@@ -5200,22 +5200,22 @@ GameCube:
         <tr class="u">
             <td>60</td>
             <td>u32</td>
-            <td><a href="#GC_models_04_04_00_60">offset </a></td>
+            <td><a href="#GC_models_04_04_00_60">offset</a></td>
         </tr>
         <tr class="u">
             <td>64</td>
             <td>u32</td>
-            <td><a href="#GC_models_04_04_00_64">offset </a></td>
+            <td><a href="#GC_models_04_04_00_64">offset</a></td>
         </tr>
         <tr class="u">
             <td>68</td>
             <td>u32</td>
-            <td><a href="#GC_models_04_04_00_68">offset </a></td>
+            <td><a href="#GC_models_04_04_00_68">offset</a></td>
         </tr>
         <tr class="u">
             <td>72</td>
             <td>u32</td>
-            <td><a href="#GC_models_04_04_00_72">offset </a></td>
+            <td><a href="#GC_models_04_04_00_72">offset</a></td>
         </tr>
         <tr class="u">
             <td>76</td>
@@ -5424,7 +5424,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04_00_68">models_04_04_00_68</h2>
 <table class="h">
     <tbody>
@@ -5485,7 +5485,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04_00_72">models_04_04_00_72</h2>
 <table class="h">
     <tbody>
@@ -5521,7 +5521,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04_00_76">models_04_04_00_76</h2>
 <table class="h">
     <tbody>
@@ -5552,7 +5552,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>       
+<hr>       
 <h2 id="models_04_04_00_80">models_04_04_00_80</h2>
 <table class="h">
     <tbody>
@@ -5578,7 +5578,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04_00_84">models_04_04_00_84</h2>
 <table class="h">
     <tbody>
@@ -5599,8 +5599,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
-
+<hr>
 <h2 id="models_04_04_00_92">models_04_04_00_92</h2>
 <table class="h">
     <tbody>
@@ -5638,7 +5637,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="models_04_04_00_92_12">models_04_04_00_92_12</h2>
 <table class="h">
     <tbody>
@@ -5661,12 +5660,12 @@ GameCube:
 </table>
 <hr>
 <h2 id="models_04_04_00_names">models_04_04_00_names</h2>
-<p>this section is a list of texture names that each material uses, likley when the mesh was first imported as a few texture names are mismatched.<br/>
-    file extenstion is always a .tga<br/>
-    this is not linked by an offset<br/>
-    null terminated strings<br/>
+<p>this section is a list of texture names that each material uses, likley when the mesh was first imported as a few texture names are mismatched.<br>
+    file extenstion is always a .tga<br>
+    this is not linked by an offset<br>
+    null terminated strings<br>
 </p>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_80">GC_models_04_04_00_80</h2>
 <table class="h">
     <tbody>
@@ -5702,7 +5701,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_80_04">GC_models_04_04_00_80_04</h2>
 <table class="h">
     <tbody>
@@ -5723,7 +5722,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_80_00">GC_models_04_04_00_80_00</h2>
 <table class="h">
     <tbody>
@@ -5799,7 +5798,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_60">GC_models_04_04_00_60</h2>
 <p>vertex</p>
 <table class="h">
@@ -5821,7 +5820,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_64">GC_models_04_04_00_64</h2>
 <p>color?</p>
 <table class="h">
@@ -5858,7 +5857,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_68">GC_models_04_04_00_68</h2>
 <p>?</p>
 <table class="h">
@@ -5880,7 +5879,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_72">GC_models_04_04_00_72</h2>
 <p>?</p>
 <table class="h">
@@ -5902,7 +5901,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_76">GC_models_04_04_00_76</h2>
 <table class="h">
     <tbody>
@@ -5963,7 +5962,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_76_08">GC_models_04_04_00_76_08</h2>
 <table class="h">
     <tbody>
@@ -5984,9 +5983,9 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_76_12">GC_models_04_04_00_76_12</h2>
-<p>maybe related to <a href="#GC_models_04_04_00_76t48">[04]</a> / <a href="#GC_models_04_04_00">[16] / </a>? 
+<p>maybe related to <a href="#GC_models_04_04_00_76t48">[04]</a> / <a href="#GC_models_04_04_00">[16] /</a>? 
 <table class="h">
     <tbody>
         <tr>
@@ -6006,7 +6005,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="GC_models_04_04_00_76_16">GC_models_04_04_00_76_16</h2>
 <table class="h">
     <tbody>
@@ -6027,7 +6026,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp">pmwr_model_psp</h2>
 <table class="h">
     <tbody>
@@ -6044,17 +6043,17 @@ GameCube:
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4">offset</a> </td>
+            <td><a href="#pmwr_model_psp_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_8">offset</a> </td>
+            <td><a href="#pmwr_model_psp_8">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_12">offset</a> </td>
+            <td><a href="#pmwr_model_psp_12">offset</a></td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -6123,7 +6122,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp_4">pmwr_model_psp_4</h2>
 <table class="h">
     <tbody>
@@ -6140,7 +6139,7 @@ GameCube:
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4_4">offset</a> </td>
+            <td><a href="#pmwr_model_psp_4_4">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -6159,7 +6158,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp_4_4">pmwr_model_psp_4_4</h2>
 <table class="h">
     <tbody>
@@ -6171,7 +6170,7 @@ GameCube:
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4_4_0">offset</a> </td>
+            <td><a href="#pmwr_model_psp_4_4_0">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -6180,7 +6179,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp_4_4_0">pmwr_model_psp_4_4_0</h2>
 <table class="h">
     <tbody>
@@ -6332,7 +6331,7 @@ GameCube:
         <tr class="u">
             <td>100</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4_4_0_100">offset</a> </td>
+            <td><a href="#pmwr_model_psp_4_4_0_100">offset</a></td>
         </tr>
         <tr class="u">
             <td>104</td>
@@ -6351,7 +6350,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp_4_4_0_100">pmwr_model_psp_4_4_0_100</h2>
 <table class="h">
     <tbody>
@@ -6403,7 +6402,7 @@ GameCube:
         <tr class="u">
             <td>32</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4_4_0_100_32">offset</a> </td>
+            <td><a href="#pmwr_model_psp_4_4_0_100_32">offset</a></td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -6427,7 +6426,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="pmwr_model_psp_12">pmwr_model_psp_12</h2>
 <table class="h">
     <tbody>
@@ -6463,7 +6462,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="texture_animation_section">Texture Animations Part 1</h2>
 <p>linked to by the <a href="#data_pack">datapack</a><br>
     Amount = [48] in Datapack<br>
@@ -6499,7 +6498,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
                 
 <h2 id="model_animation_1">Model Animation 1</h2>
 <p>multi linked to by:<br>
@@ -6710,7 +6709,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="model_animation_1_28t1">model_animation_1_28t1</h2>
 <table class="h">
     <tbody>
@@ -6802,7 +6801,7 @@ GameCube:
         </tr>
     </tfoot>
 </table>
-<hr/>           
+<hr>           
 <h2 id="model_animation_1_24t3">model_animation_1_24t3</h2>
 <table class="h">
     <tbody>
@@ -7064,7 +7063,7 @@ not sure amount, 0,16,32,416,512 seen<br>
             <td>16</td>
             <td>u32</td>
             <td>
-                <a href="#model_animation_1_52t35_16">offset 2 </a> based on amount [08]
+                <a href="#model_animation_1_52t35_16">offset 2</a> based on amount [08]
             </td>
         </tr>
         <tr>
@@ -7299,7 +7298,7 @@ not sure amount, 0,16,32,416,512 seen<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="model_animation_1_52t163_08">model_animation_1_52t163_08</h2>
 <table class="h">
     <tbody>
@@ -7320,7 +7319,7 @@ not sure amount, 0,16,32,416,512 seen<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="model_animation_1_52t163_12">model_animation_1_52t163_12</h2>
 <table class="h">
     <tbody>
@@ -7341,7 +7340,7 @@ not sure amount, 0,16,32,416,512 seen<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="model_animation_2">Model Animation 2</h2>
                 
 <p>multi linked to by:
@@ -7496,16 +7495,16 @@ not sure amount, 0,16,32,416,512 seen<br>
             <td>00</td>
             <td>u8</td>
             <td>
-                texture type <br/>
-                * 24 = RGB no alpha<br/>
-                * 65 = dxt1 <br/>
-                * 68 = ? <br/>
-                * 72 = ? <br/>
-                * 160 = rgba8888 <br/>
-                * 193 = dxt1 + alpha texture half size <br/>
-                * 194 = dxt1 + alpha texture <br/>
-                * 196 = ? <br/>
-                * 197 = dxt5/3 <br/>
+                texture type <br>
+                * 24 = RGB no alpha<br>
+                * 65 = dxt1 <br>
+                * 68 = ? <br>
+                * 72 = ? <br>
+                * 160 = rgba8888 <br>
+                * 193 = dxt1 + alpha texture half size <br>
+                * 194 = dxt1 + alpha texture <br>
+                * 196 = ? <br>
+                * 197 = dxt5/3 <br>
                 * 200 = ?
             </td>
         </tr>
@@ -7547,19 +7546,19 @@ not sure amount, 0,16,32,416,512 seen<br>
     </tfoot>
 </table>
 <h2>gamecube dxt1 compression differences</h2>
-gc does not use standard dxt1 compression,<br/>
-instead it uses CMPR, a gc derivative of the standard format<br/>
-the color and pixel position are big endian<br/>
-and every 4 pixel blocks are arranged in a zigzap pattern<br/>
-so 1st pixel block would be top left 2nd top right 3rd bottom left 4th bottom right<br/>
-after move right unless end then move down<br/>
-<br/>
+gc does not use standard dxt1 compression,<br>
+instead it uses CMPR, a gc derivative of the standard format<br>
+the color and pixel position are big endian<br>
+and every 4 pixel blocks are arranged in a zigzap pattern<br>
+so 1st pixel block would be top left 2nd top right 3rd bottom left 4th bottom right<br>
+after move right unless end then move down<br>
+<br>
 <h2>ps2</h2>
 each texture type has 16 bytes of padding before the color table<br>
-then a 1024 byte color lookup table?<br/>
+then a 1024 byte color lookup table?<br>
 <br>
 the format is: 16 byte padding + 1024 color lookup + (x * y) + mipmaps / 2
-<br/>
+<br>
 <table class="h">
     <tbody>
         <tr>
@@ -7593,9 +7592,9 @@ formats seen: <br> 68 = x * y
 <br> 72 = x * y
 <br> 196 = x * y /2
 <br> 200 = x * y
-<br/>
+<br>
 the format is: 48 byte header + 1024 color lookup + (x * y) / type
-<br/>
+<br>
 <h2 id="xpp_header">xpp_header</h2>
 <table class="h">
     <tbody>
@@ -7672,11 +7671,11 @@ the format is: 48 byte header + 1024 color lookup + (x * y) / type
     </tfoot>
 </table>
 
-texture type by console: <br/>
-gc: 65 / 193 / 194 <br/>
-pc: 24 / 65 / 160 / 197 <br/>
-xbox: 65 / 160 / 197 <br/>
-psp: 68 / 72 / 196 / 200 <br/>
+texture type by console: <br>
+gc: 65 / 193 / 194 <br>
+pc: 24 / 65 / 160 / 197 <br>
+xbox: 65 / 160 / 197 <br>
+psp: 68 / 72 / 196 / 200 <br>
 ps2: 72 / 160 / 200
 
                 <p>Snoopy vs. the Red Baron</p>
@@ -7696,11 +7695,11 @@ ps2: 72 / 160 / 200
             <td>04</td>
             <td>u8</td>
             <td>
-                texture type <br/>
-                * 65 = dxt1 <br/>
-                * 193 = DDS (dxt1 compression + alpha texture half size) probably<br/>
-                * 195 = ???<br/>
-                * 197 = dxt5 <br/>
+                texture type <br>
+                * 65 = dxt1 <br>
+                * 193 = DDS (dxt1 compression + alpha texture half size) probably<br>
+                * 195 = ???<br>
+                * 197 = dxt5 <br>
             </td>
         </tr>
         <tr>
@@ -7727,7 +7726,7 @@ ps2: 72 / 160 / 200
             <td>12</td>
             <td>u32</td>
             <td>
-                string offset <br/>end is relative on next offset / start of unordered?
+                string offset <br>end is relative on next offset / start of unordered?
             </td>
         </tr>
     </tbody>
@@ -7737,7 +7736,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unordered_list">Unordered List</h2>
 <p>sections here appear whenever they are linked and do not have a set order<br>
    sections in the unordered list can link to the ordered list and sections in the ordered list can link to the unordered list<br>
@@ -7770,8 +7769,6 @@ ps2: 72 / 160 / 200
 <a href="#unknown">unknown</a><br>
 <a href="#wtf">wtf</a><br>
 <a href="#mysterious">mysterious</a><br>
-
-    
 </p>
 <hr>
 <h2 id="idk">idk</h2>
@@ -7779,7 +7776,6 @@ ps2: 72 / 160 / 200
     <a href="#world_20_12t1">world_20_12t1 [72]</a><br>
     <a href="#world_20_12t13">world_20_12t13 [64]</a><br>
     <a href="#unknown_00_04">unknown_00_04 [04]t6</a><br>
-
 </p>
 <table class="h">
     <tbody>
@@ -7927,7 +7923,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="idk_12">idk_12</h2>
 <table class="h">
     <tbody>
@@ -8073,7 +8069,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="idk_12_16">idk_12_16</h2>
 <table class="h">
     <tbody>
@@ -8149,7 +8145,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="idk_20">idk_20</h2>
 <table class="h">
     <tbody>
@@ -8186,7 +8182,7 @@ ps2: 72 / 160 / 200
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#idk_20_08">offset </a> based on amount [04]</td>
+            <td><a href="#idk_20_08">offset</a> based on amount [04]</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -8196,7 +8192,7 @@ ps2: 72 / 160 / 200
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td><a href="#idk_20_16">offset </a> based on amount [12]</td>
+            <td><a href="#idk_20_16">offset</a> based on amount [12]</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -8220,7 +8216,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="idk_20_08">idk_20_08</h2>
 <table class="h">
     <tbody>
@@ -8291,7 +8287,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="idk_20_16">idk_20_16</h2>
 <table class="h">
     <tbody>
@@ -8362,7 +8358,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car">car</h2>
 <p>linked to by:<br>
 <a href="#basic_04">basic_04 [00]t0</a><br>
@@ -8381,7 +8377,7 @@ ps2: 72 / 160 / 200
             <td>00</td>
             <td>u32</td>
             <td>
-                <a href="#car_00">offset </a>
+                <a href="#car_00">offset</a>
             </td>
         </tr>
         <tr class="u">
@@ -8411,10 +8407,10 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00">car_00</h2>
 <p>
-    4 to 172 are indexes?<br/>rest are offsets
+    4 to 172 are indexes?<br>rest are offsets
 
 
 </p>
@@ -8752,7 +8748,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
     <p>
         multi linked to by:<br>
         <a href="#car_00"> car_00 [180]</a>
@@ -8832,7 +8828,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_00">car_00_180_00</h2>
 <table class="h">
     <tbody>
@@ -8908,7 +8904,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_00_08">car_00_180_00_08</h2>
 <p>skid mark colors</p>
 <table class="h">
@@ -8960,7 +8956,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_00_16">car_00_180_00_16</h2>
 <table class="h">
     <tbody>
@@ -9001,7 +8997,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_00_16_08">car_00_180_00_16_08</h2>
 <p>same as car_00_180_04_56? / car_00_192 1 </p>
 <table class="h">
@@ -9083,7 +9079,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_00_16_12">car_00_180_00_16_12</h2>
 <p>linked to by:<br>
 <a href="#car_00_180_00_16">car_00_180_00_16 (12)</a><br>
@@ -9123,7 +9119,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>  
+<hr>  
 <h2 id="car_00_180_04">car_00_180_04</h2>
 <table class="h">
     <tbody>
@@ -9271,7 +9267,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_04_56">car_00_180_04_56</h2>
 <table class="h">
     <tbody>
@@ -9352,7 +9348,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_04_80">car_00_180_04_80</h2>
 <table class="h">
     <tbody>
@@ -9408,7 +9404,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_04_84">car_00_180_04_84</h2>
     <p>
         multi linked to by:<br>
@@ -9449,7 +9445,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_04_92">car_00_180_04_92</h2>
 <table class="h">
     <tbody>
@@ -9485,7 +9481,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_20">car_00_180_20</h2>
 <table class="h">
     <tbody>
@@ -9517,7 +9513,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_20_04t1">car_00_180_20_04t1</h2>
 <table class="h">
     <tbody>
@@ -9628,7 +9624,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_180_20_04t3">car_00_180_20_04t3</h2>
 <table class="h">
     <tbody>
@@ -9684,7 +9680,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_184">car_00_184</h2>
     <p>
         multi linked to by:<br>
@@ -9729,7 +9725,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_184_04">car_00_184_04</h2>
 <table class="h">
     <tbody>
@@ -9831,7 +9827,7 @@ ps2: 72 / 160 / 200
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_184_04_00">car_00_184_04_00</h2>
 <p>very similar to <a href="#idk_12">idk_12</a><br>
 however 32-35 are always little endian in gc so I think this is a diff section?
@@ -9964,7 +9960,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_184_04_00_16">car_00_184_04_00_16</h2>
 <table class="h">
     <tbody>
@@ -10076,7 +10072,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_184_04_08">car_00_184_04_08</h2>
 <p>car hitbox??</p>
 <table class="h">
@@ -10213,7 +10209,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188">car_00_188</h2>
 <table class="h">
     <tbody>
@@ -10394,7 +10390,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188_52">car_00_188_52</h2>
 <table class="h">
     <tbody>
@@ -10420,7 +10416,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188_52_04">car_00_188_52_04</h2>
 <table class="h">
     <tbody>
@@ -10461,7 +10457,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188_52_04_04">car_00_188_52_04_04</h2>
 <table class="h">
     <tbody>
@@ -10482,7 +10478,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188_60">car_00_188_60</h2>
 <table class="h">
     <tbody>
@@ -10548,7 +10544,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_188_68">car_00_188_68</h2>
 <table class="h">
     <tbody>
@@ -10604,7 +10600,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_192">car_00_192</h2>
 <p>stats?</p>
 <table class="h">
@@ -10650,7 +10646,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
             <td>24</td>
             <td>u32</td>
             <td>
-                <a href="#car_00_192_24">offset </a> based on amount [20]
+                <a href="#car_00_192_24">offset</a> based on amount [20]
             </td>
         </tr>
         <tr class="u">
@@ -10702,7 +10698,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_192_16">car_00_192_16</h2>
     <p>
         multi linked to by:<br>
@@ -10787,7 +10783,7 @@ however 32-35 are always little endian in gc so I think this is a diff section?
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_192_24">car_00_192_24</h2>
 <p>Speed and Acceleration shifts<br>
 once the car reaches the set speed the next "shift" will activate<br>
@@ -10821,7 +10817,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_196">car_00_196</h2> 
 <p>engine sounds?</p>
 <table class="h">
@@ -10887,7 +10883,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_200">car_00_200</h2>
 <p>frames</p>
 <table class="h">
@@ -10901,42 +10897,42 @@ speed boosts set to maximum shift</p>
             <td>00</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr>
             <td>08</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr>
             <td>16</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
             <td>
-                <a href="#interface">Offset Frame </a>
+                <a href="#interface">Offset Frame</a>
             </td>
         </tr>
         <tr class="u">
@@ -10956,7 +10952,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_208">car_00_208</h2>
 <p>? some type of positioning</p>
 <table class="h">
@@ -10975,7 +10971,7 @@ speed boosts set to maximum shift</p>
             <td>04</td>
             <td>u32</td>
             <td>
-                <a href="#car_00_208_04">offset 1 </a> based on amount [00]
+                <a href="#car_00_208_04">offset 1</a> based on amount [00]
             </td>
         </tr>
     </tbody>
@@ -10985,7 +10981,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_208_04">car_00_208_04</h2>
 <p>? some type of positioning</p>
 <table class="h">
@@ -11042,7 +11038,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="car_00_216">car_00_216</h2>
 <table class="h">
     <tbody>
@@ -11073,30 +11069,29 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
     <h2 id="interface">interface</h2>
     <p>
         multi linked to by:<br>
         <a href="#interface_12_24"> interface_12_24 [04]t1,t31</a><br>
         <a href="#interface_12_24_04t11_04">interface_12_24_04t11_04 [08]t100</a><br>
         <a href="#interface_12_24_04t11_04">interface_12_24_04t11_04 [08]t101</a><br>
-        <a href="#interface_72_24t6">interface_72_24t6 [00] </a><br>
+        <a href="#interface_72_24t6">interface_72_24t6 [00]</a><br>
         <a href="#world_settings_192">world_settings_192 [00],[04]</a><br>
         <a href="#world_20_12t4">world_20_12t4 [104]</a><br>
         <a href="#unknown_00_04_08t34">unknown_00_04_08t34 [04],[08],[12]</a><br>
         <a href="#var_164_12_12t6_00t1">var_164_12_12t6_00t1 [00]</a><br>
         <a href="#var_164_12_12t6_00t2">var_164_12_12t6_00t2 [04]</a><br>
         <a href="#var_164_20_04_12t1608">var_164_20_04_12t1608 [04]</a><br>
-        <a href="#car_00_200">car_00_200 [00],[04],[08],[12],[16],[20] </a><br>
+        <a href="#car_00_200">car_00_200 [00],[04],[08],[12],[16],[20]</a><br>
     <br>
-        
         interface sections that can be multilinked: <br>
         <a href="#interface">interface</a><br>
         <a href="#sound_controls">sound_controls</a><br>
         <a href="#frame_text">frame_text (text)</a><br>
         <a href="#frame_font">frame_font (font)</a><br>
-        <a href="#model_link">model_link </a><br>
-        <a href="#model_sub_link">model_sub_link </a><br>
+        <a href="#model_link">model_link</a><br>
+        <a href="#model_sub_link">model_sub_link</a><br>
            <a href="#emitter"> emitter (emitter)</a><br>
         <table class="h">
             <tbody>
@@ -11128,7 +11123,7 @@ speed boosts set to maximum shift</p>
                     <td>04</td>
                     <td>u32</td>
                     <td>
-                        <a href="#interface_04">offset 1 (varibles ?) </a>
+                        <a href="#interface_04">offset 1 (varibles ?)</a>
                     </td>
                 </tr>
                 <tr>
@@ -11140,7 +11135,7 @@ speed boosts set to maximum shift</p>
                     <td>12</td>
                     <td>u32</td>
                     <td>
-                        <a href="#interface_12">offset 2 </a> based on amount [08]
+                        <a href="#interface_12">offset 2</a> based on amount [08]
                     </td>
                 </tr>
                 <tr class="u">
@@ -11174,14 +11169,14 @@ speed boosts set to maximum shift</p>
                     <td>36</td>
                     <td>u32</td>
                     <td>
-                        <a href="#sound_controls">another sound_controls / rare </a>
+                        <a href="#sound_controls">another sound_controls / rare</a>
                     </td>
                 </tr>
                 <tr>
                     <td>40</td>
                     <td>u32</td>
                     <td>
-                        <a href="#sound_controls">another sound_controls / rare </a>
+                        <a href="#sound_controls">another sound_controls / rare</a>
                     </td>
                 </tr>
                 <tr class="u">
@@ -11200,7 +11195,7 @@ speed boosts set to maximum shift</p>
                     <td>52</td>
                     <td>u32</td>
                     <td>
-                        <a href="#sound_controls">another sound_controls / rare </a>
+                        <a href="#sound_controls">another sound_controls / rare</a>
                     </td>
                 </tr>
                 <tr>
@@ -11244,7 +11239,7 @@ speed boosts set to maximum shift</p>
                 </tr>
             </tfoot>
         </table>
-    <hr/>
+    <hr>
     <h2 id="interface_04">interface_04</h2>
     <table class="h">
         <tbody>
@@ -11336,11 +11331,11 @@ speed boosts set to maximum shift</p>
                 <td>12</td>
                 <td>u32</td>
                 <td>based on type [04]<br>
-                    <a href="#interface_04_04_12t1">1 = offset</a> <br>
-                    <a href="#interface_04_04_12t5">5 = offset</a> <br>
-                    <a href="#interface_04_04_12t7">7 = offset</a> <br>
-                    <a href="#interface_04_04_12t8">8 = offset</a> <br>
-                    <a href="#interface_04_04_12t9">9 = offset</a> <br>
+                    <a href="#interface_04_04_12t1">1 = offset</a><br>
+                    <a href="#interface_04_04_12t5">5 = offset</a><br>
+                    <a href="#interface_04_04_12t7">7 = offset</a><br>
+                    <a href="#interface_04_04_12t8">8 = offset</a><br>
+                    <a href="#interface_04_04_12t9">9 = offset</a><br>
                 </td>
             </tr>
             <tr class="u">
@@ -11636,7 +11631,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-<hr/>
+<hr>
     <h2 id="interface_04_04_12t9">interface_04_04_12t9</h2>
     <p>strings ?</p>
     <table class="h">
@@ -11729,7 +11724,7 @@ speed boosts set to maximum shift</p>
                 <td>16</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_12_16">offset 2 </a> based on amount [12]
+                    <a href="#interface_12_16">offset 2</a> based on amount [12]
                 </td>
             </tr>
             <tr>
@@ -11916,7 +11911,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_12_04t1027">interface_12_04t1027</h2>
     <table class="h">
         <tbody>
@@ -12073,7 +12068,7 @@ speed boosts set to maximum shift</p>
                 <td>24</td>
                 <td>u32</td>
                 <td>
-                    <a href="#sound_controls">offset sometimes / links to sound_controls </a> probably not related to type
+                    <a href="#sound_controls">offset sometimes / links to sound_controls</a> probably not related to type
                 </td>
             </tr>
             <tr class="u">
@@ -12166,15 +12161,15 @@ speed boosts set to maximum shift</p>
                 <td>u32</td>
                 <td>
                     based on type [04] <br>
-                    <a href="#interface_12_24_04t11_04_08t0">0 = offset v0 </a>
+                    <a href="#interface_12_24_04t11_04_08t0">0 = offset v0</a>
                     <br>
-                    <a href="#interface_12_24_04t11_04_08t1">1 = offset v1 </a>
+                    <a href="#interface_12_24_04t11_04_08t1">1 = offset v1</a>
                     <br>
-                    <a href="#sound_controls">3 = offset sound_controls </a>
+                    <a href="#sound_controls">3 = offset sound_controls</a>
                     <br>
-                    <a href="#interface">100 = offset interface </a>
+                    <a href="#interface">100 = offset interface</a>
                     <br>
-                    <a href="#interface">101 = offset interface </a>
+                    <a href="#interface">101 = offset interface</a>
                     <br>
                 </td>
             </tr>
@@ -12185,7 +12180,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_12_24_04t11_04_00">interface_12_24_04t11_04_00</h2>
     <table class="h">
         <tbody>
@@ -12267,7 +12262,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_12_24_04t11_04_08t1">interface_12_24_04t11_04_08t1</h2>
     <table class="h">
         <tbody>
@@ -12287,7 +12282,7 @@ speed boosts set to maximum shift</p>
                 <td>04</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_12_24_04t11_04_08t1_00_04">offset 2 (same structure as interface_12_24_04t11_04_08t1_00_04) </a>
+                    <a href="#interface_12_24_04t11_04_08t1_00_04">offset 2 (same structure as interface_12_24_04t11_04_08t1_00_04)</a>
                 </td>
             </tr>
             <tr class="u">
@@ -12396,7 +12391,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_12_24_08">interface_12_24_08</h2>
     <table class="h">
         <tbody>
@@ -12409,14 +12404,14 @@ speed boosts set to maximum shift</p>
                 <td>00</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_12_24_08_00">offset 1 </a>
+                    <a href="#interface_12_24_08_00">offset 1</a>
                 </td>
             </tr>
             <tr>
                 <td>04</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_12_24_08_00">offset 2 </a>
+                    <a href="#interface_12_24_08_00">offset 2</a>
                     <br>same structure as offset 1 
                 </td>
             </tr>
@@ -12595,19 +12590,19 @@ speed boosts set to maximum shift</p>
                 <td>19</td>
                 <td>u8</td>
                 <td>
-                    type of layer<br/>
-                    0 = texture <br/>
-                    1 = text <br/>
-                    2 = ? unused <br/>
-                    3 = model <br/>
-                    4 = ? unused <br/>
-                    5 = unknown <br/>
-                    6,7 = recursive <br/>
-                    10 = box ?<br/>
-                    12 = var?<br/>
-                    13 = frame?<br/>
-                    14 = manager ?<br/>
-                    15 = emitter<br/>
+                    type of layer<br>
+                    0 = texture <br>
+                    1 = text <br>
+                    2 = ? unused <br>
+                    3 = model <br>
+                    4 = ? unused <br>
+                    5 = unknown <br>
+                    6,7 = recursive <br>
+                    10 = box ?<br>
+                    12 = var?<br>
+                    13 = frame?<br>
+                    14 = manager ?<br>
+                    15 = emitter<br>
                 </td>
             </tr>
             <tr>
@@ -12622,7 +12617,7 @@ speed boosts set to maximum shift</p>
                 <td>24</td>
                 <td>u32</td>
                 <td>
-                    based on type [19]<br/>
+                    based on type [19]<br>
                     <a href="#interface_72_24t0">0 = texture</a>
                     <br>
                     <a href="#interface_72_24t1">1 = text offset</a>
@@ -12686,7 +12681,7 @@ speed boosts set to maximum shift</p>
                 <td>44</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_44">offset 5 sometimes </a>
+                    <a href="#interface_72_44">offset 5 sometimes</a>
                 </td>
             </tr>
             <tr>
@@ -12755,7 +12750,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_08">interface_72_08</h2>
     <table class="h">
         <tbody>
@@ -12793,7 +12788,7 @@ speed boosts set to maximum shift</p>
                 <td>08</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_08_08">offset 1 </a> based on amount [04]
+                    <a href="#interface_72_08_08">offset 1</a> based on amount [04]
                 </td>
             </tr>
             <tr class="u">
@@ -12848,7 +12843,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_08_08_04t2">interface_72_08_08_04t2</h2>
     <table class="h">
         <tbody>
@@ -12935,7 +12930,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_08_08_04t6">interface_72_08_08_04t6</h2>
     <table class="h">
         <tbody>
@@ -13080,7 +13075,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_20t38">interface_72_20t38</h2>
     <p>mapBlips:Standard</p>
     <table class="h">
@@ -13117,7 +13112,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_24t0">interface_72_24t0</h2>
     <p>texture type</p>
     <table class="h">
@@ -13208,7 +13203,7 @@ speed boosts set to maximum shift</p>
                 <td>04</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_24t0_08_04">offset 1 </a> based on amount [00]
+                    <a href="#interface_72_24t0_08_04">offset 1</a> based on amount [00]
                 </td>
             </tr>
             <tr class="u">
@@ -13526,7 +13521,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_24t3">interface_72_24t3</h2>
     <p>models</p>
     <table class="h">
@@ -14265,7 +14260,7 @@ speed boosts set to maximum shift</p>
                 <td>12</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_32_12"> offset 1 </a> based on amount [08]
+                    <a href="#interface_72_32_12"> offset 1</a> based on amount [08]
                 </td>
             </tr>
             <tr>
@@ -14322,7 +14317,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_12">interface_72_32_12</h2>
     <table class="h">
         <tbody>
@@ -14383,7 +14378,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20">interface_72_32_20</h2>
     <table class="h">
         <tbody>
@@ -14411,9 +14406,9 @@ speed boosts set to maximum shift</p>
                 <td>08</td>
                 <td>u32</td>
                 <td>based on type [04]<br>
-                    <a href="#interface_72_32_20_08t0">0 = offset 1 </a>
+                    <a href="#interface_72_32_20_08t0">0 = offset 1</a>
                     <br>
-                    <a href="#interface_72_32_20_08t1">1 = offset 1 </a>
+                    <a href="#interface_72_32_20_08t1">1 = offset 1</a>
                 </td>
             </tr>
         </tbody>
@@ -14423,7 +14418,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20_08t0">interface_72_32_20_08t0</h2>
     <table class="h">
         <tbody>
@@ -14469,7 +14464,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20_08t1">interface_72_32_20_08t1</h2>
     <table class="h">
         <tbody>
@@ -14509,7 +14504,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20_08t1_00">interface_72_32_20_08t1_00</h2>
     <table class="h">
         <tbody>
@@ -14527,7 +14522,7 @@ speed boosts set to maximum shift</p>
                 <td>04</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_32_20_08t1_00_04">offset 1 </a>
+                    <a href="#interface_72_32_20_08t1_00_04">offset 1</a>
                 </td>
             </tr>
             <tr class="u">
@@ -14547,7 +14542,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20_08t1_00_04">interface_72_32_20_08t1_00_04</h2>
     <table class="h">
         <tbody>
@@ -14583,7 +14578,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_32_20_08t1_04">interface_72_32_20_08t1_04</h2>
     <table class="h">
         <tbody>
@@ -14624,7 +14619,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_44">interface_72_44</h2>
     <p>values always 0</p>
     <table class="h">
@@ -14661,7 +14656,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_52">interface_72_52</h2>
     <p>animations</p>
     <table class="h">
@@ -14727,7 +14722,7 @@ speed boosts set to maximum shift</p>
                 <td>36</td>
                 <td>u32</td>
                 <td>
-                    <a href="#interface_72_52_36">offset 5 </a> based on amount [32]
+                    <a href="#interface_72_52_36">offset 5</a> based on amount [32]
                 </td>
             </tr>
             <tr class="u">
@@ -14747,7 +14742,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_52_04">interface_72_52_04</h2>
     <p>animations</p>
     <table class="h">
@@ -14819,7 +14814,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_52_28">interface_72_52_28</h2>
     <p>animations</p>
     <table class="h">
@@ -14876,7 +14871,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_52_36">interface_72_52_36</h2>
     <p>animations</p>
     <table class="h">
@@ -14958,7 +14953,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72">interface_72_72</h2>
     <p>?</p>
     <table class="h">
@@ -14981,7 +14976,7 @@ speed boosts set to maximum shift</p>
             <tr>
                 <td>04</td>
                 <td>u32</td>
-                <td><a href="#interface_72_72_04">offset 1 ?</a> </td>
+                <td><a href="#interface_72_72_04">offset 1 ?</a></td>
             </tr>
             <tr class="u">
                 <td>08</td>
@@ -14995,7 +14990,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04">interface_72_72_04</h2>
     <p>?</p>
     <table class="h">
@@ -15106,7 +15101,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_04">interface_72_72_04_04</h2>
     <p>?</p>
     <table class="h">
@@ -15160,7 +15155,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_04_16">interface_72_72_04_04_16</h2>
     <p>?</p>
     <table class="h">
@@ -15195,7 +15190,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_04_16_08t0">interface_72_72_04_04_16_08t0</h2>
     <table class="h">
         <tbody>
@@ -15256,7 +15251,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_12">interface_72_72_04_12</h2>
     <table class="h">
         <tbody>
@@ -15327,7 +15322,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_36">interface_72_72_04_36</h2>
     <p>?</p>
     <table class="h">
@@ -15384,7 +15379,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
     <h2 id="interface_72_72_04_44">interface_72_72_04_44</h2>
     <table class="h">
         <tbody>
@@ -15460,7 +15455,7 @@ speed boosts set to maximum shift</p>
             </tr>
         </tfoot>
     </table>
-    <hr/>
+    <hr>
 <h2 id="emitter">emitter</h2>
 <p>multi linked to by:
 <a href="#interface_72_24t15">interface_72_24t15</a></p>
@@ -15737,7 +15732,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="frame_font">frame_font</h2>
 <p>multi linked to by:<br>
         <a href="#link">link [60]</a><br>
@@ -16074,7 +16069,7 @@ speed boosts set to maximum shift</p>
 <hr>
 <h2 id="frame_text">frame_text</h2>
         <p>multi linked to by:<br>
-        <a href="#interface_72_24t1">interface_72_24t1 [04] </a><br>
+        <a href="#interface_72_24t1">interface_72_24t1 [04]</a><br>
         <a href="#interface_72_24t1_08t1_04">interface_72_24t1_08t1_04 [00]</a><br>
         <a href="#object">object [60]</a>
 </p><p>overflow appears 516 bytes</p>
@@ -16208,7 +16203,7 @@ speed boosts set to maximum shift</p>
             <td>60</td>
             <td>u32</td>
             <td>
-                <a href="#frame_font">offset font </a>
+                <a href="#frame_font">offset font</a>
             </td>
         </tr>
         <tr class="u">
@@ -16281,7 +16276,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="link_00_04">link_00_04</h2>
 <table class="h">
     <tbody>
@@ -16319,7 +16314,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="link_00_04_00">link_00_04_00</h2>
 <table class="h">
     <tbody>
@@ -16418,7 +16413,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="link_intro">link_intro</h2>
 <p>first files linked when game is started
 <table class="h">
@@ -16518,7 +16513,7 @@ speed boosts set to maximum shift</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="link_offset_index">link_offset_index</h2>
 <p>[12]link_intro<br>
 link_32_00_04_04 [04]<br>
@@ -16559,7 +16554,7 @@ link_32_00_04_20_04 [04]
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="link_32">link_32</h2>
 <table class="h">
     <tbody>
@@ -16848,7 +16843,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="world_settings">world_settings</h2>
 <p>usually linked unordered first exepct for Award for some reason</p>
 <table class="h">
@@ -17125,12 +17120,12 @@ link_demo [08]</p>
         <tr>
             <td>192</td>
             <td>u32</td>
-            <td><a href="#world_settings_192">offset </a></td>
+            <td><a href="#world_settings_192">offset</a></td>
         </tr>
         <tr>
             <td>196</td>
             <td>u32</td>
-            <td><a href="#world_settings_196">offset </a></td>
+            <td><a href="#world_settings_196">offset</a></td>
         </tr>
         <tr class="u">
             <td>200</td>
@@ -17276,7 +17271,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_12'>world_settings_12</h2>
 <p>shadow xyz</p>
 <table class="h">
@@ -17313,7 +17308,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_36'>world_settings_36</h2>
 <table class="h">
     <tbody>
@@ -17364,7 +17359,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_48'>world_settings_48</h2>
 <table class="h">
     <tbody>
@@ -17400,7 +17395,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_48_00'>world_settings_48_00</h2>
 <table class="h">
     <tbody>
@@ -17451,7 +17446,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_52'>world_settings_52</h2>
 <table class="h">
     <tbody>
@@ -17502,7 +17497,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_56'>world_settings_56</h2>
 <table class="h">
     <tbody>
@@ -17553,7 +17548,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_60'>world_settings_60</h2>
 <table class="h">
     <tbody>
@@ -17604,7 +17599,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_64'>world_settings_64</h2>
 <table class="h">
     <tbody>
@@ -17640,7 +17635,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_68'>world_settings_68</h2>
 <table class="h">
     <tbody>
@@ -17696,7 +17691,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_72'>world_settings_72</h2>
 <table class="h">
     <tbody>
@@ -17732,7 +17727,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_192'>world_settings_192</h2>
 <p></p>
 <table class="h">
@@ -17820,7 +17815,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_192_40'>world_settings_192_40</h2>
 <p>file name is always interface?</p>
 <table class="h">
@@ -17847,7 +17842,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_196'>world_settings_196</h2>
 <table class="h">
     <tbody>
@@ -17911,7 +17906,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_196_04'>world_settings_196_04</h2>
 <table class="h">
     <tbody>
@@ -17969,7 +17964,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id='world_settings_196_04_04'>world_settings_196_04_04</h2>
 <table class="h">
     <tbody>
@@ -17999,7 +17994,7 @@ link_demo [08]</p>
         </tr>
     </tfoot>
 </tbody></table>
-<hr/>
+<hr>
 <h2 id="mysterious">mysterious</h2>
 linked to by:<br>
 <a href="#car_00_216">car_00_216 [04]</a><br>
@@ -18059,7 +18054,7 @@ linked to by:<br>
             <td>08</td>
             <td>u32</td>
             <td>based on type [00]<br>
-                <a href="#mysterious_08t8">8 = offset </a><br>
+                <a href="#mysterious_08t8">8 = offset</a><br>
                 <a href="#mysterious_08t8t13">13 = offset</a>
             </td>
         </tr>
@@ -18268,7 +18263,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_56">mysterious_04t5_56</h2>
 <table class="h">
     <tbody>
@@ -18324,7 +18319,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_16t0">mysterious_04t5_16t0</h2>
 <table class="h">
     <tbody>
@@ -18345,7 +18340,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_16t2">mysterious_04t5_16t2</h2>
 <table class="h">
     <tbody>
@@ -18366,7 +18361,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_16t3">mysterious_04t5_16t3</h2>
 <table class="h">
     <tbody>
@@ -18387,7 +18382,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_16t5">mysterious_04t5_16t5</h2>
 <table class="h">
     <tbody>
@@ -18408,7 +18403,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_28">mysterious_04t5_28</h2>
 <table class="h">
     <tbody>
@@ -18464,7 +18459,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_36">mysterious_04t5_36</h2>
 <table class="h">
     <tbody>
@@ -18535,7 +18530,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_44">mysterious_04t5_44</h2>
 <table class="h">
     <tbody>
@@ -18606,7 +18601,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t5_52">mysterious_04t5_52</h2>
 <table class="h">
     <tbody>
@@ -18662,7 +18657,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t7">mysterious_04t7</h2>
 <table class="h">
     <tbody>
@@ -18759,7 +18754,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>     
+<hr>     
 <h2 id="mysterious_04t7_12">mysterious_04t7_12</h2>
 <table class="h">
     <tbody>
@@ -18795,7 +18790,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t7_36">mysterious_04t7_36</h2>
 <table class="h">
     <tbody>
@@ -18841,7 +18836,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9">mysterious_04t9</h2>
 <p>only 1 offset a time</p>
 <table class="h">
@@ -18893,7 +18888,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_08">mysterious_04t9_08</h2>
 <table class="h">
     <tbody>
@@ -18930,7 +18925,7 @@ linked to by:<br>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_08_08">offset </a></td>
+            <td><a href="#mysterious_04t9_08_08">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -18964,7 +18959,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_08_08">mysterious_04t9_08_08</h2>
 <table class="h">
     <tbody>
@@ -19015,7 +19010,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12">mysterious_04t9_12</h2>
 <table class="h">
     <tbody>
@@ -19032,7 +19027,7 @@ linked to by:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_04">offset </a> based on amount [00]
+            <td><a href="#mysterious_04t9_12_04">offset</a> based on amount [00]
             </td>
         </tr>
         <tr class="u">
@@ -19058,7 +19053,7 @@ linked to by:<br>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_12">offset </a></td>
+            <td><a href="#mysterious_04t9_12_12">offset</a></td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -19087,7 +19082,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_04">mysterious_04t9_12_04</h2>
 <table class="h">
     <tbody>
@@ -19184,7 +19179,7 @@ linked to by:<br>
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_04_44">offset </a></td>
+            <td><a href="#mysterious_04t9_12_04_44">offset</a></td>
         </tr>
         <tr class="u">
             <td>48</td>
@@ -19203,7 +19198,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_04_08">mysterious_04t9_12_04_08</h2>
 <table class="h">
     <tbody>
@@ -19254,7 +19249,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_04_44">mysterious_04t9_12_04_44</h2>
 <table class="h">
     <tbody>
@@ -19291,12 +19286,12 @@ linked to by:<br>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_04_44_08">offset </a></td>
+            <td><a href="#mysterious_04t9_12_04_44_08">offset</a></td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_04_44_12">offset </a></td>
+            <td><a href="#mysterious_04t9_12_04_44_12">offset</a></td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -19325,7 +19320,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_04_44_08">mysterious_04t9_12_04_44_08</h2>
 <table class="h">
     <tbody>
@@ -19376,7 +19371,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_04_44_12">mysterious_04t9_12_04_44_12</h2>
 <table class="h">
     <tbody>
@@ -19427,7 +19422,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t9_12_12">mysterious_04t9_12_12</h2>
 <table class="h">
     <tbody>
@@ -19444,7 +19439,7 @@ linked to by:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mysterious_04t9_12_04">offset (mysterious_04t9_12_04) </a> based on amount [00]</td>
+            <td><a href="#mysterious_04t9_12_04">offset (mysterious_04t9_12_04)</a> based on amount [00]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -19463,7 +19458,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t10">mysterious_04t10</h2>
 <table class="h">
     <tbody>
@@ -19499,7 +19494,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16">mysterious_04t16</h2>
 <table class="h">
     <tbody>
@@ -19575,7 +19570,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_08">mysterious_04t16_08</h2>
 <table class="h">
     <tbody>
@@ -19626,7 +19621,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_12">mysterious_04t16_12</h2>
 <table class="h">
     <tbody>
@@ -19677,7 +19672,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36">mysterious_04t16_36</h2>
 <table class="h">
     <tbody>
@@ -19713,7 +19708,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36_04">mysterious_04t16_36_04</h2>
 <table class="h">
     <tbody>
@@ -19804,7 +19799,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36_04_04">mysterious_04t16_36_04_04</h2>
 <table class="h">
     <tbody>
@@ -19840,7 +19835,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36_04_04_04">mysterious_04t16_36_04_04_04</h2>
 <table class="h">
     <tbody>
@@ -19876,7 +19871,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36_04_04_04_04">mysterious_04t16_36_04_04_04_04</h2>
 <table class="h">
     <tbody>
@@ -19927,7 +19922,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_04t16_36_04_04_04_12">mysterious_04t16_36_04_04_04_12</h2>
 <table class="h">
     <tbody>
@@ -19963,7 +19958,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_08t8">mysterious_08t8</h2>
 <table class="h">
     <tbody>
@@ -20004,7 +19999,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="mysterious_08t8t13">mysterious_08t8t13</h2>
 <table class="h">
     <tbody>
@@ -20040,14 +20035,14 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_controls">sound_controls</h2>
 <p>
    multi linked to by:<br>
-    <a href="#interface">interface [28] </a><br>
-    <a href="#interface">interface [36] </a><br>
-    <a href="#interface">interface [40] </a><br>
-    <a href="#interface">interface [52] </a><br>
+    <a href="#interface">interface [28]</a><br>
+    <a href="#interface">interface [36]</a><br>
+    <a href="#interface">interface [40]</a><br>
+    <a href="#interface">interface [52]</a><br>
     <a href="#interface_12_24">interface_12_24 3 [24]</a><br>
     <a href="#interface_12_24_04t11_04">interface_12_24_04t11_04_08t3 [08]</a><br>
     <a href="#interface_72_24t3_04">interface_72_24t3_04 [04]</a><br>
@@ -20109,7 +20104,7 @@ linked to by:<br>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#sound_controls_16">offset </a> based on amount [12]</td>
+            <td><a href="#sound_controls_16">offset</a> based on amount [12]</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -20133,7 +20128,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_controls_16">sound_controls_16</h2>
 <table class="h">
     <tbody>
@@ -20179,7 +20174,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_controls_16_04">sound_controls_16_04</h2>
 <table class="h">
     <tbody>
@@ -20200,16 +20195,16 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_section">sound_section</h2>
 <p>
    multi linked to by:<br>
-    <a href="#sound_controls_16_04">sound_controls_16_04 [00] </a><br>
-    <a href="#car_00_180">car_00_180 [08] </a><br>
-    <a href="#car_00_180">car_00_180 [12] </a><br>
-    <a href="#car_00_196">car_00_196 [00] </a><br>
-    <a href="#car_00_196">car_00_196 [08] </a><br>
-    <a href="#gate">gate [76] </a><br>
+    <a href="#sound_controls_16_04">sound_controls_16_04 [00]</a><br>
+    <a href="#car_00_180">car_00_180 [08]</a><br>
+    <a href="#car_00_180">car_00_180 [12]</a><br>
+    <a href="#car_00_196">car_00_196 [00]</a><br>
+    <a href="#car_00_196">car_00_196 [08]</a><br>
+    <a href="#gate">gate [76]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -20283,7 +20278,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="sound_section_08">sound_section_08</h2>
 <table class="h">
     <tbody>
@@ -20334,8 +20329,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
-
+<hr>
 <h2 id="model_link">model_link</h2>
 <p>multi linked to by:
 <br><a href="#interface_72_24t3_04">interface_72_24t3_04 [00]</a><br>
@@ -20367,21 +20361,21 @@ linked to by:<br>
             <td>08</td>
             <td>u32</td>
             <td>
-                <a href="#model_sub_link">offset 2 sub model </a>
+                <a href="#model_sub_link">offset 2 sub model</a>
             </td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
             <td>
-                <a href="#model_animation_1">offset 3 (model animations 1) </a>
+                <a href="#model_animation_1">offset 3 (model animations 1)</a>
             </td>
         </tr>
         <tr>
             <td>16</td>
             <td>u32</td>
             <td>
-                <a href="#model_animation_2">offset 4 (model animations 2) </a>
+                <a href="#model_animation_2">offset 4 (model animations 2)</a>
             </td>
         </tr>
         <tr>
@@ -20405,7 +20399,7 @@ linked to by:<br>
             <td>32</td>
             <td>u32</td>
             <td>
-                <a href="#model_link_32">offset 6 (model_link_32) </a> based on amount [28]
+                <a href="#model_link_32">offset 6 (model_link_32)</a> based on amount [28]
             </td>
         </tr>
         <tr class="u">
@@ -20454,7 +20448,7 @@ linked to by:<br>
             <td>56</td>
             <td>u32</td>
             <td>
-                <a href="#model_link_56">offset 8 </a>
+                <a href="#model_link_56">offset 8</a>
             </td>
         </tr>
         <tr class="u">
@@ -20466,7 +20460,7 @@ linked to by:<br>
             <td>64</td>
             <td>u32</td>
             <td>
-                <a href="#model_link_64">offset 9 </a></td>
+                <a href="#model_link_64">offset 9</a></td>
         </tr>
         <tr class="u">
             <td>68</td>
@@ -20491,7 +20485,6 @@ linked to by:<br>
     </tfoot>
 </table>
 <hr>
-
 <h2 id="model_link_24">model_link_24</h2>
 <p>model link</p>
 <table class="h">
@@ -20505,7 +20498,7 @@ linked to by:<br>
             <td>00</td>
             <td>u32</td>
             <td>
-                <a href="#models">offset model </a>
+                <a href="#models">offset model</a>
             </td>
         </tr>
     </tbody>
@@ -20528,7 +20521,7 @@ linked to by:<br>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#models">offset model </a>
+            <td><a href="#models">offset model</a>
             </td>
         </tr>
         <tr class="u">
@@ -20698,7 +20691,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="model_sub_link">model_sub_link</h2>
 <p>multi linked to by:
     <br><a href="#model_link">model_link [08]</a><br></p>
@@ -20713,7 +20706,7 @@ linked to by:<br>
             <td>00</td>
             <td>u32</td>
             <td>
-                <a href="#model_animation_2">offset model animations 2 </a>
+                <a href="#model_animation_2">offset model animations 2</a>
             </td>
         </tr>
         <tr>
@@ -20785,7 +20778,7 @@ linked to by:<br>
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#unknown_00">offset </a></td>
+            <td><a href="#unknown_00">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -20794,7 +20787,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>    
+<hr>    
 <h2 id="unknown_00">unknown_00</h2>
 <p>multi linked to by:<br>
     <a href="#car_00_180_00">car_00_180_00 [20]</a><br>
@@ -20854,7 +20847,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>              
+<hr>              
 <h2 id="unknown_00_04">unknown_00_04</h2>
 <table class="h">
     <tbody>
@@ -20932,7 +20925,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1">unknown_00_04_04t1</h2>
 <p>multi linked to by:<br>
     <a href="#unknown_00_04">unknown_00_04 [04]t1</a><br>
@@ -21029,7 +21022,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0">unknown_00_04_04t1_04t0</h2>
 <table class="h">
     <tbody>
@@ -21175,7 +21168,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_04">unknown_00_04_04t1_04t0_04</h2>
 <p>value is sometimes always the same as the sections position in file</p>
 <table class="h">
@@ -21197,7 +21190,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_40">unknown_00_04_04t1_04t0_40</h2>
 <table class="h">
     <tbody>
@@ -21268,7 +21261,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_48">unknown_00_04_04t1_04t0_48</h2>
 <table class="h">
     <tbody>
@@ -21304,7 +21297,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_56">unknown_00_04_04t1_04t0_56</h2>
 <table class="h">
     <tbody>
@@ -21375,7 +21368,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_64">unknown_00_04_04t1_04t0_64</h2>
 <table class="h">
     <tbody>
@@ -21392,7 +21385,7 @@ linked to by:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_64_04">offset </a> based on amount [00]</td>
+            <td><a href="#unknown_00_04_04t1_04t0_64_04">offset</a> based on amount [00]</td>
         </tr>
     </tbody>
     <tfoot>
@@ -21401,7 +21394,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t0_64_04">unknown_00_04_04t1_04t0_64_04</h2>
 <table class="h">
     <tbody>
@@ -21442,7 +21435,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1">unknown_00_04_04t1_04t1</h2>
 <table class="h">
     <tbody>
@@ -21573,7 +21566,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1_04">unknown_00_04_04t1_04t1_04</h2>
 <table class="h">
     <tbody>
@@ -21594,7 +21587,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1_44">unknown_00_04_04t1_04t1_44</h2>
 <table class="h">
     <tbody>
@@ -21640,7 +21633,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1_56">unknown_00_04_04t1_04t1_56</h2>
 <table class="h">
     <tbody>
@@ -21711,7 +21704,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1_64">unknown_00_04_04t1_04t1_64</h2>
 <table class="h">
     <tbody>
@@ -21737,7 +21730,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t1_64_04">unknown_00_04_04t1_04t1_64_04</h2>
 <table class="h">
     <tbody>
@@ -21778,7 +21771,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t2">unknown_00_04_04t1_04t2</h2>
 <table class="h">
     <tbody>
@@ -21849,7 +21842,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t2_04">unknown_00_04_04t1_04t2_04</h2>
 <table class="h">
     <tbody>
@@ -21895,7 +21888,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_04t2_20">unknown_00_04_04t1_04t2_20</h2>
 <p>not sure if this is 16 or 12 byte</p>
                 <table class="h">
@@ -21932,7 +21925,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>    
+<hr>    
 <h2 id="unknown_00_04_04t1_24">unknown_00_04_04t1_24</h2>
 <table class="h">
     <tbody>
@@ -21993,7 +21986,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t1_32">unknown_00_04_04t1_32</h2>
 <table class="h">
     <tbody>
@@ -22029,7 +22022,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t2">unknown_00_04_04t2</h2>
 <p>multi linked to by:<br>
     <a href="#unknown_00_04">unknown_00_04 [04]t2</a><br>
@@ -22208,7 +22201,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t2_80">unknown_00_04_04t2_80</h2>
 <table class="h">
     <tbody>
@@ -22244,7 +22237,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5">unknown_00_04_04t5</h2>
 <p>multi linked to by:<br>
     <a href="#unknown_00_04">unknown_00_04 [04]t5</a><br>
@@ -22354,7 +22347,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_04">unknown_00_04_04t5_04</h2>
 <table class="h">
     <tbody>
@@ -22399,8 +22392,8 @@ linked to by:<br>
             <td>12</td>
             <td>u32</td>
             <td>based on type [08]<br>
-                <a href="#unknown_00_04_04t5_04_12t103">103 = offset </a><br>
-                <a href="#unknown_00_04_04t5_04_12t105">105 = offset </a>
+                <a href="#unknown_00_04_04t5_04_12t103">103 = offset</a><br>
+                <a href="#unknown_00_04_04t5_04_12t105">105 = offset</a>
             </td>
         </tr>
         <tr>
@@ -22450,7 +22443,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_04_12t103">unknown_00_04_04t5_04_12t103</h2>
 <table class="h">
     <tbody>
@@ -22526,7 +22519,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_04_12t105">unknown_00_04_04t5_04_12t105</h2>
 <table class="h">
     <tbody>
@@ -22583,7 +22576,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_12">unknown_00_04_04t5_12</h2>
 <table class="h">
     <tbody>
@@ -22600,7 +22593,7 @@ linked to by:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_12_04">offset </a> based on amount [00]</td>
+            <td><a href="#unknown_00_04_04t5_12_04">offset</a> based on amount [00]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -22634,7 +22627,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_12_04">unknown_00_04_04t5_12_04</h2>
 <table class="h">
     <tbody>
@@ -22695,7 +22688,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_20">unknown_00_04_04t5_20</h2>
 <table class="h">
     <tbody>
@@ -22731,7 +22724,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_20_04">unknown_00_04_04t5_20_04</h2>
 <table class="h">
     <tbody>
@@ -22762,7 +22755,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_28">unknown_00_04_04t5_28</h2>
 <table class="h">
     <tbody>
@@ -22798,7 +22791,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04</h2>
 <table class="h">
     <tbody>
@@ -22834,12 +22827,11 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_28_04_00">unknown_00_04_04t5_28_04_00</h2>
     <p>multi linked to by:<br>
     <a href="#unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04 [00]</a><br>
 </p>
-
 <table class="h">
     <tbody>
         <tr>
@@ -22882,7 +22874,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_28_04_00_04t1">unknown_00_04_04t5_28_04_00_04t1</h2>
 <table class="h">
     <tbody>
@@ -22933,7 +22925,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_28_04_00_04t2">unknown_00_04_04t5_28_04_00_04t2</h2>
 <table class="h">
     <tbody>
@@ -22984,7 +22976,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t5_36">unknown_00_04_04t5_36</h2>
 <table class="h">
     <tbody>
@@ -23020,7 +23012,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t29">unknown_00_04_04t29</h2>
 <table class="h">
     <tbody>
@@ -23091,7 +23083,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_04t29_04">unknown_00_04_04t29_04</h2>
 <table class="h">
     <tbody>
@@ -23167,7 +23159,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1">unknown_00_04_08t1</h2>
 <table class="h">
     <tbody>
@@ -23284,7 +23276,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_48">unknown_00_04_08t1_48</h2>
 <table class="h">
     <tbody>
@@ -23340,7 +23332,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_52t1">unknown_00_04_08t1_52t1</h2>
 <table class="h">
     <tbody>
@@ -23396,7 +23388,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_52t2">unknown_00_04_08t1_52t2</h2>
 <table class="h">
     <tbody>
@@ -23451,7 +23443,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_52t2_12t0">unknown_00_04_08t1_52t2_12t0</h2>
 <table class="h">
     <tbody>
@@ -23487,7 +23479,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_52t2_12t1">unknown_00_04_08t1_52t2_12t1</h2>
 <table class="h">
     <tbody>
@@ -23538,7 +23530,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t1_52t2_12t2">unknown_00_04_08t1_52t2_12t2</h2>
 <table class="h">
     <tbody>
@@ -23609,7 +23601,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t2">unknown_00_04_08t2</h2>
 <table class="h">
     <tbody>
@@ -23697,7 +23689,7 @@ linked to by:<br>
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td><a href="#unknown_00_04_08t2_48">offset </a></td>
+            <td><a href="#unknown_00_04_08t2_48">offset</a></td>
         </tr>
         <tr>
             <td>52</td>
@@ -23724,7 +23716,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t2_48">unknown_00_04_08t2_48</h2>
 <table class="h">
     <tbody>
@@ -23780,7 +23772,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t2_52t1">unknown_00_04_08t2_52t1</h2>
 <table class="h">
     <tbody>
@@ -23836,7 +23828,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t2_52t2">unknown_00_04_08t2_52t2</h2>
 <table class="h">
     <tbody>
@@ -23887,7 +23879,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t2_52t2_12">unknown_00_04_08t2_52t2_12</h2>
 <table class="h">
     <tbody>
@@ -23958,7 +23950,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t3">unknown_00_04_08t3</h2>
 <table class="h">
     <tbody>
@@ -24070,7 +24062,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t3_48">unknown_00_04_08t3_48</h2>
 <table class="h">
     <tbody>
@@ -24126,7 +24118,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t3_52">unknown_00_04_08t3_52</h2>
 <table class="h">
     <tbody>
@@ -24182,7 +24174,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t4">unknown_00_04_08t4</h2>
 <table class="h">
     <tbody>
@@ -24278,7 +24270,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t5">unknown_00_04_08t5</h2>
 <table class="h">
     <tbody>
@@ -24329,7 +24321,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t5_04">unknown_00_04_08t5_04</h2>
 <table class="h">
     <tbody>
@@ -24385,7 +24377,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t6">unknown_00_04_08t6</h2>
 <table class="h">
     <tbody>
@@ -24421,7 +24413,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t26">unknown_00_04_08t26</h2>
 <table class="h">
     <tbody>
@@ -24457,7 +24449,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t29">unknown_00_04_08t29</h2>
 <table class="h">
     <tbody>
@@ -24568,7 +24560,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t29_52">unknown_00_04_08t29_52</h2>
 <table class="h">
     <tbody>
@@ -24624,7 +24616,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t31">unknown_00_04_08t31</h2>
 <table class="h">
     <tbody>
@@ -24735,7 +24727,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t31_52">unknown_00_04_08t31_52</h2>
 <table class="h">
     <tbody>
@@ -24791,7 +24783,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t32">unknown_00_04_08t32</h2>
 <table class="h">
     <tbody>
@@ -24877,7 +24869,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t34">unknown_00_04_08t34</h2>
 <table class="h">
     <tbody>
@@ -24909,17 +24901,17 @@ linked to by:<br>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td><a href="#interface">offset (interface) </a></td>
+            <td><a href="#interface">offset (interface)</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#interface">offset (interface) </a></td>
+            <td><a href="#interface">offset (interface)</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td><a href="#interface">offset (interface) </a></td>
+            <td><a href="#interface">offset (interface)</a></td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -24948,7 +24940,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="unknown_00_04_08t34_16">unknown_00_04_08t34_16</h2>
 <table class="h">
     <tbody>
@@ -24984,7 +24976,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator">activator</h2>
 <p>multi linked to by:<br>
     <a href="#unknown_00_04">unknown_00_04 [04]t31</a><br>
@@ -25373,7 +25365,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_24">activator_24</h2>
 <table class="h">
     <tbody>
@@ -25437,7 +25429,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_24_04t4">activator_24_04t4</h2>
 <table class="h">
     <tbody>
@@ -25454,7 +25446,7 @@ linked to by:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#activator_24_04t4_04">offset </a></td>
+            <td><a href="#activator_24_04t4_04">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -25473,7 +25465,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_24_04t4_04">activator_24_04t4_04</h2>
 <table class="h">
     <tbody>
@@ -25524,7 +25516,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_24_04t6">activator_24_04t6</h2>
 <table class="h">
     <tbody>
@@ -25575,7 +25567,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_32">activator_32</h2>
 <table class="h">
     <tbody>
@@ -25636,7 +25628,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_32_04">activator_32_04</h2>
 <table class="h">
     <tbody>
@@ -25687,7 +25679,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_32_20">activator_32_20</h2>
 <table class="h">
     <tbody>
@@ -25724,7 +25716,7 @@ linked to by:<br>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#activator_32_20_08">offset </a></td>
+            <td><a href="#activator_32_20_08">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -25733,7 +25725,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_32_20_08">activator_32_20_08</h2>
 <table class="h">
     <tbody>
@@ -25784,7 +25776,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_108">activator_108</h2>
 <table class="h">
     <tbody>
@@ -25838,7 +25830,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_108_08t1">activator_108_08t1</h2>
 <table class="h">
     <tbody>
@@ -25874,7 +25866,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_108_08t2">activator_108_08t2</h2>
 <table class="h">
     <tbody>
@@ -25911,7 +25903,7 @@ linked to by:<br>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#activator_108_08t2_08">offset </a></td>
+            <td><a href="#activator_108_08t2_08">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -25945,7 +25937,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_108_08t2_08">activator_108_08t2_08</h2>
 <table class="h">
     <tbody>
@@ -25996,7 +25988,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_116">activator_116</h2>
 <table class="h">
     <tbody>
@@ -26032,7 +26024,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_124">activator_124</h2>
 <table class="h">
     <tbody>
@@ -26088,7 +26080,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_144">activator_144</h2>
 <table class="h">
     <tbody>
@@ -26164,7 +26156,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/><h2 id="activator_176">activator_176</h2>
+<hr><h2 id="activator_176">activator_176</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -26204,7 +26196,7 @@ linked to by:<br>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_176_08">activator_176_08</h2>
 maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
 <table class="h">
@@ -26255,7 +26247,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_176_08t0">activator_176_08t0</h2>
 <table class="h">
     <tbody>
@@ -26306,7 +26298,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_176_08t13">activator_176_08t13</h2>
 <table class="h">
     <tbody>
@@ -26357,7 +26349,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_176_08t19">activator_176_08t19</h2>
 <table class="h">
     <tbody>
@@ -26408,7 +26400,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_184">activator_184</h2>
 <table class="h">
     <tbody> 
@@ -26439,7 +26431,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248">activator_248</h2>
 <table class="h">
     <tbody>
@@ -26515,7 +26507,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04">activator_248_04</h2>
 <table class="h">
     <tbody>
@@ -26569,7 +26561,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t0">activator_248_04_04t0</h2>
 <table class="h">
     <tbody>
@@ -26605,7 +26597,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t0_04">activator_248_04_04t0_04</h2>
 <p>multi linked to by:<br>
     <a href="#activator_248_04_04t0"> activator_248_04_04t0 [04]</a><br>
@@ -26730,7 +26722,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t0_04_04">activator_248_04_04t0_04_04</h2>
 <table class="h">
     <tbody>
@@ -26756,7 +26748,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t0_04_04_04">activator_248_04_04t0_04_04_04</h2>
 <table class="h">
     <tbody>
@@ -26792,7 +26784,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t0_04_04_04_04">activator_248_04_04t0_04_04_04_04</h2>
 <table class="h">
     <tbody>
@@ -26843,7 +26835,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t1">activator_248_04_04t1</h2>
 <table class="h">
     <tbody>
@@ -26894,7 +26886,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t2">activator_248_04_04t2</h2>
 <table class="h">
     <tbody>
@@ -26945,7 +26937,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t3">activator_248_04_04t3</h2>
 <table class="h">
     <tbody>
@@ -26996,7 +26988,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t4">activator_248_04_04t4</h2>
 <table class="h">
     <tbody>
@@ -27047,7 +27039,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t5">activator_248_04_04t5</h2>
 <table class="h">
     <tbody>
@@ -27097,7 +27089,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t6">activator_248_04_04t6</h2>
 <table class="h">
     <tbody>
@@ -27133,7 +27125,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t9">activator_248_04_04t9</h2>
 <table class="h">
     <tbody>
@@ -27219,7 +27211,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t11">activator_248_04_04t11</h2>
 <table class="h">
     <tbody>
@@ -27255,7 +27247,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t12">activator_248_04_04t12</h2>
 <table class="h">
     <tbody>
@@ -27291,7 +27283,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t13">activator_248_04_04t13</h2>
 <table class="h">
     <tbody>
@@ -27342,7 +27334,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t13_00">activator_248_04_04t13_00</h2>
 <table class="h">
     <tbody>
@@ -27378,7 +27370,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t13_00_04">activator_248_04_04t13_00_04</h2>
 <table class="h">
     <tbody>
@@ -27429,7 +27421,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_04_04t15">activator_248_04_04t15</h2>
 <table class="h">
     <tbody>
@@ -27465,7 +27457,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32">activator_248_32</h2>
 <table class="h">
     <tbody>
@@ -27626,7 +27618,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_08">activator_248_32_08</h2>
 <table class="h">
     <tbody>
@@ -27647,7 +27639,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_16">activator_248_32_16</h2>
 <table class="h">
     <tbody>
@@ -27683,7 +27675,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_32">activator_248_32_32</h2>
 <table class="h">
     <tbody>
@@ -27719,7 +27711,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_36">activator_248_32_36</h2>
 <table class="h">
     <tbody>
@@ -27770,7 +27762,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_52">activator_248_32_52</h2>
 <table class="h">
     <tbody>
@@ -27806,7 +27798,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72">activator_248_32_72</h2>
 <table class="h">
     <tbody>
@@ -27872,7 +27864,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t0">activator_248_32_72_08t0</h2>
 <p>there is 16 bytes of 00's before this section, not sure if its part of activator_248_32_72 [type 0] or if it just skips over 16 bytes. </p>
 <table class="h">
@@ -27924,7 +27916,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t2">activator_248_32_72_08t2</h2>
 <table class="h">
     <tbody>
@@ -27975,7 +27967,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t08">activator_248_32_72_08t08</h2>
 <table class="h">
     <tbody>
@@ -28011,7 +28003,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t10">activator_248_32_72_08t10</h2>
 <table class="h">
     <tbody>
@@ -28062,7 +28054,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t12">activator_248_32_72_08t12</h2>
 <table class="h">
     <tbody>
@@ -28113,7 +28105,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t13">activator_248_32_72_08t13</h2>
 <table class="h">
     <tbody>
@@ -28164,7 +28156,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t14">activator_248_32_72_08t14</h2>
 <table class="h">
     <tbody>
@@ -28220,7 +28212,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t15">activator_248_32_72_08t15</h2>
 <table class="h">
     <tbody>
@@ -28271,7 +28263,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t16">activator_248_32_72_08t16</h2>
 <table class="h">
     <tbody>
@@ -28312,7 +28304,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t17">activator_248_32_72_08t17</h2>
 <table class="h">
     <tbody>
@@ -28363,7 +28355,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t18">activator_248_32_72_08t18</h2>
 <table class="h">
     <tbody>
@@ -28399,7 +28391,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t18_08">activator_248_32_72_08t18_08</h2>
 <table class="h">
     <tbody>
@@ -28440,7 +28432,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t18_08_04t0">activator_248_32_72_08t18_08_04t0</h2>
 <p>multi linked to by:<br>
     <a href="#activator_248_32_72_08t18_08"> activator_248_32_72_08t18_08 [04]t0</a><br>
@@ -28544,7 +28536,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t18_08_04t6">activator_248_32_72_08t18_08_04t6</h2>
 <table class="h">
     <tbody>
@@ -28566,7 +28558,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#activator_248_32_72_08t18_08_04t6_08">offset </a></td>
+            <td><a href="#activator_248_32_72_08t18_08_04t6_08">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -28616,7 +28608,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t20">activator_248_32_72_08t20</h2>
 <table class="h">
     <tbody>
@@ -28667,7 +28659,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t20_00t1">activator_248_32_72_08t20_00t1</h2>
 <table class="h">
     <tbody>
@@ -28703,7 +28695,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t22">activator_248_32_72_08t22</h2>
 <table class="h">
     <tbody>
@@ -28754,7 +28746,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t22_00">activator_248_32_72_08t22_00</h2>
 <table class="h">
     <tbody>
@@ -28790,7 +28782,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t22_00_04">activator_248_32_72_08t22_00_04</h2>
 <table class="h">
     <tbody>
@@ -28841,7 +28833,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t23">activator_248_32_72_08t23</h2>
 <table class="h">
     <tbody>
@@ -28877,7 +28869,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t25">activator_248_32_72_08t25</h2>
 <table class="h">
     <tbody>
@@ -28894,7 +28886,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td><a href="#activator_248_32_72_08t25_04">offset </a></td>
+            <td><a href="#activator_248_32_72_08t25_04">offset</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -28913,7 +28905,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t25_04">activator_248_32_72_08t25_04</h2>
 <table class="h">
     <tbody>
@@ -28964,7 +28956,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t25_04_08">activator_248_32_72_08t25_04_08</h2>
 <table class="h">
     <tbody>
@@ -29015,7 +29007,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_72_08t32">activator_248_32_72_08t32</h2>
 <table class="h">
     <tbody>
@@ -29051,7 +29043,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="activator_248_32_76">activator_248_32_76</h2>
 <table class="h">
     <tbody>
@@ -29087,8 +29079,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
-
+<hr>
 <h2 id="flag">flag</h2>
 <p>multi linked to by:<br>
     <a href="#world_24_04"> world_24_04 [00]</a><br>
@@ -29097,7 +29088,6 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     <a href="#var_164_20_04_12t1618">var_164_20_04_12t1618 [00]t0</a><br>
     <a href="#var_164_12_12t2_04t16">var_164_12_12t2_04t16 [24]</a><br>
 </p>
-
 <table class="h">
     <tbody>
         <tr>
@@ -29207,7 +29197,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="flag_12t2">flag_12t2</h2>
 <table class="h">
     <tbody>
@@ -29258,7 +29248,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="flag_12t3">flag_12t3</h2>
 <table class="h">
     <tbody>
@@ -29294,7 +29284,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="flag_12t3_12">flag_12t3_12</h2>
 <table class="h">
     <tbody>
@@ -29350,7 +29340,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="flag_12t4">flag_12t4</h2>
 <table class="h">
     <tbody>
@@ -29386,8 +29376,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
-
+<hr>
 <h2 id="var">var</h2>
 <p>multi linked to by:<br>
     <a href="#world_24_12"> world_24_12 [00]</a><br>
@@ -29645,7 +29634,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_148">var_148</h2>
 <table class="h">
     <tbody>
@@ -29681,7 +29670,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164">var_164</h2>
 <table class="h">
     <tbody>
@@ -29737,12 +29726,12 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12">var_164_12</h2>
 <p>also linked to by<br>
-<a href="#var_164">var_164 [12] </a><br>
-<a href="#var_164_20_04">var_164_20_04 [28] </a><br>
-<a href="#var_168">var_168 [08] </a><br>
+<a href="#var_164">var_164 [12]</a><br>
+<a href="#var_164_20_04">var_164_20_04 [28]</a><br>
+<a href="#var_168">var_168 [08]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -29799,7 +29788,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t1">var_164_12_12t1</h2>
 <p>control access?</p>
 <table class="h">
@@ -29851,7 +29840,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t1_00">var_164_12_12t1_00</h2>
 <table class="h">
     <tbody>
@@ -29922,7 +29911,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t1_00_00">var_164_12_12t1_00_00</h2>
 <table class="h">
     <tbody>
@@ -29973,7 +29962,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2">var_164_12_12t2</h2>
 <p>most of the offests are pretty similar</p>
 <table class="h">
@@ -29992,11 +29981,11 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>04</td>
             <td>u32</td>
             <td>probably based on type [00]<br>
-                <a href="#var_164_12_12t2_04t1">1 = offset </a><br>
-                <a href="#var_164_12_12t2_04t4">4,5,6,9,11,19 = offset </a><br>
-                <a href="#var_164_12_12t2_04t7">7 = offset </a><br>
-                <a href="#var_164_12_12t2_04t8">8 = offset </a><br>
-                <a href="#var_164_12_12t2_04t16">16 = offset </a><br>
+                <a href="#var_164_12_12t2_04t1">1 = offset</a><br>
+                <a href="#var_164_12_12t2_04t4">4,5,6,9,11,19 = offset</a><br>
+                <a href="#var_164_12_12t2_04t7">7 = offset</a><br>
+                <a href="#var_164_12_12t2_04t8">8 = offset</a><br>
+                <a href="#var_164_12_12t2_04t16">16 = offset</a><br>
             </td>
         </tr>
         <tr class="u">
@@ -30016,7 +30005,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t1">var_164_12_12t2_04t1</h2>
 <table class="h">
     <tbody>
@@ -30087,7 +30076,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t1_12">var_164_12_12t2_04t1_12</h2>
 <table class="h">
     <tbody>
@@ -30123,7 +30112,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t1_16">var_164_12_12t2_04t1_16</h2>
 <table class="h">
     <tbody>
@@ -30198,7 +30187,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t4">var_164_12_12t2_04t4</h2>
 <table class="h">
     <tbody>
@@ -30269,7 +30258,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t4_16">var_164_12_12t2_04t4_16</h2>
 <table class="h">
     <tbody>
@@ -30282,12 +30271,12 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>00</td>
             <td>u32</td>
             <td>based on type [08] + [04]<br>
-                <a href="#world_20_12t1">1-1 = offset (world_20_12t1) </a> <br>
-                <a href="#world_20_12t8">1-8 = offset (world_20_12t8) </a> <br>
-                <a href="#world_20_12t10">1-10 = offset (world_20_12t10) </a> <br>
-                <a href="#world_20_12t13">1-13 = offset (world_20_12t13) </a> <br>
-                <a href="#world_20_12t14">1-14 = offset (world_20_12t14) </a> <br>
-                <a href="#world_20_12t15">1-15 = offset (world_20_12t15) </a> <br>
+                <a href="#world_20_12t1">1-1 = offset (world_20_12t1)</a><br>
+                <a href="#world_20_12t8">1-8 = offset (world_20_12t8)</a><br>
+                <a href="#world_20_12t10">1-10 = offset (world_20_12t10)</a><br>
+                <a href="#world_20_12t13">1-13 = offset (world_20_12t13)</a><br>
+                <a href="#world_20_12t14">1-14 = offset (world_20_12t14)</a><br>
+                <a href="#world_20_12t15">1-15 = offset (world_20_12t15)</a><br>
                 2 = value 1 - 150</td>
         </tr>
         <tr class="u">
@@ -30327,7 +30316,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t7">var_164_12_12t2_04t7</h2>
 <table class="h">
     <tbody>
@@ -30398,7 +30387,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t8">var_164_12_12t2_04t8</h2>
 <table class="h">
     <tbody>
@@ -30469,7 +30458,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t8_16">var_164_12_12t2_04t8_16</h2>
 <table class="h">
     <tbody>
@@ -30520,7 +30509,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t2_04t16">var_164_12_12t2_04t16</h2>
 <table class="h">
     <tbody>
@@ -30591,7 +30580,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t5">var_164_12_12t5</h2>
 <p>award: sendEndLevel:sucess</p>
 <table class="h">
@@ -30643,7 +30632,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t5_04">var_164_12_12t5_04</h2>
 <table class="h">
     <tbody>
@@ -30694,7 +30683,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t5_04_08">var_164_12_12t5_04_08</h2>
 <table class="h">
     <tbody>
@@ -30745,7 +30734,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t6">var_164_12_12t6</h2>
 <p>play interface</p>
 <table class="h">
@@ -30851,7 +30840,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t6_00t1_08">var_164_12_12t6_00t1_08</h2>
 <table class="h">
     <tbody>
@@ -30887,7 +30876,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t6_00t2">var_164_12_12t6_00t2</h2>
 <table class="h">
     <tbody>
@@ -30938,7 +30927,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t7">var_164_12_12t7</h2>
 <p>fillEmUp</p>
 <table class="h">
@@ -30990,7 +30979,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t7_00">var_164_12_12t7_00</h2>
 <table class="h">
     <tbody>
@@ -31041,7 +31030,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8">var_164_12_12t8</h2>
 <p>flag / value related</p>
 <table class="h">
@@ -31102,7 +31091,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8_00t2">var_164_12_12t8_00t2</h2>
 <table class="h">
     <tbody>
@@ -31153,7 +31142,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8_00t2_04">var_164_12_12t8_00t2_04</h2>
 <table class="h">
     <tbody>
@@ -31204,7 +31193,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8_00t2_12">var_164_12_12t8_00t2_12</h2>
 <table class="h">
     <tbody>
@@ -31275,7 +31264,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8_04t3">var_164_12_12t8_04t3</h2>
 <table class="h">
     <tbody>
@@ -31302,7 +31291,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td><a href="#var_164_12_12t8_04t3_12">offset </a></td>
+            <td><a href="#var_164_12_12t8_04t3_12">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -31311,7 +31300,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t8_04t3_12">var_164_12_12t8_04t3_12</h2>
 <table class="h">
     <tbody>
@@ -31367,7 +31356,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t14">var_164_12_12t14</h2>
 <p>teleport spookys castle / arena p1-p8</p>
 <table class="h">
@@ -31419,7 +31408,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t14_00">var_164_12_12t14_00</h2>
 <table class="h">
     <tbody>
@@ -31471,7 +31460,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t15">var_164_12_12t15</h2>
 <p>sleep</p>
 <table class="h">
@@ -31509,7 +31498,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t16">var_164_12_12t16</h2>
 <p>SetMissionObjective_complete</p>
 <table class="h">
@@ -31546,7 +31535,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t24">var_164_12_12t24</h2>
 <p>playEvent, only Spookys castle</p>
 <table class="h">
@@ -31583,7 +31572,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_12_12t24_04">var_164_12_12t24_04</h2>
 <table class="h">
     <tbody>
@@ -31634,7 +31623,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20">var_164_20</h2>
 <table class="h">
     <tbody>
@@ -31651,7 +31640,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td><a href="#var_164_20_04">offset </a></td>
+            <td><a href="#var_164_20_04">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -31660,7 +31649,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04">var_164_20_04</h2>
 <table class="h">
     <tbody>
@@ -31722,7 +31711,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1604">var_164_20_04_12t1604</h2>
 <p>LS_level_start</p>
 <table class="h">
@@ -31759,7 +31748,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1608">var_164_20_04_12t1608</h2>
 <p>SE_1P_startup_interface_complete(nonDEMOMODE)</p>
 <table class="h">
@@ -31811,7 +31800,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1618">var_164_20_04_12t1618</h2>
 <p>VC_</p>
 <table class="h">
@@ -31868,7 +31857,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1618_00t1">var_164_20_04_12t1618_00t1</h2>
 <table class="h">
     <tbody>
@@ -31904,7 +31893,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1618_00t1_12">var_164_20_04_12t1618_00t1_12</h2>
 <table class="h">
     <tbody>
@@ -31960,7 +31949,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1620">var_164_20_04_12t1620</h2>
 <p>VT_FP:grape_enter_removeItem</p>
 <table class="h">
@@ -32012,7 +32001,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1620_00">var_164_20_04_12t1620_00</h2>
 <table class="h">
     <tbody>
@@ -32063,7 +32052,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1636">var_164_20_04_12t1636</h2>
 <p>TR_endRound, arenas only</p>
 <table class="h">
@@ -32115,7 +32104,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_12t1636_00">var_164_20_04_12t1636_00</h2>
 <table class="h">
     <tbody>
@@ -32166,7 +32155,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20">var_164_20_04_20</h2>
 <table class="h">
     <tbody>
@@ -32200,7 +32189,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t5">var_164_20_04_20_08t5</h2>
 <table class="h">
     <tbody>
@@ -32256,7 +32245,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t5_00t1">var_164_20_04_20_08t5_00t1</h2>
 <table class="h">
     <tbody>
@@ -32307,7 +32296,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t5_00t1_04">var_164_20_04_20_08t5_00t1_04</h2>
 <table class="h">
     <tbody>
@@ -32358,7 +32347,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t5_00t1_12">var_164_20_04_20_08t5_00t1_12</h2>
 <table class="h">
     <tbody>
@@ -32429,7 +32418,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t6">var_164_20_04_20_08t6</h2>
 <table class="h">
     <tbody>
@@ -32480,7 +32469,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_164_20_04_20_08t6_00">var_164_20_04_20_08t6_00</h2>
 <table class="h">
     <tbody>
@@ -32531,7 +32520,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="var_168">var_168</h2>
 <table class="h">
     <tbody>
@@ -32567,7 +32556,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="gate">gate</h2>
 <p>multi linked to by:<br>
     <a href="#world_32"> world_32 [00]</a><br>
@@ -32779,7 +32768,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="gate_24">gate_24</h2>
 <table class="h">
     <tbody>
@@ -32815,7 +32804,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="gate_84">gate_84</h2>
 <table class="h">
     <tbody>
@@ -32866,7 +32855,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="gate_84_04">gate_84_04</h2>
 <table class="h">
     <tbody>
@@ -32917,7 +32906,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="strange">strange</h2>
 <p>multi linked to by:<br>
     <a href="#world_20_12t14">world_20_12t14 [64]</a><br>
@@ -33014,7 +33003,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object">object</h2>
 <p>multi linked to by:<br>
     <a href="#world_20_12t15"> world_20_12t15 [56]</a><br>
@@ -33206,7 +33195,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>100</td>
             <td>u32</td>
-            <td><a href="#mysterious">offset (mysterious) </a> based on amount [96]</td>
+            <td><a href="#mysterious">offset (mysterious)</a> based on amount [96]</td>
         </tr>
         <tr class="u">
             <td>104</td>
@@ -33240,7 +33229,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_12">object_12</h2>
 <table class="h">
     <tbody>
@@ -33287,7 +33276,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#object_12_16">offset </a></td>
+            <td><a href="#object_12_16">offset</a></td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -33311,7 +33300,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_12_16">object_12_16</h2>
 <table class="h">
     <tbody>
@@ -33362,7 +33351,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t15">object_32t15</h2>
 <p>multi linked to by:<br>
     <a href="#object">object [32]t15</a><br>
@@ -33401,7 +33390,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t15_04">object_32t15_04</h2>
 <table class="h">
     <tbody>
@@ -33452,7 +33441,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t15_04_04">object_32t15_04_04</h2>
 <table class="h">
     <tbody>
@@ -33498,7 +33487,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t16">object_32t16</h2>
 <table class="h">
     <tbody>
@@ -33534,7 +33523,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t17">object_32t17</h2>
 <table class="h">
     <tbody>
@@ -33570,7 +33559,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t18">object_32t18</h2>
 <table class="h">
     <tbody>
@@ -33606,7 +33595,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="object_32t18_00">object_32t18_00</h2>
 <table class="h">
     <tbody>
@@ -33642,7 +33631,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="um">um</h2>
 <p>multi linked to by:<br>
     <a href="#object_32t15_04_04">object_32t15_04_04 [00]</a><br>
@@ -33717,7 +33706,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf">wtf</h2>
 <p>linked to by:<br>
     <a href="#object">object [88]</a><br>
@@ -33766,7 +33755,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_04">wtf_04</h2>
 <p>related to character collisions/ higher numbers = less collisions</p>
 <table class="h">
@@ -33823,7 +33812,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08">wtf_08</h2>
 <table class="h">
     <tbody>
@@ -33864,7 +33853,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_00">wtf_08_00</h2>
 <table class="h">
     <tbody>
@@ -33902,7 +33891,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_00_04">wtf_08_00_04</h2>
 <p>collision related</p>
 <table class="h">
@@ -33939,7 +33928,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_00_12">wtf_08_00_12</h2>
 <table class="h">
     <tbody>
@@ -33975,7 +33964,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1">wtf_08_08t1</h2>
 <table class="h">
     <tbody>
@@ -33987,7 +33976,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td><a href="#wtf_08_08t1_00">offset </a></td>
+            <td><a href="#wtf_08_08t1_00">offset</a></td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -33997,7 +33986,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#wtf_08_08t1_08">offset </a></td>
+            <td><a href="#wtf_08_08t1_08">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -34011,7 +34000,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_00">wtf_08_08t1_00</h2>
 <table class="h">
     <tbody>
@@ -34047,7 +34036,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_00_04">wtf_08_08t1_00_04</h2>
 <table class="h">
     <tbody>
@@ -34083,7 +34072,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_00_12">wtf_08_08t1_00_12</h2>
 <table class="h">
     <tbody>
@@ -34119,7 +34108,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_08">wtf_08_08t1_08</h2>
 <table class="h">
     <tbody>
@@ -34156,7 +34145,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#wtf_08_08t1_08_08">offset </a></td>
+            <td><a href="#wtf_08_08t1_08_08">offset</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -34192,7 +34181,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_08_08">wtf_08_08t1_08_08</h2>
 <table class="h">
     <tbody>
@@ -34248,7 +34237,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t1_08_20t0">wtf_08_08t1_08_20t0</h2>
 <table class="h">
     <tbody>
@@ -34324,7 +34313,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3">wtf_08_08t3</h2>
 <table class="h">
     <tbody>
@@ -34349,14 +34338,14 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>08</td>
             <td>u32</td>
             <td>
-                <a href="#wtf_08_08t3_08">offset 2 </a>
+                <a href="#wtf_08_08t3_08">offset 2</a>
             </td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
             <td>
-                <a href="#wtf_08_08t3_12">offset 3 </a>
+                <a href="#wtf_08_08t3_12">offset 3</a>
             </td>
         </tr>
         <tr class="u">
@@ -34368,7 +34357,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>20</td>
             <td>u32</td>
             <td>
-                <a href="#wtf_08_08t3_20">offset 4 </a>
+                <a href="#wtf_08_08t3_20">offset 4</a>
             </td>
         </tr>
         <tr>
@@ -34412,7 +34401,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_00">wtf_08_08t3_00</h2>
 <table class="h">
     <tbody>
@@ -34431,7 +34420,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>04</td>
             <td>u32</td>
             <td>
-                <a href="#wtf_08_08t3_00_04">offset 1 </a>
+                <a href="#wtf_08_08t3_00_04">offset 1</a>
             </td>
         </tr>
         <tr class="u">
@@ -34453,7 +34442,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_00_04">wtf_08_08t3_00_04</h2>
 <p>?????</p>
 <table class="h">
@@ -34490,7 +34479,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_00_12">wtf_08_08t3_00_12</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34527,7 +34516,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_08">wtf_08_08t3_08</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34588,7 +34577,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_08_08">wtf_08_08t3_08_08</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34645,7 +34634,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_08_20">wtf_08_08t3_08_20</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34722,7 +34711,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_12">wtf_08_08t3_12</h2>
 <table class="h">
     <tbody>
@@ -34758,7 +34747,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_12_04">wtf_08_08t3_12_04</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34795,7 +34784,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_20">wtf_08_08t3_20</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34864,7 +34853,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_20_08">wtf_08_08t3_20_08</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34921,7 +34910,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_24">wtf_08_08t3_24</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34960,7 +34949,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_24_04">wtf_08_08t3_24_04</h2>
 <p>??????????????</p>
 <table class="h">
@@ -34997,7 +34986,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_24_12">wtf_08_08t3_24_12</h2>
 <table class="h">
     <tbody>
@@ -35033,7 +35022,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_32">wtf_08_08t3_32</h2>
 <p>??????????????</p>
 <table class="h">
@@ -35067,7 +35056,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
             <td>08</td>
             <td>u32</td>
             <td>
-                <a href="#wtf_08_08t3_32_08">offset 1 </a>
+                <a href="#wtf_08_08t3_32_08">offset 1</a>
             </td>
         </tr>
         <tr class="u">
@@ -35102,7 +35091,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_08_08t3_32_08">wtf_08_08t3_32_08</h2>
 <p>??????????????</p>
 <table class="h">
@@ -35159,7 +35148,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_12">wtf_12</h2>
 <p>?</p>
 <table class="h">
@@ -35198,7 +35187,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_12_00">wtf_12_00</h2>
 <p>?</p>
 <table class="h">
@@ -35237,7 +35226,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="wtf_12_00_04">wtf_12_00_04</h2>
 <p>?</p>
 <table class="h">
@@ -35274,7 +35263,7 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="texture_anim_1">Texture Animation Part 2</h2>
 <p>linked to from <a href="#texture_animation_section">Texture Animation Part 1</a></p>
 <table class="h">
@@ -35592,7 +35581,7 @@ likely unused.</p>
         </tr>
     </tfoot>
 </table>
-<hr/>
+<hr>
 <h2 id="offset_patch_list">Offset Patch List</h2>
 <p>
     linked to by the <a href="#data_pack">datapack</a><br>
