@@ -35,12 +35,12 @@
                                             <a class="link" href="#bmg_demo_basic_audio">Audio</a>
                                         </div>
                             <div class="box box2">
-                                <a class="link" href="#index_patch_list">Index Patch List</a>
+                                <a class="link" href="#bmg_demo_index_patch_list">Index Patch List</a>
                             </div>
                             <div class="box box2" style="padding-bottom: 2%;">
-                                <a class="link" href="#ordered_list">Ordered List</a>
+                                <a class="link" href="#bmg_demo_ordered_list">Ordered List</a>
                                     <div class="box box3">
-                                        <a class="link" href="#file_specific_section">File Specific Sections</a>
+                                        <a class="link" href="#bmg_demo_file_specific_section">File Specific Sections</a>
                                     </div>
                                     <div class="box box3">
                                         <a class="link" href="#bmg_demo_texture_anim">Texture Animation Part 1</a>
@@ -54,18 +54,18 @@
                                     <div class="box box3"><a class="link" href="#bmg_demo_model_anim_3">bmg_demo_model_anim_3</a>
                                     </div>
                                     <div class="box box3">
-                                    <a class="link" href="#unordered_list">Unordered List</a>
+                                    <a class="link" href="#bmg_demo_unordered_list">Unordered List</a>
                                 </div>
                                 <div class="box box3"><a class="link" href="#bmg_demo_texture_anim_0">bmg_demo_texture_anim_0</a></div>
                             </div>
-                            <div class="box box2"><a class="link" href="#offset_patch_list">Offset Patch List</a></div>
+                            <div class="box box2"><a class="link" href="#bmg_demo_offset_patch_list">Offset Patch List</a></div>
                         </div>
                         Next Data Pack<br>
                         .<br>
                         .<br>
                         .<br>
                         .<br>
-                        <div class="box box1"><a class="link" href="#end">End of File Section</a></div>
+                        <div class="box box1"><a class="link" href="#bmg_demo_end">End of File Section</a></div>
                     </div>
                     <div style="background:#09518b;border-top: 25px solid #4664cd;border-left: 50px solid transparent;border-right: 25px solid transparent;">
                         <a style="color:#09518b;user-select:none;">.</a>
@@ -565,7 +565,7 @@
 <h2 id="bmg_demo_basic_audio_0_string">bmg_demo_basic_audio_0_string</h2>
 <p>wav file name, 32 bytes padding?</p>
 <hr>
-<h2 id="index_patch_list">index_patch_list</h2>
+<h2 id="bmg_demo_index_patch_list">index_patch_list</h2>
 <p> probably? </p>
 <h2>Texture Indexes (1)</h2>
 <p>sections with texture patches seen:<br>
@@ -652,12 +652,12 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="ordered_list">Ordered List</h2>
+<h2 id="bmg_demo_ordered_list">Ordered List</h2>
 <p>no direct offset to this section<br>
     to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
     in order the sections contained are:<br>
-    <a href="#file_specific_section">File Specific Section</a><br>
+    <a href="#bmg_demo_file_specific_section">File Specific Section</a><br>
 
     <a href="#bmg_demo_texture_anim">bmg_demo_texture_anim</a><br>
 
@@ -669,16 +669,16 @@
 
     <a href="#bmg_demo_model_anim_3">bmg_demo_model_anim_3</a><br>
 
-    <a href="#unordered_list">Unordered List</a><br>
+    <a href="#bmg_demo_unordered_list">Unordered List</a><br>
 
     <a href="#bmg_demo_texture_anim_0">bmg_demo_texture_anim_0</a><br>
 
-    <a href="#offset_patch_list">Offset Patch List</a><br><br>
+    <a href="#bmg_demo_offset_patch_list">Offset Patch List</a><br><br>
     Texture Animation Part 1 & Textures & Offset Patch List are directly linked to by the datapack<br>
     The other sections are linked to by the File Specific Section & unordered list & Texture Animation Part 1<br>
 </p>
 <hr>
-<h2 id="file_specific_section">Ordered List File Specific Section</h2>
+<h2 id="bmg_demo_file_specific_section">Ordered List File Specific Section</h2>
 <p>The first part of the ordered list depends on the type of file</p>
 <table class="h">
     <tbody>
@@ -5279,7 +5279,7 @@ sections seen:<br>
     </tfoot>
 </table>
 <hr>
-<h2 id="unordered_list">Unordered List</h2>
+<h2 id="bmg_demo_unordered_list">Unordered List</h2>
 <p>sections here appear whenever they are linked and do not have a set order<br>
    sections in the unordered list can link to the ordered list and sections in the ordered list can link to the unordered list<br>
 <h2>sections seen</h2>
@@ -26785,7 +26785,7 @@ sections seen:<br>
     </tfoot>
 </table>
 <hr>
-<h2 id="offset_patch_list">Offset Patch List</h2>
+<h2 id="bmg_demo_offset_patch_list">Offset Patch List</h2>
 <p>
     linked to by the <a href="#bmg_demo_datapack">datapack</a><br>
     Patches offsets into the file.<br>
@@ -26866,7 +26866,7 @@ the offests in the ordered list will be malformed in memory if no general offest
     </tfoot>
 </table>
 <hr>
-<h2 id="end">end of file</h2>
+<h2 id="bmg_demo_end">end of file</h2>
 <p>
     at the end of the file a block of 128 bytes is found<br>each u8 is 32
 </p>

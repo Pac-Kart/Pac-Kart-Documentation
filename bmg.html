@@ -410,7 +410,8 @@
 <p>4 bytes of padding in the wii version here</p>
 <hr>
 <h2 id="bmg_basic_audio">bmg_basic_audio</h2>
-<p>audio offsets start at the end of this section</p>
+<p>audio offsets start at the end of this section<br>
+the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bmg_basic_audio_4[0],bmg_basic_audio_0[1]</p>
 <table class="h">
     <tbody>
         <tr>
@@ -537,7 +538,131 @@
 <h2 id="bmg_basic_audio_0_0twii">bmg_basic_audio_0_0twii</h2>
 <p>FSB3 file</p>
 <hr>
-<p>skipping sections here</p>
+<h2 id="bmg_basic_audio_4_0">bmg_basic_audio_4_0</h2>
+<p>string</p>
+<hr>
+<h2 id="unknown_table">unknown table</h2>
+<p>unknown</p>
+<hr>
+<h2 id="texture_offset_list">texture_offset_list</h2>
+<p>offsets in these sections use the start of the table as the relative offset</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#texture_offset_list_0">offset</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="texture_offset_list_0">texture_offset_list_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>always 3</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>always 4</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>19,55,65,101</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>3,35,151,183</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>69,197</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2,3,4,5</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>4,5,6,7,8,9</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>4,5,6,7,8,9</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_texture_offset_list_0_8">offset texture data 2</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#bmg_texture_offset_list_0_12">offset texture data 1</a></td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#bmg_texture_offset_list_0_16">offset string name</a></td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#bmg_texture_offset_list_0_20">offset texture data 3</a></td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_texture_offset_list_0_16">bmg_texture_offset_list_0_16</h2>
+<p>texture string name</p>
+<hr>
+<h2 id="bmg_texture_offset_list_0_12">bmg_texture_offset_list_0_12</h2>
+<p>texture data 1</p>
+<hr>
+<h2 id="bmg_texture_offset_list_0_8">bmg_texture_offset_list_0_8</h2>
+<p>texture data 2</p>
+<hr>
+<h2 id="bmg_texture_offset_list_0_20">bmg_texture_offset_list_0_20</h2>
+<p>texture data 3</p>
 <hr>
 <h2 id="index_patch_list">index_patch_list</h2>
 <h2>Texture Indexes (1)</h2>
