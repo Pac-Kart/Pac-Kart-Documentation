@@ -33,6 +33,12 @@
                                         <div class="box box2">
                                             <a class="link" href="#bmg_basic_audio">Audio</a>
                                         </div>
+                                        <div class="box box2">
+                                            <a class="link" href="#unknown_table">unknown</a>
+                                        </div>
+                                        <div class="box box2">
+                                            <a class="link" href="#bmg_texture_offset_list">Textures</a>
+                                        </div>
                             <div class="box box2">
                                 <a class="link" href="#index_patch_list">Index Patch List</a>
                             </div>
@@ -190,10 +196,10 @@
             <td>u32</td>
             <td>index patch list textures prob 2 - 3214</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>2 - 447</td>
+            <td>amount <a href="#bmg_texture_offset_list">Textures</a> | 2 - 447</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -544,7 +550,7 @@ the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bm
 <h2 id="unknown_table">unknown table</h2>
 <p>unknown</p>
 <hr>
-<h2 id="texture_offset_list">texture_offset_list</h2>
+<h2 id="bmg_texture_offset_list">bmg_texture_offset_list</h2>
 <p>offsets in these sections use the start of the table as the relative offset</p>
 <table class="h">
     <tbody>
@@ -556,7 +562,7 @@ the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bm
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td><a href="#texture_offset_list_0">offset</a></td>
+            <td><a href="#bmg_texture_offset_list_0">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -566,7 +572,7 @@ the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bm
     </tfoot>
 </table>
 <hr>
-<h2 id="texture_offset_list_0">texture_offset_list_0</h2>
+<h2 id="bmg_texture_offset_list_0">bmg_texture_offset_list_0</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -617,22 +623,22 @@ the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bm
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td><a href="#bmg_texture_offset_list_0_8">offset texture data 2</a></td>
+            <td><a href="#bmg_bmg_texture_offset_list_0_8">offset texture data 2</a></td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bmg_texture_offset_list_0_12">offset texture data 1</a></td>
+            <td><a href="#bmg_bmg_texture_offset_list_0_12">offset texture data 1</a></td>
         </tr>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td><a href="#bmg_texture_offset_list_0_16">offset string name</a></td>
+            <td><a href="#bmg_bmg_texture_offset_list_0_16">offset string name</a></td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>u32</td>
-            <td><a href="#bmg_texture_offset_list_0_20">offset texture data 3</a></td>
+            <td><a href="#bmg_bmg_texture_offset_list_0_20">offset texture data 3</a></td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -652,16 +658,16 @@ the sections are not seperate blocks but are listed like bmg_basic_audio_0[0],bm
     </tfoot>
 </table>
 <hr>
-<h2 id="bmg_texture_offset_list_0_16">bmg_texture_offset_list_0_16</h2>
+<h2 id="bmg_bmg_texture_offset_list_0_16">bmg_bmg_texture_offset_list_0_16</h2>
 <p>texture string name</p>
 <hr>
-<h2 id="bmg_texture_offset_list_0_12">bmg_texture_offset_list_0_12</h2>
+<h2 id="bmg_bmg_texture_offset_list_0_12">bmg_bmg_texture_offset_list_0_12</h2>
 <p>texture data 1</p>
 <hr>
-<h2 id="bmg_texture_offset_list_0_8">bmg_texture_offset_list_0_8</h2>
+<h2 id="bmg_bmg_texture_offset_list_0_8">bmg_bmg_texture_offset_list_0_8</h2>
 <p>texture data 2</p>
 <hr>
-<h2 id="bmg_texture_offset_list_0_20">bmg_texture_offset_list_0_20</h2>
+<h2 id="bmg_bmg_texture_offset_list_0_20">bmg_bmg_texture_offset_list_0_20</h2>
 <p>texture data 3</p>
 <hr>
 <h2 id="index_patch_list">index_patch_list</h2>

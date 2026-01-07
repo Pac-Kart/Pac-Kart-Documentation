@@ -15,6 +15,50 @@
                 <br>
                 <h1>wip</h1>
             </section>
+                <h2>Bigfoot: Collision Course Structure</h2>
+                <p>
+                    The layout seen in <b>x*</b> Bigfoot: Collision Course archives is as follows:
+                </p>
+                <div class="visual_structure">
+                    <div style="background:#09518b;border-top: none;border-bottom: 25px solid #4664cd;border-left: 50px solid transparent;border-right: 25px solid transparent;">
+                        <a style="color:white;">.x*</a>
+                    </div>
+                    <div style="color: white;background: #4664cd;text-align: center;">
+                        <div class="box box1">
+                            <a class="link" href="#bcc_header">File Header</a>
+                        </div>
+                        <div class="box box1"><a class="link" href="#bcc_directory">File Directory</a></div>
+                        <div class="box box1" style="padding-bottom: 2%;">
+                            <a class="link" href="#bcc_datapack">DataPack</a>
+                                        <div class="box box2">
+                                            <a class="link" href="#unknown_table">...</a>
+                                        </div>
+                            <div class="box box2">
+                                <a class="link" href="#index_patch_list">Index Patch List</a>
+                            </div>
+                            <div class="box box2" style="padding-bottom: 2%;">
+                                <a class="link" href="#ordered_list">Ordered List</a>
+                                    <div class="box box3">
+                                        <a class="link" href="#file_specific_section">File Specific Sections</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#unordered_list">Unordered List</a>
+                                </div>
+                            </div>
+                            <div class="box box2"><a class="link" href="#offset_patch_list">Offset Patch List</a></div>
+                        </div>
+                        Next Data Pack<br>
+                        .<br>
+                        .<br>
+                        .<br>
+                        .<br>
+                        <div class="box box1"><a class="link" href="#end">End of File Section</a></div>
+                    </div>
+                    <div style="background:#09518b;border-top: 25px solid #4664cd;border-left: 50px solid transparent;border-right: 25px solid transparent;">
+                        <a style="color:#09518b;user-select:none;">.</a>
+                    </div>
+                </div>
+                <hr>
 <h2 id="bcc_header">bcc_header</h2>
 <table class="h">
     <tbody>
@@ -459,6 +503,61 @@
             <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
+</table>
+<hr>
+<h2 id="ordered_list">Ordered List</h2>
+<p>no direct offset to this section<br>
+    to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
+    all sections in the ordered list use the start of the ordered list as the offset<br><br>
+    in order the sections contained are:<br>
+    <a href="#ordered_list">File Specific Section</a><br>
+
+    ...<br>
+
+    <a href="#offset_patch_list">Offset Patch List</a><br><br>
+    Texture Animation Part 1 & Textures & Offset Patch List are directly linked to by the datapack<br>
+    The other sections are linked to by the File Specific Section & unordered list & Texture Animation Part 1<br>
+</p>
+<hr>
+<h2 id="file_specific_section">Ordered List File Specific Section</h2>
+<p>The first part of the ordered list depends on the type of file</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>0 = car</td>
+            <td>
+                <a href="#bcc_basic">bcc_basic</a>
+            </td>
+        </tr>
+        <tr>
+            <td>1 = interface</td>
+            <td>
+                <a href="#bcc_basic">bcc_basic</a>
+            </td>
+        </tr>
+        <tr>
+            <td>3 = link</td>
+            <td>
+                <a href="#bcc_basic">bcc_basic</a>
+            </td>
+        </tr>
+        <tr>
+            <td>4 = world</td>
+            <td>
+                <a href="#bcc_world">bcc_world</a>
+            </td>
+        </tr>
+        <tr>
+            <td>8 = share</td>
+            <td>
+                <a href="#bcc_share">bcc_share</a>
+            </td>
+        </tr>
+    </tbody>
 </table>
 <hr>
 <h2 id="bcc_share">bcc_share</h2>
@@ -16589,6 +16688,15 @@
         </tr>
     </tfoot>
 </table>
+<hr>
+<h2 id="unordered_list">Unordered List</h2>
+<p>sections here appear whenever they are linked and do not have a set order<br>
+   sections in the unordered list can link to the ordered list and sections in the ordered list can link to the unordered list<br>
+<h2>sections seen</h2>
+<h4>multi linked</h4>
+
+<h4>just linked?</h4>
+</p>
 <hr>
 <h2 id="bcc_weird_4">bcc_weird_4</h2>
 <p>multi linked to by:<br>
@@ -35302,4 +35410,8 @@
     </tfoot>
 </table>
 <hr>
+<h2 id="end">end of file</h2>
+<p>
+    at the end of the file a block of 128 bytes is found<br>each u8 is 32
+</p>
 </section></div></body></html>
