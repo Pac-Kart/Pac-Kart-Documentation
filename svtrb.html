@@ -48,6 +48,9 @@
                                         <a class="link" href="#svtrb_texture">svtrb_texture</a>
                                     </div>
                                     <div class="box box3">
+                                        <a class="link" href="#svtrb_some_model_anims_section">svtrb_some_model_anims_section</a>
+                                    </div>
+                                    <div class="box box3">
                                         <a class="link" href="#svtrb_texture_anims">svtrb_texture_anims</a>
                                     </div>
                                     <div class="box box3">
@@ -19360,6 +19363,198 @@ ps2/psp = vag prob
 <h2 id="svtrb_texture_psp_20">svtrb_texture_psp_20</h2>
 <p>texture data</p>
 <hr>
+<h2 id="svtrb_some_model_anims_section">svtrb_some_model_anims_section</h2>
+<p>multi linked to by:<br>
+    <a href="#svtrb_font">svtrb_font [4]</a><br>
+</p>
+<caption>not sure if this where this comes in</caption>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>always 5</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>25,39,42,47,50,57</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>25,39,47,48,55</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>amount | 123,127,128</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#svtrb_some_model_anims_section_24">offset</a> based on amount [20]</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>amount | 6,27,44,87,97</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#svtrb_some_model_anims_section_32">offset</a> based on amount [28]</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td>offset string</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="svtrb_some_model_anims_section_24">svtrb_some_model_anims_section_24</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>0 - 86</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">2 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="svtrb_some_model_anims_section_32">svtrb_some_model_anims_section_32</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0.001953125 - 0.939453125</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0.00390625 - 0.94140625</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0.03125 - 0.99609375</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0.15625 - 1.625</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,1,2,250,251,252,253,254,255</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u8</td>
+            <td>1 - 56</td>
+        </tr>
+        <tr class="u">
+            <td>21</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>22</td>
+            <td>u8</td>
+            <td>3 - 47</td>
+        </tr>
+        <tr class="u">
+            <td>23</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">24 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="svtrb_share">svtrb_share</h2>
 <table class="h">
     <tbody>
@@ -21845,6 +22040,32 @@ sections here appear whenever they are linked and do not have a set order<br>
 </p>
 <h2>sections seen</h2>
 <h4>multi linked</h4>
+<a href="#svtrb_interface">svtrb_interface</a><br>
+<a href="#svtrb_sound_controls">svtrb_sound_controls</a><br>
+<a href="#svtrb_sound_section">svtrb_sound_section</a><br>
+<a href="#svtrb_text">svtrb_text</a><br>
+<a href="#svtrb_font">svtrb_font</a><br>
+<a href="#svtrb_interface_72_24t1_12t1">svtrb_interface_72_24t1_12t1</a><br>
+<a href="#svtrb_interface_72_24t2_4_4_0">svtrb_interface_72_24t2_4_4_0</a><br>
+<a href="#svtrb_car">svtrb_car</a><br>
+<a href="#svtrb_model_link">svtrb_model_link</a><br>
+<a href="#svtrb_car_0_36">svtrb_car_0_36</a><br>
+<a href="#svtrb_car_0_76_4_4">svtrb_car_0_76_4_4</a><br>
+<a href="#svtrb_car_0_76_4_4_128">svtrb_car_0_76_4_4_128</a><br>
+<a href="#svtrb_car_0_76_20_4">svtrb_car_0_76_20_4</a><br>
+<a href="#svtrb_strange">svtrb_strange</a><br>
+<a href="#svtrb_mysterious_4t9">svtrb_mysterious_4t9</a><br>
+<a href="#svtrb_activator">svtrb_activator</a><br>
+<a href="#svtrb_unknown">svtrb_unknown</a><br>
+<a href="#svtrb_unknown_4_4t1">svtrb_unknown_4_4t1</a><br>
+<a href="#svtrb_unknown_4_4t2">svtrb_unknown_4_4t2</a><br>
+<a href="#svtrb_unknown_4_4t2_12_0">svtrb_unknown_4_4t2_12_0</a><br>
+<a href="#svtrb_unknown_4_4t2_112_0">svtrb_unknown_4_4t2_112_0</a><br>
+<a href="#svtrb_unknown_4_4t5">svtrb_unknown_4_4t5</a><br>
+<a href="#svtrb_unknown_4_4t5_28_4_0">svtrb_unknown_4_4t5_28_4_0</a><br>
+<h4>just linked?</h4>
+<a href="#svtrb_mysterious">svtrb_mysterious</a><br>
+<a href="#svtrb_world_link">svtrb_world_link</a><br>
 <hr>
 <h2 id="svtrb_interface">svtrb_interface</h2>
 <p>multi linked to by:<br>
@@ -24878,7 +25099,7 @@ sections here appear whenever they are linked and do not have a set order<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#svtrb_font_4">offset (svtrb_font_4)</a></td>
+            <td><a href="#svtrb_some_model_anims_section">offset (svtrb_some_model_anims_section)</a></td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -24934,197 +25155,6 @@ sections here appear whenever they are linked and do not have a set order<br>
     <tfoot>
         <tr>
             <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="svtrb_font_4">svtrb_font_4</h2>
-<p>multi linked to by:<br>
-    <a href="#svtrb_font">svtrb_font [4]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>always 5</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>25,39,42,47,50,57</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>25,39,47,48,55</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>amount | 123,127,128</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#svtrb_font_4_24">offset</a> based on amount [20]</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td>amount | 6,27,44,87,97</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#svtrb_font_4_32">offset</a> based on amount [28]</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td>offset string</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="svtrb_font_4_24">svtrb_font_4_24</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>0 - 86</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">2 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="svtrb_font_4_32">svtrb_font_4_32</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0.001953125 - 0.939453125</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0.00390625 - 0.94140625</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0.03125 - 0.99609375</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0.15625 - 1.625</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>0,1,2,250,251,252,253,254,255</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>1 - 56</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>3 - 47</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">24 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
