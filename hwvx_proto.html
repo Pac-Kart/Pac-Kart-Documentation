@@ -25,19 +25,19 @@
                     </div>
                     <div style="color: white;background: #4664cd;text-align: center;">
                         <div class="box box1">
-                            <a class="link" href="#file_header_x">File Header</a>
+                            <a class="link" href="#hwvx_proto_file_header">File Header</a>
                         </div>
                         <div class="box box1"><a class="link" href="#hwvx_proto_directory">File Directory</a></div>
                         <div class="box box1" style="padding-bottom: 2%;">
                             <a class="link" href="#datapack">DataPack</a>
                                         <div class="box box2">
-                                            <a class="link" href="#audio_section">Audio</a>
+                                            <a class="link" href="#hwvx_proto_audio_section">Audio</a>
                                         </div>
                             <div class="box box2">
                                 <a class="link" href="#patch_list">Patch List</a>
                             </div>
                             <div class="box box2" style="padding-bottom: 2%;">
-                                <a class="link" href="#ordered_list">Ordered List</a>
+                                <a class="link" href="#hwvx_proto_ordered_list">Ordered List</a>
                                     <div class="box box3">
                                         <a class="link" href="#file_specific_section">File Specific Sections</a>
                                     </div>
@@ -54,10 +54,10 @@
                                     <div class="box box3"><a class="link" href="#hwvx_proto_texture">Textures</a>
                                     </div>
                                     <div class="box box3">
-                                                <a class="link" href="#color_table">color table</a>
+                                                <a class="link" href="#hwvx_proto_color_table">color table</a>
                                     </div>
                                     <div class="box box3">
-                                    <a class="link" href="#unordered_list">Unordered List</a>
+                                    <a class="link" href="#hwvx_proto_unordered_list">Unordered List</a>
                                 </div>
                                 <div class="box box3"><a class="link" href="#hwvx_proto_texture_anims_0">Texture Animation Part 2</a></div>
                             </div>
@@ -67,7 +67,7 @@
                         <a style="color:#09518b;user-select:none;">.</a>
                     </div>
                 </div>
-<h2 id="file_header_x">File Header</h2>
+<h2 id="hwvx_proto_file_header">File Header</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -181,12 +181,12 @@
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#ordered_list">Length of Ordered List</a></td>
+            <td><a href="#hwvx_proto_ordered_list">Length of Ordered List</a></td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td>Length of <a href="#audio_section">audio_section section</a> (not including the Sound Offset List)</td>
+            <td>Length of <a href="#hwvx_proto_audio_section">hwvx_proto_audio_section section</a> (not including the Sound Offset List)</td>
         </tr>
         <tr>
             <td>08</td>
@@ -236,7 +236,7 @@
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#color_table">CLUT offset</a> (from ordered) based on amount [40]</td>
+            <td><a href="#hwvx_proto_color_table">CLUT offset</a> (from ordered) based on amount [40]</td>
         </tr>
         <tr>
             <td>48</td>
@@ -271,7 +271,7 @@
         <tr>
             <td>72</td>
             <td>u32</td>
-            <td><a href="#impulse_tracker">offset to impulse_tracker</a><br> or length of hwvx_proto_audio_list + hwvx_proto_audio_data maybe?<br>
+            <td><a href="#hwvx_proto_impulse_tracker">offset to hwvx_proto_impulse_tracker</a><br> or length of hwvx_proto_audio_list + hwvx_proto_audio_data maybe?<br>
                 only seen in world files</td>
         </tr>
         <tr>
@@ -317,7 +317,7 @@
         </tr>
     </tfoot>
 </table>
-<p>if there are any sounds or if file type is music go to <a href="#audio_section">audio_section</a> else go to <a href="#patch_list">patch_list</a></p>
+<p>if there are any sounds or if file type is music go to <a href="#hwvx_proto_audio_section">hwvx_proto_audio_section</a> else go to <a href="#patch_list">patch_list</a></p>
 <hr>
 <h2 id="hwvx_proto_geo_datapack">hwvx_proto_geo_datapack</h2>
 <table class="h">
@@ -430,9 +430,9 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="audio_section">audio_section</h2>
+<h2 id="hwvx_proto_audio_section">hwvx_proto_audio_section</h2>
 <p>this comes directly after the <a href="#hwvx_proto_datapack">datapack</a><br>
-if file type is music go to <a href="#impulse_tracker">impulse_tracker</a> else go to <a href="#hwvx_proto_sound_offset_list">Sound Offset List</a></p>
+if file type is music go to <a href="#hwvx_proto_impulse_tracker">hwvx_proto_impulse_tracker</a> else go to <a href="#hwvx_proto_sound_offset_list">Sound Offset List</a></p>
 <hr>
 <h2 id="hwvx_proto_sound_offset_list">hwvx proto Sound Offset List</h2>
 <p>comes directly after the datapack if there are any sounds, if not skip to the <a href="#patch_list">patch list</a></p>
@@ -523,7 +523,7 @@ if file type is music go to <a href="#impulse_tracker">impulse_tracker</a> else 
 <h2 id="hwvx_proto_audio_data">hwvx_proto_audio_data</h2>
 <p>raw vag format, no header</p>
 <hr>
-<h2 id="impulse_tracker">impulse_tracker</h2>
+<h2 id="hwvx_proto_impulse_tracker">hwvx_proto_impulse_tracker</h2>
 <p>Impulse Tracker module sound data<br>
 Magic: IMPM</p>
 <hr>
@@ -535,7 +535,7 @@ Magic: IMPM</p>
 <hr>
 <h2 id="hwvx_proto_patch_list">hwvx_proto_patch_list</h2>
 <p> patches the textures indexs/texture anims indexs/sound indexes/model indexs/general offsets into the file.<br>
-    the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
+    the offset is based on the next section <a href="#hwvx_proto_ordered_list">(Ordered List)</a><br>
     To get each section you would do:<br>
     patch_list = hwvx_proto_datapack + 120 //after datapack<br>
     patch_list += (u32(8) * 4) // after audio section<br>
@@ -669,7 +669,7 @@ Magic: IMPM</p>
 <hr>
 <h2 id="geo_patch_list">geo_patch_list</h2>
 <p> patches the textures indexs/texture anims indexs/model indexs/general offsets into the file.<br>
-    the offset is based on the next section <a href="#ordered_list">(Ordered List)</a><br>
+    the offset is based on the next section <a href="#hwvx_proto_ordered_list">(Ordered List)</a><br>
     To get each section you would do:<br>
     patch_list = hwvx_proto_geo_datapack + 84 //start of Texture Indexes<br>
     patch_list+= (u32(8) * 8) //start of Texture Animation Indexes<br>
@@ -776,7 +776,7 @@ Magic: IMPM</p>
 <h2>Padding (5)</h2>
 <p>values in padding are always 0</p>
 <hr>
-<h2 id="ordered_list">Ordered List</h2>
+<h2 id="hwvx_proto_ordered_list">Ordered List</h2>
 <p>to get here offset to the Patch List from the datapack then add the sections together<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
 </p>
@@ -1013,13 +1013,17 @@ hwvx_proto_world_36_48 = 1056-1856
 hwvx_proto_world_36_28 = 1088-1824
 hwvx_proto_world_36_48_8 = 1888-10336
 hwvx_proto_world_36_48_24 = 10400-12832
+hwvx_proto_world_76 = 12896
 hwvx_proto_world_52 = 12912-13024
+hwvx_proto_world_52_88t1 = 13136
 hwvx_proto_world_108 = 13152-17232
 hwvx_proto_world_108_44t6 = 17280-20000
 hwvx_proto_world_4 = 20032
 hwvx_proto_world_4_20 = 20096-20160
 hwvx_proto_world_4_16 = 20320-21216
 hwvx_proto_world_4_16_4 = 21280-22584
+hwvx_proto_world_120 = 22592
+hwvx_proto_world_120_0 = 22608-26640
 
 </p>
 <p>world multi linked sections<br>
@@ -1242,7 +1246,7 @@ hwvx_proto_world_4_16_4 = 21280-22584
         <tr class="u">
             <td>156</td>
             <td>u32</td>
-            <td><a href="#hwvx_proto_world_156">offset</a></td>
+            <td><a href="#hwvx_proto_world_settings">offset</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -1252,244 +1256,14 @@ hwvx_proto_world_4_16_4 = 21280-22584
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_proto_world_4">hwvx_proto_world_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>-7615.1845703125 - 0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>-1203.1905517578125 - 0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>-7381.078125 - 0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 204</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16">offset</a> based on amount [28]</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_20">offset</a> based on amount [28] </td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>8 - 1024</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>1 - 492</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>500,400</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>278.18109130859375 - 6831.77001953125</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>500,400</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>2 - 32</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>2,1</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>10,6,7,4,9,12,21,14,32,11</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes</th>
-        </tr>
-    </tfoot>
-</table>
+<h2 id="hwvx_proto_world_124">hwvx_proto_world_124</h2>
+<p>string listed here</p>
 <hr>
-<h2 id="hwvx_proto_world_4_16">hwvx_proto_world_4_16</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount 0 - 25</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [0]</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td>amount 0 - 5</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [12]</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>amount 0 - 15</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [16]</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td>amount 0 - 2</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [24]</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>48</td>
-            <td>u32</td>
-            <td>amount 0 - 270</td>
-        </tr>
-        <tr>
-            <td>52</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [48]</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">56 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
+<h2 id="hwvx_proto_world_140">hwvx_proto_world_140</h2>
+<p>string listed here</p>
 <hr>
-<h2 id="hwvx_proto_world_4_16_4">hwvx_proto_world_4_16_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_108">offset (hwvx_proto_world_108)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_4_20">hwvx_proto_world_4_20</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0 - 342</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
+<h2 id="hwvx_proto_world_132">hwvx_proto_world_132</h2>
+<p>string listed here</p>
 <hr>
 <h2 id="hwvx_proto_world_12">hwvx_proto_world_12</h2>
 <p>multi linked to by:<br>
@@ -1690,122 +1464,6 @@ hwvx_proto_world_4_16_4 = 21280-22584
         </tr>
     </tfoot>
 </table>
-<hr>
-<h2 id="hwvx_proto_world_20">hwvx_proto_world_20</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world">hwvx_proto_world [20]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>314 - 1240</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_model_anims_1">offset (hwvx_proto_model_anims_1)</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>5,7,10,15,1</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_20_12">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_20_12">hwvx_proto_world_20_12</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>patch model </td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 9999.900390625</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_car_160">offset(hwvx_proto_car_160)</a></td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="hwvx_proto_world_36">hwvx_proto_world_36</h2>
 <table class="h">
     <tbody>
@@ -2230,234 +1888,11 @@ hwvx_proto_world_4_16_4 = 21280-22584
     </tfoot>
 </table>
 <hr>
-<h2 id="hwvx_proto_world_44">hwvx_proto_world_44</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>-3518.383544921875 - 3683.447021484375</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>-257.639404296875 - 292.9000244140625</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>-1794.569580078125 - 2959.843994140625</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>3682 - 4535</tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_sound_section">offset (hwvx_proto_sound_section)</a></td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>163.15728759765625 - 5000</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>245.71278381347656 - 7500</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_36_48_16">hwvx_proto_world_36_48_16</h2>
+<h2 id="hwvx_proto_world_76">hwvx_proto_world_76</h2>
 <p>multi linked to by:<br>
-    <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48 [16]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>-5144.80712890625 - 4953.7333984375</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>-818.3575439453125 - 630.6139526367188</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>-4094.2138671875 - 4644.375</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>-0.9999660849571228 - 1</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>-1 - 1</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>-0.9999662041664124 - 0.9999994039535522</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>-0.9999706745147705 - 1</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>25 - 5327</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_car_228_8_24t2">offset (hwvx_proto_car_228_8_24t2)</a></td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>float</td>
-            <td>500,1500,700,600,800,300,400,1000,1200</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_36_48_24">hwvx_proto_world_36_48_24</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48 [24]</a><br>
+    <a href="#hwvx_proto_world">hwvx_proto_world [76]</a><br>
     <a href="#hwvx_proto_datapack_68_4t5">hwvx_proto_datapack_68_4t5 [4]</a><br>
+    <a href="#hwvx_proto_datapack_68_20_4t7">hwvx_proto_datapack_68_20_4t7 [8]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -2466,105 +1901,15 @@ hwvx_proto_world_4_16_4 = 21280-22584
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
-            <td>float</td>
-            <td>-5397.0263671875 - 5047.4970703125</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>-807.3743896484375 - 636.52685546875</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>-4501.787109375 - 5233.3505859375</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
             <td>u32</td>
-            <td>35 - 8399</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>10000,0,30000,60000</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>always 500</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>1 - 71</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td>16842752 - 1044250881</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
+            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">64 bytes per entry</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2764,326 +2109,6 @@ hwvx_proto_world_4_16_4 = 21280-22584
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_76">hwvx_proto_world_76</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world">hwvx_proto_world [76]</a><br>
-    <a href="#hwvx_proto_datapack_68_4t5">hwvx_proto_datapack_68_4t5 [4]</a><br>
-    <a href="#hwvx_proto_datapack_68_20_4t7">hwvx_proto_datapack_68_20_4t7 [8]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_84_0">hwvx_proto_world_84_0</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world_76">hwvx_proto_world_76 [0]</a><br>
-    <a href="#hwvx_proto_world_92_4">hwvx_proto_world_92_4  [12][16]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>17563904,786688,17629440,0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>512,2,64,1,4,8,16,32,128,256</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0 - 610000</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_84_0_12">offset</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_84_0_12">hwvx_proto_world_84_0_12</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>2071,1815,1792,2048</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_92">hwvx_proto_world_92</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_92_4">offset</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_92_4">hwvx_proto_world_92_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>23,24</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>1,2,0,3,4</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>1,4,2,8,16,32,64,128,256</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_text">offset (hwvx_proto_text)</a></td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_text">offset (hwvx_proto_text)</a></td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_100">hwvx_proto_world_100</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>89 - 6688</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_100_4">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_100_4">hwvx_proto_world_100_4</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world_100">hwvx_proto_world_100 [4]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount 3 - 18</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_100_4_4">offset</a> based on amount [0] </td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_100_4_4">hwvx_proto_world_100_4_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>always 255</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0 - 60000</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -4667,6 +3692,1277 @@ hwvx_proto_world_4_16_4 = 21280-22584
     </tfoot>
 </table>
 <hr>
+<h2 id="hwvx_proto_world_4">hwvx_proto_world_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-7615.1845703125 - 0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-1203.1905517578125 - 0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-7381.078125 - 0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>always 204</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>always 204</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>always 204</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>always 204</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16">offset</a> based on amount [28]</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_20">offset</a> based on amount [28] </td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>8 - 1024</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>1 - 492</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>500,400</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>278.18109130859375 - 6831.77001953125</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>500,400</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>2 - 32</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>2,1</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>10,6,7,4,9,12,21,14,32,11</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_4_20">hwvx_proto_world_4_20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 342</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_4_16">hwvx_proto_world_4_16</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount 0 - 25</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [0]</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>amount 0 - 5</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [12]</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>amount 0 - 15</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [16]</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td>amount 0 - 2</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [24]</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>u32</td>
+            <td>amount 0 - 270</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_4_16_4">offset (hwvx_proto_world_4_16_4)</a> based on amount [48]</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">56 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_4_16_4">hwvx_proto_world_4_16_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_108">offset (hwvx_proto_world_108)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_120">hwvx_proto_world_120</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_120_0">offset</a> based on amount [4]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>amount 0 - 291</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_120_0">hwvx_proto_world_120_0</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world_120">hwvx_proto_world_120 [0]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-5375.1669921875 - 5032.7001953125</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-807.374267578125 - 743.0345458984375</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-4676.67431640625 - 5149.48974609375</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0 - 1905.4068603515625</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0 - 1905.4068603515625</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>0 - 794.8197021484375</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>0 - 600.2181396484375</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>33</td>
+            <td>u8</td>
+            <td>0,128,1</td>
+        </tr>
+        <tr class="u">
+            <td>34</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>35</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>37</td>
+            <td>u8</td>
+            <td>128,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>38</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>39</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>41</td>
+            <td>u8</td>
+            <td>128,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>42</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>43</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>45</td>
+            <td>u8</td>
+            <td>128,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>46</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>47</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>49</td>
+            <td>u8</td>
+            <td>0,128,1</td>
+        </tr>
+        <tr class="u">
+            <td>50</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>51</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>53</td>
+            <td>u8</td>
+            <td>0,128,1</td>
+        </tr>
+        <tr class="u">
+            <td>54</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>55</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>57</td>
+            <td>u8</td>
+            <td>128,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>58</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>59</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>61</td>
+            <td>u8</td>
+            <td>128,0,1</td>
+        </tr>
+        <tr class="u">
+            <td>62</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>63</td>
+            <td>u8</td>
+            <td>255,0</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>float</td>
+            <td>0 - 300</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0 - 290</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0 - 1130102777</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>float</td>
+            <td>0 - 146.66659545898438</td>
+        </tr>
+        <tr class="u">
+            <td>80</td>
+            <td>u32</td>
+            <td>25600,19200,25601,19201,12800,20480,8448,5120,0</td>
+        </tr>
+        <tr class="u">
+            <td>84</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>85</td>
+            <td>u8</td>
+            <td>always 128</td>
+        </tr>
+        <tr class="u">
+            <td>86</td>
+            <td>u8</td>
+            <td>always 255</td>
+        </tr>
+        <tr class="u">
+            <td>87</td>
+            <td>u8</td>
+            <td>always 255</td>
+        </tr>
+        <tr class="u">
+            <td>88</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>92</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>96</td>
+            <td>u32</td>
+            <td>256,262400,196864,65792,0</td>
+        </tr>
+        <tr class="u">
+            <td>100</td>
+            <td>u32</td>
+            <td>0 - 271</td>
+        </tr>
+        <tr class="u">
+            <td>104</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>108</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">112 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_20">hwvx_proto_world_20</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world">hwvx_proto_world [20]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>314 - 1240</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_model_anims_1">offset (hwvx_proto_model_anims_1)</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>5,7,10,15,1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_20_12">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_20_12">hwvx_proto_world_20_12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>patch model </td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 9999.900390625</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_car_160">offset(hwvx_proto_car_160)</a></td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_44">hwvx_proto_world_44</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-3518.383544921875 - 3683.447021484375</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-257.639404296875 - 292.9000244140625</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-1794.569580078125 - 2959.843994140625</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>3682 - 4535</tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_sound_section">offset (hwvx_proto_sound_section)</a></td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>163.15728759765625 - 5000</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>245.71278381347656 - 7500</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_36_48_16">hwvx_proto_world_36_48_16</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48 [16]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-5144.80712890625 - 4953.7333984375</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-818.3575439453125 - 630.6139526367188</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-4094.2138671875 - 4644.375</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>-0.9999660849571228 - 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>-1 - 1</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>-0.9999662041664124 - 0.9999994039535522</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>-0.9999706745147705 - 1</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>25 - 5327</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_car_228_8_24t2">offset (hwvx_proto_car_228_8_24t2)</a></td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>500,1500,700,600,800,300,400,1000,1200</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_36_48_24">hwvx_proto_world_36_48_24</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48 [24]</a><br>
+    <a href="#hwvx_proto_datapack_68_4t5">hwvx_proto_datapack_68_4t5 [4]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-5397.0263671875 - 5047.4970703125</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-807.3743896484375 - 636.52685546875</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-4501.787109375 - 5233.3505859375</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>always 205</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>35 - 8399</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>10000,0,30000,60000</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>always 500</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td>1 - 71</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u32</td>
+            <td>16842752 - 1044250881</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">64 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_92">hwvx_proto_world_92</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_92_4">offset</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_92_4">hwvx_proto_world_92_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>23,24</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>1,2,0,3,4</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>1,4,2,8,16,32,64,128,256</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_84_0">offset (hwvx_proto_world_84_0)</a></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_text">offset (hwvx_proto_text)</a></td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_text">offset (hwvx_proto_text)</a></td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_100">hwvx_proto_world_100</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>89 - 6688</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_100_4">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_100_4">hwvx_proto_world_100_4</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world_100">hwvx_proto_world_100 [4]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount 3 - 18</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_100_4_4">offset</a> based on amount [0] </td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_100_4_4">hwvx_proto_world_100_4_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>always 255</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0 - 60000</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="hwvx_proto_world_116">hwvx_proto_world_116</h2>
 Only WORLD2L1_PROTO.XPS ?
 <table class="h">
@@ -4730,1042 +5026,6 @@ Only WORLD2L1_PROTO.XPS ?
             <td>28</td>
             <td>u32</td>
             <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156">hwvx_proto_world_156</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>5416.828125 - 16517.71484375</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>5416.828125 - 16517.71484375</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>50,33,120,40,75,192,245,25,221</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>2500,3000,5000,2000</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>33</td>
-            <td>u8</td>
-            <td>always 96</td>
-        </tr>
-        <tr class="u">
-            <td>34</td>
-            <td>u8</td>
-            <td>always 106</td>
-        </tr>
-        <tr class="u">
-            <td>35</td>
-            <td>u8</td>
-            <td>always 70</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>always 200</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>float</td>
-            <td>0.10000000149011612,0.07500000298023224</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>float</td>
-            <td>always 0.5</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>80</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>float</td>
-            <td>0.3179999887943268 - 0.7170000076293945</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>float</td>
-            <td>0.30300000309944153 - 0.9039999842643738</td>
-        </tr>
-        <tr class="u">
-            <td>96</td>
-            <td>float</td>
-            <td>0.09000000357627869 - 0.15000000596046448</td>
-        </tr>
-        <tr class="u">
-            <td>100</td>
-            <td>float</td>
-            <td>0.09000000357627869 - 0.15000000596046448</td>
-        </tr>
-        <tr class="u">
-            <td>104</td>
-            <td>float</td>
-            <td>15,5</td>
-        </tr>
-        <tr class="u">
-            <td>108</td>
-            <td>float</td>
-            <td>200,175</td>
-        </tr>
-        <tr class="u">
-            <td>112</td>
-            <td>float</td>
-            <td>always 5</td>
-        </tr>
-        <tr class="u">
-            <td>116</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr>
-            <td>120</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>124</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>128</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>132</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>136</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>140</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>144</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>148</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr>
-            <td>152</td>
-            <td>u32</td>
-            <td>patch texture</td>
-        </tr>
-        <tr class="u">
-            <td>156</td>
-            <td>u32</td>
-            <td>offseted to by:
-                <a href="#hwvx_proto_world">hwvx_proto_world</a><br>
-                <a href="#hwvx_proto_car_160">hwvx_proto_car_160</a><br>
-                <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48</a><br>
-                <a href="#hwvx_proto_world_36_48_8">hwvx_proto_world_36_48_8</a><br>
-                <a href="#hwvx_proto_world_36_48_24">hwvx_proto_world_36_48_24</a><br>
-                <a href="#hwvx_proto_world_108_44t6">hwvx_proto_world_108_44t6</a><br>
-                <a href="#hwvx_proto_world_76">hwvx_proto_world_76</a><br>
-                + ?
-            </td>
-        </tr>
-        <tr>
-            <td>160</td>
-            <td>u32</td>
-            <td>offset string HW_Cars</td>
-        </tr>
-        <tr>
-            <td>164</td>
-            <td>u32</td>
-                <td>offset string HW_Items</td>
-        </tr>
-        <tr class="u">
-            <td>168</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>172</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>176</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>180</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>184</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>188</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>192</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_192">offset</a></td>
-        </tr>
-        <tr>
-            <td>196</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_196">offset</a></td>
-        </tr>
-        <tr>
-            <td>200</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_font">offset (hwvx_proto_font)</a></td>
-        </tr>
-        <tr>
-            <td>204</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_interface">offset (hwvx_proto_interface)</a></td>
-        </tr>
-        <tr class="u">
-            <td>208</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>212</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>216</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>220</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>224</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_224">offset</a></td>
-        </tr>
-        <tr>
-            <td>228</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_228">offset</a></td>
-        </tr>
-        <tr>
-            <td>232</td>
-            <td>u32</td>
-            <td>amount 0 - 4</td>
-        </tr>
-        <tr>
-            <td>236</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_236">offset</a> based on amount [232]</td>
-        </tr>
-        <tr>
-            <td>240</td>
-            <td>u32</td>
-            <td>amount always 3</td>
-        </tr>
-        <tr>
-            <td>244</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_244">offset</a> based on amount [240] </td>
-        </tr>
-        <tr>
-            <td>248</td>
-            <td>u32</td>
-            <td>amount always 2</td>
-        </tr>
-        <tr>
-            <td>252</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_244">offset</a> base on amount [248], same as hwvx_proto_world_156_244</td>
-        </tr>
-        <tr>
-            <td>256</td>
-            <td>u32</td>
-            <td>amount 0 - 2</td>
-        </tr>
-        <tr>
-            <td>260</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_260">offset</a> based on amount[256] </td>
-        </tr>
-        <tr class="u">
-            <td>264</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>268</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>272</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>276</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>280</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>284</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>288</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>292</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>296</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>300</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">304 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_192">hwvx_proto_world_156_192</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>255,128,220,110,16,233,119,180,189</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>188,128,182,64,100,40,88,196,150</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>177,140,150,0,100,148,35,226,220</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>103,200,220,128,60,160,255,89,40,59</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_196">hwvx_proto_world_156_196</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 256</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>50,100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0,0.009999999776482582</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_196_28">offset</a></td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_sound_controls">offset (hwvx_proto_sound_controls)</a></td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_196_28">hwvx_proto_world_156_196_28</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_224">hwvx_proto_world_156_224</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>always 0.18000000715255737</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>always 160000</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>always 490000</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_228">hwvx_proto_world_156_228</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_236">hwvx_proto_world_156_236</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_236_0">offset</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_236_0">hwvx_proto_world_156_236_0</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>256,65792</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0,1,10</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>80,1000,50,100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0,200</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0.10000000149011612,0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_236_0_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_236_0_28">hwvx_proto_world_156_236_0_28</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_244">hwvx_proto_world_156_244</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_260">hwvx_proto_world_156_260</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,3</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_156_260_4">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_156_260_4">hwvx_proto_world_156_260_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>150,0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>66,0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>160,64</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>65,64</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>160,0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>64,0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>32,0</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>66,0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>160,112</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>65,66</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>0,32</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>0,65</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>25</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>26</td>
-            <td>u8</td>
-            <td>0,96</td>
-        </tr>
-        <tr class="u">
-            <td>27</td>
-            <td>u8</td>
-            <td>0,64</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td>0,205</td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0,204</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0,76</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0,62</td>
         </tr>
     </tbody>
     <tfoot>
@@ -6461,366 +5721,6 @@ Only WORLD2L1_PROTO.XPS ?
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_120">hwvx_proto_world_120</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#hwvx_proto_world_120_0">offset</a> based on amount [4]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>amount 0 - 291</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="hwvx_proto_world_120_0">hwvx_proto_world_120_0</h2>
-<p>multi linked to by:<br>
-    <a href="#hwvx_proto_world_120">hwvx_proto_world_120 [0]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>-5375.1669921875 - 5032.7001953125</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>-807.374267578125 - 743.0345458984375</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>-4676.67431640625 - 5149.48974609375</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 205</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0 - 1905.4068603515625</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0 - 1905.4068603515625</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>0 - 794.8197021484375</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>0 - 600.2181396484375</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>33</td>
-            <td>u8</td>
-            <td>0,128,1</td>
-        </tr>
-        <tr class="u">
-            <td>34</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>35</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>37</td>
-            <td>u8</td>
-            <td>128,0,1</td>
-        </tr>
-        <tr class="u">
-            <td>38</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>39</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>41</td>
-            <td>u8</td>
-            <td>128,0,1</td>
-        </tr>
-        <tr class="u">
-            <td>42</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>43</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>45</td>
-            <td>u8</td>
-            <td>128,0,1</td>
-        </tr>
-        <tr class="u">
-            <td>46</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>47</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>49</td>
-            <td>u8</td>
-            <td>0,128,1</td>
-        </tr>
-        <tr class="u">
-            <td>50</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>51</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>53</td>
-            <td>u8</td>
-            <td>0,128,1</td>
-        </tr>
-        <tr class="u">
-            <td>54</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>55</td>
-            <td>u8</td>
-            <td>0,255</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>57</td>
-            <td>u8</td>
-            <td>128,0,1</td>
-        </tr>
-        <tr class="u">
-            <td>58</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>59</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>61</td>
-            <td>u8</td>
-            <td>128,0,1</td>
-        </tr>
-        <tr class="u">
-            <td>62</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>63</td>
-            <td>u8</td>
-            <td>255,0</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>float</td>
-            <td>0 - 300</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>0 - 290</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>0 - 1130102777</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>float</td>
-            <td>0 - 146.66659545898438</td>
-        </tr>
-        <tr class="u">
-            <td>80</td>
-            <td>u32</td>
-            <td>25600,19200,25601,19201,12800,20480,8448,5120,0</td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>85</td>
-            <td>u8</td>
-            <td>always 128</td>
-        </tr>
-        <tr class="u">
-            <td>86</td>
-            <td>u8</td>
-            <td>always 255</td>
-        </tr>
-        <tr class="u">
-            <td>87</td>
-            <td>u8</td>
-            <td>always 255</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>96</td>
-            <td>u32</td>
-            <td>256,262400,196864,65792,0</td>
-        </tr>
-        <tr class="u">
-            <td>100</td>
-            <td>u32</td>
-            <td>0 - 271</td>
-        </tr>
-        <tr class="u">
-            <td>104</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>108</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -10642,7 +9542,7 @@ array of floats, <a href="#hwvx_proto_model_8_8_12_modeldata_sec2">based on amou
 <h2 id="hwvx_proto_texture_data">texture_data</h2>
 <p>RGB,RGBA,8-bit Indexed seen</p>
 <hr>
-<h2 id="color_table">color table</h2>
+<h2 id="hwvx_proto_color_table">color table</h2>
 <p>1024 / 256 colors per entry, offseted from <a href="#hwvx_proto_datapack">hwvx_proto_datapack</a></p>
 <hr>
 <h2 id="hwvx_proto_share_end">hwvx_proto_share_end</h2>
@@ -10728,7 +9628,7 @@ array of floats, <a href="#hwvx_proto_model_8_8_12_modeldata_sec2">based on amou
     </tfoot>
 </table>
 <hr>
-<h2 id="unordered_list">Unordered List</h2>
+<h2 id="hwvx_proto_unordered_list">Unordered List</h2>
 <p>sections here appear whenever they are linked and do not have a set order<br>
 <h2>sections seen</h2>
 <h4>multi linked</h4>
@@ -10752,10 +9652,1125 @@ array of floats, <a href="#hwvx_proto_model_8_8_12_modeldata_sec2">based on amou
 <h4>just linked</h4>
 <a href="#hwvx_proto_car_160">hwvx_proto_car_160</a><br>
 <a href="#hwvx_proto_car_228_8">hwvx_proto_car_228_8</a><br>
+<a href="#hwvx_proto_world_settings">hwvx_proto_world_settings</a><br>
 </p>
 <hr>
+<h2 id="hwvx_proto_world_settings">hwvx_proto_world_settings</h2>
+<p>linked to by:<br>
+    <a href="#hwvx_proto_world">hwvx_proto_world [156]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>5416.828125 - 16517.71484375</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>5416.828125 - 16517.71484375</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>50,33,120,40,75,192,245,25,221</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>2500,3000,5000,2000</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>33</td>
+            <td>u8</td>
+            <td>always 96</td>
+        </tr>
+        <tr class="u">
+            <td>34</td>
+            <td>u8</td>
+            <td>always 106</td>
+        </tr>
+        <tr class="u">
+            <td>35</td>
+            <td>u8</td>
+            <td>always 70</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>always 200</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>0.10000000149011612,0.07500000298023224</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>float</td>
+            <td>always 0.5</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>80</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>84</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>88</td>
+            <td>float</td>
+            <td>0.3179999887943268 - 0.7170000076293945</td>
+        </tr>
+        <tr class="u">
+            <td>92</td>
+            <td>float</td>
+            <td>0.30300000309944153 - 0.9039999842643738</td>
+        </tr>
+        <tr class="u">
+            <td>96</td>
+            <td>float</td>
+            <td>0.09000000357627869 - 0.15000000596046448</td>
+        </tr>
+        <tr class="u">
+            <td>100</td>
+            <td>float</td>
+            <td>0.09000000357627869 - 0.15000000596046448</td>
+        </tr>
+        <tr class="u">
+            <td>104</td>
+            <td>float</td>
+            <td>15,5</td>
+        </tr>
+        <tr class="u">
+            <td>108</td>
+            <td>float</td>
+            <td>200,175</td>
+        </tr>
+        <tr class="u">
+            <td>112</td>
+            <td>float</td>
+            <td>always 5</td>
+        </tr>
+        <tr class="u">
+            <td>116</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>132</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>136</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>140</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>144</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>148</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr>
+            <td>152</td>
+            <td>u32</td>
+            <td>patch texture</td>
+        </tr>
+        <tr class="u">
+            <td>156</td>
+            <td>u32</td>
+            <td>offseted to by:
+                <a href="#hwvx_proto_world">hwvx_proto_world</a><br>
+                <a href="#hwvx_proto_car_160">hwvx_proto_car_160</a><br>
+                <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48</a><br>
+                <a href="#hwvx_proto_world_36_48_8">hwvx_proto_world_36_48_8</a><br>
+                <a href="#hwvx_proto_world_36_48_24">hwvx_proto_world_36_48_24</a><br>
+                <a href="#hwvx_proto_world_108_44t6">hwvx_proto_world_108_44t6</a><br>
+                <a href="#hwvx_proto_world_76">hwvx_proto_world_76</a><br>
+                + ?
+            </td>
+        </tr>
+        <tr>
+            <td>160</td>
+            <td>u32</td>
+            <td>offset string HW_Cars</td>
+        </tr>
+        <tr>
+            <td>164</td>
+            <td>u32</td>
+                <td>offset string HW_Items</td>
+        </tr>
+        <tr class="u">
+            <td>168</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>172</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>176</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>180</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>184</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>188</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>192</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_192">offset</a></td>
+        </tr>
+        <tr>
+            <td>196</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_196">offset</a></td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_font">offset (hwvx_proto_font)</a></td>
+        </tr>
+        <tr>
+            <td>204</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_interface">offset (hwvx_proto_interface)</a></td>
+        </tr>
+        <tr class="u">
+            <td>208</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>212</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>216</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>220</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>224</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_224">offset</a></td>
+        </tr>
+        <tr>
+            <td>228</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_228">offset</a></td>
+        </tr>
+        <tr>
+            <td>232</td>
+            <td>u32</td>
+            <td>amount 0 - 4</td>
+        </tr>
+        <tr>
+            <td>236</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_236">offset</a> based on amount [232]</td>
+        </tr>
+        <tr>
+            <td>240</td>
+            <td>u32</td>
+            <td>amount always 3</td>
+        </tr>
+        <tr>
+            <td>244</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_244">offset</a> based on amount [240] </td>
+        </tr>
+        <tr>
+            <td>248</td>
+            <td>u32</td>
+            <td>amount always 2</td>
+        </tr>
+        <tr>
+            <td>252</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_244">offset</a> base on amount [248], same as hwvx_proto_world_settings_244</td>
+        </tr>
+        <tr>
+            <td>256</td>
+            <td>u32</td>
+            <td>amount 0 - 2</td>
+        </tr>
+        <tr>
+            <td>260</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_260">offset</a> based on amount[256] </td>
+        </tr>
+        <tr class="u">
+            <td>264</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>268</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>272</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>276</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>280</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>284</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>288</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>292</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>296</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>300</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">304 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_192">hwvx_proto_world_settings_192</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>255,128,220,110,16,233,119,180,189</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>188,128,182,64,100,40,88,196,150</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>177,140,150,0,100,148,35,226,220</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>103,200,220,128,60,160,255,89,40,59</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_196">hwvx_proto_world_settings_196</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 256</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>50,100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,0.009999999776482582</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_196_28">offset</a></td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_sound_controls">offset (hwvx_proto_sound_controls)</a></td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_196_28">hwvx_proto_world_settings_196_28</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_224">hwvx_proto_world_settings_224</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>always 0.18000000715255737</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>always 160000</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>always 490000</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_228">hwvx_proto_world_settings_228</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_236">hwvx_proto_world_settings_236</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_236_0">offset</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_236_0">hwvx_proto_world_settings_236_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>256,65792</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0,1,10</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>80,1000,50,100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0,200</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0.10000000149011612,0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_236_0_28">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_236_0_28">hwvx_proto_world_settings_236_0_28</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_244">hwvx_proto_world_settings_244</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_unknown">offset (hwvx_proto_unknown)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_260">hwvx_proto_world_settings_260</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,3</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_settings_260_4">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_settings_260_4">hwvx_proto_world_settings_260_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>150,0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>66,0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>160,64</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>65,64</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>160,0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>64,0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>32,0</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>66,0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>160,112</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>65,66</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>21</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>22</td>
+            <td>u8</td>
+            <td>0,32</td>
+        </tr>
+        <tr class="u">
+            <td>23</td>
+            <td>u8</td>
+            <td>0,65</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>25</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>26</td>
+            <td>u8</td>
+            <td>0,96</td>
+        </tr>
+        <tr class="u">
+            <td>27</td>
+            <td>u8</td>
+            <td>0,64</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u8</td>
+            <td>0,205</td>
+        </tr>
+        <tr class="u">
+            <td>29</td>
+            <td>u8</td>
+            <td>0,204</td>
+        </tr>
+        <tr class="u">
+            <td>30</td>
+            <td>u8</td>
+            <td>0,76</td>
+        </tr>
+        <tr class="u">
+            <td>31</td>
+            <td>u8</td>
+            <td>0,62</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_84_0">hwvx_proto_world_84_0</h2>
+<p>multi linked to by:<br>
+    <a href="#hwvx_proto_world_76">hwvx_proto_world_76 [0]</a><br>
+    <a href="#hwvx_proto_world_92_4">hwvx_proto_world_92_4  [12][16]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>17563904,786688,17629440,0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>512,2,64,1,4,8,16,32,128,256</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0 - 610000</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#hwvx_proto_world_84_0_12">offset</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="hwvx_proto_world_84_0_12">hwvx_proto_world_84_0_12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>2071,1815,1792,2048</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="hwvx_proto_world_36_48_8_36">hwvx_proto_world_36_48_8_36</h2>
-unordered?
 <p>multi linked to by:<br>
     <a href="#hwvx_proto_world_36_48_8">hwvx_proto_world_36_48_8 [36]</a><br>
     <a href="#hwvx_proto_unknown_4">hwvx_proto_unknown_4 [4]t6</a><br>
@@ -16369,7 +16384,7 @@ maybe same as hwvx_proto_car_144?</p>
     <a href="#hwvx_proto_interface_16_20t1">hwvx_proto_interface_16_20t1 [4]</a><br>
     <a href="#hwvx_proto_interface_16_20t2_4_20">hwvx_proto_interface_16_20t2_4_20 [8]</a><br>
     <a href="#hwvx_proto_interface_16_20t10">hwvx_proto_interface_16_20t10 [16]</a><br>
-    <a href="#hwvx_proto_world_156">hwvx_proto_world_156 [200]</a><br>
+    <a href="#hwvx_proto_world_settings">hwvx_proto_world_settings [200]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -16535,12 +16550,12 @@ maybe same as hwvx_proto_car_144?</p>
 <hr>
 <h2 id="hwvx_proto_interface">hwvx_proto_interface</h2>
 <p>multi linked to by:<br>
-    <a href="#basic_4">basic_4 [0]</a><br>
+    <a href="#hwvx_proto_basic_4">hwvx_proto_basic_4 [0]</a><br>
     <a href="#hwvx_proto_interface_16_60">hwvx_proto_interface_16_60 [0]</a><br>
     <a href="#hwvx_proto_interface_16_68_20_8">hwvx_proto_interface_16_68_20_8 [0]</a><br>
     <a href="#hwvx_proto_interface_24_8">hwvx_proto_interface_24_8 [0]t1</a><br>
     <a href="#hwvx_proto_car_132">hwvx_proto_car_132 [16][24][28]</a><br>
-    <a href="#hwvx_proto_world_156">hwvx_proto_world_156 [204]</a><br>
+    <a href="#hwvx_proto_world_settings">hwvx_proto_world_settings [204]</a><br>
     <a href="#hwvx_proto_datapack_68_4t1">hwvx_proto_datapack_68_4t1 [0]</a><br>
     <a href="#hwvx_proto_datapack_68_20_4t4">hwvx_proto_datapack_68_20_4t4 [0]</a><br>
     <a href="#hwvx_proto_datapack_68_20_4t31">hwvx_proto_datapack_68_20_4t31 [4]</a><br>
@@ -18422,7 +18437,8 @@ maybe same as hwvx_proto_car_144?</p>
         </tr>
     </tfoot>
 </table>
-<hr><h2 id="hwvx_proto_interface_16_72">hwvx_proto_interface_16_72</h2>
+<hr>
+<h2 id="hwvx_proto_interface_16_72">hwvx_proto_interface_16_72</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -20201,9 +20217,9 @@ hwvx_proto_interface_24 = hwvx_proto_interface_16_68_20 ?
     <a href="#hwvx_proto_unknown_thing_32">hwvx_proto_unknown_thing_32 [0]</a><br>
     <a href="#hwvx_proto_unknown_idk_sec_28">hwvx_proto_unknown_idk_sec_28 [24]</a><br>
     <a href="#hwvx_proto_unknown_4_4t2">hwvx_proto_unknown_4_4t2 [112][116][120]</a><br>
-    <a href="#hwvx_proto_world_156_196_28">hwvx_proto_world_156_196_28 [0]</a><br>
-    <a href="#hwvx_proto_world_156_236_0_28">hwvx_proto_world_156_236_0_28 [0]</a><br>
-    <a href="#hwvx_proto_world_156_244">hwvx_proto_world_156_244 [0]</a><br>
+    <a href="#hwvx_proto_world_settings_196_28">hwvx_proto_world_settings_196_28 [0]</a><br>
+    <a href="#hwvx_proto_world_settings_236_0_28">hwvx_proto_world_settings_236_0_28 [0]</a><br>
+    <a href="#hwvx_proto_world_settings_244">hwvx_proto_world_settings_244 [0]</a><br>
     <a href="#hwvx_proto_collision_92_0">hwvx_proto_collision_92_0 [48][60][64]</a><br>
     <a href="#hwvx_proto_collision_92_0_72">hwvx_proto_collision_92_0_72 [0]</a><br>
     <a href="#hwvx_proto_unknown_4_4t4_28">hwvx_proto_unknown_4_4t4_28 [0]</a><br>
@@ -24106,7 +24122,8 @@ hwvx_proto_interface_24 = hwvx_proto_interface_16_68_20 ?
         </tr>
     </tfoot>
 </table>
-<hr><h2 id="hwvx_proto_link_52_0_4_20">hwvx_proto_link_52_0_4_20</h2>
+<hr>
+<h2 id="hwvx_proto_link_52_0_4_20">hwvx_proto_link_52_0_4_20</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -24536,7 +24553,7 @@ hwvx_proto_interface_24 = hwvx_proto_interface_16_68_20 ?
     <a href="#hwvx_proto_unknown_4">hwvx_proto_unknown_4 [4]t26</a><br>
     <a href="#hwvx_proto_interface">hwvx_proto_interface [32][36][40][44]</a><br>
     <a href="#hwvx_proto_car_228_8_24t2">hwvx_proto_car_228_8_24t2 [32]</a><br>
-    <a href="#hwvx_proto_world_156_196">hwvx_proto_world_156_196 [32]</a><br>
+    <a href="#hwvx_proto_world_settings_196">hwvx_proto_world_settings_196 [32]</a><br>
     <a href="#hwvx_proto_world_36_48_8_36">hwvx_proto_world_36_48_8_36 [12]</a><br>
     <a href="#hwvx_proto_unknown_thing_4t0">hwvx_proto_unknown_thing_4t0 [24]</a><br>
 </p>
