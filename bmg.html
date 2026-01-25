@@ -606,12 +606,14 @@ if section last section in wii version this is 16 bytes aligned to datapack?<br>
         <tr class="u">
             <td>00</td>
             <td>u8</td>
-            <td>always 1,3</td>
+            <td>1 = pc<br>
+                3 = wii</td>
         </tr>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>always 3,4</td>
+            <td>3 = pc<br>
+                4 = wii</td>
         </tr>
         <tr class="u">
             <td>02</td>
@@ -623,30 +625,36 @@ if section last section in wii version this is 16 bytes aligned to datapack?<br>
             <td>u8</td>
             <td>3,35,148,151,183</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u8</td>
-            <td>69,197,198</td>
+            <td>type<br>
+                24 = RGB no alpha<br>
+                69 = probably dds related<br>
+                160 = rgba8888<br>
+                202 = x * y amount, unknown format<br>
+                197 = ?<br>
+                198 = ?</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>05</td>
             <td>u8</td>
-            <td>0,1,2,3,4,5,6</td>
+            <td>mip maps | 0,1,2,3,4,5,6</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>06</td>
             <td>u8</td>
-            <td>3,4,5,6,7,8,9</td>
+            <td>x | 3,4,5,6,7,8,9</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>07</td>
             <td>u8</td>
-            <td>3,4,5,6,7,8,9</td>
+            <td>y | 3,4,5,6,7,8,9</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>192 - 17440064</td>
+            <td>offset texture data | 192 - 17440064</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -656,7 +664,7 @@ if section last section in wii version this is 16 bytes aligned to datapack?<br>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td>160 - 17440032</td>
+            <td>offset texture string | 160 - 17440032</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -681,7 +689,14 @@ if section last section in wii version this is 16 bytes aligned to datapack?<br>
     </tfoot>
 </table>
 <hr>
-<h2 id="bmg_texture_offset_list_0_16">bmg_texture_offset_list_0_16</h2>
+<p>section is formated differently based on console</p>
+<h2 id="bmg_pc_texture_offset_list_0_8">bmg_pc_texture_offset_list_0_8</h2>
+<p>texture data</p>
+<hr>
+<h2 id="bmg_pc_texture_offset_list_0_16">bmg_texture_offset_list_0_16</h2>
+<p>texture string name</p>
+<hr>
+<h2 id="bmg_wii_texture_offset_list_0_16">bmg_wii_texture_offset_list_0_16</h2>
 <p>texture string name</p>
 <hr>
 <h2 id="bmg_texture_offset_list_0_12">bmg_texture_offset_list_0_12</h2>
@@ -4892,7 +4907,7 @@ only seen in mcp.xdx9
         <tr>
             <td>72</td>
             <td>u32</td>
-            <td><a href="#bmg_world_120_0_72">offset</a> based on amount [72]</td>
+            <td><a href="#bmg_world_120_0_72">offset</a> based on amount [64]</td>
         </tr>
         <tr>
             <td>76</td>
@@ -23739,7 +23754,7 @@ sections seen:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_world_settings_4_36_4">offset</a> based on amount [4]</td>
+            <td><a href="#bmg_world_settings_4_36_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -26114,1307 +26129,6 @@ sections seen:<br>
     <tfoot>
         <tr>
             <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_a_single_section">bmg_a_single_section</h2>
-<p>multi linked to by:<br>
-    <a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [96]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>5,1000</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>1,200</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>200,250</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>1000,2000</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>always 80</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 2000</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf">bmg_world_asdf</h2>
-<p>multi linked to by:<br>
-<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [100]</a><br>
-<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [104]</a><br>
-<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [128]</a><br>
-<a href="#bmg_world_link_type_0t13">bmg_world_link_type_0t13 [48]</a><br>
-<a href="#bmg_object_4t153_4">bmg_object_4t153_4 [0]</a><br>
-<a href="#bmg_unknown_4">bmg_unknown_4 [4]t2</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,2,3</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_16">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>20 - 10000</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>float</td>
-            <td>always -1</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>float</td>
-            <td>0,0.4000000059604645</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>53</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>54</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>55</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>float</td>
-            <td>0 - 50000</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>float</td>
-            <td>0,2500</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>float</td>
-            <td>0,1000,1500,2500,3000,5000,7500,8000,20000,21000</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>float</td>
-            <td>0,2500</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>float</td>
-            <td>0,500,1000</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>80</td>
-            <td>float</td>
-            <td>-2500,-1500,-400,0</td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>88</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>u32</td>
-            <td>0,1,2,5,10,25,50,100</td>
-        </tr>
-        <tr class="u">
-            <td>96</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>100</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>104</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>108</td>
-            <td>float</td>
-            <td>0,0.699999988079071,0.75</td>
-        </tr>
-        <tr class="u">
-            <td>112</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>113</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>114</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>115</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>116</td>
-            <td>u32</td>
-            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
-        </tr>
-        <tr>
-            <td>120</td>
-            <td>u32</td>
-            <td>amount | 0,1,3</td>
-        </tr>
-        <tr>
-            <td>124</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_124">offset</a> based on amount [120]</td>
-        </tr>
-        <tr>
-            <td>128</td>
-            <td>u32</td>
-            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
-        </tr>
-        <tr>
-            <td>132</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_132">offset</a></td>
-        </tr>
-        <tr>
-            <td>136</td>
-            <td>u32</td>
-            <td>amount | 0,1,2,3,4</td>
-        </tr>
-        <tr>
-            <td>140</td>
-            <td>u32</td>
-            <td><a href="#bmg_mysterious">offset (bmg_mysterious)</a> based on amount [136]</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">144 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_16">bmg_world_asdf_16</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_16_4">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_16_4">bmg_world_asdf_16_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>always 10000</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>3,10,1010,10000,1000000000,2000000000</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>1,100,300,3000</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>1,10,100</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>10,20,180</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_16_4_36">offset</a></td>
-        </tr>
-        <tr>
-            <td>40</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_16_4_40">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_16_4_36">bmg_world_asdf_16_4_36</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 3000</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>always 3000</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>always 1000</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_16_4_40">bmg_world_asdf_16_4_40</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>always -100</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always -100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>always 1000</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>always -360</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>always 360</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_28">bmg_world_asdf_28</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_28_8">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_28_8">bmg_world_asdf_28_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 125</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88">bmg_world_asdf_88</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>20,40,200,325,1000,100000</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_4">offset</a></td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_4">bmg_world_asdf_88_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8">bmg_world_asdf_88_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,1</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4">bmg_world_asdf_88_8_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4_0">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4_8">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4_0">bmg_world_asdf_88_8_4_0</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>1,2,3</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4_0_4">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0,1</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4_0_12">offset</a> 0,6612128</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4_0_4">bmg_world_asdf_88_8_4_0_4</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,312101502,312111030,312111556,504271625</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0,1,312101502</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4_0_12">bmg_world_asdf_88_8_4_0_12</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4_8">bmg_world_asdf_88_8_4_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>always 2</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_88_8_4_8_8">offset</a></td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_thing">offset (bmg_world_thing)</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>10,20,30,40,150,200</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_88_8_4_8_8">bmg_world_asdf_88_8_4_8_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_124">bmg_world_asdf_124</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_thing">offset (bmg_world_thing)</a></td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_132">bmg_world_asdf_132</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#bmg_world_asdf_132_0">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bmg_world_asdf_132_0">bmg_world_asdf_132_0</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 100</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -33084,6 +31798,1307 @@ sections seen:<br>
     </tfoot>
 </table>
 <hr>
+<h2 id="bmg_a_single_section">bmg_a_single_section</h2>
+<p>multi linked to by:<br>
+    <a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [96]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>5,1000</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>1,200</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>200,250</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>1000,2000</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>always 80</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 2000</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf">bmg_world_asdf</h2>
+<p>multi linked to by:<br>
+<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [100]</a><br>
+<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [104]</a><br>
+<a href="#bmg_world_link_type_0t10">bmg_world_link_type_0t10 [128]</a><br>
+<a href="#bmg_world_link_type_0t13">bmg_world_link_type_0t13 [48]</a><br>
+<a href="#bmg_object_4t153_4">bmg_object_4t153_4 [0]</a><br>
+<a href="#bmg_unknown_4">bmg_unknown_4 [4]t2</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0,2,3</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_16">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_28">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>20 - 10000</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>always -1</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>float</td>
+            <td>0,0.4000000059604645</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>53</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>54</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>55</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>56</td>
+            <td>float</td>
+            <td>0 - 50000</td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>float</td>
+            <td>0,2500</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>float</td>
+            <td>0,1000,1500,2500,3000,5000,7500,8000,20000,21000</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>float</td>
+            <td>0,2500</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>float</td>
+            <td>0,500,1000</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>80</td>
+            <td>float</td>
+            <td>-2500,-1500,-400,0</td>
+        </tr>
+        <tr class="u">
+            <td>84</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>88</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>92</td>
+            <td>u32</td>
+            <td>0,1,2,5,10,25,50,100</td>
+        </tr>
+        <tr class="u">
+            <td>96</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>100</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>104</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>108</td>
+            <td>float</td>
+            <td>0,0.699999988079071,0.75</td>
+        </tr>
+        <tr class="u">
+            <td>112</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>113</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>114</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>115</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>116</td>
+            <td>u32</td>
+            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>u32</td>
+            <td>amount | 0,1,3</td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_124">offset</a> based on amount [120]</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>u32</td>
+            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
+        </tr>
+        <tr>
+            <td>132</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_132">offset</a></td>
+        </tr>
+        <tr>
+            <td>136</td>
+            <td>u32</td>
+            <td>amount | 0,1,2,3,4</td>
+        </tr>
+        <tr>
+            <td>140</td>
+            <td>u32</td>
+            <td><a href="#bmg_mysterious">offset (bmg_mysterious)</a> based on amount [136]</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">144 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_16">bmg_world_asdf_16</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_16_4">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_16_4">bmg_world_asdf_16_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>always 10000</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>3,10,1010,10000,1000000000,2000000000</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>1,100,300,3000</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>1,10,100</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>10,20,180</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_16_4_36">offset</a></td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_16_4_40">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_16_4_36">bmg_world_asdf_16_4_36</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 3000</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>always 3000</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 1000</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_16_4_40">bmg_world_asdf_16_4_40</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>always -100</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always -100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>always 1000</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>always -360</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>always 360</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_28">bmg_world_asdf_28</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_28_8">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_28_8">bmg_world_asdf_28_8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 125</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88">bmg_world_asdf_88</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>20,40,200,325,1000,100000</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_4">offset</a></td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_4">bmg_world_asdf_88_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8">bmg_world_asdf_88_8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4">bmg_world_asdf_88_8_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4_0">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4_8">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4_0">bmg_world_asdf_88_8_4_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1,2,3</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4_0_4">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4_0_12">offset</a> 0,6612128</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4_0_4">bmg_world_asdf_88_8_4_0_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,312101502,312111030,312111556,504271625</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0,1,312101502</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4_0_12">bmg_world_asdf_88_8_4_0_12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4_8">bmg_world_asdf_88_8_4_8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>always 2</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_88_8_4_8_8">offset</a></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_thing">offset (bmg_world_thing)</a></td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>10,20,30,40,150,200</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_88_8_4_8_8">bmg_world_asdf_88_8_4_8_8</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_124">bmg_world_asdf_124</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_thing">offset (bmg_world_thing)</a></td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#bmg_unknown">offset (bmg_unknown)</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_132">bmg_world_asdf_132</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#bmg_world_asdf_132_0">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bmg_world_asdf_132_0">bmg_world_asdf_132_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 100</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="bmg_interface">bmg_interface</h2>
 <p>multi linked to by:<br>
 <a href="#bmg_world_settings_0">bmg_world_settings_0 [0]</a><br>
@@ -35402,7 +35417,7 @@ sections seen:<br>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bmg_interface_84_24_4t11_4_12t107_8_8t0_4_4">offset</a> based on amount [4]</td>
+            <td><a href="#bmg_interface_84_24_4t11_4_12t107_8_8t0_4_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
