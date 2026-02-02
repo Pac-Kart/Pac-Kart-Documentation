@@ -677,7 +677,7 @@ Magic: IMPM</p>
     patch_list = hwvx_proto_geo_datapack + 84 //start of Texture Indexes<br>
     patch_list+= (u32(8) * 8) //start of Texture Animation Indexes<br>
     patch_list+= (u32(28) * 8) //start of Model Indexes<br>
-    patch_list+= (u32(56) * 4) //start of General Offsets<br>
+    patch_list+= (u32(40) * 4) //start of General Offsets<br>
     patch_list+= (u32(4) * 4) //start of Padding<br>
     patch_list+= (u32(36)) //start of Ordered List<br>
 </p>
@@ -6611,7 +6611,7 @@ Only WORLD2L1_PROTO.XPS ?
             <td>00</td>
             <td>u32</td>
             <td>offseted to:<br>
-                <a href="#hwvx_proto_world_36_48_8">? get_hwvx_proto_world_36_48_16</a><br>
+                <a href="#hwvx_proto_world_36_48_16">? hwvx_proto_world_36_48_16</a><br>
             </td>
         </tr>
     </tbody>
@@ -9933,14 +9933,12 @@ broke list:
             <td>156</td>
             <td>u32</td>
             <td>offseted to by:
-                <a href="#hwvx_proto_world">hwvx_proto_world</a><br>
                 <a href="#hwvx_proto_car_link">hwvx_proto_car_link</a><br>
                 <a href="#hwvx_proto_world_36_48">hwvx_proto_world_36_48</a><br>
                 <a href="#hwvx_proto_world_36_48_8">hwvx_proto_world_36_48_8</a><br>
                 <a href="#hwvx_proto_world_36_48_24">hwvx_proto_world_36_48_24</a><br>
                 <a href="#hwvx_proto_world_108_44t6">hwvx_proto_world_108_44t6</a><br>
                 <a href="#hwvx_proto_world_76">hwvx_proto_world_76</a><br>
-                + ?
             </td>
         </tr>
         <tr>
@@ -11398,7 +11396,7 @@ maybe same as hwvx_proto_car_related?</p>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td><a href="#hwvx_proto_model_8_8_12">offset</a> links to random parts in model data? usually 4 bytes but that does change</td>
+            <td>736 - 515920, not an offset</td>
         </tr>
     </tbody>
     <tfoot>
