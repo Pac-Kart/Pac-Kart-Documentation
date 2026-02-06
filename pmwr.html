@@ -7737,6 +7737,66 @@ ps2: 72 / 160 / 200
     </tfoot>
 </table>
 <hr>
+<h2 id="share_low_section">share</h2>
+<p>not linked by offset, section appears after texture data and before Offset Patch List<br>
+only appears in gShared?<br>
+does not appear to do anything<br>
+likely unused.</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>offset ghsared string</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>amount in texture index ?</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>offset texture index</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>amount in offset 2</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>index Audio ?</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>amount models</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>offset models list</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="unordered_list">Unordered List</h2>
 <p>sections here appear whenever they are linked and do not have a set order<br>
    sections in the unordered list can link to the ordered list and sections in the ordered list can link to the unordered list<br>
@@ -9081,10 +9141,6 @@ ps2: 72 / 160 / 200
 </table>
 <hr>
 <h2 id="car_00_180_00_16_12">car_00_180_00_16_12</h2>
-<p>linked to by:<br>
-<a href="#car_00_180_00_16">car_00_180_00_16 (12)</a><br>
-<a href="#car_00_180_00_16">car_00_180_00_16 (16)</a>
-</p>
 <table class="h">
     <tbody>
         <tr>
@@ -9405,47 +9461,6 @@ ps2: 72 / 160 / 200
     </tfoot>
 </table>
 <hr>
-<h2 id="car_00_180_04_84">car_00_180_04_84</h2>
-    <p>
-        multi linked to by:<br>
-        <a href="#car_00_180_04"> car_00_180_04 [84][88]</a><br>
-    <br>
-
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 3000</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="car_00_180_04_92">car_00_180_04_92</h2>
 <table class="h">
     <tbody>
@@ -9677,6 +9692,907 @@ ps2: 72 / 160 / 200
     <tfoot>
         <tr>
             <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188">car_00_188</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#model_animation_2">offset Model Animation 2</a></td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#model_link">offset 2 (model_link)</a></td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u8</td>
+            <td>always 25</td>
+        </tr>
+        <tr class="u">
+            <td>21</td>
+            <td>u24</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>u32</td>
+            <td>amount offset [52]</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_52">offset</a> based on amount [48]</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>u32</td>
+            <td>amount offset [60]</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_60">offset</a> based on amount [56]</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>u32</td>
+            <td>amount [68]</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_68">offset</a> based on amount [64]</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>u32</td>
+            <td>amount [76]</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_68">offset same structure as (car_00_188_68)</a> based on amount [72]</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>u32</td>
+            <td>amount [84]</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_68">offset same structure as (car_00_188_68)</a> based on amount [80]</td>
+        </tr>
+        <tr class="u">
+            <td>88</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>92</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>96</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>100</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>104</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>108</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>112</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>116</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>120</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>124</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">128 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188_52">car_00_188_52</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 38</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_52_04">offset 1</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188_52_04">car_00_188_52_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#car_00_188_52_04_04">offset 1</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u24</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188_52_04_04">car_00_188_52_04_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#model_link">offset 1 (model_link)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188_60">car_00_188_60</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>5 - 54</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>1,0,2</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>1.0089999437332153 - 3</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>1.899999976158142,3,1,1.25,0.8999999761581421,0.8270000219345093</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0.15000000596046448,1,0,0.05000000074505806,0.5,0.25</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_188_68">car_00_188_68</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 53</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>-6.199999809265137 - 6.199999809265137</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>-3.880000114440918 - 3.5</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>-5 - 2.700000047683716</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_192">car_00_192</h2>
+<p>stats?</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>float</td>
+            <td>Reversing Speed</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>Turn Lag, low numbers are slow, high numbers are snappy</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>float</td>
+            <td>Ground Turning Sensitivity</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>float</td>
+            <td>Air Turning Sensitivity</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>
+                <a href="#car_00_192_16">offset (car_00_192_16)</a>
+            </td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>amount of "shifts"</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td>
+                <a href="#car_00_192_24">offset</a> based on amount [20]
+            </td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>29</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>30</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>31</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td>
+                <a href="#wtf">offset (wtf)</a>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_192_24">car_00_192_24</h2>
+<p>Speed and Acceleration shifts<br>
+once the car reaches the set speed the next "shift" will activate<br>
+speed boosts set to maximum shift</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>float</td>
+            <td>Ground Acceleration</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>float</td>
+            <td>Air Acceleration</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>float</td>
+            <td>speed</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_196">car_00_196</h2> 
+<p>engine sounds?</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>
+                <a href="#sound_section">offset 1 (sound_section)</a>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>60,90 <br>effects when the engine sound activates<br>
+            has something to do with speed</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>
+                <a href="#sound_section">offset 2 (sound_section)</a>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>300,350,250,400,600<br>
+                has something to do with the engine sound when starting from 0 speed<br>
+                low values seems to randimize engine pitch?</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0.5,1<br>
+            engine pitch</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>2.5,2,1.5,4<br>
+            effects pitch in some way</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_200">car_00_200</h2>
+<p>frames</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>
+                <a href="#interface">Offset Frame</a>
+            </td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_208">car_00_208</h2>
+<p>? some type of positioning</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>
+                <a href="#car_00_208_04">offset 1</a> based on amount [00]
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_208_04">car_00_208_04</h2>
+<p>? some type of positioning</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,-10,10,15,5,-5</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0 - 20</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>-20 - 20</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_216">car_00_216</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#mysterious">offset 1 (mysterious)</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_180_04_84">car_00_180_04_84</h2>
+    <p>
+        multi linked to by:<br>
+        <a href="#car_00_180_04"> car_00_180_04 [84][88]</a><br>
+    <br>
+
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 3000</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="car_00_192_16">car_00_192_16</h2>
+    <p>
+        multi linked to by:<br>
+        <a href="#car_00_192"> car_00_192 [16]</a><br>
+    <br>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 500</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u16</td>
+            <td>always 200</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u16</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>always 2</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 12</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -10206,866 +11122,6 @@ however 32-35 are always little endian in gc so I think this is a diff section?
     <tfoot>
         <tr>
             <th colspan="3">96 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188">car_00_188</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#model_animation_2">offset Model Animation 2</a></td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#model_link">offset 2 (model_link)</a></td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>always 25</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u24</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#model_animation_1">offset Model Animation 1</a></td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>48</td>
-            <td>u32</td>
-            <td>amount offset [52]</td>
-        </tr>
-        <tr>
-            <td>52</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_52">offset</a> based on amount [48]</td>
-        </tr>
-        <tr>
-            <td>56</td>
-            <td>u32</td>
-            <td>amount offset [60]</td>
-        </tr>
-        <tr>
-            <td>60</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_60">offset</a> based on amount [56]</td>
-        </tr>
-        <tr>
-            <td>64</td>
-            <td>u32</td>
-            <td>amount [68]</td>
-        </tr>
-        <tr>
-            <td>68</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_68">offset</a> based on amount [64]</td>
-        </tr>
-        <tr>
-            <td>72</td>
-            <td>u32</td>
-            <td>amount [76]</td>
-        </tr>
-        <tr>
-            <td>76</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_68">offset same structure as (car_00_188_68)</a> based on amount [72]</td>
-        </tr>
-        <tr>
-            <td>80</td>
-            <td>u32</td>
-            <td>amount [84]</td>
-        </tr>
-        <tr>
-            <td>84</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_68">offset same structure as (car_00_188_68)</a> based on amount [80]</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>96</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>100</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>104</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>108</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>112</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>116</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>120</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>124</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">128 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188_52">car_00_188_52</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0 - 38</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_52_04">offset 1</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188_52_04">car_00_188_52_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#car_00_188_52_04_04">offset 1</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u24</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188_52_04_04">car_00_188_52_04_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#model_link">offset 1 (model_link)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188_60">car_00_188_60</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>5 - 54</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>1,0,2</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>1.0089999437332153 - 3</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>1.899999976158142,3,1,1.25,0.8999999761581421,0.8270000219345093</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0.15000000596046448,1,0,0.05000000074505806,0.5,0.25</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_188_68">car_00_188_68</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0 - 53</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>-6.199999809265137 - 6.199999809265137</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>-3.880000114440918 - 3.5</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>-5 - 2.700000047683716</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_192">car_00_192</h2>
-<p>stats?</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>float</td>
-            <td>Reversing Speed</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>Turn Lag, low numbers are slow, high numbers are snappy</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>float</td>
-            <td>Ground Turning Sensitivity</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>float</td>
-            <td>Air Turning Sensitivity</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>
-                <a href="#car_00_192_16">offset (car_00_192_16)</a>
-            </td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>amount of "shifts"</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td>
-                <a href="#car_00_192_24">offset</a> based on amount [20]
-            </td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td>
-                <a href="#wtf">offset (wtf)</a>
-            </td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_192_16">car_00_192_16</h2>
-    <p>
-        multi linked to by:<br>
-        <a href="#car_00_192"> car_00_192 [16]</a><br>
-    <br>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 500</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u16</td>
-            <td>always 200</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u16</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>always 2</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 12</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_192_24">car_00_192_24</h2>
-<p>Speed and Acceleration shifts<br>
-once the car reaches the set speed the next "shift" will activate<br>
-speed boosts set to maximum shift</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>float</td>
-            <td>Ground Acceleration</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>float</td>
-            <td>Air Acceleration</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>float</td>
-            <td>speed</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_196">car_00_196</h2> 
-<p>engine sounds?</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>
-                <a href="#sound_section">offset 1 (sound_section)</a>
-            </td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>60,90 <br>effects when the engine sound activates<br>
-            has something to do with speed</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td>
-                <a href="#sound_section">offset 2 (sound_section)</a>
-            </td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>300,350,250,400,600<br>
-                has something to do with the engine sound when starting from 0 speed<br>
-                low values seems to randimize engine pitch?</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0.5,1<br>
-            engine pitch</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>2.5,2,1.5,4<br>
-            effects pitch in some way</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_200">car_00_200</h2>
-<p>frames</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>
-                <a href="#interface">Offset Frame</a>
-            </td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_208">car_00_208</h2>
-<p>? some type of positioning</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>
-                <a href="#car_00_208_04">offset 1</a> based on amount [00]
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_208_04">car_00_208_04</h2>
-<p>? some type of positioning</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0,-10,10,15,5,-5</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0 - 20</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>-20 - 20</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="car_00_216">car_00_216</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#mysterious">offset 1 (mysterious)</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -11686,7 +11742,8 @@ speed boosts set to maximum shift</p>
     <hr>
     <h2 id="interface_12">interface_12</h2>
     <p>linked to by:<br>
-    <a href="#interface_72_32">interface_72_32 4</a></p>
+    <a href="#interface">interface [12]</a><br>
+    <a href="#interface_72_32">interface_72_32 [4]</a><br>
     </p>
     <table class="h">
         <tbody>
@@ -11748,7 +11805,10 @@ speed boosts set to maximum shift</p>
     </table>
     <hr>
     <h2 id="interface_12_04t1026">interface_12_04t1026</h2>
-    <p>also linked to by <a href="#interface_12_16">interface_12_16</a></p>
+    <p>linked to by:<br>
+    <a href="#interface_12_16">interface_12_16 [12]</a><br>
+    <a href="#interface_12">interface_12 [4]t1026</a><br>
+    </p>
     <table class="h">
         <tbody>
             <tr>
@@ -15938,7 +15998,7 @@ speed boosts set to maximum shift</p>
 </table>
 <hr>
 <h2 id="frame_multi_font">frame_multi_font</h2>
-<p>multilink
+<p>multi linked to by:<br>
         <a href="#interface_72_24t1">interface_72_24t1 o12 t1</a><br>
 </p>
 <table class="h">
@@ -16109,6 +16169,9 @@ speed boosts set to maximum shift</p>
 </table>
 <hr>
 <h2 id="link">link</h2>
+<p>linked to by:<br>
+<a href="#basic_04">basic_04 [0]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -16846,6 +16909,9 @@ link_demo [08]</p>
 <hr>
 <h2 id="world_settings">world_settings</h2>
 <p>usually linked unordered first exepct for Award for some reason</p>
+<p>linked to by:<br>
+<a href="#world">world [0]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -20331,8 +20397,8 @@ linked to by:<br>
 </table>
 <hr>
 <h2 id="model_link">model_link</h2>
-<p>multi linked to by:
-<br><a href="#interface_72_24t3_04">interface_72_24t3_04 [00]</a><br>
+<p>multi linked to by:<br>
+<a href="#interface_72_24t3_04">interface_72_24t3_04 [00]</a><br>
 <a href="#car_00_188">car_00_188 [04]</a><br>
 <a href="#car_00_188_52_04_04">car_00_188_52_04_04 [00]</a><br>
 <a href="#mysterious">mysterious [04]t8</a><br>
@@ -20693,8 +20759,8 @@ linked to by:<br>
 </table>
 <hr>
 <h2 id="model_sub_link">model_sub_link</h2>
-<p>multi linked to by:
-    <br><a href="#model_link">model_link [08]</a><br></p>
+<p>multi linked to by:<br>
+<a href="#model_link">model_link [08]</a><br></p>
 <table class="h">
     <tbody>
         <tr>
@@ -20757,7 +20823,7 @@ linked to by:<br>
 </table>
 <hr>
 <h2 id="unknown">unknown</h2>
-<p>very long section, no idea what it does<br>
+<p>unknown_00 is commonly linked to by sections that look like this, not sure if same section<br>
     linked to by:<br>
     <a href="#strange">strange [04]</a><br>
     <a href="#unknown_00_04_04t1">unknown_00_04_04t1 [32]</a><br>
@@ -20922,2093 +20988,6 @@ linked to by:<br>
     <tfoot>
         <tr>
             <th colspan="3">16 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1">unknown_00_04_04t1</h2>
-<p>multi linked to by:<br>
-    <a href="#unknown_00_04">unknown_00_04 [04]t1</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>offset type? 0/1/2</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>10,5,8,3</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>based on type [00]<br>
-                <a href="#unknown_00_04_04t1_04t0">0 = offset</a><br>
-                <a href="#unknown_00_04_04t1_04t1">1 = offset</a><br>
-                <a href="#unknown_00_04_04t1_04t2">2 = offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>100-1000</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0-750</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>50-1500</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_24">offset 24</a> based on amount [20]</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td>amount [32]</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#unknown">offset (unknown)</a> based on amount [28]</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0">unknown_00_04_04t1_04t0</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_04">offset 04</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>2,0,3</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0,0.5</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>260,-20</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>260,40</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>1.5,10</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>0,5</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td>amount [40]</td>
-        </tr>
-        <tr>
-            <td>40</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_40">offset</a> based on amount [36]</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_48">offset 40</a> based on amount [44]</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>53</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>54</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>55</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>56</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_56">offset 56</a></td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0,2 amount probably</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_64">offset 64</a> based on amount [60]</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">80 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_04">unknown_00_04_04t1_04t0_04</h2>
-<p>value is sometimes always the same as the sections position in file</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#models">offset maybe? model?</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_40">unknown_00_04_04t1_04t0_40</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>1,3</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>1,3</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>1,3</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0-500</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_48">unknown_00_04_04t1_04t0_48</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>?</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes per entry ?</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_56">unknown_00_04_04t1_04t0_56</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0,3</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,3</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_64">unknown_00_04_04t1_04t0_64</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t0_64_04">offset</a> based on amount [00]</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t0_64_04">unknown_00_04_04t1_04t0_64_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1">unknown_00_04_04t1_04t1</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>0,3</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>5,2,3</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>1,2</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0,100</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0/180</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>180,0,4</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>-1000,10</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>0-2000</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>float</td>
-            <td>0.5-10</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>float</td>
-            <td>0-6</td>
-        </tr>
-        <tr>
-            <td>40</td>
-            <td>u32</td>
-            <td>1,2 amount prob</td>
-        </tr>
-        <tr>
-            <td>44</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_44">offset 44</a> based on amount [40]</td>
-        </tr>
-        <tr>
-            <td>48</td>
-            <td>u32</td>
-            <td>2,0 amount</td>
-        </tr>
-        <tr>
-            <td>52</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_44">offset 44</a> based on amount [48]</td>
-        </tr>
-        <tr>
-            <td>56</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_56">offset 56</a></td>
-        </tr>
-        <tr>
-            <td>60</td>
-            <td>u32</td>
-            <td>3,0,4,1,18,6 amount</td>
-        </tr>
-        <tr>
-            <td>64</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_64">offset 64</a> based on amount [60]</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>76</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">80 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1_04">unknown_00_04_04t1_04t1_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>patch texture ?</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1_44">unknown_00_04_04t1_04t1_44</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>1,2,5,3,50,10,20,0,4,0.25,0.5,7,8</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0,75,300,150,500,400,200,1000,50</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1_56">unknown_00_04_04t1_04t1_56</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>-0.25 - 20</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0.5,0,0.4000000059604645,0.10000000149011612,2,2.5,1,7,10</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>3,0,8,63,154</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0,1,25,153</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0,153,25</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>2,0,154,63</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0,1,4,2,5</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0,1.5,-0.25</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0,0.5</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1_64">unknown_00_04_04t1_04t1_64</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t1_64_04">offset</a> based on amount [00]</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t1_64_04">unknown_00_04_04t1_04t1_64_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,5</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0,-1,-2,1</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0,1,-2</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t2">unknown_00_04_04t1_04t2</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t2_04">offset 1</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0.10000000149011612-1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0.5,0</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>1/2 amount</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t1_04t2_20">offset 20</a> based on amount [16]</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>25</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>26</td>
-            <td>u8</td>
-            <td>2,0,5</td>
-        </tr>
-        <tr class="u">
-            <td>27</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t2_04">unknown_00_04_04t1_04t2_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0-250</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_04t2_20">unknown_00_04_04t1_04t2_20</h2>
-<p>not sure if this is 16 or 12 byte</p>
-                <table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0-10</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0-300</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0,0.25</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>    
-<h2 id="unknown_00_04_04t1_24">unknown_00_04_04t1_24</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0-255</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0-800</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t1_32">unknown_00_04_04t1_32</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t2">unknown_00_04_04t2</h2>
-<p>multi linked to by:<br>
-    <a href="#unknown_00_04">unknown_00_04 [04]t2</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0/1</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>always 3</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0/1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>50-62000</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0-1000</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0,-750</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>always 100000</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>float</td>
-            <td>0/1</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>float</td>
-            <td>0.001,1</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>48</td>
-            <td>u32</td>
-            <td><a href="#wtf">offset (wtf)</a></td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>float</td>
-            <td>0.4000000059604645,0.4000000059604645,0</td>
-        </tr>
-        <tr>
-            <td>56</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>68</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
-        </tr>
-        <tr class="u">
-            <td>72</td>
-            <td>u8</td>
-            <td>0/1</td>
-        </tr>
-        <tr class="u">
-            <td>73</td>
-            <td>u24</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>76</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset (unknown_00)</a></td>
-        </tr>
-        <tr>
-            <td>80</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t2_80">offset 3</a></td>
-        </tr>
-        <tr class="u">
-            <td>84</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>88</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>92</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>96</td>
-            <td>u32</td>
-            <td>amount 0/1,3</td>
-        </tr>
-        <tr>
-            <td>100</td>
-            <td>u32</td>
-            <td><a href="#mysterious">offset (mysterious)</a> based on amount [96]</td>
-        </tr>
-        <tr class="u">
-            <td>104</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>108</td>
-            <td>u32</td>
-            <td>always 100</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">112 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t2_80">unknown_00_04_04t2_80</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>50,100</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0,50</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5">unknown_00_04_04t5</h2>
-<p>multi linked to by:<br>
-    <a href="#unknown_00_04">unknown_00_04 [04]t5</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href='#unknown_00_04_04t5_04'>offset sometiems?</a><br>
-            only active when [00] = 1?<br></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0/500</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_12">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>100,0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_20">offset sometimes?</a></td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0,100</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_28">offset sometimes?</a></td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_36">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u8</td>
-            <td>2,1</td>
-        </tr>
-        <tr class="u">
-            <td>41</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>42</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>43</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_04">unknown_00_04_04t5_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0,50</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>type?<br>
-                101,102,100,0 = 0<br>
-                103,105 = offset</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>u32</td>
-            <td>based on type [08]<br>
-                <a href="#unknown_00_04_04t5_04_12t103">103 = offset</a><br>
-                <a href="#unknown_00_04_04t5_04_12t105">105 = offset</a>
-            </td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>u32</td>
-            <td>amount 1,2</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td><a href='#unknown_00_04_04t5_04_20'>offset</a> based on amount [16]</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td>amount probably 0/1</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#mysterious">offset (mysterious)</a> based on amount [28]</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_04_12t103">unknown_00_04_04t5_04_12t103</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>always 6553700</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 2147483647</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_04_12t105">unknown_00_04_04t5_04_12t105</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 3000</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>always 2 amount</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#mysterious">offset (mysterious)</a> based on amount [04]</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>            
-<h2 id="unknown_00_04_04t5_04_20">unknown_00_04_04t5_04_20</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>410131222,312111556</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry?</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_12">unknown_00_04_04t5_12</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_12_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>2,5</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_12_04">unknown_00_04_04t5_12_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>255,0,127,60,192,87,120</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>255,70,127,60,0,192,120,66</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0,255,127,60,75,160,120</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>100,0,180,200,64,255</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>100,400,0,150</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_20">unknown_00_04_04t5_20</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04]</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_20_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_20_04">unknown_00_04_04t5_20_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>15,20,5,30,0,50,10</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0,100</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_28">unknown_00_04_04t5_28</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_28_04">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#unknown_00_04_04t5_28_04_00">offset (unknown_00_04_04t5_28_04_00)</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_28_04_00">unknown_00_04_04t5_28_04_00</h2>
-    <p>multi linked to by:<br>
-    <a href="#unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04 [00]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>type? 1,2</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u24</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td>based on type [00]<br>
-                <a href="#unknown_00_04_04t5_28_04_00_04t1">1 = offset</a><br>
-                <a href="#unknown_00_04_04t5_28_04_00_04t2">2 = offset</a>            
-            </td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>500,100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_28_04_00_04t1">unknown_00_04_04t5_28_04_00_04t1</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>1/3</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>50/75</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>1/100</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_28_04_00_04t2">unknown_00_04_04t5_28_04_00_04t2</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>50,100</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>05</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>06</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>07</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="unknown_00_04_04t5_36">unknown_00_04_04t5_36</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>5-100</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>5-250</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -24977,6 +22956,2093 @@ linked to by:<br>
     </tfoot>
 </table>
 <hr>
+<h2 id="unknown_00_04_04t5_28_04_00">unknown_00_04_04t5_28_04_00</h2>
+    <p>multi linked to by:<br>
+    <a href="#unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04 [00]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>type? 1,2</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u24</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>based on type [00]<br>
+                <a href="#unknown_00_04_04t5_28_04_00_04t1">1 = offset</a><br>
+                <a href="#unknown_00_04_04t5_28_04_00_04t2">2 = offset</a>            
+            </td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>500,100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_28_04_00_04t1">unknown_00_04_04t5_28_04_00_04t1</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>1/3</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>50/75</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>1/100</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_28_04_00_04t2">unknown_00_04_04t5_28_04_00_04t2</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>50,100</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1">unknown_00_04_04t1</h2>
+<p>multi linked to by:<br>
+    <a href="#unknown_00_04">unknown_00_04 [04]t1</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>offset type? 0/1/2</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>10,5,8,3</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>based on type [00]<br>
+                <a href="#unknown_00_04_04t1_04t0">0 = offset</a><br>
+                <a href="#unknown_00_04_04t1_04t1">1 = offset</a><br>
+                <a href="#unknown_00_04_04t1_04t2">2 = offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>100-1000</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0-750</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>50-1500</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_24">offset 24</a> based on amount [20]</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>amount [32]</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#unknown">offset (unknown)</a> based on amount [28]</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0">unknown_00_04_04t1_04t0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_04">offset 04</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0,2</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>2,0,3</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,0.5</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>260,-20</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>260,40</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>1.5,10</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>0,5</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td>amount [40]</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_40">offset</a> based on amount [36]</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>48</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_48">offset 40</a> based on amount [44]</td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>53</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>54</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>55</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_56">offset 56</a></td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0,2 amount probably</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_64">offset 64</a> based on amount [60]</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">80 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_04">unknown_00_04_04t1_04t0_04</h2>
+<p>value is sometimes always the same as the sections position in file</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#models">offset maybe? model?</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_40">unknown_00_04_04t1_04t0_40</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>1,3</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>1,3</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>1,3</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0-500</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_48">unknown_00_04_04t1_04t0_48</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes per entry ?</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_56">unknown_00_04_04t1_04t0_56</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0,3</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0,2</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0,3</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_64">unknown_00_04_04t1_04t0_64</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t0_64_04">offset</a> based on amount [00]</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t0_64_04">unknown_00_04_04t1_04t0_64_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1">unknown_00_04_04t1_04t1</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0,3</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>5,2,3</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>1,2</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0,100</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0/180</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>180,0,4</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>-1000,10</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>0-2000</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>float</td>
+            <td>0.5-10</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>float</td>
+            <td>0-6</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td>1,2 amount prob</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_44">offset 44</a> based on amount [40]</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>u32</td>
+            <td>2,0 amount</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_44">offset 44</a> based on amount [48]</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_56">offset 56</a></td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>u32</td>
+            <td>3,0,4,1,18,6 amount</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_64">offset 64</a> based on amount [60]</td>
+        </tr>
+        <tr class="u">
+            <td>68</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>76</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">80 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1_04">unknown_00_04_04t1_04t1_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>patch texture ?</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1_44">unknown_00_04_04t1_04t1_44</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>1,2,5,3,50,10,20,0,4,0.25,0.5,7,8</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0,75,300,150,500,400,200,1000,50</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1_56">unknown_00_04_04t1_04t1_56</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-0.25 - 20</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0.5,0,0.4000000059604645,0.10000000149011612,2,2.5,1,7,10</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>3,0,8,63,154</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0,1,25,153</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0,153,25</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>2,0,154,63</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0,1,4,2,5</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,1.5,-0.25</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,0.5</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1_64">unknown_00_04_04t1_04t1_64</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t1_64_04">offset</a> based on amount [00]</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t1_64_04">unknown_00_04_04t1_04t1_64_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,5</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0,-1,-2,1</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0,1,-2</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t2">unknown_00_04_04t1_04t2</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t2_04">offset 1</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0.10000000149011612-1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0.5,0</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>1/2 amount</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t1_04t2_20">offset 20</a> based on amount [16]</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u8</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>25</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>26</td>
+            <td>u8</td>
+            <td>2,0,5</td>
+        </tr>
+        <tr class="u">
+            <td>27</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t2_04">unknown_00_04_04t1_04t2_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0-250</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_04t2_20">unknown_00_04_04t1_04t2_20</h2>
+<p>not sure if this is 16 or 12 byte</p>
+                <table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0-10</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0-300</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0,0.25</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>    
+<h2 id="unknown_00_04_04t1_24">unknown_00_04_04t1_24</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0-255</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0-800</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t1_32">unknown_00_04_04t1_32</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5">unknown_00_04_04t5</h2>
+<p>multi linked to by:<br>
+    <a href="#unknown_00_04">unknown_00_04 [04]t5</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href='#unknown_00_04_04t5_04'>offset sometiems?</a><br>
+            only active when [00] = 1?<br></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0/500</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_12">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>100,0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_20">offset sometimes?</a></td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0,100</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_28">offset sometimes?</a></td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_36">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u8</td>
+            <td>2,1</td>
+        </tr>
+        <tr class="u">
+            <td>41</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>42</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>43</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_04">unknown_00_04_04t5_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,2</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0,50</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>type?<br>
+                101,102,100,0 = 0<br>
+                103,105 = offset</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td>based on type [08]<br>
+                <a href="#unknown_00_04_04t5_04_12t103">103 = offset</a><br>
+                <a href="#unknown_00_04_04t5_04_12t105">105 = offset</a>
+            </td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>amount 1,2</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href='#unknown_00_04_04t5_04_20'>offset</a> based on amount [16]</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>amount probably 0/1</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#mysterious">offset (mysterious)</a> based on amount [28]</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_04_12t103">unknown_00_04_04t5_04_12t103</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>always 6553700</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 2147483647</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_04_12t105">unknown_00_04_04t5_04_12t105</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 3000</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td>always 2 amount</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#mysterious">offset (mysterious)</a> based on amount [04]</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>            
+<h2 id="unknown_00_04_04t5_04_20">unknown_00_04_04t5_04_20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>410131222,312111556</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry?</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_12">unknown_00_04_04t5_12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_12_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>2,5</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_12_04">unknown_00_04_04t5_12_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>255,0,127,60,192,87,120</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>255,70,127,60,0,192,120,66</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0,255,127,60,75,160,120</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>100,0,180,200,64,255</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>100,400,0,150</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_20">unknown_00_04_04t5_20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04]</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_20_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_20_04">unknown_00_04_04t5_20_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>15,20,5,30,0,50,10</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0,100</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_28">unknown_00_04_04t5_28</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_28_04">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_28_04">unknown_00_04_04t5_28_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t5_28_04_00">offset (unknown_00_04_04t5_28_04_00)</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t5_36">unknown_00_04_04t5_36</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>5-100</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>5-250</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t2">unknown_00_04_04t2</h2>
+<p>multi linked to by:<br>
+    <a href="#unknown_00_04">unknown_00_04 [04]t2</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0/1</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>always 3</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0/1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>50-62000</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0-1000</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0,2</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0,-750</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>always 100000</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>float</td>
+            <td>0/1</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>float</td>
+            <td>0.001,1</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>u32</td>
+            <td><a href="#wtf">offset (wtf)</a></td>
+        </tr>
+        <tr class="u">
+            <td>52</td>
+            <td>float</td>
+            <td>0.4000000059604645,0.4000000059604645,0</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
+        </tr>
+        <tr class="u">
+            <td>60</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>64</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset 1 (unknown_00)</a></td>
+        </tr>
+        <tr class="u">
+            <td>72</td>
+            <td>u8</td>
+            <td>0/1</td>
+        </tr>
+        <tr class="u">
+            <td>73</td>
+            <td>u24</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset (unknown_00)</a></td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>u32</td>
+            <td><a href="#unknown_00_04_04t2_80">offset 3</a></td>
+        </tr>
+        <tr class="u">
+            <td>84</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>88</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>92</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>96</td>
+            <td>u32</td>
+            <td>amount 0/1,3</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>u32</td>
+            <td><a href="#mysterious">offset (mysterious)</a> based on amount [96]</td>
+        </tr>
+        <tr class="u">
+            <td>104</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>108</td>
+            <td>u32</td>
+            <td>always 100</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">112 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="unknown_00_04_04t2_80">unknown_00_04_04t2_80</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>50,100</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0,50</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="activator">activator</h2>
 <p>multi linked to by:<br>
     <a href="#unknown_00_04">unknown_00_04 [04]t31</a><br>
@@ -26598,244 +26664,6 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     </tfoot>
 </table>
 <hr>
-<h2 id="activator_248_04_04t0_04">activator_248_04_04t0_04</h2>
-<p>multi linked to by:<br>
-    <a href="#activator_248_04_04t0"> activator_248_04_04t0 [04]</a><br>
-    mysterious_04t16_36_04 maybe?
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>amount [04] 1,2</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#activator_248_04_04t0_04_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0,50,20,301,5,125 </td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>200,20</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>0,180</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>float</td>
-            <td>0,90,35</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>25</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>26</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>27</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0,1,2</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0,3</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0,1</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u8</td>
-            <td>2,0</td>
-        </tr>
-        <tr class="u">
-            <td>33</td>
-            <td>u8</td>
-            <td>0,1,3</td>
-        </tr>
-        <tr class="u">
-            <td>34</td>
-            <td>u8</td>
-            <td>3,0</td>
-        </tr>
-        <tr class="u">
-            <td>35</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="activator_248_04_04t0_04_04">activator_248_04_04t0_04_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>3,1,4</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#activator_248_04_04t0_04_04_04">offset</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="activator_248_04_04t0_04_04_04">activator_248_04_04t0_04_04_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>312111556,410131222</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#activator_248_04_04t0_04_04_04_04">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="activator_248_04_04t0_04_04_04_04">activator_248_04_04t0_04_04_04_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>01</td>
-            <td>u8</td>
-            <td>2,1</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u8</td>
-            <td>1,3,0</td>
-        </tr>
-        <tr class="u">
-            <td>03</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="activator_248_04_04t1">activator_248_04_04t1</h2>
 <table class="h">
     <tbody>
@@ -28433,110 +28261,6 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     </tfoot>
 </table>
 <hr>
-<h2 id="activator_248_32_72_08t18_08_04t0">activator_248_32_72_08t18_08_04t0</h2>
-<p>multi linked to by:<br>
-    <a href="#activator_248_32_72_08t18_08"> activator_248_32_72_08t18_08 [04]t0</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 3500</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u16</td>
-            <td>always 130</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>always 2</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>always 12</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>33</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>34</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>35</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="activator_248_32_72_08t18_08_04t6">activator_248_32_72_08t18_08_04t6</h2>
 <table class="h">
     <tbody>
@@ -29076,6 +28800,348 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="activator_248_04_04t0_04">activator_248_04_04t0_04</h2>
+<p>multi linked to by:<br>
+    <a href="#activator_248_04_04t0"> activator_248_04_04t0 [04]</a><br>
+    mysterious_04t16_36_04 maybe?
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>amount [04] 1,2</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#activator_248_04_04t0_04_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0,50,20,301,5,125 </td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>200,20</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>0,180</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,90,35</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>25</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>26</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>27</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u8</td>
+            <td>0,2</td>
+        </tr>
+        <tr class="u">
+            <td>29</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>30</td>
+            <td>u8</td>
+            <td>0,3</td>
+        </tr>
+        <tr class="u">
+            <td>31</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u8</td>
+            <td>2,0</td>
+        </tr>
+        <tr class="u">
+            <td>33</td>
+            <td>u8</td>
+            <td>0,1,3</td>
+        </tr>
+        <tr class="u">
+            <td>34</td>
+            <td>u8</td>
+            <td>3,0</td>
+        </tr>
+        <tr class="u">
+            <td>35</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="activator_248_04_04t0_04_04">activator_248_04_04t0_04_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>3,1,4</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#activator_248_04_04t0_04_04_04">offset</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="activator_248_04_04t0_04_04_04">activator_248_04_04t0_04_04_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>312111556,410131222</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#activator_248_04_04t0_04_04_04_04">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="activator_248_04_04t0_04_04_04_04">activator_248_04_04t0_04_04_04_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>2,1</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>1,3,0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="activator_248_32_72_08t18_08_04t0">activator_248_32_72_08t18_08_04t0</h2>
+<p>multi linked to by:<br>
+    <a href="#activator_248_32_72_08t18_08"> activator_248_32_72_08t18_08 [04]t0</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>always 3500</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u16</td>
+            <td>always 130</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>always 2</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>always 12</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>33</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>34</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>35</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -33352,142 +33418,6 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     </tfoot>
 </table>
 <hr>
-<h2 id="object_32t15">object_32t15</h2>
-<p>multi linked to by:<br>
-    <a href="#object">object [32]t15</a><br>
-    </p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>amount 1,8</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#object_32t15_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset (unknown_00)</a></td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#unknown_00">offset (unknown_00)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="object_32t15_04">object_32t15_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>amount 3,5,4,8,7,6,1</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#object_32t15_04_04">offset</a> based on amount [00]</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>amount 3,5,4,7,6,1</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#object_32t15_04_04">offset same as section above</a> based on amount [08]</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>amount 2,4,1</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#object_32t15_04_04">offset same as section above</a> based on amount [16]</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>float</td>
-            <td>1 - 2800</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">28 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="object_32t15_04_04">object_32t15_04_04</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td><a href="#um">offset (um)</a></td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#um">offset (um)</a></td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u8</td>
-            <td>5 - 100</td>
-        </tr>
-        <tr class="u">
-            <td>09</td>
-            <td>u8</td>
-            <td>1,0</td>
-        </tr>
-        <tr class="u">
-            <td>10</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>11</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">12 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="object_32t16">object_32t16</h2>
 <table class="h">
     <tbody>
@@ -33628,6 +33558,142 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="object_32t15">object_32t15</h2>
+<p>multi linked to by:<br>
+    <a href="#object">object [32]t15</a><br>
+    </p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>amount 1,8</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#object_32t15_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset (unknown_00)</a></td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#unknown_00">offset (unknown_00)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="object_32t15_04">object_32t15_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>amount 3,5,4,8,7,6,1</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#object_32t15_04_04">offset</a> based on amount [00]</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>amount 3,5,4,7,6,1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#object_32t15_04_04">offset same as section above</a> based on amount [08]</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>amount 2,4,1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#object_32t15_04_04">offset same as section above</a> based on amount [16]</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>float</td>
+            <td>1 - 2800</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">28 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="object_32t15_04_04">object_32t15_04_04</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#um">offset (um)</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#um">offset (um)</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>5 - 100</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>1,0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -35265,7 +35331,8 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
 </table>
 <hr>
 <h2 id="texture_anim_1">Texture Animation Part 2</h2>
-<p>linked to from <a href="#texture_animation_section">Texture Animation Part 1</a></p>
+<p>linked to by:<br>
+<a href="#texture_animation_section">Texture Animation Part 1</a></p>
 <table class="h">
     <tbody>
         <tr>
@@ -35518,66 +35585,6 @@ maybe same as <a href="#activator_248_32_72">activator_248_32_72</a>
     <tfoot>
         <tr>
             <th colspan="3">16 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="share_low_section">share</h2>
-<p>not linked by offset, section appears after texture data and before Offset Patch List<br>
-only appears in gShared?<br>
-does not appear to do anything<br>
-likely unused.</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>offset ghsared string</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>amount in texture index ?</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>offset texture index</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>amount in offset 2</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>index Audio ?</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>amount models</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>offset models list</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
         </tr>
     </tfoot>
 </table>
