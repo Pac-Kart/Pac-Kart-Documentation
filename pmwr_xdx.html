@@ -25,7 +25,7 @@
                     </div>
                     <div style="color: white;background: #4664cd;text-align: center;">
                         <div class="box box1">
-                            <a class="link" href="#pmwr_xdx_header">File Header</a>
+                            <a class="link" href="#pmwr_xdx_file_header">File Header</a>
                         </div>
                         <div class="box box1"><a class="link" href="#pmwr_xdx_directory">File Directory</a></div>
                         <div class="box box1" style="padding-bottom: 2%;">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <hr>
-<h2 id="pmwr_xdx_header">pmwr_xdx_header</h2>
+<h2 id="pmwr_xdx_file_header">pmwr_xdx_file_header</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -545,6 +545,15 @@
 <h2 id="ordered_list">Ordered List</h2>
 <p>to get here offset to the Patch List from the datapack then add the sections together<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
+    in order the sections contained are:<br>
+    <a href="#file_specific_section">file_specific_section</a><br>
+    <a href="#pmwr_xdx_model">pmwr_xdx_model</a><br>
+    <a href="#pmwr_xdx_texture_anims">pmwr_xdx_texture_anims</a><br>
+    <a href="#pmwr_xdx_model_anims_1">pmwr_xdx_model_anims_1</a><br>
+    <a href="#pmwr_xdx_model_anims_2">pmwr_xdx_model_anims_2</a><br>
+    <a href="#pmwr_xdx_texture">pmwr_xdx_texture</a><br>
+    <a href="#unordered_list">unordered_list</a><br>
+    <a href="#pmwr_xdx_texture_anims_0">pmwr_xdx_texture_anims_0</a><br>
 </p>
 <hr>
 <h2 id="file_specific_section">Ordered List File Specific Section</h2>
@@ -753,25 +762,25 @@
             <td>u32</td>
             <td><a href="#pmwr_xdx_world_4">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>4,8</td>
+            <td>amount | 4,8</td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_12">offset (pmwr_xdx_world_12)</a></td>
+            <td><a href="#pmwr_xdx_world_12">offset (pmwr_xdx_world_12)</a> based on amount [8]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>1,2</td>
+            <td>amount | 1,2</td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_20">offset (pmwr_xdx_world_20)</a></td>
+            <td><a href="#pmwr_xdx_world_20">offset (pmwr_xdx_world_20)</a> based on amount [16]</td>
         </tr>
         <tr>
             <td>24</td>
@@ -833,15 +842,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>72</td>
             <td>u32</td>
-            <td>4,8,16</td>
+            <td>amount | 4,8,16</td>
         </tr>
         <tr>
             <td>76</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_76">offset (pmwr_xdx_world_76)</a></td>
+            <td><a href="#pmwr_xdx_world_76">offset (pmwr_xdx_world_76)</a> based on amount [72]</td>
         </tr>
         <tr class="u">
             <td>80</td>
@@ -883,35 +892,35 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>112</td>
             <td>u32</td>
-            <td>10,15,21</td>
+            <td>amount | 10,15,21</td>
         </tr>
         <tr>
             <td>116</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_116">offset (pmwr_xdx_world_116)</a></td>
+            <td><a href="#pmwr_xdx_world_116">offset (pmwr_xdx_world_116)</a> based on amount [112]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>120</td>
             <td>u32</td>
-            <td>0,1,6</td>
+            <td>amount | 0,1,6</td>
         </tr>
         <tr>
             <td>124</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_124">offset (pmwr_xdx_world_124)</a></td>
+            <td><a href="#pmwr_xdx_world_124">offset (pmwr_xdx_world_124)</a> based on amount [120]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>128</td>
             <td>u32</td>
-            <td>10,83,104</td>
+            <td>amount | 10,83,104</td>
         </tr>
         <tr>
             <td>132</td>
             <td>u32</td>
-            <td><a href="#pmwr_xdx_world_132">offset (pmwr_xdx_world_132)</a></td>
+            <td><a href="#pmwr_xdx_world_132">offset (pmwr_xdx_world_132)</a> based on amount [128]</td>
         </tr>
         <tr class="u">
             <td>136</td>
@@ -2344,7 +2353,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">128 bytes</th>
+            <th colspan="3">128 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2492,7 +2501,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">64 bytes</th>
+            <th colspan="3">64 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2708,7 +2717,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">96 bytes</th>
+            <th colspan="3">96 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2873,7 +2882,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -3083,7 +3092,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -4552,7 +4561,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -6551,7 +6560,7 @@
         </tr>
     <tfoot>
         <tr>
-            <th colspan="3">? bytes</th>
+            <th colspan="3">0 bytes</th>
         </tr>
     </tfoot>
 </table>
