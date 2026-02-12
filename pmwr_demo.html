@@ -26,7 +26,7 @@
         </div>
         <div style="color: white;background: #4664cd;text-align: center;">
             <div class="box box1">
-                <a class="link" href="#pmwr_demo_header">File Header</a>
+                <a class="link" href="#pmwr_demo_file_header">File Header</a>
             </div>
             <div class="box box1"><a class="link" href="#pmwr_demo_directory">File Directory</a></div>
             <div class="box box1" style="padding-bottom: 2%;">
@@ -40,7 +40,7 @@
                 <div class="box box2" style="padding-bottom: 2%;">
                     <a class="link" href="#ordered_list">Ordered List</a>
                         <div class="box box3">
-                <a class="link" href="#file_specific_section">File Specific Sections</a>
+                <a class="link" href="#pmwr_demo_file_specific_section">File Specific Sections</a>
                         </div>
                         <div class="box box3">
                 <a class="link" href="#pmwr_demo_texture_anims">pmwr_demo_texture_anims</a>
@@ -58,7 +58,7 @@
                 <a class="link" href="#pmwr_demo_model_anims_2">pmwr_demo_model_anims_2</a>
                         </div>
                         <div class="box box3">
-                        <a class="link" href="#unordered_list">Unordered List</a>
+                        <a class="link" href="#pmwr_demo_unordered_list">Unordered List</a>
                     </div>
                         <div class="box box3">
                 <a class="link" href="#pmwr_demo_texture_anims_0">pmwr_demo_texture_anims_0</a>
@@ -78,7 +78,7 @@
         </div>
                 </div>
     <hr>
-<h2 id="pmwr_demo_header">pmwr_demo_header</h2>
+<h2 id="pmwr_demo_file_header">pmwr_demo_file_header</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -568,9 +568,20 @@ sections with texture animation patches seen:<br>
                 to get here offset to the Patch List from the datapack then add the sections together<br>
                 all sections in the ordered list use the start of the ordered list as the offset<br>
                 <br>
+    in order the sections contained are:<br>
+    <a href="#pmwr_demo_file_specific_section">pmwr_demo_file_specific_section</a><br>
+    <a href="#pmwr_demo_texture_anims">pmwr_demo_texture_anims</a><br>
+    <a href="#pmwr_demo_model">pmwr_demo_model</a><br>
+    <a href="#pmwr_demo_texture">pmwr_demo_texture</a><br>
+    <a href="#pmwr_demo_model_anims_1">pmwr_demo_model_anims_1</a><br>
+    <a href="#pmwr_demo_model_anims_2">pmwr_demo_model_anims_2</a><br>
+    <a href="#pmwr_demo_unordered_list">pmwr_demo_unordered_list</a><br>
+    <a href="#pmwr_demo_texture_anims">pmwr_demo_texture_anims</a><br>
+    <a href="#offset_patch_list">Offset Patch List</a><br><br>
+
 </p>
 <hr>
-<h2 id="file_specific_section">Ordered List File Specific Section</h2>
+<h2 id="pmwr_demo_file_specific_section">Ordered List File Specific Section</h2>
 <p>The first part of the ordered list depends on the type of file</p>
 <table class="h">
     <tbody>
@@ -758,28 +769,28 @@ sections with texture animation patches seen:<br>
                 <a href="#pmwr_demo_world_4">offset</a>
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>4,8</td>
+            <td>amount | 4,8</td>
         </tr>
         <tr>
             <td>12</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_12">offset (pmwr_demo_world_12)</a>
+                <a href="#pmwr_demo_world_12">offset (pmwr_demo_world_12)</a> based on amount [8]
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>1,2</td>
+            <td>amount | 1,2</td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_20">offset (pmwr_demo_world_20)</a>
+                <a href="#pmwr_demo_world_20">offset (pmwr_demo_world_20)</a> based on amount [16]
             </td>
         </tr>
         <tr>
@@ -830,16 +841,16 @@ sections with texture animation patches seen:<br>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td>4,8,16</td>
+            <td>amount | 4,8,16</td>
         </tr>
         <tr>
             <td>60</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_60">offset (pmwr_demo_world_60)</a>
+                <a href="#pmwr_demo_world_60">offset (pmwr_demo_world_60)</a> based on amount [56]
             </td>
         </tr>
         <tr>
@@ -878,52 +889,52 @@ sections with texture animation patches seen:<br>
                 based on amount [80]
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>88</td>
             <td>u32</td>
-            <td>14,15,21</td>
+            <td>amount | 14,15,21</td>
         </tr>
         <tr>
             <td>92</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_92">offset (pmwr_demo_world_92)</a>
+                <a href="#pmwr_demo_world_92">offset (pmwr_demo_world_92)</a> based on amount [88]
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>96</td>
             <td>u32</td>
-            <td>0,1,6</td>
+            <td>amount | 0,1,6</td>
         </tr>
         <tr>
             <td>100</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_100">offset (pmwr_demo_world_100)</a>
+                <a href="#pmwr_demo_world_100">offset (pmwr_demo_world_100)</a> based on amount [96]
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>104</td>
             <td>u32</td>
-            <td>10,82,104</td>
+            <td>amount | 10,82,104</td>
         </tr>
         <tr>
             <td>108</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_108">offset (pmwr_demo_world_108)</a>
+                <a href="#pmwr_demo_world_108">offset (pmwr_demo_world_108)</a> based on amount [104]
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>112</td>
             <td>u32</td>
-            <td>71,121,623</td>
+            <td>amount | 71,121,623</td>
         </tr>
         <tr>
             <td>116</td>
             <td>u32</td>
             <td>
-                <a href="#pmwr_demo_world_116">offset (pmwr_demo_world_116)</a>
+                <a href="#pmwr_demo_world_116">offset (pmwr_demo_world_116)</a> based on amount [112]
             </td>
         </tr>
         <tr>
@@ -2344,7 +2355,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">128 bytes</th>
+            <th colspan="3">128 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2476,7 +2487,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">64 bytes</th>
+            <th colspan="3">64 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2660,7 +2671,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">96 bytes</th>
+            <th colspan="3">96 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2793,7 +2804,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2961,7 +2972,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -3147,7 +3158,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">112 bytes</th>
+            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -4512,7 +4523,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">80 bytes</th>
+            <th colspan="3">80 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -6760,7 +6771,7 @@ multi linked to by:<br>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -8405,7 +8416,7 @@ multi linked to by:<br>
     </tfoot>
 </table>
 <hr>
-<h2 id="unordered_list">Unordered List</h2>
+<h2 id="pmwr_demo_unordered_list">Unordered List</h2>
 <p>
 sections here appear whenever they are linked and do not have a set order<br>
 <h2>sections seen</h2>
