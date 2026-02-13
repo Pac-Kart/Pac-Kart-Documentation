@@ -25,7 +25,7 @@
                     </div>
                     <div style="color: white;background: #4664cd;text-align: center;">
                         <div class="box box1">
-                            <a class="link" href="#svtrb_header">File Header</a>
+                            <a class="link" href="#svtrb_file_header">File Header</a>
                         </div>
                         <div class="box box1"><a class="link" href="#svtrb_directory">File Directory</a></div>
                         <div class="box box1" style="padding-bottom: 2%;">
@@ -39,7 +39,7 @@
                             <div class="box box2" style="padding-bottom: 2%;">
                                 <a class="link" href="#ordered_list">Ordered List</a>
                                     <div class="box box3">
-                                        <a class="link" href="#file_specific_section">File Specific Sections</a>
+                                        <a class="link" href="#svtrb_file_specific_section">File Specific Sections</a>
                                     </div>
                                     <div class="box box3">
                                         <a class="link" href="#svtrb_datapack_text_link">svtrb_datapack_text_link</a>
@@ -63,7 +63,7 @@
                                         <a class="link" href="#svtrb_model_anims_2">svtrb_model_anims_2</a>
                                     </div>
                                     <div class="box box3">
-                                    <a class="link" href="#unordered_list">Unordered List</a>
+                                    <a class="link" href="#svtrb_unordered_list">Unordered List</a>
                                 </div>
                                     <div class="box box3">
                                     <a class="link" href="#svtrb_texture_anims_0">svtrb_texture_anims_0</a>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <hr>
-<h2 id="svtrb_header">svtrb_header</h2>
+<h2 id="svtrb_file_header">svtrb_file_header</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -161,7 +161,7 @@
             <td>20</td>
             <td>u32</td>
             <td>based on console type<br>
-                <a href="#svtrb_datapacktpc">pc = offset svtrb_datapacktpc</a><br>
+                <a href="#svtrb_datapack_pc">pc = offset svtrb_datapack_pc</a><br>
                 <a href="#svtrb_datapack">ps2/psp = offset svtrb_datapack</a>
                 </td>
         </tr>
@@ -174,6 +174,12 @@
 </table>
 <hr>
 <h2 id="svtrb_datapack">svtrb_datapack</h2>
+<p>2 datapack sections are seen<br>
+psp / ps2 = <a href="#svtrb_datapack_ps">svtrb_datapack_ps</a><br>
+pc = <a href="#svtrb_datapack_pc">svtrb_datapack_pc</a>
+</p>
+<hr>
+<h2 id="svtrb_datapack_ps">svtrb_datapack_ps</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -342,7 +348,7 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="svtrb_datapacktpc">svtrb_datapacktpc</h2>
+<h2 id="svtrb_datapack_pc">svtrb_datapack_pc</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -780,9 +786,21 @@ ps2/psp = vag prob
 <h2 id="ordered_list">Ordered List</h2>
 <p>to get here offset to the Patch List from the datapack then add the sections together<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
+    in order the sections contained are:<br>
+    <a href="#svtrb_file_specific_section">svtrb_file_specific_section</a><br>
+    <a href="#svtrb_datapack_text_link">svtrb_datapack_text_link</a><br>
+    <a href="#svtrb_texture">svtrb_texture</a><br>
+    <a href="#svtrb_some_model_anims_section">svtrb_some_model_anims_section</a><br>
+    <a href="#svtrb_texture_anims">svtrb_texture_anims</a><br>
+    <a href="#svtrb_model">svtrb_model</a><br>
+    <a href="#svtrb_model_anims_1">svtrb_model_anims_1</a><br>
+    <a href="#svtrb_model_anims_2">svtrb_model_anims_2</a><br>
+    <a href="#svtrb_unordered_list">svtrb_unordered_list</a><br>
+    <a href="#svtrb_texture_anims_0">svtrb_texture_anims_0</a><br>
+    <a href="#offset_patch_list">Offset Patch List</a><br>
 </p>
 <hr>
-<h2 id="file_specific_section">Ordered List File Specific Section</h2>
+<h2 id="svtrb_file_specific_section">Ordered List File Specific Section</h2>
 <p>The first part of the ordered list depends on the type of file</p>
 <table class="h">
     <tbody>
@@ -885,35 +903,6 @@ ps2/psp = vag prob
     <tfoot>
         <tr>
             <th colspan="3">8 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="svtrb_datapack_text_link">svtrb_datapack_text_link</h2>
-<p>linked to by:<br>
-    <a href="#svtrb_datapack">svtrb_datapack [24]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>u32</td>
-            <td><a href="#svtrb_text">offset (svtrb_text)</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -5118,7 +5107,7 @@ ps2/psp = vag prob
         <tr>
             <td>64</td>
             <td>u32</td>
-            <td><a href="#svtrb_world_120_0_64">offset</a> based on amounnt [60]</td>
+            <td><a href="#svtrb_world_120_0_64">offset</a> based on amount [60]</td>
         </tr>
         <tr class="u">
             <td>68</td>
@@ -5653,6 +5642,56 @@ ps2/psp = vag prob
     </tfoot>
 </table>
 <hr>
+<h2 id="svtrb_share">svtrb_share</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td>patch model</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="svtrb_datapack_text_link">svtrb_datapack_text_link</h2>
+<p>linked to by:<br>
+    <a href="#svtrb_datapack">svtrb_datapack [24]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#svtrb_text">offset (svtrb_text)</a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="svtrb_texture">svtrb_texture</h2>
 <p>linked to by:<br>
     <a href="#svtrb_datapack">svtrb_datapack [24]</a><br>
@@ -6029,27 +6068,6 @@ ps2/psp = vag prob
     <tfoot>
         <tr>
             <th colspan="3">24 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="svtrb_share">svtrb_share</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>00</td>
-            <td>u32</td>
-            <td>patch model</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -8512,7 +8530,7 @@ ps2/psp = vag prob
     </tfoot>
 </table>
 <hr>
-<h2 id="unordered_list">Unordered List</h2>
+<h2 id="svtrb_unordered_list">Unordered List</h2>
 <p>
 sections here appear whenever they are linked and do not have a set order<br>
 </p>
@@ -10987,7 +11005,7 @@ sections here appear whenever they are linked and do not have a set order<br>
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>based on type from svtrb_var_164_20[0]<br>
+            <td><a href="#svtrb_var_164_20">based on type [00] (svtrb_var_164_20)</a><br>
                 <a href="#svtrb_var_164_20_4_12t13">13 = offset</a><br>
                 <a href="#svtrb_var_164_20_4_12t1600">1600 = offset</a><br>
                 <a href="#svtrb_var_164_20_4_12t1602">1602 = offset</a><br>
@@ -31357,7 +31375,7 @@ sections here appear whenever they are linked and do not have a set order<br>
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#svtrb_car_0_32_28">offset</a> based on [24]</td>
+            <td><a href="#svtrb_car_0_32_28">offset</a> based on amount [24]</td>
         </tr>
     </tbody>
     <tfoot>
