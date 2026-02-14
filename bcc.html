@@ -287,7 +287,7 @@
         <tr>
             <td>104</td>
             <td>u32</td>
-            <td><a href="#bcc_texture_anims">offset</a> based on amount [100]</td>
+            <td><a href="#bcc_datapack_text_link">offset</a> based on amount [100]</td>
         </tr>
         <tr class="u">
             <td>108</td>
@@ -681,20 +681,20 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#bcc_world_4">offset</a></td>
+            <td><a href="#bcc_world_4">offset (bcc_world_4)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>always 4</td>
+            <td>amount | always 4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bcc_world_12">offset</a> 304,320</td>
+            <td><a href="#bcc_world_12">offset (bcc_world_12)</a> based on amount [8]</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -709,9 +709,9 @@
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>amount prob always 1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#bcc_world_28">offset</a></td>
@@ -749,12 +749,12 @@
         <tr class="u">
             <td>56</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>amount prob 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>60</td>
             <td>u32</td>
-            <td><a href="#bcc_world_60">offset</a> 0,15280,15328</td>
+            <td><a href="#bcc_world_60">offset</a></td>
         </tr>
         <tr class="u">
             <td>64</td>
@@ -776,25 +776,25 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>80</td>
             <td>u32</td>
-            <td>always 4</td>
+            <td>amount | always 4</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>84</td>
             <td>u32</td>
-            <td><a href="#bcc_world_84">offset</a></td>
+            <td><a href="#bcc_world_84">offset</a> based on amount [80]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>88</td>
             <td>u32</td>
-            <td>26 - 203</td>
+            <td>amount | 26 - 203</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>92</td>
             <td>u32</td>
-            <td><a href="#bcc_world_92">offset</a> 944,960</td>
+            <td><a href="#bcc_world_92">offset (bcc_world_92)</a> based on amount [88]</td>
         </tr>
         <tr class="u">
             <td>96</td>
@@ -806,27 +806,27 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>104</td>
             <td>u32</td>
-            <td>4,6,7,11,12,14,20</td>
+            <td>amount | 4,6,7,11,12,14,20</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>108</td>
             <td>u32</td>
-            <td><a href="#bcc_world_108">offset</a></td>
+            <td><a href="#bcc_world_108">offset (bcc_world_108)</a> based on amount [104]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>112</td>
             <td>u32</td>
-            <td>21,29,31,53,54,88</td>
+            <td>amount | 21,29,31,53,54,88</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>116</td>
             <td>u32</td>
-            <td><a href="#bcc_world_116">offset</a></td>
+            <td><a href="#bcc_world_116">offset (bcc_world_116)</a> based on amount [112]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>120</td>
             <td>u32</td>
             <td><a href="#bcc_world_120">offset</a></td>
@@ -891,12 +891,12 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>172</td>
             <td>u32</td>
-            <td><a href="#bcc_world_settings">offset</a></td>
+            <td><a href="#bcc_world_settings">offset (bcc_world_settings)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>176</td>
             <td>u32</td>
             <td><a href="#bcc_world_176">offset</a></td>
@@ -904,12 +904,12 @@
         <tr class="u">
             <td>180</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>amount prob 0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>184</td>
             <td>u32</td>
-            <td><a href="#bcc_world_184">offset</a> 0,5424,5440</td>
+            <td><a href="#bcc_world_184">offset</a></td>
         </tr>
         <tr class="u">
             <td>188</td>
@@ -931,15 +931,15 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>204</td>
             <td>u32</td>
-            <td>2,3,5</td>
+            <td>amount | 2,3,5</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>208</td>
             <td>u32</td>
-            <td><a href="#bcc_world_208">offset</a></td>
+            <td><a href="#bcc_world_208">offset</a> based on amount [204]</td>
         </tr>
         <tr class="u">
             <td>212</td>
@@ -1318,7 +1318,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">160 bytes</th>
+            <th colspan="3">160 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -1492,7 +1492,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">112 bytes</th>
+            <th colspan="3">112 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -1812,7 +1812,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">96 bytes</th>
+            <th colspan="3">96 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -1988,10 +1988,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>116</td>
             <td>u32</td>
-            <td>patch model </td>
+            <td>patch model</td>
         </tr>
         <tr class="u">
             <td>120</td>
@@ -2006,7 +2006,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">128 bytes</th>
+            <th colspan="3">128 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2503,7 +2503,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">96 bytes</th>
+            <th colspan="3">96 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -3387,7 +3387,7 @@
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">4 bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -3719,7 +3719,7 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="bcc_texture_anims">bcc_texture_anims</h2>
+<h2 id="bcc_datapack_text_link">bcc_datapack_text_link</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -28613,115 +28613,6 @@
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bcc_interface_84_24_4t11_4_12t1_12">bcc_interface_84_24_4t11_4_12t1_12</h2>
-<p>multi linked to by:<br>
-    <a href="#bcc_interface_84_24_4t11_4_12t1">bcc_interface_84_24_4t11_4_12t1 [12]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td><a href="#bcc_interface_84_24_4t11_4_12t1_12_8">offset</a> 11934944,11935360,12029632,41790784,41791088,41870144</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>8,9</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0,2</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#bcc_interface_84_24_4t11_4_12t1_12_20">offset</a> 11934976,11935392,12029664,41790800,41791120,41870160</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>25</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>26</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>27</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>41</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>42</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>43</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
         </tr>
     </tfoot>
 </table>
