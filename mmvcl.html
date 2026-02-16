@@ -274,7 +274,7 @@
 <a href="#mm_Texture">mm_Texture</a><br>
 <a href="#mm_sound_list">mm_sound_list</a><br>
 <a href="#mm_car_section">mm_car_section</a><br>
-<a href="#car_text_related">car_text_related</a><br>
+<a href="#mm_car_text_related">mm_car_text_related</a><br>
 <a href="#mm_unknown_idk_sec">mm_unknown_idk_sec</a><br>
 <a href="#mm_some_model_link">mm_some_model_link</a><br>
 <a href="#mm_world_later">mm_world_later</a><br>
@@ -375,9 +375,9 @@
             <td>u32</td>
             <td>based on file?<br>
                 <a href="#mm_interface">BOOTUP,LOADING,ENDGAME,MAINMENU = offset (mm_interface)</a>
-                <br>VEHICLES = offset depends on type [04] prob<br>
+                <br>VEHICLES = offset depends on type [4] prob<br>
                 &nbsp;<a href="#mm_car">1,2,3,4,5,6,7,8,9 = offset (mm_car)</a><br>
-                &nbsp;<a href="#mm_object">200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220 = offset (mm_object)</a><br>
+                &nbsp;<a href="#mm_object">200,201,202,203,204,205,206,207,208,209,<br>210,211,212,213,214,215,216,217,218,219,220 = offset (mm_object)</a><br>
                 &nbsp;<a href="#mm_car_link_the_third">100 = offset (mm_car_link_the_third)</a><br>
                 &nbsp;<a href="#mm_interface">10,11,101,102,103 = offset (mm_interface)</a></td>
         </tr>
@@ -516,7 +516,7 @@
         <tr>
             <td>48</td>
             <td>u32</td>
-            <td>amount 616 - 3699</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>52</td>
@@ -526,7 +526,7 @@
         <tr>
             <td>56</td>
             <td>u32</td>
-            <td>amount 2310,1500,2100,2400,3600,2450,1920,1250,3200,5000</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>60</td>
@@ -536,7 +536,7 @@
         <tr>
             <td>64</td>
             <td>u32</td>
-            <td>amount 10158,8215,8655,8138,6309,10610,8642,5561,18601,6543,7209,8372?</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>68</td>
@@ -653,12 +653,12 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>160</td>
             <td>u32</td>
             <td>amount 6,2,3,7,5,0,4,8</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>164</td>
             <td>u32</td>
             <td><a href="#mm_world_164">offset</a> based on amount [160]</td>
@@ -1130,23 +1130,8 @@
         </tr>
         <tr class="u">
             <td>28</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>always 64</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>always 28</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>always 70</td>
+            <td>float</td>
+            <td>always 10000</td>
         </tr>
         <tr>
             <td>32</td>
@@ -1160,13 +1145,28 @@
         </tr>
         <tr class="u">
             <td>40</td>
-            <td>u32</td>
-            <td>0,256</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>41</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>42</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>43</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>44</td>
             <td>float</td>
-            <td>100,-200</td>
+            <td>-200,100</td>
         </tr>
     </tbody>
     <tfoot>
@@ -1464,8 +1464,8 @@
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,1055777571,1029390034</td>
+            <td>float</td>
+            <td>0,0.053526706993579865,0.4646235406398773</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -1500,7 +1500,7 @@
         <tr class="u">
             <td>44</td>
             <td>float</td>
-            <td>3000,500,8000,5000,2000,1500,1000</td>
+            <td>500,1000,1500,2000,3000,5000,8000</td>
         </tr>
         <tr class="u">
             <td>48</td>
@@ -1603,7 +1603,7 @@
             <td>u32</td>
             <td><a href="#mm_item_maybe">offset (mm_item_maybe)</a></td>
         </tr>
-        <tr class="u">
+       <tr class="u">
             <td>40</td>
             <td>u32</td>
             <td>0</td>
@@ -1621,12 +1621,27 @@
         <tr class="u">
             <td>52</td>
             <td>float</td>
-            <td>500,800,1200,3000,2500</td>
+            <td>500,800,1200,2500,3000</td>
         </tr>
         <tr class="u">
             <td>56</td>
-            <td>u32</td>
-            <td>0,256</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>57</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>58</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>59</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -1761,7 +1776,7 @@
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>1,-0.009525620378553867,-0.5455574989318848,0.2409789115190506,0.9581750631332397,-0.021813731640577316</td>
+            <td>-0.5455574989318848 - 1</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -1771,7 +1786,7 @@
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0,0.9999546408653259,-0.8380733728408813,0.9705303311347961,-0.28618279099464417,0.9997620582580566</td>
+            <td>-0.8380733728408813 - 0.9999546408653259</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -1801,7 +1816,7 @@
         <tr class="u">
             <td>32</td>
             <td>float</td>
-            <td>0,-0.9999546408653259,0.8380733728408813,-0.9705303311347961,0.28618279099464417,-0.9997620582580566</td>
+            <td>-0.9999546408653259 - 0.8380733728408813</td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -1811,7 +1826,7 @@
         <tr class="u">
             <td>40</td>
             <td>float</td>
-            <td>1,-0.009525620378553867,-0.5455574989318848,0.2409789115190506,0.9581750631332397,-0.021813731640577316</td>
+            <td>-0.5455574989318848 - 1</td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -1861,17 +1876,17 @@
         <tr class="u">
             <td>80</td>
             <td>u32</td>
-            <td>3,0,1,2,4</td>
+            <td>amount | 3,0,1,2,4</td>
         </tr>
         <tr class="u">
             <td>84</td>
             <td>u32</td>
             <td>5,1,3,0,7</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>88</td>
             <td>u32</td>
-            <td><a href="#mm_world_164_88">offset</a></td>
+            <td><a href="#mm_world_164_88">offset</a> based on amount [80], if 0 offset is mm_world_164</td>
         </tr>
         <tr class="u">
             <td>92</td>
@@ -1887,7 +1902,6 @@
 </table>
 <hr>
 <h2 id="mm_world_164_88">mm_world_164_88</h2>
-16,192,288,672,480,576,384 bytes seen
 <table class="h">
     <tbody>
         <tr>
@@ -1896,14 +1910,14 @@
             <th>Description</th>
         </tr>
         <tr class="u">
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
+            <td>00</td>
+            <td>u32</td>
+            <td>1</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">? bytes</th>
+            <th colspan="3">4 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -2059,23 +2073,83 @@
         </tr>
         <tr class="u">
             <td>48</td>
-            <td>float</td>
-            <td>NaN - NaN</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>49</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>50</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>51</td>
+            <td>u8</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>52</td>
-            <td>float</td>
-            <td>NaN - NaN</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>53</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>54</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>55</td>
+            <td>u8</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>56</td>
-            <td>float</td>
-            <td>NaN - NaN</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>57</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>58</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>59</td>
+            <td>u8</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>60</td>
-            <td>float</td>
-            <td>NaN - NaN</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>61</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>62</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>63</td>
+            <td>u8</td>
+            <td>45 - 197</td>
         </tr>
         <tr>
             <td>64</td>
@@ -2313,8 +2387,23 @@
         </tr>
         <tr class="u">
             <td>32</td>
-            <td>u32</td>
-            <td>0 - 4294934528</td>
+            <td>u8</td>
+            <td>0 - 122</td>
+        </tr>
+        <tr class="u">
+            <td>33</td>
+            <td>u8</td>
+            <td>0,128</td>
+        </tr>
+        <tr class="u">
+            <td>34</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>35</td>
+            <td>u8</td>
+            <td>0,255</td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -2388,13 +2477,28 @@
         </tr>
         <tr class="u">
             <td>56</td>
-            <td>u32</td>
-            <td>0 - 1123024896</td>
+            <td>float</td>
+            <td>0 - 120</td>
         </tr>
         <tr class="u">
             <td>60</td>
-            <td>u32</td>
-            <td>25600,25601,12801,3841,12800,19200,23041,19201</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>61</td>
+            <td>u8</td>
+            <td>15,50,75,90,100</td>
+        </tr>
+        <tr class="u">
+            <td>62</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>63</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>64</td>
@@ -2439,6 +2543,45 @@
     </tfoot>
 </table>
 <hr>
+<h2 id="hwvx_proto_unordered_list">Unordered List</h2>
+<p>sections here appear whenever they are linked and do not have a set order<br>
+<h2>sections seen</h2>
+broke list:
+ <h4>multi linked</h4> 
+<a href="#hwvx_proto_world_color_section">hwvx_proto_world_color_section</a><br>
+<a href="#hwvx_proto_world_small_section">hwvx_proto_world_small_section</a><br>
+<a href="#hwvx_proto_world_model_related">hwvx_proto_world_model_related</a><br>
+<a href="#hwvx_proto_world_idk">hwvx_proto_world_idk</a><br>
+<a href="#hwvx_proto_some_world_thing">hwvx_proto_some_world_thing</a><br>
+<a href="#hwvx_proto_car_related">hwvx_proto_car_related</a><br>
+<a href="#hwvx_proto_strange">hwvx_proto_strange</a><br>
+<a href="#hwvx_proto_text">hwvx_proto_text</a><br>
+<a href="#hwvx_proto_font">hwvx_proto_font</a><br>
+<a href="#hwvx_proto_interface">hwvx_proto_interface</a><br>
+<a href="#hwvx_proto_interface_text_related">hwvx_proto_interface_text_related</a><br>
+<a href="#hwvx_proto_unknown">hwvx_proto_unknown</a><br>
+<a href="#hwvx_proto_unknown_idk_sec">hwvx_proto_unknown_idk_sec</a><br>
+<a href="#hwvx_proto_unknown_link_section">hwvx_proto_unknown_link_section</a><br>
+<a href="#hwvx_proto_grand_section">hwvx_proto_grand_section</a><br>
+<a href="#hwvx_proto_unknown_thing">hwvx_proto_unknown_thing</a><br>
+<a href="#hwvx_proto_asdf">hwvx_proto_asdf</a><br>
+<a href="#hwvx_proto_sound_controls">hwvx_proto_sound_controls</a><br>
+<a href="#hwvx_proto_sound_section">hwvx_proto_sound_section</a><br>
+
+<h4>just linked</h4>
+<a href="#hwvx_proto_world_text_link">hwvx_proto_world_text_link</a><br>
+<a href="#hwvx_proto_world_settings">hwvx_proto_world_settings</a><br>
+<a href="#hwvx_proto_geo_list">hwvx_proto_geo_list</a><br>
+<a href="#hwvx_proto_collision_settings">hwvx_proto_collision_settings</a><br>
+<a href="#hwvx_proto_car">hwvx_proto_car</a><br>
+<a href="#hwvx_proto_car_link">hwvx_proto_car_link</a><br>
+<a href="#hwvx_proto_mysterious">hwvx_proto_mysterious</a><br>
+<a href="#hwvx_proto_model_link">hwvx_proto_model_link</a><br>
+<a href="#hwvx_proto_item">hwvx_proto_item</a><br>
+<a href="#hwvx_proto_link">hwvx_proto_link</a><br>
+<a href="#hwvx_proto_texture_anims_0">hwvx_proto_texture_anims_0</a><br>
+</p>
+<hr>
 <h2 id="mm_model">mm_model</h2>
         <p>multi linked to by:<br>
         <a href="#mm_model_texture_anims_list">mm_model_texture_anims_list [04]</a><br>
@@ -2465,20 +2608,20 @@
             <td>u16</td>
             <td>always 4101</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>02</td>
             <td>u16</td>
-            <td>1,2,3,4</td>
+            <td>amount | 1,2,3,4</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>0,9,4,46,36,45,37,48,47,55</td>
+            <td>0,4,9,36,37,45,46,47,48,55</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#mm_model_8">offset maybe?</td>
+            <td><a href="#mm_model_8">offset </a> based on amount [2]</td>
         </tr>
         <tr>
             <td>12</td>
@@ -2638,10 +2781,10 @@ render?
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>02</td>
             <td>u8</td>
-            <td>1 - 36</td>
+            <td>amount | 1 - 36</td>
         </tr>
         <tr class="u">
             <td>03</td>
@@ -2650,13 +2793,28 @@ render?
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
-            <td>3 - 5431</td>
+            <td>u8</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2,3,4,5,6,7,9,21</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#mm_model_8_8">offset</a></td>
+            <td><a href="#mm_model_8_8">offset</a> based on amount [2]</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -2681,7 +2839,7 @@ render?
         <tr class="u">
             <td>19</td>
             <td>u8</td>
-            <td>0,10,11,17,19,5,6,12,16</td>
+            <td>0,5,6,10,11,12,16,17,19</td>
         </tr>
         <tr>
             <td>20</td>
@@ -2707,7 +2865,7 @@ render?
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>-100.9734115600586,-54.76277160644531,55.93761444091797,99.40694427490234</td>
+            <td>-100.9734115600586 - 99.40694427490234</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -2717,7 +2875,7 @@ render?
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>-100.6426773071289,-52.53395080566406,52.89797592163086,99.4931869506836</td>
+            <td>-100.6426773071289 - 99.4931869506836</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -2800,15 +2958,30 @@ render?
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
-            <td>0 - 4294967295</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0,52,64,128,255</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#mm_model_8_8_12">offset</a></td>
@@ -2853,404 +3026,22 @@ render?
             <td>u8</td>
             <td>0,1,2,255</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>patch texture 0 - 260</td>
+            <td>patch texture | 0 - 260</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
-            <td>u8</td>
-            <td><a href="#mm_model_8_8_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0 - 28</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8">mm_model_8_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u16</td>
-            <td>0,1,2,4,5,6,16,20,65,69</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
             <td>u32</td>
-            <td>0 - 4294967295</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>1 - 1198</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>0,1,2,3,5</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>0,1,2,255</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>patch texture 0 - 260</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td>0 - 248</td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>3 - 28</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8">mm_model_8_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u16</td>
-            <td>always 1024</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>always 12</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>always 255</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>always 255</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td><a href="#mm_model_8_8_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>always 43</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>always 11</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8">mm_model_8_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>02</td>
-            <td>u16</td>
-            <td>0 - 1024</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0 - 4294967295</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12">offset</a> based on amount [16] somehow?544 - 5126432</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>1 - 1198</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u8</td>
-            <td>0,5,2,1,3</td>
-        </tr>
-        <tr class="u">
-            <td>21</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>22</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>23</td>
-            <td>u8</td>
-            <td>0,1,255,2</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>patch texture 0 - 260</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u8</td>
-            <td><a href="#mm_model_8_8_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>29</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>30</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>31</td>
-            <td>u8</td>
-            <td>0 - 28</td>
+            <td>based on type [3]<br>
+                0 = value<br>
+                <a href="#mm_model_8_8_28t4">4 = offset</a></td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
             <th colspan="3">32 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8_12t9">mm_model_8_8_12t9</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>always 459008</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12t9_20">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>always 524544</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12t9_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>always 132608</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12t9_36">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>always 131841</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12t9_44">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u32</td>
-            <td>always 16712452</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12t9_52">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">64 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -3286,132 +3077,30 @@ render?
         <tr class="u">
             <td>16</td>
             <td>u16</td>
-            <td>9 - 65280</td>
+            <td>amount | 9 - 1139</td>
         </tr>
         <tr class="u">
             <td>18</td>
             <td>u8</td>
-            <td>0 - 255</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>19</td>
             <td>u8</td>
-            <td>0,96</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12_20">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0 - 16776998</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12_28">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>32</td>
-            <td>u32</td>
-            <td>0 - 1610613534</td>
-        </tr>
-        <tr class="u">
-            <td>36</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12_36">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0 - 16778244</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12_44">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>48</td>
-            <td>u8</td>
-            <td>0 - 250</td>
-        </tr>
-        <tr class="u">
-            <td>49</td>
-            <td>u8</td>
-            <td>0 - 128</td>
-        </tr>
-        <tr class="u">
-            <td>50</td>
-            <td>u8</td>
-            <td>0 - 255</td>
-        </tr>
-        <tr class="u">
-            <td>51</td>
-            <td>u8</td>
-            <td>0,3,96</td>
-        </tr>
-        <tr class="u">
-            <td>52</td>
-            <td>u16</td>
-            <td><a href="#mm_model_8_8_12_52">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>54</td>
-            <td>u8</td>
-            <td>0 - 63</td>
-        </tr>
-        <tr class="u">
-            <td>55</td>
-            <td>u8</td>
-            <td>0,2,48</td>
-        </tr>
-        <tr class="u">
-            <td>56</td>
-            <td>u32</td>
-            <td>0 - 16778244</td>
-        </tr>
-        <tr class="u">
-            <td>60</td>
-            <td>u32</td>
-            <td><a href="#mm_model_8_8_12_60">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>64</td>
-            <td>u32</td>
-            <td>0 - 1610613252</td>
-        </tr>
-        <tr class="u">
-            <td>68</td>
-            <td>u8</td>
-            <td><a href="#mm_model_8_8_12_68">offset</a></td>
-        </tr>
-        <tr class="u">
-            <td>69</td>
-            <td>u8</td>
-            <td>0 - 239</td>
-        </tr>
-        <tr class="u">
-            <td>70</td>
-            <td>u8</td>
-            <td>0 - 79</td>
-        </tr>
-        <tr class="u">
-            <td>71</td>
-            <td>u8</td>
-            <td>0,2,108,144</td>
+            <td>0,96 | type</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">72+ bytes</th>
+            <th colspan="3">20+ bytes</th>
         </tr>
     </tfoot>
 </table>
-<hr>
-<h2 id="mm_model_8_8_12_20">mm_model_8_8_12_20</h2>
+<p>next section is based on type [19]<br>
+    <a href="#mm_model_8_8_12_type_0">mm_model_8_8_12_type_0</a><br>
+    <a href="#mm_model_8_8_12_type_96">mm_model_8_8_12_type_96</a> </p>
+<h2 id="mm_model_8_8_12_type_0">mm_model_8_8_12_type_0</h2>
+<p>there is no amount for this section, section ends whenever all values are 0</p>
 <table class="h">
     <tbody>
         <tr>
@@ -3419,15 +3108,39 @@ render?
             <th>Type</th>
             <th>Description</th>
         </tr>
+        <tr>
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#mm_model_8_8_12_type_0_0">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0 - 48</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>1 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>2 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">192 - 23600 bytes</th>
+            <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
-<hr>
-<h2 id="mm_model_8_8_12_28">mm_model_8_8_12_28</h2>
+<h2 id="mm_model_8_8_12_type_96">mm_model_8_8_12_type_96</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -3435,93 +3148,21 @@ render?
             <th>Type</th>
             <th>Description</th>
         </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>?</td>
+        </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">192 - 16288 bytes</th>
+            <th colspan="3">amount mm_model_8_8_12[16]</th>
         </tr>
     </tfoot>
 </table>
 <hr>
-<h2 id="mm_model_8_8_12_36">mm_model_8_8_12_36</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">192 - 12128 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8_12_44">mm_model_8_8_12_44</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">1152 - 10800 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8_12_52">mm_model_8_8_12_52</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">944 - 4448 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8_12_60">mm_model_8_8_12_60</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">720 - 13216 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="mm_model_8_8_12_68">mm_model_8_8_12_68</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">288 - 14720 bytes</th>
-        </tr>
-    </tfoot>
-</table>
+<h2 id="mm_model_8_8_12_type_0_0">mm_model_8_8_12_type_0_0</h2>
+<p>some data stream</p>
 <hr>
 <h2 id="mm_model_8_8_28t4">mm_model_8_8_28t4</h2>
 <table class="h">
@@ -3826,22 +3467,22 @@ render?
             <td>u32</td>
             <td>0 - 385</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1_24">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1_28">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1_32">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1_36">offset</a></td>
@@ -3851,7 +3492,7 @@ render?
             <td>u32</td>
             <td>0 - 1620214384</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1_44">offset</a></td>
@@ -4383,7 +4024,7 @@ render?
         <tr>
             <td>44</td>
             <td>u32</td>
-            <td><a href="#mm_car_section_44">offset</a> based on amount [40] offset maybe?</td>
+            <td><a href="#mm_car_section_44">offset</a> based on amount [40]</td>
         </tr>
     </tbody>
     <tfoot>
@@ -4584,7 +4225,7 @@ render?
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">120 bytes</th>
+            <th colspan="3">120 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -4605,32 +4246,32 @@ render?
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>type? 0,1,2</td>
+            <td>0,1,2 | type?</td>
         </tr>
         <tr class="u">
             <td>02</td>
             <td>u8</td>
-            <td>1,2,0</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>0,2,1</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u8</td>
-            <td>0,1,2,3,5,50,25,10,30</td>
+            <td>0,1,2,3,5,10,25,30,50</td>
         </tr>
         <tr class="u">
             <td>05</td>
             <td>u8</td>
-            <td>0,2,1</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>06</td>
             <td>u8</td>
-            <td>1,3,2,0,4</td>
+            <td>0,1,2,3,4</td>
         </tr>
         <tr class="u">
             <td>07</td>
@@ -4645,14 +4286,29 @@ render?
         <tr class="u">
             <td>12</td>
             <td>u32 / float</td>
-            <td>based on type [01]?<br>
+            <td>based on type [1]?<br>
                 0 = u32 0,1000,5000,250,3000,500,150,300<br>
                 1,2 = float 10,25,50,20,75</td>
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,257,256,1,1000,100</td>
+            <td>u8</td>
+            <td>0,1,100,232</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,3</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -4688,7 +4344,7 @@ render?
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td><a href="#car_text_related">offset (car_text_related)</a></td>
+            <td><a href="#mm_car_text_related">offset (mm_car_text_related)</a></td>
         </tr>
     </tbody>
     <tfoot>
@@ -4886,7 +4542,7 @@ render?
     </tfoot>
 </table>
 <hr>
-<h2 id="car_text_related">car_text_related</h2>
+<h2 id="mm_car_text_related">mm_car_text_related</h2>
 <p>multi linked to by:<br>
     <a href="#mm_car_section_44_100">mm_car_section_44_100 [0]</a><br>
 </p>
@@ -4910,7 +4566,7 @@ render?
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#car_text_related_8">offset</a> based on amount [04]</td>
+            <td><a href="#mm_car_text_related_8">offset</a> based on amount [04]</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -4925,7 +4581,7 @@ render?
     </tfoot>
 </table>
 <hr>
-<h2 id="car_text_related_8">car_text_related_8</h2>
+<h2 id="mm_car_text_related_8">mm_car_text_related_8</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -4992,16 +4648,15 @@ render?
             <th>Offset</th>
             <th>Type</th>
             <th>Description</th>
-        </tr>
         <tr class="u">
             <td>00</td>
             <td>u8</td>
-            <td>0</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>always 1</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>02</td>
@@ -5011,57 +4666,57 @@ render?
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>always 1</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u8</td>
-            <td>always 1</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>05</td>
             <td>u8</td>
-            <td>always 3</td>
+            <td>1,2,3,7</td>
         </tr>
         <tr class="u">
             <td>06</td>
             <td>u8</td>
-            <td>always 10</td>
+            <td>0,5,10,12</td>
         </tr>
         <tr class="u">
             <td>07</td>
             <td>u8</td>
-            <td>always 1</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>always 50</td>
+            <td>10 - 200</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>always 500</td>
+            <td>10 - 500</td>
         </tr>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td>always 10000</td>
+            <td>0,10000</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0 - 50000</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0,250,1000</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>float</td>
-            <td>always -300</td>
+            <td>-2500 - 10000</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -5355,10 +5010,10 @@ render?
             <td>u32</td>
             <td>always 45</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>patch texture 16,9,0,6</td>
+            <td>patch texture | 16,9,0,6</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -5492,60 +5147,45 @@ render?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>always 14 amount prob </td>
+            <td>always 14 amount</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mm_world_later_32_4">offset</a></td>
+            <td><a href="#mm_world_later_32_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
-            <td>always 257</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>12</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>13</td>
-            <td>u8</td>
-            <td>always 80</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>always 195</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>always 71</td>
+            <td>float</td>
+            <td>always 100000</td>
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>always 80</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>always 195</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>always 71</td>
+            <td>float</td>
+            <td>always 100000</td>
         </tr>
         <tr>
             <td>20</td>
@@ -5608,10 +5248,10 @@ render?
             <td>float</td>
             <td>-2 - 1.7000000476837158</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>patch texture 1 - 19</td>
+            <td>patch texture | 1 - 19</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -5815,10 +5455,10 @@ render?
             <td>u32</td>
             <td>amount 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>60</td>
             <td>u32</td>
-            <td><a href="#mm_car_model_sec_48">offset (mm_car_model_sec_48)</a> based on amount [56]</td>
+            <td><a href="#mm_item_maybe_60">offset </a> based on amount [56]</td>
         </tr>
         <tr>
             <td>64</td>
@@ -5916,6 +5556,382 @@ render?
     <tfoot>
         <tr>
             <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60">mm_item_maybe_60</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0,1,7</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#mm_strange">offset (mm_strange)</a></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>u32</td>
+            <td><a href="#mm_item_maybe_60_12">offset</a> </td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60_12">mm_item_maybe_60_12</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>-40,0,9,56</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>-67.5 - 19</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>-110,-107,-100,-59,-16.5,0,25,61.5,85,120</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#mm_item_maybe_60_12_24">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60_12_24">mm_item_maybe_60_12_24</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#mm_model">offset (mm_model)</a></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>u32</td>
+            <td>amout | 1,3</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td><a href="#mm_item_maybe_60_12_24_20">offset</a> based on amount [16]</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td>amount | 3,4</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td><a href="#mm_item_maybe_60_12_24_28">offset</a> based on amount [24] </td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>36</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>u32</td>
+            <td><a href="#mm_item_maybe_60_12_24_40">offset</a></td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60_12_24_20">mm_item_maybe_60_12_24_20</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>2,8,10</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>2,8,10</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>2,50,100,300</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>float</td>
+            <td>0,50,100,200,400</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60_12_24_28">mm_item_maybe_60_12_24_28</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>0,128,255</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>always 255</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0 - 3000</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">12 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="mm_item_maybe_60_12_24_40">mm_item_maybe_60_12_24_40</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>-999,0,999</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -6192,8 +6208,23 @@ render?
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
-            <td>always 1052672</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>always 16</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>always 16</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -6315,10 +6346,10 @@ render?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>patch texture 0,2,5,6,12,13</td>
+            <td>patch texture | 0,2,5,6,12,13</td>
         </tr>
         <tr>
             <td>04</td>
@@ -6368,7 +6399,7 @@ render?
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#mm_font_28">offset</a></td>
+            <td><a href="#mm_font_28">offset</a> based on amount [24]</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -6577,22 +6608,22 @@ render?
         <tr>
             <td>12</td>
             <td>u32</td>
-            <td>amount [16]</td>
+            <td>amount</td>
         </tr>
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td><a href="#mm_interface_16">offset</a></td>
+            <td><a href="#mm_interface_16">offset</a> based on amount [12]</td>
         </tr>
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount [24] 1,0,2</td>
+            <td>amount | 1,0,2</td>
         </tr>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#mm_interface_24">offset</a></td>
+            <td><a href="#mm_interface_24">offset</a> based on amount [20]</td>
         </tr>
         <tr>
             <td>28</td>
@@ -6713,7 +6744,7 @@ render?
         <tr>
             <td>16</td>
             <td>u32</td>
-            <td>offset maybe based on [01]?  0 - 4604016<br>
+            <td>based on type [1]<br>
             <a href="#mm_interface_16_16t0">0 = offset</a><br>
             <a href="#mm_interface_16_16t1">1 = offset</a></td>
         </tr>
@@ -6746,7 +6777,7 @@ render?
             <td>u32</td>
             <td><a href="#mm_interface_16_40">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>44</td>
             <td>u32</td>
             <td><a href="#mm_interface_16_44">offset</a></td>
@@ -6799,8 +6830,23 @@ render?
         </tr>
         <tr class="u">
             <td>00</td>
-            <td>u32</td>
-            <td>0,512,1280,515</td>
+            <td>u8</td>
+            <td>0,3</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,2,5</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr>
             <td>04</td>
@@ -6853,15 +6899,15 @@ render?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>16,4</td>
+            <td>amount | 16,4</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mm_interface_16_16t0_16_4">offset</a></td>
+            <td><a href="#mm_interface_16_16t0_16_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -6999,7 +7045,7 @@ render?
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mm_interface_16_16t1_8_4">offset</a></td>
+            <td><a href="#mm_interface_16_16t1_8_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -7122,18 +7168,33 @@ render?
         </tr>
         <tr class="u">
             <td>00</td>
-            <td>u32</td>
-            <td>131841,196866,66051</td>
+            <td>u8</td>
+            <td>0 - 104</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0 - 104</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0 - 104</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0 - 20</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>0 - 20</td>
         </tr>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>0,2 amount</td>
+            <td>0 - 4 amount</td>
         </tr>
         <tr>
             <td>12</td>
@@ -7374,12 +7435,12 @@ maybe 8 bytes per entry ???
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>320,140,500,0,110,530,-640,1280</td>
+            <td>-640 - 1280</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0 - 394</td>
+            <td>-160 - 580</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -7393,13 +7454,28 @@ maybe 8 bytes per entry ???
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,256,512</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0,250,700,300,150,500,750</td>
+            <td>0 - 2000</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -7486,12 +7562,12 @@ maybe 8 bytes per entry ???
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0 - 2000</td>
+            <td>0 - 5000</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0 - 2000</td>
+            <td>0 - 5000</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -7505,13 +7581,28 @@ maybe 8 bytes per entry ???
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,256,512</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0,250,2400,2500,500,300</td>
+            <td>0 - 3850</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -7699,7 +7790,7 @@ maybe 8 bytes per entry ???
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount [24]0,3,4,5,1,2</td>
+            <td>amount [24] 0,3,4,5,1,2</td>
         </tr>
         <tr>
             <td>24</td>
@@ -7709,7 +7800,7 @@ maybe 8 bytes per entry ???
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td>amount [32]0,1,3,2</td>
+            <td>amount [32] 0,1,3,2</td>
         </tr>
         <tr>
             <td>32</td>
@@ -7937,13 +8028,28 @@ maybe 8 bytes per entry ???
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,1,256</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0,400,1800,500,200</td>
+            <td>0,100,200,300,400,500,700,1000,1800</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -8563,12 +8669,12 @@ maybe 8 bytes per entry ???
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td>amount [32]0,1,2</td>
+            <td>amount [32] 0,1,2</td>
         </tr>
         <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#mm_interface_16_56_32">offset</a> based on amount [28]0 - 4396448</td>
+            <td><a href="#mm_interface_16_56_32">offset</a> based on amount [28]</td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -8995,17 +9101,17 @@ maybe 8 bytes per entry ???
         <tr>
             <td>20</td>
             <td>u32</td>
-            <td>amount [24]0,2,1</td>
+            <td>amount [24] 0,2,1</td>
         </tr>
         <tr>
             <td>24</td>
             <td>u32</td>
-            <td><a href="#mm_interface_16_64_24">offset</a> based on amount [20]0 - 4571872</td>
+            <td><a href="#mm_interface_16_64_24">offset</a> based on amount [20]</td>
         </tr>
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td>amount [32]0,2,1</td>
+            <td>amount [32] 0,2,1</td>
         </tr>
         <tr>
             <td>32</td>
@@ -10286,7 +10392,7 @@ mm_interface_24 === mm_interface_16_40_12 ?
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#mm_object_100_12_24_28">offset</a> based on amount [24] offset maybe?</td>
+            <td><a href="#mm_object_100_12_24_28">offset</a> based on amount [24]</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -10542,20 +10648,35 @@ mm_asdf_texture_link = mm_world_later_32?
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>amount prob always 7</td>
+            <td>amount always 7</td>
         </tr>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mm_asdf_texture_link_4">offset</a> based on amount [0] always 14445632</td>
+            <td><a href="#mm_asdf_texture_link_4">offset</a> based on amount [0]</td>
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
-            <td>always 257</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -10601,37 +10722,37 @@ mm_asdf_texture_link = mm_world_later_32?
         <tr class="u">
             <td>00</td>
             <td>u8</td>
-            <td>255,192,87,128</td>
+            <td>87,128,192,255</td>
         </tr>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>192,87,82,0</td>
+            <td>0,82,87,192</td>
         </tr>
         <tr class="u">
             <td>02</td>
             <td>u8</td>
-            <td>0,255,192</td>
+            <td>0,192,255</td>
         </tr>
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>128,255,70,100</td>
+            <td>70,100,128,255</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>64,40,16,70,32,25</td>
+            <td>16,25,32,40,64,70</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>-1.2999999523162842,-1,-0.800000011920929,-0.699999988079071,-0.6000000238418579,-0.4000000059604645,-0.30000001192092896</td>
+            <td>-1.2999999523162842 - -0.30000001192092896</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>patch texture 140,82,141</td>
+            <td>patch texture | 140,82,141</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -10746,7 +10867,7 @@ mm_asdf_texture_link = mm_world_later_32?
         <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#mm_another_unknown_sec_28">offset</a> based on amount [24]14446448,14447168,14448448,14448576</td>
+            <td><a href="#mm_another_unknown_sec_28">offset</a> based on amount [24]</td>
         </tr>
         <tr>
             <td>32</td>
@@ -10882,12 +11003,12 @@ mm_asdf_texture_link = mm_world_later_32?
         <tr class="u">
             <td>00</td>
             <td>u8</td>
-            <td>0</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>1,2</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>02</td>
@@ -10897,16 +11018,17 @@ mm_asdf_texture_link = mm_world_later_32?
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>always 2</td>
+            <td>2,3</td>
+        </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>1,10000,150,1000,20000</td>
+            <td>1 - 20000</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0,250</td>
         </tr>
         <tr>
             <td>12</td>
@@ -11385,14 +11507,6 @@ mm_asdf_texture_link = mm_world_later_32?
 </table>
 <hr>
 <h2 id="mm_car_model_sec_48">mm_car_model_sec_48</h2>
-<p>linked? to by:<br>
-<a href="#mm_car_model_sec">mm_car_model_sec [48]</a><br>
-<a href="#mm_car_236">mm_car_236 [4]</a><br>
-<a href="#mm_item_maybe">mm_item_maybe [60]</a><br>
-mm_car_model_sec_48
-mm_object_100
-mm_car_236 [4]
-same sections?</p>
 <table class="h">
     <tbody>
         <tr>
@@ -11413,7 +11527,7 @@ same sections?</p>
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td>based on type[04]<br>
+            <td>based on type [4]<br>
                 <a href="#mm_unknown">0 = offset (mm_unknown)</a><br>
                 <a href="#mm_strange">1 = offset (mm_strange)</a><br>
                 <a href="#mm_unknown_idk_sec">6 = offset</a><br>
@@ -11448,17 +11562,17 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0,-0.36000001430511475,0.36000001430511475</td>
+            <td>-3.8369998931884766 - 3.561000108718872</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0,3.200000047683716</td>
+            <td>-4 - 10</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>-0.25,0.4000000059604645,0</td>
+            <td>-9.399999618530273 - 25</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -11467,8 +11581,23 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>16777260,16777258,16777226,16777225</td>
+            <td>u8</td>
+            <td>0 - 52</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -12130,12 +12259,12 @@ same sections?</p>
         <tr class="u">
             <td>76</td>
             <td>float</td>
-            <td>1,0.5,4,5,20,2,10,0.8999999761581421,3,1.5</td>
+            <td>0.0010000000474974513 - 70</td>
         </tr>
         <tr class="u">
             <td>80</td>
             <td>float</td>
-            <td>0,1,10,0.20000000298023224,1.5</td>
+            <td>0 - 30</td>
         </tr>
         <tr class="u">
             <td>84</td>
@@ -12144,28 +12273,13 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>88</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>89</td>
-            <td>u8</td>
-            <td>0,80</td>
-        </tr>
-        <tr class="u">
-            <td>90</td>
-            <td>u8</td>
-            <td>195,122</td>
-        </tr>
-        <tr class="u">
-            <td>91</td>
-            <td>u8</td>
-            <td>68,71</td>
+            <td>float</td>
+            <td>1000,10000,100000</td>
         </tr>
         <tr class="u">
             <td>92</td>
             <td>float</td>
-            <td>300,3000,2000,1500,500,1000,0,4000,700</td>
+            <td>0 - 10000</td>
         </tr>
     </tbody>
     <tfoot>
@@ -12486,17 +12600,17 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0 - 300</td>
+            <td>-50 - 3000</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0 - 50</td>
+            <td>0 - 425</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0 - 150</td>
+            <td>0 - 550</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -12505,13 +12619,28 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>16</td>
-            <td>u32</td>
-            <td>0,256</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>0 - 4000</td>
+            <td>0 - 20000</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -12557,17 +12686,32 @@ same sections?</p>
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>0,128,255</td>
+            <td>0,64,128,200,250,255</td>
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
-            <td>0,512,256</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0 - 2000</td>
+            <td>0 - 20000</td>
         </tr>
     </tbody>
     <tfoot>
@@ -12774,17 +12918,32 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0.5,1,0.009999999776482582,0.25,0.75,0,0.10000000149011612</td>
+            <td>0 - 1</td>
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
+            <td>u8</td>
             <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0,100,900,1000,200,500,250</td>
+            <td>0 - 5000</td>
         </tr>
     </tbody>
     <tfoot>
@@ -12841,17 +13000,32 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0.4000000059604645,0</td>
+            <td>0 - 1</td>
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
-            <td>512,256</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0,2000</td>
+            <td>0 - 2000</td>
         </tr>
     </tbody>
     <tfoot>
@@ -12880,7 +13054,7 @@ same sections?</p>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>type? 0,1</td>
+            <td>0,1 type</td>
         </tr>
         <tr class="u">
             <td>02</td>
@@ -12890,7 +13064,7 @@ same sections?</p>
         <tr class="u">
             <td>03</td>
             <td>u8</td>
-            <td>0,1</td>
+            <td>0,1,4,5</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -12900,17 +13074,17 @@ same sections?</p>
         <tr class="u">
             <td>05</td>
             <td>u8</td>
-            <td>0,3,1</td>
+            <td>0,1,3</td>
         </tr>
         <tr class="u">
             <td>06</td>
             <td>u8</td>
-            <td>5,10,2</td>
+            <td>2,5,10</td>
         </tr>
         <tr class="u">
             <td>07</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -12932,17 +13106,17 @@ same sections?</p>
         <tr class="u">
             <td>20</td>
             <td>u32</td>
-            <td>1 - 7500</td>
+            <td>1 - 11000</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>0,2000,1000,50,2500,3000</td>
+            <td>0,50,1000,2000,2500,3000,4000,5000</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td>0 - 1000</td>
+            <td>0 - 50101</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -12967,12 +13141,12 @@ same sections?</p>
         <tr class="u">
             <td>48</td>
             <td>float</td>
-            <td>0.4000000059604645,0,0.800000011920929,0.5,0.20000000298023224,0.10000000149011612,0.25,0.6000000238418579</td>
+            <td>0 - 0.800000011920929</td>
         </tr>
         <tr class="u">
             <td>52</td>
-            <td>u32</td>
-            <td>0,32,1,16,1.5,12,5,30,25,10</td>
+            <td>float</td>
+            <td>0 - 32</td>
         </tr>
         <tr class="u">
             <td>56</td>
@@ -12982,37 +13156,22 @@ same sections?</p>
         <tr class="u">
             <td>60</td>
             <td>float</td>
-            <td>0,0.25,1,0.8799999952316284,0.550000011920929,0.949999988079071,0.75</td>
+            <td>0 - 1</td>
         </tr>
         <tr class="u">
             <td>64</td>
             <td>float</td>
-            <td>10,0,50,250,-15,100,5,150,0.009999999776482582,-5</td>
+            <td>-15 - 500</td>
         </tr>
         <tr class="u">
             <td>68</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>69</td>
-            <td>u8</td>
-            <td>80,0</td>
-        </tr>
-        <tr class="u">
-            <td>70</td>
-            <td>u8</td>
-            <td>195,250</td>
-        </tr>
-        <tr class="u">
-            <td>71</td>
-            <td>u8</td>
-            <td>71,72</td>
+            <td>float</td>
+            <td>10000,100000,512000</td>
         </tr>
         <tr class="u">
             <td>72</td>
             <td>float</td>
-            <td>500,100,400,250,300</td>
+            <td>100,250,300,400,500</td>
         </tr>
         <tr class="u">
             <td>76</td>
@@ -13027,17 +13186,17 @@ same sections?</p>
         <tr class="u">
             <td>84</td>
             <td>u32</td>
-            <td>7500,4000,5000,15000,1000,8000,9000,7000</td>
+            <td>1000,2000,3000,4000,5000,7000,7500,8000,9000,15000</td>
         </tr>
         <tr class="u">
             <td>88</td>
             <td>u32</td>
             <td>0,1000</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>92</td>
             <td>u32</td>
-            <td>patch texture 8,12,17,0,59,73</td>
+            <td>patch texture | 8,12,17,0,59,73</td>
         </tr>
         <tr>
             <td>96</td>
@@ -13097,7 +13256,7 @@ same sections?</p>
         <tr>
             <td>140</td>
             <td>u32</td>
-            <td><a href="#mm_asdf_140">offset (mm_texture_anims_8 ?)</a> based on amount [136]</td>
+            <td><a href="#mm_asdf_140">offset </a> based on amount [136]</td>
         </tr>
         <tr class="u">
             <td>144</td>
@@ -13290,8 +13449,23 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>64</td>
-            <td>u32</td>
-            <td>0,4294967295</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>65</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>66</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>67</td>
+            <td>u8</td>
+            <td>0,255</td>
         </tr>
         <tr class="u">
             <td>68</td>
@@ -13991,10 +14165,10 @@ same sections?</p>
             <td>u32</td>
             <td>0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>patch sound 0 - 39</td>
+            <td>patch sound | 0 - 39</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -14073,10 +14247,10 @@ same sections?</p>
             <td>u32</td>
             <td>0,1</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>amount?  1,3,4,2</td>
+            <td>amount | 1,3,4,2</td>
         </tr>
         <tr>
             <td>12</td>
@@ -14127,8 +14301,23 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>00</td>
-            <td>u32</td>
-            <td>0,257</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -14138,12 +14327,12 @@ same sections?</p>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>1,1.0499999523162842,0.949999988079071</td>
+            <td>0.949999988079071,1,1.0499999523162842</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>0.800000011920929,0.5</td>
+            <td>-1,0.5,0.800000011920929</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -14226,18 +14415,33 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>00</td>
-            <td>u32</td>
-            <td>always 39334400</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>always 50</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>always 88</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>always 2</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>31,43,27,44,36,24,11,54</td>
+            <td>11,24,27,31,36,43,44,54</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>u32</td>
-            <td>4500,3500,7000,5000,5500,6500</td>
+            <td>3500,4500,5000,5500,6500,7000</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -14252,42 +14456,42 @@ same sections?</p>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>8500,9000,6200,10000,8000,7000</td>
+            <td>6200,7000,8000,8500,9000,10000</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>7300,8500,5800,9500,8000,6300</td>
+            <td>5800,6300,7300,8000,8500,9500</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>float</td>
-            <td>5000,4000,6000</td>
+            <td>4000,5000,6000</td>
         </tr>
         <tr class="u">
             <td>32</td>
             <td>float</td>
-            <td>500,1750,1000,1500,250</td>
+            <td>250,500,1000,1500,1750</td>
         </tr>
         <tr class="u">
             <td>36</td>
             <td>float</td>
-            <td>0.25,0.30000001192092896,0.15000000596046448,0.20000000298023224,0.2199999988079071</td>
+            <td>0.15000000596046448 - 0.30000001192092896</td>
         </tr>
         <tr class="u">
             <td>40</td>
             <td>float</td>
-            <td>0.029999999329447746,0.30000001192092896,0.05000000074505806</td>
+            <td>0.029999999329447746 - 0.30000001192092896</td>
         </tr>
         <tr class="u">
             <td>44</td>
             <td>float</td>
-            <td>0.019999999552965164,0.20000000298023224,0.029999999329447746</td>
+            <td>0.019999999552965164 - 0.20000000298023224</td>
         </tr>
         <tr class="u">
             <td>48</td>
             <td>float</td>
-            <td>16,10,11.5,15,12</td>
+            <td>10,11.5,12,15,16</td>
         </tr>
         <tr class="u">
             <td>52</td>
@@ -14312,7 +14516,7 @@ same sections?</p>
         <tr class="u">
             <td>68</td>
             <td>float</td>
-            <td>30,60,20,45,25</td>
+            <td>20,25,30,45,60</td>
         </tr>
         <tr class="u">
             <td>72</td>
@@ -14322,7 +14526,7 @@ same sections?</p>
         <tr class="u">
             <td>76</td>
             <td>float</td>
-            <td>120,80</td>
+            <td>80,120</td>
         </tr>
         <tr class="u">
             <td>80</td>
@@ -14334,10 +14538,10 @@ same sections?</p>
             <td>float</td>
             <td>10,20</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>88</td>
             <td>u32</td>
-            <td>patch texture 4,51,61,69,75,85,89,95,100</td>
+            <td>patch texture | 4,51,61,69,75,85,89,95,100</td>
         </tr>
         <tr>
             <td>92</td>
@@ -14349,10 +14553,10 @@ same sections?</p>
             <td>u32</td>
             <td><a href="#mm_model_anims_2">offset (mm_model_anims_2)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>100</td>
             <td>u32</td>
-            <td>patch texture 18,66,0</td>
+            <td>patch texture | 18,66,0</td>
         </tr>
         <tr>
             <td>104</td>
@@ -14447,17 +14651,17 @@ same sections?</p>
         <tr>
             <td>176</td>
             <td>u32</td>
-            <td><a href="#mm_car_section">offset</a> same section as [172]</td>
+            <td><a href="#mm_car_section">offset (mm_car_section)</a></td>
         </tr>
         <tr>
             <td>180</td>
             <td>u32</td>
-            <td><a href="#mm_car_section">offset</a> same section as [172]</td>
+            <td><a href="#mm_car_section">offset (mm_car_section)</a></td>
         </tr>
         <tr>
             <td>184</td>
             <td>u32</td>
-            <td><a href="#mm_car_section">offset</a> same section as [172]</td>
+            <td><a href="#mm_car_section">offset (mm_car_section)</a></td>
         </tr>
         <tr class="u">
             <td>188</td>
@@ -14943,17 +15147,17 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>-5,-3.200000047683716,-6,-5.5,-4.5,-5.25</td>
+            <td>-6,-5.5,-5.25,-5,-4.5,-3.200000047683716</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>-0.5,1.600000023841858,-1,-3,1.25,1,-0.8999999761581421</td>
+            <td>-3 - 1.600000023841858</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>-6.199999809265137,-6.599999904632568,-7,-10,-9,-9.5,-8.800000190734863</td>
+            <td>-10 - -6.199999809265137</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -14963,17 +15167,17 @@ same sections?</p>
         <tr class="u">
             <td>16</td>
             <td>float</td>
-            <td>5,3.200000047683716,6,5.5,4.5,5.25</td>
+            <td>3.200000047683716,4.5,5,5.25,5.5,6</td>
         </tr>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>6.5,7.199999809265137,7.699999809265137,4.5,6,8.5</td>
+            <td>4.5,6,6.5,7.199999809265137,7.699999809265137,8.5</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>12,7.199999809265137,10,6,9.25,9.5,12.5</td>
+            <td>6,7.199999809265137,9.25,9.5,10,12,12.5</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -15003,17 +15207,17 @@ same sections?</p>
         <tr class="u">
             <td>48</td>
             <td>float</td>
-            <td>-5,-3,-6,-5.5</td>
+            <td>-6,-5.5,-5,-3</td>
         </tr>
         <tr class="u">
             <td>52</td>
             <td>float</td>
-            <td>-2.5,-1,-3,-2</td>
+            <td>-3,-2.5,-2,-1</td>
         </tr>
         <tr class="u">
             <td>56</td>
             <td>float</td>
-            <td>-6,-6.5,-7,-9,-12,-8.5</td>
+            <td>-12,-9,-8.5,-7,-6.5,-6</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -15023,17 +15227,17 @@ same sections?</p>
         <tr class="u">
             <td>64</td>
             <td>float</td>
-            <td>5,3,6,5.5</td>
+            <td>3,5,5.5,6</td>
         </tr>
         <tr class="u">
             <td>68</td>
             <td>float</td>
-            <td>6,7.5,4,5,7,3.5</td>
+            <td>3.5,4,5,6,7,7.5</td>
         </tr>
         <tr class="u">
             <td>72</td>
             <td>float</td>
-            <td>12,6.5,9,6,9.25,9.5</td>
+            <td>6,6.5,9,9.25,9.5,12</td>
         </tr>
         <tr class="u">
             <td>76</td>
@@ -15063,7 +15267,7 @@ same sections?</p>
         <tr class="u">
             <td>96</td>
             <td>float</td>
-            <td>45,40,50</td>
+            <td>40,45,50</td>
         </tr>
         <tr class="u">
             <td>100</td>
@@ -15073,27 +15277,42 @@ same sections?</p>
         <tr class="u">
             <td>104</td>
             <td>float</td>
-            <td>1.7999999523162842,1.899999976158142,1.5,1.2000000476837158,2</td>
+            <td>1.2000000476837158 - 2</td>
         </tr>
         <tr class="u">
             <td>108</td>
             <td>float</td>
-            <td>0.003000000026077032,0.029999999329447746,0.03999999910593033,0.004999999888241291,0.004000000189989805,0.10000000149011612</td>
+            <td>0.003000000026077032 - 0.10000000149011612</td>
         </tr>
         <tr class="u">
             <td>112</td>
             <td>float</td>
-            <td>1.5,0.10000000149011612</td>
+            <td>0.10000000149011612,1.5</td>
         </tr>
         <tr class="u">
             <td>116</td>
             <td>float</td>
-            <td>1.600000023841858,1.2999999523162842</td>
+            <td>1.2999999523162842,1.600000023841858</td>
         </tr>
         <tr class="u">
             <td>120</td>
-            <td>u32</td>
-            <td>983045,524293,786457,851973,2097157,2621445</td>
+            <td>u8</td>
+            <td>5,25</td>
+        </tr>
+        <tr class="u">
+            <td>121</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>122</td>
+            <td>u8</td>
+            <td>8,12,13,15,32,40</td>
+        </tr>
+        <tr class="u">
+            <td>123</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>124</td>
@@ -15103,7 +15322,7 @@ same sections?</p>
         <tr class="u">
             <td>128</td>
             <td>float</td>
-            <td>10,0.10000000149011612,5,0</td>
+            <td>0,0.10000000149011612,5,10</td>
         </tr>
         <tr class="u">
             <td>132</td>
@@ -15118,22 +15337,22 @@ same sections?</p>
         <tr class="u">
             <td>140</td>
             <td>float</td>
-            <td>0.07500000298023224,0.125,0.07000000029802322,0.05000000074505806,0.10000000149011612</td>
+            <td>0.05000000074505806 - 0.125</td>
         </tr>
         <tr class="u">
             <td>144</td>
             <td>float</td>
-            <td>4,2.5,5,3</td>
+            <td>2.5,3,4,5</td>
         </tr>
         <tr class="u">
             <td>148</td>
             <td>float</td>
-            <td>0.07000000029802322,0.05000000074505806,1</td>
+            <td>0.05000000074505806,0.07000000029802322,1</td>
         </tr>
         <tr class="u">
             <td>152</td>
             <td>float</td>
-            <td>4,3.5,4.099999904632568,2.75,3.799999952316284,4.199999809265137</td>
+            <td>2.75 - 4.199999809265137</td>
         </tr>
         <tr class="u">
             <td>156</td>
@@ -15143,22 +15362,22 @@ same sections?</p>
         <tr class="u">
             <td>160</td>
             <td>float</td>
-            <td>1.75,2.5,2,1.5,1.7000000476837158</td>
+            <td>1.5,1.7000000476837158,1.75,2,2.5</td>
         </tr>
         <tr class="u">
             <td>164</td>
             <td>float</td>
-            <td>60,45,33</td>
+            <td>33,45,60</td>
         </tr>
         <tr class="u">
             <td>168</td>
             <td>float</td>
-            <td>0.699999988079071,0.5,0.8999999761581421,0.6000000238418579</td>
+            <td>0.5 - 0.8999999761581421</td>
         </tr>
         <tr class="u">
             <td>172</td>
             <td>float</td>
-            <td>60,40,50</td>
+            <td>40,50,60</td>
         </tr>
         <tr class="u">
             <td>176</td>
@@ -15168,12 +15387,12 @@ same sections?</p>
         <tr class="u">
             <td>180</td>
             <td>float</td>
-            <td>0.6000000238418579,0.30000001192092896,0.699999988079071,0.5,0.800000011920929,0.7300000190734863</td>
+            <td>0.30000001192092896 - 0.800000011920929</td>
         </tr>
         <tr class="u">
             <td>184</td>
             <td>float</td>
-            <td>0.699999988079071,0.4000000059604645,0.800000011920929,0.8999999761581421</td>
+            <td>0.4000000059604645 - 0.8999999761581421</td>
         </tr>
         <tr class="u">
             <td>188</td>
@@ -15183,27 +15402,27 @@ same sections?</p>
         <tr class="u">
             <td>192</td>
             <td>float</td>
-            <td>0.00019999999494757503,0.000009999999747378752</td>
+            <td>0.000009999999747378752,0.00019999999494757503</td>
         </tr>
         <tr class="u">
             <td>196</td>
             <td>float</td>
-            <td>2,1,1.5,1.350000023841858</td>
+            <td>1,1.350000023841858,1.5,2</td>
         </tr>
         <tr class="u">
             <td>200</td>
             <td>float</td>
-            <td>2.5,2</td>
+            <td>2,2.5</td>
         </tr>
         <tr class="u">
             <td>204</td>
             <td>float</td>
-            <td>1.25,1</td>
+            <td>1,1.25</td>
         </tr>
         <tr class="u">
             <td>208</td>
             <td>float</td>
-            <td>1.7999999523162842,2,1.75</td>
+            <td>1.75,1.7999999523162842,2</td>
         </tr>
         <tr class="u">
             <td>212</td>
@@ -15304,12 +15523,12 @@ same sections?</p>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>40,28.200000762939453,26.200000762939453,26.600000381469727,18.5,25.200000762939453,24.299999237060547,24.600000381469727,25.899999618530273</td>
+            <td>18.5 - 40</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>50,70.0999984741211,56,64.19999694824219,54.599998474121094,58,60.599998474121094,63.599998474121094,65.80000305175781</td>
+            <td>50 - 70.0999984741211</td>
         </tr>
         <tr class="u">
             <td>28</td>
@@ -15324,7 +15543,7 @@ same sections?</p>
         <tr class="u">
             <td>36</td>
             <td>float</td>
-            <td>15,12.899999618530273,15.199999809265137,10,9.600000381469727,14.300000190734863,15.699999809265137,13.100000381469727,14,13.699999809265137</td>
+            <td>9.600000381469727 - 15.699999809265137</td>
         </tr>
         <tr class="u">
             <td>40</td>
@@ -15344,7 +15563,7 @@ same sections?</p>
         <tr class="u">
             <td>52</td>
             <td>float</td>
-            <td>16,10,20,13,10.100000381469727,7.599999904632568,24,14.399999618530273,11.100000381469727,7.800000190734863</td>
+            <td>7.599999904632568 - 24</td>
         </tr>
         <tr class="u">
             <td>56</td>
@@ -15384,12 +15603,12 @@ same sections?</p>
         <tr class="u">
             <td>84</td>
             <td>float</td>
-            <td>0,23.100000381469727,8,23.299999237060547,3.200000047683716,6.800000190734863,6.599999904632568,4.300000190734863,5.5</td>
+            <td>0 - 23.299999237060547</td>
         </tr>
         <tr class="u">
             <td>88</td>
             <td>float</td>
-            <td>-20,52.900001525878906,0,0.8999999761581421</td>
+            <td>-20,0,0.8999999761581421,52.900001525878906</td>
         </tr>
         <tr class="u">
             <td>92</td>
@@ -15404,12 +15623,12 @@ same sections?</p>
         <tr class="u">
             <td>100</td>
             <td>float</td>
-            <td>10,10.199999809265137,6,10.5,7.5,1.899999976158142,6.5,3.5999999046325684,4.199999809265137</td>
+            <td>1.899999976158142 - 10.5</td>
         </tr>
         <tr class="u">
             <td>104</td>
             <td>float</td>
-            <td>0,28.899999618530273,28.799999237060547,0.8999999761581421</td>
+            <td>0 - 28.899999618530273</td>
         </tr>
         <tr class="u">
             <td>108</td>
@@ -15429,7 +15648,7 @@ same sections?</p>
         <tr class="u">
             <td>120</td>
             <td>float</td>
-            <td>0,0.20000000298023224,-3.5999999046325684</td>
+            <td>-3.5999999046325684,0,0.20000000298023224</td>
         </tr>
         <tr class="u">
             <td>124</td>
@@ -15439,7 +15658,7 @@ same sections?</p>
         <tr class="u">
             <td>128</td>
             <td>float</td>
-            <td>90,60</td>
+            <td>60,90</td>
         </tr>
         <tr class="u">
             <td>132</td>
@@ -15464,7 +15683,7 @@ same sections?</p>
         <tr class="u">
             <td>148</td>
             <td>float</td>
-            <td>10,20,15</td>
+            <td>10,15,20</td>
         </tr>
         <tr class="u">
             <td>152</td>
@@ -15474,27 +15693,27 @@ same sections?</p>
         <tr class="u">
             <td>156</td>
             <td>float</td>
-            <td>10,20,15</td>
+            <td>10,15,20</td>
         </tr>
         <tr class="u">
             <td>160</td>
             <td>float</td>
-            <td>0.699999988079071,1,0.800000011920929,1.2000000476837158</td>
+            <td>0.699999988079071 - 1.2000000476837158</td>
         </tr>
         <tr class="u">
             <td>164</td>
             <td>float</td>
-            <td>0.75,0.5,0.699999988079071,0.800000011920929</td>
+            <td>0.5,0.699999988079071,0.75,0.800000011920929</td>
         </tr>
         <tr class="u">
             <td>168</td>
             <td>float</td>
-            <td>0.8999999761581421,0.699999988079071,0.800000011920929</td>
+            <td>0.699999988079071 - 0.8999999761581421</td>
         </tr>
         <tr class="u">
             <td>172</td>
             <td>float</td>
-            <td>0.8999999761581421,0.5,0.699999988079071,0.800000011920929,0.6000000238418579</td>
+            <td>0.5 - 0.8999999761581421</td>
         </tr>
     </tbody>
     <tfoot>
@@ -15710,17 +15929,17 @@ same sections?</p>
             <td>u32</td>
             <td><a href="#mm_car_model_sec">offset (mm_car_model_sec)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
@@ -15859,12 +16078,12 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>float</td>
-            <td>0,-2,-1,-2.25</td>
+            <td>-2.25,-2,-1,0</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0,-0.5,-0.75,-0.25</td>
+            <td>-0.75,-0.5,-0.25,0</td>
         </tr>
         <tr class="u">
             <td>08</td>
@@ -15884,7 +16103,7 @@ same sections?</p>
         <tr class="u">
             <td>20</td>
             <td>float</td>
-            <td>1,0.8399999737739563,0,1.0800000429153442,-1.7999999523162842,0.8999999761581421,3,1.2000000476837158,-1,-2</td>
+            <td>-2 - 3</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -15899,7 +16118,7 @@ same sections?</p>
         <tr class="u">
             <td>32</td>
             <td>float</td>
-            <td>200,150,250,300</td>
+            <td>150,200,250,300</td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -15955,12 +16174,12 @@ same sections?</p>
         <tr class="u">
             <td>04</td>
             <td>float</td>
-            <td>0.012000000104308128,0.00688599981367588,0.009999999776482582,0.00800000037997961</td>
+            <td>0.00688599981367588 - 0.012000000104308128</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0.013000000268220901,0.0163199994713068,0.012000000104308128</td>
+            <td>0.012000000104308128 - 0.0163199994713068</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -15970,7 +16189,7 @@ same sections?</p>
         <tr class="u">
             <td>16</td>
             <td>float</td>
-            <td>0.016499999910593033,0.017999999225139618,0.020500000566244125</td>
+            <td>0.016499999910593033 - 0.020500000566244125</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -16011,7 +16230,7 @@ same sections?</p>
         <tr>
             <td>04</td>
             <td>u32</td>
-            <td><a href="#mm_car_model_sec_48">offset (mm_car_model_sec_48?)</a> based on amount [0]</td>
+            <td><a href="#mm_car_236_4">offset </a> based on amount [0]</td>
         </tr>
         <tr>
             <td>08</td>
@@ -16052,7 +16271,7 @@ same sections?</p>
                 <a href="#mm_strange">1 = offset (mm_strange)</a><br>
             </td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
             <td><a href="#mm_car_236_4_12">offset</a></td>
@@ -16123,7 +16342,7 @@ same sections?</p>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
             <td><a href="#mm_car_236_4_12_24">offset</a></td>
@@ -16157,7 +16376,7 @@ same sections?</p>
         <tr class="u">
             <td>01</td>
             <td>u8</td>
-            <td>0,2,5</td>
+            <td>0,2,5 | type</td>
         </tr>
         <tr class="u">
             <td>02</td>
@@ -16169,57 +16388,57 @@ same sections?</p>
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
             <td>based on type [1]<br>
                 <a href="#mm_model">0 = offset (mm_models)</a><br>
                 2,5 = patch texture</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>amount | 0,1,2</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_12">offset</a> 0 - 14781648</td>
+            <td><a href="#mm_car_236_4_12_24_12">offset</a> based on amount [8]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>1,3</td>
+            <td>amount | 1,3</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_20">offset</a> </td>
+            <td><a href="#mm_car_236_4_12_24_20">offset</a> based on amount [16]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
-            <td>0,1,3,4,5,46</td>
+            <td>amount | 0,1,3,4,5,46</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_28">offset</a> 0 - 14784176</td>
+            <td><a href="#mm_car_236_4_12_24_28">offset</a> based on amount [24]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_32">offset</a> 0 - 14781600</td>
+            <td><a href="#mm_car_236_4_12_24_32">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>36</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_36">offset</a> 0 - 14781616</td>
+            <td><a href="#mm_car_236_4_12_24_36">offset</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>40</td>
             <td>u32</td>
-            <td><a href="#mm_car_236_4_12_24_40">offset</a> 0 - 14784112</td>
+            <td><a href="#mm_car_236_4_12_24_40">offset</a></td>
         </tr>
         <tr class="u">
             <td>44</td>
@@ -16269,8 +16488,8 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>20</td>
-            <td>u32</td>
-            <td>0,1123418112,1132068864,1134985216,1148846080,1157234688,1176256512</td>
+            <td>float</td>
+            <td>0,123,250,333,1000,2000,10000</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -16285,7 +16504,7 @@ same sections?</p>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -16325,8 +16544,8 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>20</td>
-            <td>u32</td>
-            <td>0,1110704128,1112014848,1117126656,1123680256,1133903872,1140457472</td>
+            <td>float</td>
+            <td>0,45,50,75,125,300,500</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -16341,7 +16560,7 @@ same sections?</p>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">32 bytes</th>
+            <th colspan="3">32 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -16376,18 +16595,33 @@ same sections?</p>
         </tr>
         <tr class="u">
             <td>04</td>
-            <td>u32</td>
-            <td>0,1,256,512</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,1,2</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0</td>
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>u32</td>
-            <td>0 - 1153138688</td>
+            <td>float</td>
+            <td>0 - 1500</td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">12 bytes</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
@@ -16671,17 +16905,17 @@ same sections?</p>
             <td>u32</td>
             <td><a href="#mm_car_model_sec">offset (mm_car_model_sec)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>24</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
             <td><a href="#mm_model_anims_1">offset (mm_model_anims_1)</a></td>
@@ -17052,12 +17286,12 @@ same sections?</p>
                 <a href="#mm_unknown_thing">1 = offset (mm_unknown_thing)</a><br>
                 <a href="#mm_asdf">2 = offset (mm_asdf)</a><br>
                 <a href="#mm_unknown">3 = offset (mm_unknown)</a><br>
-                <a href="#mm_strange">4 = offset</a><br>
+                <a href="#mm_strange">4 = offset (mm_strange)</a><br>
                 <a href="#mm_unknown_idk_sec">5 = offset (mm_unknown_idk_sec)</a><br>
                 <a href="#mm_item_maybe">6 = offset (mm_item_maybe)</a><br>
                 <a href="#mm_asdf_some_list">8 = offset (mm_asdf_some_list)</a><br>
                 <a href="#mm_sound_section">10 = offset (mm_sound_section)</a><br>
-                11 = 20,15,3,2,0,10<br> 
+                11 = 20,15,3,2,0,10<br>
                 12 = 0<br>
                 13 = 0,2,8<br>
                 14 = 0<br>
@@ -17066,7 +17300,7 @@ same sections?</p>
                 <a href="#mm_sound_controls">26 = offset (mm_sound_controls)</a><br>
                 <a href="#mm_unknown_some_values">27 = offset (mm_unknown_some_values)</a><br>
                 <a href="#mm_another_unknown_sec">28 = offset (mm_another_unknown_sec)</a><br>
-                <a href="#mm_unknown_small_model_link">29 = offset</a>
+                <a href="#mm_unknown_small_model_link">29 = offset (mm_unknown_small_model_link)</a>
             </td>
         </tr>
         <tr>
@@ -17097,22 +17331,22 @@ same sections?</p>
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>0,1,5,2,20,10</td>
+            <td>0 - 50</td>
         </tr>
         <tr class="u">
             <td>04</td>
             <td>u32</td>
-            <td>0,10,20,25,3,5,2</td>
+            <td>0 - 100</td>
         </tr>
         <tr class="u">
             <td>08</td>
             <td>float</td>
-            <td>0 - 250</td>
+            <td>-75 - 5000</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>float</td>
-            <td>0 - 190</td>
+            <td>-3 - 1000</td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -17127,12 +17361,12 @@ same sections?</p>
         <tr class="u">
             <td>24</td>
             <td>float</td>
-            <td>-100 - 0.05000000074505806</td>
+            <td>-200 - 10</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>float</td>
-            <td>0,-50,0.029999999329447746,0.03999999910593033,-0.004999999888241291</td>
+            <td>-200 - 0.20000000298023224</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -17162,7 +17396,7 @@ same sections?</p>
         <tr class="u">
             <td>49</td>
             <td>u8</td>
-            <td>1,0</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>50</td>
@@ -17177,7 +17411,7 @@ same sections?</p>
         <tr class="u">
             <td>52</td>
             <td>float</td>
-            <td>0,1,0.5,0.25</td>
+            <td>0 - 3</td>
         </tr>
         <tr>
             <td>56</td>
