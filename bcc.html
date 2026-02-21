@@ -37,12 +37,27 @@
                                 <a class="link" href="#index_patch_list">Index Patch List</a>
                             </div>
                             <div class="box box2" style="padding-bottom: 2%;">
-                                <a class="link" href="#ordered_list">Ordered List</a>
+                                <a class="link" href="#bcc_ordered_list">Ordered List</a>
                                     <div class="box box3">
                                         <a class="link" href="#file_specific_section">File Specific Sections</a>
                                     </div>
                                     <div class="box box3">
-                                    <a class="link" href="#unordered_list">Unordered List</a>
+                                    <a class="link" href="#bcc_model">bcc_model</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#bcc_datapack_text_link">bcc_datapack_text_link</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#bcc_some_model_anim">bcc_some_model_anim</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#bcc_model_anim_2_type_b">bcc_model_anim_2_type_b</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#bcc_model_anim_2_type_c">bcc_model_anim_2_type_c</a>
+                                    </div>
+                                    <div class="box box3">
+                                    <a class="link" href="#bcc_unordered_list">Unordered List</a>
                                 </div>
                             </div>
                             <div class="box box2"><a class="link" href="#offset_patch_list">Offset Patch List</a></div>
@@ -154,50 +169,50 @@
             <th>Type</th>
             <th>Description</th>
         </tr>
-        <tr class="u">
+        <tr>
             <td>00</td>
             <td>u32</td>
-            <td>0 - 42008728</td>
+            <td>length of <a href="#bcc_ordered_list">ordered list</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>04</td>
             <td>u32</td>
-            <td>0 - 1592920</td>
+            <td>length of audio section | 0 - 1592920</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>08</td>
             <td>u32</td>
-            <td>0 - 50</td>
+            <td>amount <a href="#bcc_basic_audio">bcc_basic_audio</a> entries | 0 - 50</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td>0 - 23791</td>
+            <td>amount general offsets patch | 0 - 23791</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>16</td>
             <td>u32</td>
-            <td>0 - 1210</td>
+            <td>amount texture patch | 0 - 1210</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>20</td>
             <td>u32</td>
-            <td>0 - 216</td>
+            <td>amount textures | 0 - 216</td>
         </tr>
         <tr class="u">
             <td>24</td>
             <td>u32</td>
             <td>0 - 411616</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>28</td>
             <td>u32</td>
-            <td>0 - 34</td>
+            <td>amount sound patch | 0 - 34</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>32</td>
             <td>u32</td>
-            <td>0 - 25</td>
+            <td>amount <a href="#bcc_basic_audio">bcc_basic_audio</a> offsets | 0 - 25</td>
         </tr>
         <tr class="u">
             <td>36</td>
@@ -224,10 +239,10 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>56</td>
             <td>u32</td>
-            <td>0 - 1228</td>
+            <td>amount model patch | 0 - 1228</td>
         </tr>
         <tr class="u">
             <td>60</td>
@@ -289,10 +304,10 @@
             <td>u32</td>
             <td><a href="#bcc_datapack_text_link">offset</a> based on amount [100]</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>108</td>
             <td>u32</td>
-            <td>0 - 725</td>
+            <td>amount <a href="#bcc_datapack_108">bcc_datapack_108</a> | 0 - 725</td>
         </tr>
         <tr class="u">
             <td>112</td>
@@ -398,11 +413,316 @@
 </table>
 4 bytes of padding in the wii version here
 <hr>
-...skipping sections here
+<h2 id="bcc_basic_audio">bcc_basic_audio</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>20 - 884</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>0 - 864</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_basic_audio_0">bcc_basic_audio_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>64 - 1557216</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td></td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>11025,22050</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>1,2,3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">16 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_basic_audio_4">bcc_basic_audio_4</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td></td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td>1,2</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>always 16</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>always 2</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>always 20</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">20 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_basic_audio_0_0tpc">bcc_basic_audio_0_0tpc</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1179011410</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_basic_audio_4_0">bcc_basic_audio_4_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>1651668340 - 1953719666</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_datapack_108">bcc_datapack_108</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0 - 25198096</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_texture_offset_list">bcc_texture_offset_list</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>128 - 25198080</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_texture_offset_list_0">bcc_texture_offset_list_0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u8</td>
+            <td>based on console<br>
+                1 = pc<br>
+                3 = wii</td>
+        </tr>
+        <tr class="u">
+            <td>01</td>
+            <td>u8</td>
+            <td>based on console<br>
+                3 = pc<br>
+                4 = wii</td>
+        </tr>
+        <tr class="u">
+            <td>02</td>
+            <td>u8</td>
+            <td>3,148,151</td>
+        </tr>
+        <tr class="u">
+            <td>03</td>
+            <td>u8</td>
+            <td>19,36,55</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>24,69,160,202</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0,2,3,4,5,6,7</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>4,5,6,7,8,9,10</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>4,5,6,7,8,9</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td>160 - 25198112</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u32</td>
+            <td>288 - 25372880</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
 <hr>
 <h2 id="index_patch_list">index_patch_list</h2>
-<p> probably? </p>
 <h2>Texture Indexes (1)</h2>
+<p>sections with texture patches seen:<br>
+<a href="#bcc_model_20_4_0tpc">bcc_model_20_4_0tpc [48]</a><br>
+<a href="#bcc_model_20_4_0twiit0">bcc_model_20_4_0twiit0 [48]</a><br>
+<a href="#bcc_model_20_4_0twiit1">bcc_model_20_4_0twiit1 [48]</a><br>
+<a href="#bcc_world_settings">bcc_world_settings [68][88][92][96][184]</a><br>
+<a href="#bcc_world_settings_0">bcc_world_settings_0 [20]</a><br>
+<a href="#bcc_car_0_20_0">bcc_car_0_20_0 [4]</a><br>
+<a href="#bcc_mysterious_4t6_16t2">bcc_mysterious_4t6_16t2 [0]</a><br>
+<a href="#bcc_mysterious_4t9_8">bcc_mysterious_4t9_8 [0]</a><br>
+<a href="#bcc_font">bcc_font [0]</a><br>
+<a href="#bcc_interface_92_36t0">bcc_interface_92_36t0 [4]t0</a><br>
+<a href="#bcc_interface_92_36t0_8_4">bcc_interface_92_36t0_8_4 [0]</a><br>
+<a href="#bcc_interface_92_36t13_12">bcc_interface_92_36t13_12 [0]</a><br>
+<a href="#bcc_emitter_16">bcc_emitter_16 [0]</a><br>
+<a href="#bcc_unknown_thing_24t1_4">bcc_unknown_thing_24t1_4 [0]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -472,6 +792,10 @@
     </tfoot>
 </table>
 <h2>Sounds (3)</h2>
+<p>sections with sound patches seen:<br>
+<a href="#bcc_share_16">bcc_share_16 [0]</a><br>
+<a href="#bcc_sound_section">bcc_sound_section [0]</a><br>
+</p>
 <table class="h">
         <tbody>
         <tr>
@@ -506,15 +830,18 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="ordered_list">Ordered List</h2>
+<h2 id="bcc_ordered_list">Ordered List</h2>
 <p>no direct offset to this section<br>
     to get here offset to the Index Patch List from the datapack then add the 3 sections together, depending on the verion <a href="padding.html">padding</a> may be used to calulate start of section<br>
     all sections in the ordered list use the start of the ordered list as the offset<br><br>
     in order the sections contained are:<br>
-    <a href="#ordered_list">File Specific Section</a><br>
-
-    ...<br>
-
+    <a href="#bcc_ordered_list">File Specific Section</a><br>
+    <a href="#bcc_model">bcc_model</a><br>
+    <a href="#bcc_datapack_text_link">bcc_datapack_text_link</a><br>
+    <a href="#bcc_some_model_anim">bcc_some_model_anim</a><br>
+    <a href="#bcc_model_anim_2_type_b">bcc_model_anim_2_type_b</a><br>
+    <a href="#bcc_model_anim_2_type_c">bcc_model_anim_2_type_c</a><br>
+    <a href="#bcc_unordered_list">bcc_unordered_list</a><br>
     <a href="#offset_patch_list">Offset Patch List</a><br><br>
     Texture Animation Part 1 & Textures & Offset Patch List are directly linked to by the datapack<br>
     The other sections are linked to by the File Specific Section & unordered list & Texture Animation Part 1<br>
@@ -3758,6 +4085,13 @@
 </table>
 <hr>
 <h2 id="bcc_model">bcc_model</h2>
+<p>multi linked to by:<br>
+<a href="#bcc_world_116">bcc_world_116 [116]</a><br>
+<a href="#bcc_idk">bcc_idk [16]</a><br>
+<a href="#bcc_mysterious_4t6_16t0">bcc_mysterious_4t6_16t0 [0]</a><br>
+<a href="#bcc_interface_92_36t0">bcc_interface_92_36t0 [4]t1</a><br>
+<a href="#bcc_model_link_12_8">bcc_model_link_12_8 [0]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -5837,6 +6171,28 @@
     </tfoot>
 </table>
 <hr>
+<h2 id="bcc_model_20_4_0twiit1_208">bcc_model_20_4_0twiit1_208</h2>
+<p>64 bytes per entry? maybe</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>?</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">? bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
 <h2 id="bcc_model_20_4_0twiit2">bcc_model_20_4_0twiit2</h2>
 <table class="h">
     <tbody>
@@ -6404,6 +6760,9 @@
 </table>
 <hr>
 <h2 id="bcc_datapack_text_link">bcc_datapack_text_link</h2>
+<p>linked to by:<br>
+    <a href="#bcc_datapack">bcc_datapack [104]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -6430,6 +6789,9 @@
 </table>
 <hr>
 <h2 id="bcc_some_model_anim">bcc_some_model_anim</h2>
+<p>linked to by:<br>
+    <a href="#bcc_model_link">bcc_model_link [16]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -6592,170 +6954,11 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="bcc_model_anim_2_type_c">bcc_model_anim_2_type_c</h2>
-<p>multi linked to by:<br>
-    <a href="#bcc_font">bcc_font [4]</a><br>
-</p>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>always 131077</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>always 35</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>always 33</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>float</td>
-            <td>always 1</td>
-        </tr>
-        <tr>
-            <td>20</td>
-            <td>u32</td>
-            <td>amount | always 384</td>
-        </tr>
-        <tr>
-            <td>24</td>
-            <td>u32</td>
-            <td><a href="#bcc_model_anim_2_type_c_24">offset</a> based on amount [20]</td>
-        </tr>
-        <tr>
-            <td>28</td>
-            <td>u32</td>
-            <td>amount | always 353</td>
-        </tr>
-        <tr>
-            <td>32</td>
-            <td>u32</td>
-            <td><a href="#bcc_model_anim_2_type_c_32">offset</a> based on amount [28]</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>u32</td>
-            <td>offset string</td>
-        </tr>
-        <tr class="u">
-            <td>40</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>44</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">48 bytes</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bcc_model_anim_2_type_c_24">bcc_model_anim_2_type_c_24</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u16</td>
-            <td>0 - 352, increments usually</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">2 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bcc_model_anim_2_type_c_32">bcc_model_anim_2_type_c_32</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>float</td>
-            <td>0.001953125 - 0.97265625</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>float</td>
-            <td>0.001953125 - 0.845703125</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>float</td>
-            <td>0.02734375 - 0.998046875</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>float</td>
-            <td>0.0703125 - 0.9140625</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u8</td>
-            <td>0,1,253,254,255</td>
-        </tr>
-        <tr class="u">
-            <td>17</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>18</td>
-            <td>u8</td>
-            <td>3 - 27</td>
-        </tr>
-        <tr class="u">
-            <td>19</td>
-            <td>u8</td>
-            <td>7 - 25</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">24 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
 <h2 id="bcc_model_anim_2_type_b">bcc_model_anim_2_type_b</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_car_0">bcc_car_0 [16]</a><br>
+<a href="#bcc_car_0">bcc_car_0 [16]</a><br>
+<a href="#bcc_car_0_28">bcc_car_0_28 [00]</a><br>
+<a href="#bcc_model_link_12">bcc_model_link_12 [00]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -7193,10 +7396,172 @@
     </tfoot>
 </table>
 <hr>
-<h2 id="unordered_list">Unordered List</h2>
+<h2 id="bcc_model_anim_2_type_c">bcc_model_anim_2_type_c</h2>
+<p>multi linked to by:<br>
+    <a href="#bcc_font">bcc_font [4]</a><br>
+</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 131077</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>always 35</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>always 33</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>float</td>
+            <td>always 1</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>u32</td>
+            <td>amount | always 384</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>u32</td>
+            <td><a href="#bcc_model_anim_2_type_c_24">offset</a> based on amount [20]</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>u32</td>
+            <td>amount | always 353</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#bcc_model_anim_2_type_c_32">offset</a> based on amount [28]</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>u32</td>
+            <td>offset string</td>
+        </tr>
+        <tr class="u">
+            <td>40</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>44</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">48 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_model_anim_2_type_c_24">bcc_model_anim_2_type_c_24</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u16</td>
+            <td>0 - 352, increments usually</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">2 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_model_anim_2_type_c_32">bcc_model_anim_2_type_c_32</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>float</td>
+            <td>0.001953125 - 0.97265625</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>float</td>
+            <td>0.001953125 - 0.845703125</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>float</td>
+            <td>0.02734375 - 0.998046875</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>float</td>
+            <td>0.0703125 - 0.9140625</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,1,253,254,255</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>3 - 27</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>7 - 25</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">24 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_unordered_list">Unordered List</h2>
 <p>sections here appear whenever they are linked and do not have a set order<br>
    sections in the unordered list can link to the ordered list and sections in the ordered list can link to the unordered list<br>
 <h2>sections seen</h2>
+ <h4>multi linked</h4> 
  <h4>multi linked</h4> 
 <a href="#bcc_something">bcc_something</a><br>
 <a href="#bcc_var">bcc_var</a><br>
@@ -7204,14 +7569,11 @@
 <a href="#bcc_object">bcc_object</a><br>
 <a href="#bcc_a_single_section">bcc_a_single_section</a><br>
 <a href="#bcc_world_thing">bcc_world_thing</a><br>
-<a href="#bcc_model_anim_2_type_c">bcc_model_anim_2_type_c</a><br>
-<a href="#bcc_model_anim_2_type_b">bcc_model_anim_2_type_b</a><br>
 <a href="#bcc_strange">bcc_strange</a><br>
 <a href="#bcc_font">bcc_font</a><br>
+<a href="#bcc_flag">bcc_flag</a><br>
 <a href="#bcc_interface">bcc_interface</a><br>
 <a href="#bcc_sound_controls">bcc_sound_controls</a><br>
-<a href="#bcc_interface_84_16_4_12t4">bcc_interface_84_16_4_12t4</a><br>
-<a href="#bcc_interface_84_24_4t11_4_12t1_12">bcc_interface_84_24_4t11_4_12t1_12</a><br>
 <a href="#bcc_text">bcc_text</a><br>
 <a href="#bcc_multi_font">bcc_multi_font</a><br>
 <a href="#bcc_emitter">bcc_emitter</a><br>
@@ -7230,7 +7592,8 @@
 <hr>
 <h2 id="bcc_something">bcc_something</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_world_176_20">bcc_world_176_20 [0]</a><br>
+<a href="#bcc_world_176_20">bcc_world_176_20 [00]</a><br>
+<a href="#bcc_var_168_24_12t18">bcc_var_168_24_12t18 [04]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -7344,7 +7707,9 @@
 <hr>
 <h2 id="bcc_var">bcc_var</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_world_176_12">bcc_world_176_12 [0]</a><br>
+<a href="#bcc_world_176_12">bcc_world_176_12 [00]</a><br>
+<a href="#bcc_var_156">bcc_var_156 [00]</a><br>
+<a href="#bcc_var_168_24_12t15">bcc_var_168_24_12t15 [00]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -8353,7 +8718,8 @@
 <hr>
 <h2 id="bcc_idk">bcc_idk</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_world_92">bcc_world_92 [80]</a><br>
+<a href="#bcc_world_92">bcc_world_92 [80]</a><br>
+<a href="#bcc_idk">bcc_idk [44]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -10387,15 +10753,15 @@
             <td>u32</td>
             <td><a href="#bcc_text">offset (bcc_text)</a></td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>104</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>amount | always 1</td>
         </tr>
         <tr>
             <td>108</td>
             <td>u32</td>
-            <td><a href="#bcc_object_108">offset</a></td>
+            <td><a href="#bcc_mysterious">offset (bcc_mysterious)</a> based on amount [104]</td>
         </tr>
         <tr class="u">
             <td>112</td>
@@ -10957,7 +11323,10 @@
 <hr>
 <h2 id="bcc_a_single_section">bcc_a_single_section</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_object">bcc_object [4]t20 </a><br>
+<a href="#bcc_object">bcc_object [04]</a><br>
+<a href="#bcc_car_0_20_0_16">bcc_car_0_20_0_16 [08]</a><br>
+<a href="#bcc_car_0_20_4">bcc_car_0_20_4 [64]</a><br>
+<a href="#bcc_car_0_32">bcc_car_0_32 [16]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -10984,7 +11353,7 @@
         <tr class="u">
             <td>12</td>
             <td>u16</td>
-            <td>always 150</td>
+            <td>115,120,125,130,150</td>
         </tr>
         <tr class="u">
             <td>14</td>
@@ -11021,7 +11390,9 @@
 <hr>
 <h2 id="bcc_world_thing">bcc_world_thing</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_world_208">bcc_world_208 [0]</a><br>
+<a href="#bcc_world_208">bcc_world_208 [00]</a><br>
+<a href="#bcc_idk_36">bcc_idk_36 [40]</a><br>
+<a href="#bcc_idk_36_60_8_4_8">bcc_idk_36_60_8_4_8 [12]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -11293,6 +11664,7 @@
 <h2 id="bcc_car">bcc_car</h2>
 <p>linked to by:<br>
     <a href="#bcc_basic_4">bcc_basic_4 [0]t0</a><br>
+    <a href="#bcc_world_12">bcc_world_12 [76]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -11684,7 +12056,7 @@
         <tr>
             <td>08</td>
             <td>u32</td>
-            <td><a href="#bcc_car_0_20_0_16_8">offset</a></td>
+            <td><a href="#bcc_a_single_section">offset (bcc_a_single_section)</a></td>
         </tr>
         <tr>
             <td>12</td>
@@ -11700,72 +12072,6 @@
     <tfoot>
         <tr>
             <th colspan="3">20 bytes per entry</th>
-        </tr>
-    </tfoot>
-</table>
-<hr>
-<h2 id="bcc_car_0_20_0_16_8">bcc_car_0_20_0_16_8</h2>
-<table class="h">
-    <tbody>
-        <tr>
-            <th>Offset</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr class="u">
-            <td>00</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>04</td>
-            <td>u32</td>
-            <td>always 1000</td>
-        </tr>
-        <tr class="u">
-            <td>08</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u16</td>
-            <td>115,120,125,130</td>
-        </tr>
-        <tr class="u">
-            <td>14</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>15</td>
-            <td>u8</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>16</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>20</td>
-            <td>u32</td>
-            <td>always 2</td>
-        </tr>
-        <tr class="u">
-            <td>24</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
-            <td>28</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="3">32 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -14541,7 +14847,11 @@
 <hr>
 <h2 id="bcc_mysterious">bcc_mysterious</h2>
 <p>linked to by:<br>
-    <a href="#bcc_car_0_56">bcc_car_0_56 [4]</a><br>
+<a href="#bcc_object">bcc_object [108]</a><br>
+<a href="#bcc_car_0_20_0_16_12">bcc_car_0_20_0_16_12 [04]</a><br>
+<a href="#bcc_car_0_20_0_16_16">bcc_car_0_20_0_16_16 [04]</a><br>
+<a href="#bcc_car_0_56">bcc_car_0_56 [04]</a><br>
+<a href="#bcc_car_0_64">bcc_car_0_64 [04]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -15300,7 +15610,8 @@
 <hr>
 <h2 id="bcc_strange">bcc_strange</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc">bcc [s]trange </a><br>
+<a href="#bcc_mysterious">bcc_mysterious [04]</a><br>
+<a href="#bcc_unknown_4">bcc_unknown_4 [04]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -15337,7 +15648,7 @@
         <tr class="u">
             <td>11</td>
             <td>u8</td>
-            <td>0</td>
+            <td>0,1</td>
         </tr>
         <tr class="u">
             <td>12</td>
@@ -16093,7 +16404,15 @@
 <hr>
 <h2 id="bcc_font">bcc_font</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc">bcc [weird]</a><br>
+<a href="#bcc_world_settings">bcc_world_settings [228]</a><br>
+<a href="#bcc_link">bcc_link [28]</a><br>
+<a href="#bcc_interface_92_36t1">bcc_interface_92_36t1 [12]</a><br>
+<a href="#bcc_multi_font_4t0">bcc_multi_font_4t0 [12]</a><br>
+<a href="#bcc_multi_font_4t0">bcc_multi_font_4t0 [28]</a><br>
+<a href="#bcc_multi_font_4t0">bcc_multi_font_4t0 [32]</a><br>
+<a href="#bcc_multi_font_4t1">bcc_multi_font_4t1 [12]</a><br>
+<a href="#bcc_multi_font_4t1">bcc_multi_font_4t1 [16]</a><br>
+<a href="#bcc_multi_font_4t1">bcc_multi_font_4t1 [20]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -16298,6 +16617,14 @@
 </table>
 <hr>
 <h2 id="bcc_flag">bcc_flag</h2>
+<p>multi linked to by:<br>
+<a href="#bcc_world_176_4">bcc_world_176_4 [00]</a><br>
+<a href="#bcc_world_176_28">bcc_world_176_28 [00]</a><br>
+<a href="#bcc_link_16_4">bcc_link_16_4 [00]</a><br>
+<a href="#bcc_interface_76_4_12t10">bcc_interface_76_4_12t10 [00]</a><br>
+<a href="#bcc_interface_84_16_4">bcc_interface_84_16_4 [12]</a><br>
+<a href="#bcc_interface_84_24_4t11_4_12t1">bcc_interface_84_24_4t11_4_12t1 [12]</a><br>
+</p>
 <table class="h">
     <tbody>
         <tr>
@@ -16634,7 +16961,22 @@
 <hr>
 <h2 id="bcc_interface">bcc_interface</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc">bcc [in]terface</a><br>
+<a href="#bcc_basic_4">bcc_basic_4 [00]</a><br>
+<a href="#bcc_var_168_16">bcc_var_168_16 [12]</a><br>
+<a href="#bcc_var_168_24_12t5_0">bcc_var_168_24_12t5_0 [00]</a><br>
+<a href="#bcc_world_settings_0">bcc_world_settings_0 [00]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [00]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [04]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [08]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [12]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [16]</a><br>
+<a href="#bcc_car_0_40">bcc_car_0_40 [20]</a><br>
+<a href="#bcc_link">bcc_link [32]</a><br>
+<a href="#bcc_interface_84_24">bcc_interface_84_24 [04]</a><br>
+<a href="#bcc_interface_84_24_4t11_4">bcc_interface_84_24_4t11_4 [12]</a><br>
+<a href="#bcc_interface_92_36t6">bcc_interface_92_36t6 [00]</a><br>
+<a href="#bcc_interface_92_40_72_24">bcc_interface_92_40_72_24 [04]</a><br>
+<a href="#bcc_interface_92_40_72_24_4t11_4">bcc_interface_92_40_72_24_4t11_4 [12]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -19545,8 +19887,13 @@
         </tr>
         <tr class="u">
             <td>20</td>
-            <td>u16</td>
-            <td>0,1,2,256,257,512</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>21</td>
+            <td>u8</td>
+            <td>0,1,2</td>
         </tr>
         <tr class="u">
             <td>22</td>
@@ -21609,10 +21956,13 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
+        <tr>
             <td>12</td>
             <td>u32</td>
-            <td><a href="#bcc_interface_92_68_4_4_16_12">offset</a></td>
+            <td>based on type [8]<br>
+                <a href="#bcc_interface_92_68_4_4_16_12t1">1 = offset</a><br>
+                <a href="#bcc_sound_controls">1 = offset (bcc_sound_controls)</a><br>
+            </td>
         </tr>
         <tr class="u">
             <td>16</td>
@@ -22040,7 +22390,15 @@
 <hr>
 <h2 id="bcc_sound_controls">bcc_sound_controls</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_interface">bcc_interface [20]</a><br>
+<a href="#bcc_mysterious">bcc_mysterious [04]</a><br>
+<a href="#bcc_interface">bcc_interface [20]</a><br>
+<a href="#bcc_interface">bcc_interface [24]</a><br>
+<a href="#bcc_interface">bcc_interface [32]</a><br>
+<a href="#bcc_interface_84_24">bcc_interface_84_24 [24]</a><br>
+<a href="#bcc_interface_84_24_4t11_4">bcc_interface_84_24_4t11_4 [12]</a><br>
+<a href="#bcc_interface_92_40_72_24">bcc_interface_92_40_72_24 [24]</a><br>
+<a href="#bcc_interface_92_68_4_4_16">bcc_interface_92_68_4_4_16 [12]</a><br>
+<a href="#bcc_unknown_4">bcc_unknown_4 [04]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -22171,7 +22529,10 @@
 <hr>
 <h2 id="bcc_text">bcc_text</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_interface_92_36t1">bcc_interface_92_36t1 [4]</a><br>
+<a href="#bcc_datapack_text_link">bcc_datapack_text_link [04]</a><br>
+<a href="#bcc_object">bcc_object [100]</a><br>
+<a href="#bcc_interface_92_36t1">bcc_interface_92_36t1 [04]</a><br>
+<a href="#bcc_interface_92_36t1_8t1_4">bcc_interface_92_36t1_8t1_4 [00]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -22701,7 +23062,8 @@
 <hr>
 <h2 id="bcc_model_link">bcc_model_link</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_interface_92_36t3_4">bcc_interface_92_36t3_4 [0]</a><br>
+<a href="#bcc_car_0_28">bcc_car_0_28 [04]</a><br>
+<a href="#bcc_interface_92_36t3_4">bcc_interface_92_36t3_4 [00]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -23004,7 +23366,18 @@
 <hr>
 <h2 id="bcc_unknown">bcc_unknown</h2>
 <p>multi linked to by:<br>
-    <a href="#_">_ [4]t1</a><br>
+<a href="#bcc_idk_36_68">bcc_idk_36_68 [00]</a><br>
+<a href="#bcc_object">bcc_object [88]</a><br>
+<a href="#bcc_world_thing">bcc_world_thing [40]</a><br>
+<a href="#bcc_world_thing">bcc_world_thing [48]</a><br>
+<a href="#bcc_world_thing_76">bcc_world_thing_76 [00]</a><br>
+<a href="#bcc_car_0_20_0">bcc_car_0_20_0 [28]</a><br>
+<a href="#bcc_car_0_20_0">bcc_car_0_20_0 [32]</a><br>
+<a href="#bcc_car_0_20_0">bcc_car_0_20_0 [36]</a><br>
+<a href="#bcc_car_0_20_4_80">bcc_car_0_20_4_80 [16]</a><br>
+<a href="#bcc_car_0_72">bcc_car_0_72 [00]</a><br>
+<a href="#bcc_mysterious">bcc_mysterious [04]</a><br>
+<a href="#bcc_strange_4">bcc_strange_4 [00]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -24433,7 +24806,14 @@
 <hr>
 <h2 id="bcc_sound_section">bcc_sound_section</h2>
 <p>multi linked to by:<br>
-    <a href="#bcc_unknown_4">bcc_unknown_4 [4]t9</a><br>
+<a href="#bcc_world_thing">bcc_world_thing [88]</a><br>
+<a href="#bcc_car_0_20">bcc_car_0_20 [08]</a><br>
+<a href="#bcc_car_0_20">bcc_car_0_20 [12]</a><br>
+<a href="#bcc_car_0_24_4_0_40">bcc_car_0_24_4_0_40 [88]</a><br>
+<a href="#bcc_car_0_36">bcc_car_0_36 [00]</a><br>
+<a href="#bcc_car_0_36">bcc_car_0_36 [08]</a><br>
+<a href="#bcc_sound_controls_16_4">bcc_sound_controls_16_4 [00]</a><br>
+<a href="#bcc_unknown_4">bcc_unknown_4 [04]</a><br>
 </p>
 <table class="h">
     <tbody>
@@ -25181,7 +25561,7 @@
 <hr>
 <h2 id="offset_patch_list">Offset Patch List</h2>
 <p>
-    linked to by the <a href="#data_pack">datapack</a><br>
+    linked to by the <a href="#bcc_datapack">datapack</a><br>
     Patches offsets into the file.<br>
 </p>
 <p>depending on the verion <a href="padding.html">padding</a> may be seen</p>
@@ -25191,6 +25571,12 @@
     note that the model section is probably unnecessary if there is no shared file linked.<br>
 </p>
 <p>sections with model patches seen:<br>
+<a href="#bcc_world_116">bcc_world_116 [116]</a><br>
+<a href="#bcc_idk">bcc_idk [16]</a><br>
+<a href="#bcc_mysterious_4t6_16t0">bcc_mysterious_4t6_16t0 [0]</a><br>
+<a href="#bcc_interface_92_36t0">bcc_interface_92_36t0 [4]t1</a><br>
+<a href="#bcc_model_link_12_8">bcc_model_link_12_8 [0]</a><br>
+</p>
         </p><table class="h">
     <tbody>
         <tr>
