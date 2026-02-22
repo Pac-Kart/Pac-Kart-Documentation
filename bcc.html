@@ -25,7 +25,7 @@
                     </div>
                     <div style="color: white;background: #4664cd;text-align: center;">
                         <div class="box box1">
-                            <a class="link" href="#bcc_header">File Header</a>
+                            <a class="link" href="#bcc_file_header">File Header</a>
                         </div>
                         <div class="box box1"><a class="link" href="#bcc_directory">File Directory</a></div>
                         <div class="box box1" style="padding-bottom: 2%;">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <hr>
-<h2 id="bcc_header">bcc_header</h2>
+<h2 id="bcc_file_header">bcc_file_header</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -337,7 +337,7 @@
         <tr class="u">
             <td>132</td>
             <td>u32</td>
-            <td>0 - 41682032</td>
+            <td>offset same offset as bcc_datapack_108</td>
         </tr>
         <tr class="u">
             <td>136</td>
@@ -354,50 +354,30 @@
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
-            <td>148</td>
+        <tr>
+            <td>148-159</td>
             <td>u32</td>
-            <td>0,1264677492,1399349618,1918986323,1953653067</td>
+            <td>share string 1</td>
         </tr>
-        <tr class="u">
-            <td>152</td>
-            <td>u32</td>
-            <td>0,25701,1701052416</td>
-        </tr>
-        <tr class="u">
-            <td>156</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
+        <tr>
             <td>160</td>
             <td>u32</td>
-            <td>0,1,2</td>
+            <td>share string index | 0,1,2</td>
         </tr>
         <tr class="u">
             <td>164</td>
             <td>u32</td>
             <td>0</td>
         </tr>
-        <tr class="u">
-            <td>168</td>
+        <tr>
+            <td>168-179</td>
             <td>u32</td>
-            <td>0,1399349618,1918986323</td>
+            <td>shared string 2</td>
         </tr>
-        <tr class="u">
-            <td>172</td>
-            <td>u32</td>
-            <td>0,25701,1701052416</td>
-        </tr>
-        <tr class="u">
-            <td>176</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
-        <tr class="u">
+        <tr>
             <td>180</td>
             <td>u32</td>
-            <td>0,1</td>
+            <td>shared string index | 0,1</td>
         </tr>
         <tr class="u">
             <td>184</td>
@@ -516,17 +496,43 @@
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td>always 2</td>
+            <td>based on console?<br>
+                2 = pc<br>
+                6 = wii</td>
         </tr>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td>always 20</td>
+            <td>based on console?<br>
+                8 = wii<br>
+                20 = pc<br>
+                </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
             <th colspan="3">20 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="bcc_basic_audio_0_0twii">bcc_basic_audio_0_0twii</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>always 1179861555</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">4 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -685,7 +691,7 @@
         <tr class="u">
             <td>20</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0 - 1735136 | wii only offset</td>
         </tr>
         <tr class="u">
             <td>24</td>
@@ -4299,7 +4305,7 @@
         <tr>
             <td>00</td>
             <td>u32</td>
-            <td>based on type <a href="#bcc_model">bcc_model [0]</a><br><br>
+            <td>based on console type <a href="#bcc_model">bcc_model [0]</a><br><br>
                 <a href="#bcc_model_20_4_0tpc">1507337 = offset (bcc_model_20_4_0tpc)</a><br>
                 <a href="#bcc_model_20_4_0twii">1507343 = offset (bcc_model_20_4_0twii)</a><br>
             </td>
@@ -16169,15 +16175,10 @@
             <td>u8</td>
             <td>0</td>
         </tr>
-        <tr class="u">
-            <td>12</td>
-            <td>u32</td>
-            <td>0</td>
-        </tr>
     </tbody>
     <tfoot>
         <tr>
-            <th colspan="3">16 bytes per entry</th>
+            <th colspan="3">12 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
