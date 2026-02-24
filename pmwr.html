@@ -6553,7 +6553,7 @@ GameCube:
     </tfoot>
 </table>
 <hr>
-<h2 id="pmwr_model_psp_4_4_0">pmwr_model_psp_4_4_0</h2>
+<h2 id="models_04_4_0_psp">models_04_4_0_psp</h2>
 <table class="h">
     <tbody>
         <tr>
@@ -6564,7 +6564,7 @@ GameCube:
         <tr class="u">
             <td>00</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0,2</td>
         </tr>
         <tr class="u">
             <td>04</td>
@@ -6573,18 +6573,33 @@ GameCube:
         </tr>
         <tr class="u">
             <td>08</td>
-            <td>float</td>
-            <td>-2.1054141091383894e+38 - 1.6884122298174239e+38</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>12</td>
             <td>u32</td>
-            <td>0,256,512</td>
+            <td>0 - 905969920</td>
         </tr>
         <tr class="u">
             <td>16</td>
             <td>u32</td>
-            <td>2 - 3215</td>
+            <td>1 - 13879</td>
         </tr>
         <tr class="u">
             <td>20</td>
@@ -6594,12 +6609,12 @@ GameCube:
         <tr class="u">
             <td>24</td>
             <td>u32</td>
-            <td>patch Animation 1,384,385</td>
+            <td>patch Animation 0 - 6545</td>
         </tr>
         <tr class="u">
             <td>28</td>
             <td>u32</td>
-            <td>1,384,385</td>
+            <td>0 - 6545</td>
         </tr>
         <tr class="u">
             <td>32</td>
@@ -6613,88 +6628,103 @@ GameCube:
         </tr>
         <tr class="u">
             <td>40</td>
-            <td>u32</td>
-            <td>patch texture 0 - 65535</td>
+            <td>u8</td>
+            <td>patch texture 0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>41</td>
+            <td>u8</td>
+            <td>0,1,255</td>
+        </tr>
+        <tr class="u">
+            <td>42</td>
+            <td>u8</td>
+            <td>0,1,204</td>
+        </tr>
+        <tr class="u">
+            <td>43</td>
+            <td>u8</td>
+            <td>0,204</td>
         </tr>
         <tr class="u">
             <td>44</td>
             <td>u8</td>
-            <td>always 255</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>45</td>
             <td>u8</td>
-            <td>always 255</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>46</td>
             <td>u8</td>
-            <td>always 255</td>
+            <td>0 - 255</td>
         </tr>
         <tr class="u">
             <td>47</td>
             <td>u8</td>
-            <td>always 255</td>
+            <td>13 - 255</td>
         </tr>
         <tr class="u">
             <td>48</td>
             <td>u32</td>
-            <td>0,1280,1283</td>
+            <td>0 - 1535</td>
         </tr>
         <tr class="u">
             <td>52</td>
             <td>u32</td>
-            <td>0</td>
+            <td>0 - 4294958305</td>
         </tr>
         <tr class="u">
             <td>56</td>
             <td>u32</td>
-            <td>6 - 9645</td>
+            <td>0 - 41637</td>
         </tr>
         <tr class="u">
             <td>60</td>
             <td>u32</td>
-            <td>always 1</td>
+            <td>0,1,2,3,4,5,7,8,9,10</td>
         </tr>
         <tr class="u">
             <td>64</td>
             <td>u32</td>
-            <td>80,112</td>
+            <td>0,10,18,42,50,80,112</td>
         </tr>
         <tr class="u">
             <td>68</td>
             <td>u32</td>
-            <td>280,282</td>
+            <td>280,282,288,290,384,928,930</td>
         </tr>
         <tr class="u">
             <td>72</td>
             <td>u32</td>
-            <td>always 262144</td>
+            <td>0,262144</td>
         </tr>
         <tr class="u">
             <td>76</td>
             <td>float</td>
-            <td>2.924334764480591 - 2918.94921875</td>
+            <td>0 - 17188.103515625</td>
         </tr>
         <tr class="u">
             <td>80</td>
             <td>float</td>
-            <td>21.211795806884766 - 870.7129516601562</td>
+            <td>0 - 17188.072265625</td>
         </tr>
         <tr class="u">
             <td>84</td>
             <td>float</td>
-            <td>43.52512741088867 - 2152.688720703125</td>
+            <td>0 - 15930.755859375</td>
         </tr>
         <tr class="u">
             <td>88</td>
             <td>float</td>
-            <td>0.8727525472640991 - 64</td>
+            <td>0 - 299.30517578125</td>
         </tr>
         <tr class="u">
             <td>92</td>
             <td>float</td>
-            <td>0.8886204957962036 - 128</td>
+            <td>0 - 128</td>
         </tr>
         <tr class="u">
             <td>96</td>
@@ -6704,7 +6734,10 @@ GameCube:
         <tr class="u">
             <td>100</td>
             <td>u32</td>
-            <td><a href="#pmwr_model_psp_4_4_0_100">offset</a></td>
+            <td>based on type [60]<br>
+                0 = <a href="#models_04_4_0_psp_100t0">offset</a><br>
+                1 = <a href="#models_04_4_0_psp_100trest">offset</a><br>
+                </td>
         </tr>
         <tr class="u">
             <td>104</td>
@@ -6720,6 +6753,198 @@ GameCube:
     <tfoot>
         <tr>
             <th colspan="3">112 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="models_04_4_0_psp_100t0">models_04_4_0_psp_100t0</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td><a href="#models_04_4_0_psp_100t0_0">offset</a> </td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#models_04_4_0_psp_100t0_4">offset</a> </td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u32</td>
+            <td><a href="#models_04_4_0_psp_100t0_8">offset</a> </td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u32</td>
+            <td>4 - 180</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>6 - 228</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,1</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>4 - 98</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">32 bytes</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="models_04_4_0_psp_100trest">models_04_4_0_psp_100trest</h2>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0,1,2,3,4</td>
+        </tr>
+        <tr class="u">
+            <td>04</td>
+            <td>u8</td>
+            <td>0 - 39</td>
+        </tr>
+        <tr class="u">
+            <td>05</td>
+            <td>u8</td>
+            <td>0</td>
+        </tr>
+        <tr class="u">
+            <td>06</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>07</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>08</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>09</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>10</td>
+            <td>u8</td>
+            <td>0 - 255</td>
+        </tr>
+        <tr class="u">
+            <td>11</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>12</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>13</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>14</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>15</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>16</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>17</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>18</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>19</td>
+            <td>u8</td>
+            <td>0,255</td>
+        </tr>
+        <tr class="u">
+            <td>20</td>
+            <td>u32</td>
+            <td>3 - 5344</td>
+        </tr>
+        <tr class="u">
+            <td>24</td>
+            <td>u32</td>
+            <td>0,49152</td>
+        </tr>
+        <tr class="u">
+            <td>28</td>
+            <td>u32</td>
+            <td>3,4</td>
+        </tr>
+        <tr class="u">
+            <td>32</td>
+            <td>u32</td>
+            <td><a href="#models_04_4_0_psp_100trest_32">offset</a> </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">36 bytes</th>
         </tr>
     </tfoot>
 </table>
@@ -7850,6 +8075,34 @@ not sure amount, 0,16,32,416,512 seen<br>
     <tfoot>
         <tr>
             <th colspan="3">32 bytes per entry</th>
+        </tr>
+    </tfoot>
+</table>
+<hr>
+<h2 id="pmwr_datapack_psp_84">pmwr_datapack_psp_84</h2>
+<p>??</p>
+<table class="h">
+    <tbody>
+        <tr>
+            <th>Offset</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr class="u">
+            <td>00</td>
+            <td>u32</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>u32</td>
+            <td><a href="#pmwr_frame_text">offset (pmwr_frame_text)</a></td>
+        </tr>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3">8 bytes per entry</th>
         </tr>
     </tfoot>
 </table>
